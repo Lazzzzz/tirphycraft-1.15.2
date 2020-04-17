@@ -1,31 +1,39 @@
 package laz.tirphycraft;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraftforge.common.MinecraftForge;
+import laz.tirphycraft.particle.GlintParticle;
+import net.minecraft.client.Minecraft;
+import net.minecraft.particles.ParticleType;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
+import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 @Mod(MOD_ID)
 public class Tirphycraft
 {
     public static final String MOD_ID = "tirphycraft";
 
+    public static final TirphycraftGroup ITEM_GROUP = new TirphycraftGroup(MOD_ID + "_group");
+
     public Tirphycraft() {
+
+    }
+
+    @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
+    public static class Registry {
+
+        @SubscribeEvent
+        public static void registerParticleFactories(ParticleFactoryRegisterEvent event) {
+            Minecraft.getInstance().particles.registerFactory(GLINT_PARTICLE, GlintParticle.Factory::new);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleTypes(RegistryEvent.Register<ParticleType<?>> event) {
+            event.getRegistry().register(GLINT_PARTICLE.setRegistryName(MOD_ID, "glint"));
+        }
 
     }
 }
