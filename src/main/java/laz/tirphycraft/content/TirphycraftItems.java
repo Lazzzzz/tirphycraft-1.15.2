@@ -1,0 +1,16 @@
+package laz.tirphycraft.content;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
+
+public class TirphycraftItems {
+
+    public static void init(){
+
+
+
+    }
+
+}
