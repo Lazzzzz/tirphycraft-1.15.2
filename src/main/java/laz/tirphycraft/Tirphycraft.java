@@ -8,10 +8,12 @@ import laz.tirphycraft.particle.GlintParticle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.ParticleType;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MOD_ID)
@@ -24,6 +26,11 @@ public class Tirphycraft
     public Tirphycraft() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         TirphycraftRegistries.init(bus);
+        MinecraftForge.EVENT_BUS.addListener(Tirphycraft::serverAboutToStart);
+    }
+
+    private static void serverAboutToStart(FMLServerAboutToStartEvent event) {
+        // DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "school_grounds"), ACADEMY_GROUNDS.get(), null, true);
     }
 
     @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
