@@ -1,8 +1,8 @@
 package laz.tirphycraft.world.biome.froz;
 
-import net.minecraft.world.biome.Biome;
+import laz.tirphycraft.world.biome.base.FrozBiome;
 
-public class FrozIceMountainBiome extends Biome {
+public class FrozIceMountainBiome extends FrozBiome {
 
     protected FrozIceMountainBiome(Builder builder) {
         super(builder);

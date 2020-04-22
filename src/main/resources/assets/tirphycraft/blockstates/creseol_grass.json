@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "tirphycraft:creseol_grass" },
+            { "model": "tirphycraft:creseol_grass", "y": 90 },
+            { "model": "tirphycraft:creseol_grass", "y": 180 },
+            { "model": "tirphycraft:creseol_grass", "y": 270 }
+        ]
+    
+    }
+}

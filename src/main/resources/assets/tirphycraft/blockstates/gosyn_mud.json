@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "tirphycraft:gosyn_mud" },
+            { "model": "tirphycraft:gosyn_mud", "y": 90 },
+            { "model": "tirphycraft:gosyn_mud", "y": 180 },
+            { "model": "tirphycraft:gosyn_mud", "y": 270 }
+        ]
+    
+    }
+}

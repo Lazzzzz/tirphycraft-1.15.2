@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "tirphycraft:blocks/spirit_wall_middle"
+   }
+}

@@ -3,6 +3,7 @@ package laz.tirphycraft.content;
 import static laz.tirphycraft.content.TirphycraftRegistries.DIMENSIONS;
 
 import laz.tirphycraft.world.dimension.froz.FrozModDimension;
+import laz.tirphycraft.world.dimension.gosyn.GosynModDimension;
 import laz.tirphycraft.world.dimension.laputa.LaputaModDimension;
 import laz.tirphycraft.world.dimension.noxis.NoxisModDimension;
 import net.minecraftforge.common.ModDimension;
@@ -15,6 +16,7 @@ public class TirphycraftDimensions {
 	public static RegistryObject<ModDimension> FROZ_DIM;
 	public static final RegistryObject<ModDimension> LAPUTA_DIM = DIMENSIONS.register("laputa_dim", () -> new LaputaModDimension());
 	public static final RegistryObject<ModDimension> NOXIS_DIM 	= DIMENSIONS.register("noxis_dim", () -> new NoxisModDimension());
+<<<<<<< HEAD
 
 	public static void init(){
 		FROZ_DIM = addDimension("froz_dim", FrozModDimension::new);
@@ -25,4 +27,8 @@ public class TirphycraftDimensions {
 		return DIMENSIONS.register(name,dimSupplier);
 	}
 
+=======
+	public static final RegistryObject<ModDimension> GOSYN_DIM 	= DIMENSIONS.register("gosyn_dim", () -> new GosynModDimension());
+	
+>>>>>>> master
 }

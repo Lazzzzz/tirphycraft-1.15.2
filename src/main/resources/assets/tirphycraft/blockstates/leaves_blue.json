@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "check_decay=true,decayable=true": { "model": "tirphycraft:leaves_blue" },
+        "check_decay=true,decayable=false": { "model": "tirphycraft:leaves_blue" },
+        "check_decay=false,decayable=true": { "model": "tirphycraft:leaves_blue" },
+        "check_decay=false,decayable=false": { "model": "tirphycraft:leaves_blue" }
+    }
+}

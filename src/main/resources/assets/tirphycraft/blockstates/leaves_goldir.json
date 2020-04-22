@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "check_decay=true,decayable=true": { "model": "tirphycraft:leaves_goldir" },
+        "check_decay=true,decayable=false": { "model": "tirphycraft:leaves_goldir" },
+        "check_decay=false,decayable=true": { "model": "tirphycraft:leaves_goldir" },
+        "check_decay=false,decayable=false": { "model": "tirphycraft:leaves_goldir" }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "axis=y":  { "model": "tirphycraft:melynch_bark" },
+        "axis=z":   { "model": "tirphycraft:melynch_bark", "x": 90 },
+        "axis=x":   { "model": "tirphycraft:melynch_bark", "x": 90, "y": 90 },
+        "axis=none": { "model": "tirphycraft:melynch_bark" }
+    }
+}

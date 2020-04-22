@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures":
+    {
+        "end": "tirphycraft:blocks/log_froz_top",
+        "side": "tirphycraft:blocks/log_froz_side"
+    }
+}

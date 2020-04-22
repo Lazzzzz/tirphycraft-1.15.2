@@ -1,8 +1,8 @@
 package laz.tirphycraft.world.biome.froz;
 
-import net.minecraft.world.biome.Biome;
+import laz.tirphycraft.world.biome.base.FrozBiome;
 
-public class FrozDeadBiome extends Biome {
+public class FrozDeadBiome extends FrozBiome {
 
     protected FrozDeadBiome(Builder builder) {
         super(builder);

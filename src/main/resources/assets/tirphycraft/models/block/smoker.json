@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "tirphycraft:blocks/noxis_frozen_grass_top",
+        "down": "tirphycraft:blocks/noxis_dirt",
+        "up": "tirphycraft:blocks/smoker_top",
+        "north": "tirphycraft:blocks/noxis_frozen_grass_side",
+        "east": "tirphycraft:blocks/noxis_frozen_grass_side",
+        "south": "tirphycraft:blocks/noxis_frozen_grass_side",
+        "west": "tirphycraft:blocks/noxis_frozen_grass_side"
+    }
+}

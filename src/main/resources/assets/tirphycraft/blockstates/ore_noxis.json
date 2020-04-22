@@ -1,0 +1,9 @@
+{
+    "variants": {
+    
+    "variant=purodes": { "model": "tirphycraft:ore_noxis_purodes" },
+    "variant=crystal": { "model": "tirphycraft:ore_noxis_crystal" },
+    "variant=tenium": { "model": "tirphycraft:ore_noxis_tenium" } ,
+            "variant=coal_on_coke": { "model": "tirphycraft:ore_noxis_coal_on_coke" }       
+    }
+}

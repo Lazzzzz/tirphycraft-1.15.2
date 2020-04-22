@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures": 
+    {
+        "end": "tirphycraft:blocks/creseol_brick",
+        "side": "tirphycraft:blocks/creseol_bricks_runed_2"
+   }
+}

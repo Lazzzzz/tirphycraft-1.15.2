@@ -1,8 +1,8 @@
 package laz.tirphycraft.world.biome.laputa;
 
-import net.minecraft.world.biome.Biome;
+import laz.tirphycraft.world.biome.base.LaputaBiome;
 
-public class LaputaNMLBiome extends Biome {
+public class LaputaNMLBiome extends LaputaBiome {
 
     protected LaputaNMLBiome(Builder builder) {
         super(builder);

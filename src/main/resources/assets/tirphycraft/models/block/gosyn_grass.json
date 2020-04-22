@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "tirphycraft:blocks/gosyn_grass_top",
+        "down": "tirphycraft:blocks/gosyn_dirt",
+        "up": "tirphycraft:blocks/gosyn_grass_top",
+        "north": "tirphycraft:blocks/gosyn_grass_side",
+        "east": "tirphycraft:blocks/gosyn_grass_side",
+        "south": "tirphycraft:blocks/gosyn_grass_side",
+        "west": "tirphycraft:blocks/gosyn_grass_side"
+    }
+}

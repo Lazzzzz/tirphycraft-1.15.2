@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "axis=y":  { "model": "tirphycraft:log_mystical" },
+        "axis=z":   { "model": "tirphycraft:log_mystical", "x": 90 },
+        "axis=x":   { "model": "tirphycraft:log_mystical", "x": 90, "y": 90 },
+        "axis=none": { "model": "tirphycraft:log_mystical" }
+    }
+}

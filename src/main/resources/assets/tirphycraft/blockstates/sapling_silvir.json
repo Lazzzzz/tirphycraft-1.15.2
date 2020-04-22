@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "stage=0": { "model": "tirphycraft:sapling_silvir" },
+        "stage=1": { "model": "tirphycraft:sapling_silvir" }
+    }
+}

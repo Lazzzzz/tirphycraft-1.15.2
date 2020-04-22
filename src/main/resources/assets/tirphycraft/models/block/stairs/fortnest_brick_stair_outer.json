@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "tirphycraft:blocks/fortnest_bricks",
+        "top": "tirphycraft:blocks/fortnest_bricks",
+        "side": "tirphycraft:blocks/fortnest_bricks"
+    }
+}

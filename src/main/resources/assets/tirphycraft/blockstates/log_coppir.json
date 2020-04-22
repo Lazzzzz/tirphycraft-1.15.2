@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "axis=y":  { "model": "tirphycraft:log_coppir" },
+        "axis=z":   { "model": "tirphycraft:log_coppir", "x": 90 },
+        "axis=x":   { "model": "tirphycraft:log_coppir", "x": 90, "y": 90 },
+        "axis=none": { "model": "tirphycraft:log_coppir" }
+    }
+}

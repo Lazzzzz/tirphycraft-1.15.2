@@ -1,0 +1,19 @@
+{
+    "parent": "tirphycraft:block/block_2_layer",
+    "textures": 
+    {
+        "particle": "tirphycraft:blocks/creseol_bark",
+        "down": "tirphycraft:blocks/creseol_bark",
+        "up": "tirphycraft:blocks/creseol_bark",
+        "north": "tirphycraft:blocks/creseol_bark",
+        "east": "tirphycraft:blocks/creseol_bark",
+        "south": "tirphycraft:blocks/creseol_bark",
+        "west": "tirphycraft:blocks/creseol_bark",
+        "down2": "tirphycraft:blocks/creseol_bark",
+        "up2": "tirphycraft:blocks/creseol_bark",
+        "north2": "tirphycraft:blocks/creseol_bark_rune1",
+        "east2": "tirphycraft:blocks/creseol_bark_rune1",
+        "south2": "tirphycraft:blocks/creseol_bark_rune1",
+        "west2": "tirphycraft:blocks/creseol_bark_rune1"
+    }
+}
