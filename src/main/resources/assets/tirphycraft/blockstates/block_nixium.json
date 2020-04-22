@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:block_nixium" }
+        "": { "model": "tirphycraft:block/block_nixium" }
     }
 }

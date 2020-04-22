@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:laputa_cobblestone" }
+        "": { "model": "tirphycraft:block/laputa_cobblestone" }
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:block_pyrodes" }
+        "": { "model": "tirphycraft:block/block_pyrodes" }
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:histoire_ice" }
+        "": { "model": "tirphycraft:block/histoire_ice" }
     }
 }

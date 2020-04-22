@@ -1,5 +1,6 @@
 package laz.tirphycraft;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -11,6 +12,6 @@ public class TirphycraftGroup extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return null;
+        return new ItemStack(Blocks.BRICKS);
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:sun_stone" }
+        "": { "model": "tirphycraft:block/sun_stone" }
     }
 }

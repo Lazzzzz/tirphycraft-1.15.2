@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:frozen_crystal" }
+        "": { "model": "tirphycraft:block/frozen_crystal" }
     }
 }
