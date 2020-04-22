@@ -56,7 +56,7 @@ public class TirphycraftRegistries {
     public static void init(IEventBus eventBus){
         TirphycraftBlocks.init();
         TirphycraftItems.init();
-
+        TirphycraftDimensions.init();
         TirphycraftBiomes.init();
 
         register(eventBus);

@@ -12,6 +12,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import static laz.tirphycraft.Tirphycraft.MOD_ID;
+import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
+
 @Mod(MOD_ID)
 public class Tirphycraft
 {
