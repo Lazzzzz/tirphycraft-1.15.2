@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "tirphycraft:blocks/ore_noxis_coal_on_coke"
+   }
+}

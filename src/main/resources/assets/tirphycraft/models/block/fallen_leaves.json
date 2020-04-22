@@ -1,0 +1,48 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"fallen_leaves": "tirphycraft:blocks/plants/fallen_leaves",
+		"particle": "tirphycraft:blocks/plants/fallen_leaves"
+	},
+	"elements": [
+		{
+			"name": "Cube",
+			"from": [0, 0, 0],
+			"to": [16, 1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#fallen_leaves"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#fallen_leaves"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#fallen_leaves"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#fallen_leaves"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#fallen_leaves"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#fallen_leaves"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [12, 315, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 315, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 45, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"rotation": [0, 180, 0]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0]
+		}
+	}
+}

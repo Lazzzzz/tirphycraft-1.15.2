@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "tirphycraft:blocks/laputa_grass_top",
+        "down": "tirphycraft:blocks/laputa_dirt",
+        "up": "tirphycraft:blocks/laputa_grass_top",
+        "north": "tirphycraft:blocks/laputa_grass_side",
+        "east": "tirphycraft:blocks/laputa_grass_side",
+        "south": "tirphycraft:blocks/laputa_grass_side",
+        "west": "tirphycraft:blocks/laputa_grass_side"
+    }
+}

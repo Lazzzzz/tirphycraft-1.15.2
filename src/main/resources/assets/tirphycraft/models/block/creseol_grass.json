@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "tirphycraft:blocks/creseol_grass_top",
+        "down": "tirphycraft:blocks/gosyn_dirt",
+        "up": "tirphycraft:blocks/creseol_grass_top",
+        "north": "tirphycraft:blocks/creseol_grass_side",
+        "east": "tirphycraft:blocks/creseol_grass_side",
+        "south": "tirphycraft:blocks/creseol_grass_side",
+        "west": "tirphycraft:blocks/creseol_grass_side"
+    }
+}

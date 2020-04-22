@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures":
+    {
+        "cross": "tirphycraft:blocks/laputa_tall_grass"
+    }
+}

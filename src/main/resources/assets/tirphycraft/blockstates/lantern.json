@@ -1,0 +1,14 @@
+{
+    "variants": 
+    {
+        "variant=variant_0": 
+        {
+            "model": "tirphycraft:lantern_0"
+        },
+
+        "variant=variant_1": 
+        {
+            "model": "tirphycraft:lantern_1"
+        }
+    }
+}

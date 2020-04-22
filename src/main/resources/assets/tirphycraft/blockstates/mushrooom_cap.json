@@ -1,0 +1,23 @@
+{
+    "variants": 
+    {
+        "variant=variant_0": 
+        {
+            "model": "tirphycraft:mushrooom_cap_0"
+        },
+
+        "variant=variant_1": 
+        {
+            "model": "tirphycraft:mushrooom_cap_1"
+        },
+                "variant=variant_2": 
+        {
+            "model": "tirphycraft:mushrooom_cap_2"
+        },
+                "variant=variant_3": 
+        {
+            "model": "tirphycraft:mushrooom_cap_3"
+        }
+        
+    }
+}
