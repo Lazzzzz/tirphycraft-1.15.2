@@ -3,11 +3,14 @@ package laz.tirphycraft;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
+import laz.tirphycraft.content.TirphycraftDimensions;
 import laz.tirphycraft.content.TirphycraftRegistries;
 import laz.tirphycraft.particle.GlintParticle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.ParticleType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,7 +33,7 @@ public class Tirphycraft
     }
 
     private static void serverAboutToStart(FMLServerAboutToStartEvent event) {
-        // DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "school_grounds"), ACADEMY_GROUNDS.get(), null, true);
+        DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "froz_dim"), TirphycraftDimensions.FROZ_DIM.get(), null, true);
     }
 
     @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
