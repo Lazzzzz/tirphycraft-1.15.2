@@ -20,10 +20,10 @@ public class TirphycraftDimensions {
 
 
 	public static void init(){
-		FROZ_DIM = addDimension("froz_dim", FrozModDimension::new);
-		LAPUTA_DIM = addDimension("laputa_dim", LaputaModDimension::new);
-		GOSYN_DIM = addDimension("gosyn_dim", GosynModDimension::new);
-		NOXIS_DIM = addDimension("noxis_dim", NoxisModDimension::new);
+		FROZ_DIM 	= addDimension("froz_dim", FrozModDimension::new);
+		LAPUTA_DIM	= addDimension("laputa_dim", LaputaModDimension::new);
+		GOSYN_DIM 	= addDimension("gosyn_dim", GosynModDimension::new);
+		NOXIS_DIM 	= addDimension("noxis_dim", NoxisModDimension::new);
 
 	}
 
