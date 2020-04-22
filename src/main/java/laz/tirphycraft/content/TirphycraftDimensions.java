@@ -16,7 +16,7 @@ public class TirphycraftDimensions {
 	public static RegistryObject<ModDimension> FROZ_DIM;
 	public static final RegistryObject<ModDimension> LAPUTA_DIM = DIMENSIONS.register("laputa_dim", () -> new LaputaModDimension());
 	public static final RegistryObject<ModDimension> NOXIS_DIM 	= DIMENSIONS.register("noxis_dim", () -> new NoxisModDimension());
-<<<<<<< HEAD
+
 
 	public static void init(){
 		FROZ_DIM = addDimension("froz_dim", FrozModDimension::new);
@@ -27,8 +27,6 @@ public class TirphycraftDimensions {
 		return DIMENSIONS.register(name,dimSupplier);
 	}
 
-=======
 	public static final RegistryObject<ModDimension> GOSYN_DIM 	= DIMENSIONS.register("gosyn_dim", () -> new GosynModDimension());
-	
->>>>>>> master
+
 }
