@@ -12,9 +12,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
-
 @Mod(MOD_ID)
 public class Tirphycraft
 {
@@ -39,6 +36,6 @@ public class Tirphycraft
         public static void registerParticleTypes(RegistryEvent.Register<ParticleType<?>> event) {
             event.getRegistry().register(GLINT_PARTICLE.setRegistryName(MOD_ID, "glint"));
         }
-
+        
     }
 }
