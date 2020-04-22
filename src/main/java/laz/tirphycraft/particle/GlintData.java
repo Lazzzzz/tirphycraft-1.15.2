@@ -1,13 +1,14 @@
 package laz.tirphycraft.particle;
 
+import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
+
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+
 import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleType;
-
-import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 public class GlintData implements IParticleData {
 

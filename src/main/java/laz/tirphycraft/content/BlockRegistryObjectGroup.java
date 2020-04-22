@@ -1,16 +1,17 @@
 package laz.tirphycraft.content;
 
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import javax.annotation.Nonnull;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-
-import javax.annotation.Nonnull;
-import java.util.Objects;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class BlockRegistryObjectGroup<B extends Block, I extends Item, T extends TileEntity> implements Supplier<B> {
     private final String name;
