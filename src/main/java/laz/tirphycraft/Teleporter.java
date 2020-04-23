@@ -27,7 +27,7 @@ public class Teleporter extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        if(world.isRemote()){
+        if(!world.isRemote()){
             ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
             DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "froz_dim"), FROZ_DIM.get(), null, true);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
