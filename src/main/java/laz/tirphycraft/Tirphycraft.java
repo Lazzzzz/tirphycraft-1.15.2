@@ -17,6 +17,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
+import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MOD_ID)
@@ -28,12 +29,16 @@ public class Tirphycraft
 
     public Tirphycraft() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverStartup);
         TirphycraftRegistries.init(bus);
         MinecraftForge.EVENT_BUS.addListener(Tirphycraft::serverAboutToStart);
     }
 
-    private static void serverAboutToStart(FMLServerAboutToStartEvent event) {
+    private void serverStartup(FMLServerStartedEvent event){
         DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "froz_dim"), TirphycraftDimensions.FROZ_DIM.get(), null, true);
+    }
+
+    private static void serverAboutToStart(FMLServerAboutToStartEvent event) {
     }
 
     @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
