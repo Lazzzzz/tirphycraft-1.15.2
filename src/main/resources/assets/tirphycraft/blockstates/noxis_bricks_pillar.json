@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:noxis_bricks_pillar" }
+        "": { "model": "tirphycraft:block/noxis_bricks_pillar" }
     }
 }

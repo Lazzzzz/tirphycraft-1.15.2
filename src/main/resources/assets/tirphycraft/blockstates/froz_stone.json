@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:froz_stone" }
+        "": { "model": "tirphycraft:block/froz_stone" }
     }
 }

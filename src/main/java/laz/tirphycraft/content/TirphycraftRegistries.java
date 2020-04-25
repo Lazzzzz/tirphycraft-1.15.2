@@ -8,8 +8,18 @@ import java.util.function.Supplier;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Food;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.Items;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -78,11 +88,56 @@ public class TirphycraftRegistries {
         return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name, itemSupplier);
     }
 
-    public static RegistryObject<Item> addSimpleItem(String name) {
+    public static RegistryObject<Item> addSimpleItem(String name, int size) {
         ITEMLIST_INT = ++ITEMLIST_INT;
-        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name, () -> new Item(new Item.Properties().group(ITEM_GROUP)));
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name, () -> new Item(new Item.Properties().group(ITEM_GROUP).maxStackSize(size)));
+    }
+    
+    public static RegistryObject<Item> addSimpleFood(String name, int food) {
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name, () -> new Item(new Item.Properties().group(ITEM_GROUP).food(new Food.Builder().hunger(food).saturation(food).build())));
+    }
+    
+    public static void addTools(String name, IItemTier tier) {
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_axe", () -> new AxeItem(tier, 5.0F, -3.0F, (new Item.Properties()).group(ITEM_GROUP)));
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_pickaxe", () -> new PickaxeItem(tier, 1, -2.8F, (new Item.Properties()).group(ITEM_GROUP)));
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_sword", () -> new SwordItem(tier, 3, -2.4F, (new Item.Properties()).group(ITEM_GROUP)));
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_shovel", () -> new ShovelItem(tier, 1.5F, -3.0F, (new Item.Properties()).group(ITEM_GROUP)));
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_hoe", () -> new HoeItem(tier, -1F, (new Item.Properties()).group(ITEM_GROUP)));
     }
 
+    public static RegistryObject<Item> addFeet(String name, Item item){
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_boots", () -> item);
+    }
+    
+    public static RegistryObject<Item> addLegs(String name, Item item){
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_leggings", () -> item);
+    }
+    
+    public static RegistryObject<Item> addChest(String name, Item item){
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_chestplate", () -> item);
+    }
+    
+    public static RegistryObject<Item> addHead(String name, Item item){
+        ITEMLIST_INT = ++ITEMLIST_INT;
+        return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_helmet", () -> item);
+    }
+    
+    public static void addArmor(String name, Item feet, Item legs, Item chest, Item head){
+        addFeet(name, feet);
+        addLegs(name, legs);
+        addChest(name, chest);
+        addHead(name, head);
+    }
+    
     public static RegistryObject<Biome> addBiome(String name, Supplier<Biome> biomeSupplier){
         BIOMES_INT = ++BIOMES_INT;
         return BIOMELIST[BIOMES_INT] = TIRPH_BIOMES.register(name, biomeSupplier);

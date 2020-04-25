@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:laputa_grass" }
+        "": { "model": "tirphycraft:block/laputa_grass" }
     }
 }
