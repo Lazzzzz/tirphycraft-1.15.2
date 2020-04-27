@@ -2,35 +2,38 @@ package laz.tirphycraft.util;
 
 public enum TirphyColor {
 
-    BLUE(0, 1, 1, 1),
-    GREEN(1, 1, 1, 1),
-    RED(2, 1, 1, 1);
+    BLUE(0, 0, 0, 1),
+    GREEN(1, 0, 1, 0),
+    RED(2, 1, 0, 0),
+    YELLOW(3, 1, 1, 0),
+    PINK(4, 1f, 0.5f, 0.5f),
+    PURPLE(5, 0.5f, 0, 1);
 
-    private final int index;
-    private final int blue;
-    private final int green;
-    private final int red;
+    private final float index;
+    private final float blue;
+    private final float green;
+    private final float red;
 
-    TirphyColor(int index, int blue, int green, int red) {
+    TirphyColor(int index, float red, float green, float blue) {
         this.index = index;
         this.blue = blue;
         this.green = green;
         this.red = red;
     }
 
-    public int getIndex() {
+    public float getIndex() {
         return index;
     }
 
-    public int getBlue() {
+    public float getBlue() {
         return blue;
     }
 
-    public int getGreen() {
+    public float getGreen() {
         return green;
     }
 
-    public int getRed() {
+    public float getRed() {
         return red;
     }
 
@@ -42,6 +45,12 @@ public enum TirphyColor {
                 return GREEN;
             case 2:
                 return RED;
+            case 3:
+            	return YELLOW;
+            case 4:
+            	return PINK;
+            case 5:
+            	return PURPLE;
             default:
                 throw new IllegalStateException("Unexpected variant: " + index);
         }

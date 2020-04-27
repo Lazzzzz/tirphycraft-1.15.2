@@ -3,6 +3,7 @@ package laz.tirphycraft.content;
 import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
+import laz.tirphycraft.util.TirphyColor;
 
 import static laz.tirphycraft.content.TirphycraftRegistries.addBlockClass;
 
@@ -32,7 +33,12 @@ public class TirphycraftBlocks {
     
        addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
        BLACK_CRYSTAL = addCubedBlock("black_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0)); //      
-       addBlockClass("laputa_blue", () -> new CrystalBlock());
+      
+       addBlockClass("laputa_blue", () -> new CrystalBlock(TirphyColor.BLUE));
+       addBlockClass("laputa_pink", () -> new CrystalBlock(TirphyColor.PINK));
+       addBlockClass("laputa_purple", () -> new CrystalBlock(TirphyColor.PURPLE));
+       addBlockClass("laputa_yellow", () -> new CrystalBlock(TirphyColor.YELLOW));
+       addBlockClass("laputa_green", () -> new CrystalBlock(TirphyColor.GREEN));
        
        addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
         

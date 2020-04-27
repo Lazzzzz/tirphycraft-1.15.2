@@ -40,7 +40,7 @@ public class GlintData implements IParticleData {
     @Override
     public void write(PacketBuffer buf) {
         buf.writeInt(getMaxAge());
-        buf.writeInt(getColor().getIndex());
+        buf.writeFloat(getColor().getIndex());
     }
 
     @Override
