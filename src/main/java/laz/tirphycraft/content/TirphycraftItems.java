@@ -1,6 +1,6 @@
 package laz.tirphycraft.content;
 
-import static laz.tirphycraft.content.TirphycraftRegistries.addItemWClass;
+import static laz.tirphycraft.content.TirphycraftRegistries.addItemClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTools;
@@ -91,80 +91,80 @@ public class TirphycraftItems {
 
 	public static void init() {
 
-		PYRODES_FEET = new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.FEET);
-		PYRODES_LEGS = new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.LEGS);
-		PYRODES_CHEST= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.CHEST);
-		PYRODES_HEAD = new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.HEAD);
+		PYRODES_FEET 	= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.FEET);
+		PYRODES_LEGS 	= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.LEGS);
+		PYRODES_CHEST	= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.CHEST);
+		PYRODES_HEAD 	= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.HEAD);
 		
-		HEAVY_FEET= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.FEET);
-		HEAVY_LEGS= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.LEGS);
-		HEAVY_CHEST= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.CHEST);
-		HEAVY_HEAD= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.HEAD);
+		HEAVY_FEET		= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.FEET);
+		HEAVY_LEGS		= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.LEGS);
+		HEAVY_CHEST		= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.CHEST);
+		HEAVY_HEAD		= new ArmorHeavy(TirphycraftArmorTiers.HEAVY, EquipmentSlotType.HEAD);
 		
-		NIXIUM_FEET= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.FEET);
-		NIXIUM_LEGS= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.LEGS);
-		NIXIUM_CHEST= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.CHEST);
-		NIXIUM_HEAD= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.HEAD);
+		NIXIUM_FEET		= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.FEET);
+		NIXIUM_LEGS		= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.LEGS);
+		NIXIUM_CHEST	= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.CHEST);
+		NIXIUM_HEAD		= new ArmorNixium(TirphycraftArmorTiers.NIXIUM, EquipmentSlotType.HEAD);
 		
-		TENIUM_FEET= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.FEET);
-		TENIUM_LEGS= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.LEGS);
-		TENIUM_CHEST= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.CHEST);
-		TENIUM_HEAD= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.HEAD);
+		TENIUM_FEET		= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.FEET);
+		TENIUM_LEGS		= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.LEGS);
+		TENIUM_CHEST	= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.CHEST);
+		TENIUM_HEAD		= new ArmorTenium(TirphycraftArmorTiers.TENIUM, EquipmentSlotType.HEAD);
 		
-		ROSE_FEET= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.FEET);
-		ROSE_LEGS= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.LEGS);
-		ROSE_CHEST= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.CHEST);
-		ROSE_HEAD= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.HEAD);
+		ROSE_FEET		= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.FEET);
+		ROSE_LEGS		= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.LEGS);
+		ROSE_CHEST		= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.CHEST);
+		ROSE_HEAD		= new ArmorRose(TirphycraftArmorTiers.ROSE, EquipmentSlotType.HEAD);
 		
-		ORIGIN_FEET= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.FEET);
-		ORIGIN_LEGS= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.LEGS);
-		ORIGIN_CHEST= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.CHEST);
-		ORIGIN_HEAD= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.HEAD);
+		ORIGIN_FEET		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.FEET);
+		ORIGIN_LEGS		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.LEGS);
+		ORIGIN_CHEST	= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.CHEST);
+		ORIGIN_HEAD		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.HEAD);
 		
-		addItemWClass("anti_amulet", AmuletAnti::new);
+		addItemClass("anti_amulet", AmuletAnti::new);
 
-		addItemWClass("amulet_1_health", AmuletHealth1::new);
-		addItemWClass("amulet_2_health", AmuletHealth2::new);
-		addItemWClass("amulet_3_health", AmuletHealth3::new);
+		addItemClass("amulet_1_health", AmuletHealth1::new);
+		addItemClass("amulet_2_health", AmuletHealth2::new);
+		addItemClass("amulet_3_health", AmuletHealth3::new);
 
-		addItemWClass("amulet_1_attack", AmuletAttack1::new);
-		addItemWClass("amulet_2_attack", AmuletAttack2::new);
-		addItemWClass("amulet_3_attack", AmuletAttack3::new);
+		addItemClass("amulet_1_attack", AmuletAttack1::new);
+		addItemClass("amulet_2_attack", AmuletAttack2::new);
+		addItemClass("amulet_3_attack", AmuletAttack3::new);
 
-		addItemWClass("amulet_1_speed", AmuletSpeed1::new);
-		addItemWClass("amulet_2_speed", AmuletSpeed2::new);
-		addItemWClass("amulet_3_speed", AmuletSpeed3::new);
+		addItemClass("amulet_1_speed", AmuletSpeed1::new);
+		addItemClass("amulet_2_speed", AmuletSpeed2::new);
+		addItemClass("amulet_3_speed", AmuletSpeed3::new);
 
-		addItemWClass("totem_levitation", TotemLevitation::new);
-		addItemWClass("totem_thunder", TotemThunder::new);
+		addItemClass("totem_levitation", TotemLevitation::new);
+		addItemClass("totem_thunder", TotemThunder::new);
 
-		TENIUM_INGOT = addItemWClass("tenium_ingot", ItemShiny::new);
+		TENIUM_INGOT = addItemClass("tenium_ingot", ItemShiny::new);
 		
-		addItemWClass("queen_heart", ItemShiny::new);
-		addItemWClass("ankh", ItemShiny::new);
-		addItemWClass("poseidon_eye", ItemShiny::new);
+		addItemClass("queen_heart", ItemShiny::new);
+		addItemClass("ankh", ItemShiny::new);
+		addItemClass("poseidon_eye", ItemShiny::new);
 
-		addItemWClass("staff_1_heal", StaffHeal1::new);
-		addItemWClass("staff_2_heal", StaffHeal2::new);
-		addItemWClass("staff_3_heal", StaffHeal3::new);
-		addItemWClass("staff_1_teleportation", StaffTeleportation1::new);
-		addItemWClass("staff_2_teleportation", StaffTeleportation2::new);
-		addItemWClass("staff_3_teleportation", StaffTeleportation3::new);
-		addItemWClass("staff_1_explosion", StaffExplosion1::new);
-		addItemWClass("staff_2_explosion", StaffExplosion2::new);
-		addItemWClass("staff_3_explosion", StaffExplosion3::new);
-		addItemWClass("staff_1_fireball", StaffFireBall1::new);
-		addItemWClass("staff_2_fireball", StaffFireBall2::new);
-		addItemWClass("staff_3_fireball", StaffFireBall3::new);
+		addItemClass("staff_1_heal", StaffHeal1::new);
+		addItemClass("staff_2_heal", StaffHeal2::new);
+		addItemClass("staff_3_heal", StaffHeal3::new);
+		addItemClass("staff_1_teleportation", StaffTeleportation1::new);
+		addItemClass("staff_2_teleportation", StaffTeleportation2::new);
+		addItemClass("staff_3_teleportation", StaffTeleportation3::new);
+		addItemClass("staff_1_explosion", StaffExplosion1::new);
+		addItemClass("staff_2_explosion", StaffExplosion2::new);
+		addItemClass("staff_3_explosion", StaffExplosion3::new);
+		addItemClass("staff_1_fireball", StaffFireBall1::new);
+		addItemClass("staff_2_fireball", StaffFireBall2::new);
+		addItemClass("staff_3_fireball", StaffFireBall3::new);
 		
-		addItemWClass("return_clock",ClockReturn::new);
-		addItemWClass("noxis_clock",ClockNoxis::new);
-		addItemWClass("laputa_clock", ClockLaputa::new);
-		addItemWClass("gosyn_clock",ClockGosyn::new);
-		addItemWClass("froz_clock",ClockFroz::new);
+		addItemClass("return_clock",ClockReturn::new);
+		addItemClass("noxis_clock",ClockNoxis::new);
+		addItemClass("laputa_clock", ClockLaputa::new);
+		addItemClass("gosyn_clock",ClockGosyn::new);
+		addItemClass("froz_clock",ClockFroz::new);
 
-		addItemWClass("sun_tear", ArtefactSunTear::new);
-		addItemWClass("feather_of_light", ArtefactFeatherOfLight::new);
+		addItemClass("sun_tear", ArtefactSunTear::new);
+		addItemClass("feather_of_light", ArtefactFeatherOfLight::new);
 		
 		
 		addTools("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);

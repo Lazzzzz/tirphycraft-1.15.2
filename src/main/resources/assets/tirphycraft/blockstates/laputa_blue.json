@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:crystal/laputa_blue" }
+        "": { "model": "tirphycraft:block/crystal/laputa_blue" }
     }
 }

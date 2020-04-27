@@ -78,12 +78,19 @@ public class TirphycraftRegistries {
                 () -> new Block(properties), blockItemCreator())
                 .register(BLOCKS, ITEMS);
     }
+    
+    public static BlockRegistryObjectGroup<Block, BlockItem, ?> addBlockClass(String name, Supplier<Block> blockSupplier) {
+        SIMPLE_INT = ++SIMPLE_INT;
+        return SIMPLE[SIMPLE_INT - 1] = new BlockRegistryObjectGroup<>(name,
+                blockSupplier, blockItemCreator())
+                .register(BLOCKS, ITEMS);
+    }
 
     private static <B extends Block> Function<B, BlockItem> blockItemCreator() {
         return block -> new BlockItem(block, new Item.Properties().group(ITEM_GROUP));
     }
 
-    public static RegistryObject<Item> addItemWClass(String name, Supplier<Item> itemSupplier) {
+    public static RegistryObject<Item> addItemClass(String name, Supplier<Item> itemSupplier) {
         ITEMLIST_INT = ++ITEMLIST_INT;
         return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name, itemSupplier);
     }

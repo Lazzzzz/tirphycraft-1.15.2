@@ -134,24 +134,6 @@ public class LaputaChunkGenerator extends NoiseChunkGenerator<LaputaGenSettings>
 	}
 
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EntityClassification creatureType, BlockPos pos) {
-		if (Feature.SWAMP_HUT.func_202383_b(this.world, pos)) {
-			if (creatureType == EntityClassification.MONSTER) {
-				return Feature.SWAMP_HUT.getSpawnList();
-			}
-
-			if (creatureType == EntityClassification.CREATURE) {
-				return Feature.SWAMP_HUT.getCreatureSpawnList();
-			}
-		} else if (creatureType == EntityClassification.MONSTER) {
-			if (Feature.PILLAGER_OUTPOST.isPositionInStructure(this.world, pos)) {
-				return Feature.PILLAGER_OUTPOST.getSpawnList();
-			}
-
-			if (Feature.OCEAN_MONUMENT.isPositionInStructure(this.world, pos)) {
-				return Feature.OCEAN_MONUMENT.getSpawnList();
-			}
-		}
-
 		return super.getPossibleCreatures(creatureType, pos);
 	}
 

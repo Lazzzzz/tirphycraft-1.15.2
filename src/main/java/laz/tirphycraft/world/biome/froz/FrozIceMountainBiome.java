@@ -4,8 +4,8 @@ import laz.tirphycraft.world.biome.base.FrozBiome;
 
 public class FrozIceMountainBiome extends FrozBiome {
 
-    protected FrozIceMountainBiome(Builder builder) {
-        super(builder);
+    protected FrozIceMountainBiome() {
+        super();
     }
 
 }

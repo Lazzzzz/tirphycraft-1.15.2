@@ -18,7 +18,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GlintParticle extends SpriteTexturedParticle {
 
-    protected GlintParticle(GlintData data, World world, double posX, double posY, double posZ, double speedX, double speedY, double speedZ) {
+    public GlintParticle(GlintData data, World world, double posX, double posY, double posZ, double speedX, double speedY, double speedZ) {
         super(world, posX, posY, posZ, speedX, speedY, speedZ);
         motionX = speedX;
         motionY = speedY;

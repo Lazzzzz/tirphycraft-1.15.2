@@ -4,8 +4,8 @@ import laz.tirphycraft.world.biome.base.LaputaBiome;
 
 public class LaputaMeteoriteBiome extends LaputaBiome {
 
-    protected LaputaMeteoriteBiome(Builder builder) {
-        super(builder);
+    public LaputaMeteoriteBiome() {
+        super();
     }
 
 }
