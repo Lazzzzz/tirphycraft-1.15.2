@@ -107,7 +107,7 @@ public class TirphycraftBlocks {
        
        addCubedBlock("noxis_ash_lit", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0).lightValue(4));
        
-       LAPUTA_GRASS = addBlockClass("laputa_grass", () -> new GrassBlock(Properties.from(Blocks.GRASS_BLOCK)));
+       LAPUTA_GRASS = addCubedBlock("laputa_grass", Properties.from(Blocks.GRASS_BLOCK));
        LAPUTA_DIRT  = addCubedBlock("laputa_dirt", Block.Properties.create(Material.GOURD).harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5f, 0).sound(SoundType.GROUND));
 
      
