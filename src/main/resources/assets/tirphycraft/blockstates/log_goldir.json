@@ -1,9 +1,7 @@
 {
-    "variants":
-    {
-        "axis=y":  { "model": "tirphycraft:log_goldir" },
-        "axis=z":   { "model": "tirphycraft:log_goldir", "x": 90 },
-        "axis=x":   { "model": "tirphycraft:log_goldir", "x": 90, "y": 90 },
-        "axis=none": { "model": "tirphycraft:log_goldir" }
+    "variants": {
+        "axis=y":    { "model": "tirphycraft:block/logs/log_goldir" },
+        "axis=z":     { "model": "tirphycraft:block/logs/log_goldir", "x": 90 },
+        "axis=x":     { "model": "tirphycraft:block/logs/log_goldir", "x": 90, "y": 90 }
     }
 }

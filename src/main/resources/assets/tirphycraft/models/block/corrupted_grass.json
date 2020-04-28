@@ -1,7 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures":
-    {
-        "cross": "tirphycraft:blocks/plants/corrupted_grass"
-    }
-}

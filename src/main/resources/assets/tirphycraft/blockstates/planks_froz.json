@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tirphycraft:planks_froz" }
+        "": { "model": "tirphycraft:block/planks/planks_froz" }
     }
 }

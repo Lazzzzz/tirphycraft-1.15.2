@@ -34,8 +34,7 @@ public class TotemLevitation extends Item {
 				pos.getY() + 10, pos.getZ() + 10);
 
 		List<Entity> list = worldIn.getEntitiesInAABBexcluding(playerIn, box, EntityPredicates.NOT_SPECTATING);
-		System.out.println(list);
-		if (!list.isEmpty()) {
+		if (!list.isEmpty() && !worldIn.isRemote) {
 
 			for (int i = 0; i <= list.size() - 1; i++) {
 				if (!(list.get(i) instanceof PlayerEntity)) {

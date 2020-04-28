@@ -1,6 +1,7 @@
 package laz.tirphycraft.world.features;
 
 import laz.tirphycraft.world.features.laputa.BlackCrystalFeature;
+import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;

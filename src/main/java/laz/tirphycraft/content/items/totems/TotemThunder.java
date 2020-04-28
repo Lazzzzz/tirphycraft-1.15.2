@@ -39,8 +39,7 @@ public class TotemThunder extends Item {
 						for (int j = 0; j < 2; j++) {
 							LightningBoltEntity m = new LightningBoltEntity(worldIn, p.getX(), p.getY(), p.getZ(), false);
 							worldIn.addEntity(m);
-					        if(worldIn.isRemote())
-					        {
+					        if(worldIn.isRemote()) {
 					            ClientWorld c = (ClientWorld) playerIn.world;
 					            c.addLightning(m);
 					        }

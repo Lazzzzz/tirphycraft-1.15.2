@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/corrupted_0",
-        "top": "tirphycraft:blocks/corrupted_0",
-        "side": "tirphycraft:blocks/corrupted_0"
-    }
-}

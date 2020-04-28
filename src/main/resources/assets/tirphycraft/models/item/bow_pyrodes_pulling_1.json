@@ -1,6 +1,0 @@
-{
-    "parent": "item/bow",
-    "textures": {
-        "layer0": "tirphycraft:items/bow/bow_pyrodes_pulling_1"
-    }
-}

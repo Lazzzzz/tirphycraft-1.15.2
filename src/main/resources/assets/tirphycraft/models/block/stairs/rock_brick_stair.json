@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/gosyn_rockbrick",
-        "top": "tirphycraft:blocks/gosyn_rockbrick",
-        "side": "tirphycraft:blocks/gosyn_rockbrick"
-    }
-}

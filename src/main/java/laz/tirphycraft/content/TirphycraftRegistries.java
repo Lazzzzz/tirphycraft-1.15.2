@@ -6,7 +6,10 @@ import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import laz.tirphycraft.content.blocks.saplings.TirphycraftSapling;
 import net.minecraft.block.Block;
+import net.minecraft.block.Block.Properties;
+import net.minecraft.block.trees.Tree;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
@@ -85,7 +88,7 @@ public class TirphycraftRegistries {
                 blockSupplier, blockItemCreator())
                 .register(BLOCKS, ITEMS);
     }
-
+    
     private static <B extends Block> Function<B, BlockItem> blockItemCreator() {
         return block -> new BlockItem(block, new Item.Properties().group(ITEM_GROUP));
     }

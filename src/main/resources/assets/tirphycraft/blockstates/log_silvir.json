@@ -1,9 +1,7 @@
 {
-    "variants":
-    {
-        "axis=y":  { "model": "tirphycraft:log_silvir" },
-        "axis=z":   { "model": "tirphycraft:log_silvir", "x": 90 },
-        "axis=x":   { "model": "tirphycraft:log_silvir", "x": 90, "y": 90 },
-        "axis=none": { "model": "tirphycraft:log_silvir" }
+    "variants": {
+        "axis=y":    { "model": "tirphycraft:block/logs/log_silvir" },
+        "axis=z":     { "model": "tirphycraft:block/logs/log_silvir", "x": 90 },
+        "axis=x":     { "model": "tirphycraft:block/logs/log_silvir", "x": 90, "y": 90 }
     }
 }

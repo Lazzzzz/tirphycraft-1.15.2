@@ -1,6 +1,0 @@
-{
-   "parent": "block/cube_all",
-   "textures": {
-       "all": "tirphycraft:blocks/fortnest_bricks_nested"
-   }
-}

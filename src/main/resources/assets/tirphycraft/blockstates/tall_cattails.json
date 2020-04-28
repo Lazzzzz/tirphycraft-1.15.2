@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "half=lower": { "model": "tirphycraft:tall_cattails_lower" },
-        "half=upper":    { "model": "tirphycraft:tall_cattails_upper" }
-    }
-}

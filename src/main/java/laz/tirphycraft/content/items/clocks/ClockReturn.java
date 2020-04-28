@@ -30,7 +30,7 @@ public class ClockReturn extends Item {
         if(!world.isRemote()){
             ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
             @SuppressWarnings("deprecation")
-			DimensionType dimensionType = DimensionManager.getRegistry().getByValue(0);
+			DimensionType dimensionType = DimensionManager.getRegistry().getByValue(1);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
             playerEntity.teleport(targetWorld, player.getPosX(),64, player.getPosY(), player.rotationYaw, player.rotationPitch);
         }

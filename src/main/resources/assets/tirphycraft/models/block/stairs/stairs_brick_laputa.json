@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/brick_laputa",
-        "top": "tirphycraft:blocks/brick_laputa",
-        "side": "tirphycraft:blocks/brick_laputa"
-    }
-}

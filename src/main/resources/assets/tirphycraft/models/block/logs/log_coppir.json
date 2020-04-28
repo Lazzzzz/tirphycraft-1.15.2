@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "tirphycraft:blocks/logs/log_coppir_top",
+        "side": "tirphycraft:blocks/logs/log_coppir_side"
+    }
+}

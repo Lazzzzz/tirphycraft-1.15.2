@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "half=lower": { "model": "tirphycraft:double_tall_grass_lower" },
-        "half=upper":    { "model": "tirphycraft:double_tall_grass_upper" }
-    }
-}

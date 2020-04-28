@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "axis=y":  { "model": "tirphycraft:crystal/laputa_pink_crystal" },
-        "axis=z":   { "model": "tirphycraft:crystal/laputa_pink_crystal", "x": 90 },
-        "axis=x":   { "model": "tirphycraft:crystal/laputa_pink_crystal", "x": 90, "y": 90 },
-        "axis=none": { "model": "tirphycraft:crystal/laputa_pink_crystal" }
-    }
-}

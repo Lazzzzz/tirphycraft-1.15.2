@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures":
-    {
-        "end": "tirphycraft:blocks/log_mushroom",
-        "side": "tirphycraft:blocks/log_mushroom"
-    }
-}

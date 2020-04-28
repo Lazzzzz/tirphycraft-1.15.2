@@ -1,7 +1,0 @@
-{
-    "variants":
-    {
-        "stage=0": { "model": "tirphycraft:sapling_normal" },
-        "stage=1": { "model": "tirphycraft:sapling_normal" }
-    }
-}

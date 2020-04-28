@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/spirit_bricks_smooth",
-        "top": "tirphycraft:blocks/spirit_bricks_smooth",
-        "side": "tirphycraft:blocks/spirit_bricks_smooth"
-    }
-}

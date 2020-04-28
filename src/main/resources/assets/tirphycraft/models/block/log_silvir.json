@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures":
-    {
-        "end": "tirphycraft:blocks/log_silvir_top",
-        "side": "tirphycraft:blocks/log_silvir_side"
-    }
-}

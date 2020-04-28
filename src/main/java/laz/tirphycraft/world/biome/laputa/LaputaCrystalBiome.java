@@ -6,8 +6,6 @@ public class LaputaCrystalBiome extends LaputaBiome {
 
 	public LaputaCrystalBiome() {
 		super();
-		
-		
 	}
-
+	
 }

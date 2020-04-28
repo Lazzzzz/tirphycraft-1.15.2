@@ -1,6 +1,0 @@
-{
-   "parent":"item/handheld",
-   "textures":{
-      "layer0":"tirphycraft:items/heavy_large_sword"
-   }
-}

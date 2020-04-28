@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/nest_block",
-        "top": "tirphycraft:blocks/nest_block",
-        "side": "tirphycraft:blocks/nest_block"
-    }
-}

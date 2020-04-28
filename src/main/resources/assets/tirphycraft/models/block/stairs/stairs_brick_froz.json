@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "tirphycraft:blocks/brick_froz",
-        "top": "tirphycraft:blocks/brick_froz",
-        "side": "tirphycraft:blocks/brick_froz"
-    }
-}

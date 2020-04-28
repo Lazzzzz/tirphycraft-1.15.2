@@ -1,8 +1,8 @@
 {
     "parent": "block/inner_stairs",
     "textures": {
-        "bottom": "tirphycraft:blocks/planks_goldir",
-        "top": "tirphycraft:blocks/planks_goldir",
-        "side": "tirphycraft:blocks/planks_goldir"
+        "bottom": "tirphycraft:blocks/planks/planks_goldir",
+        "top": "tirphycraft:blocks/planks/planks_goldir",
+        "side": "tirphycraft:blocks/planks/planks_goldir"
     }
 }
