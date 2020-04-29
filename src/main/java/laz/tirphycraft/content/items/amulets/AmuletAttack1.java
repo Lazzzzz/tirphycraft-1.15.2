@@ -2,7 +2,6 @@ package laz.tirphycraft.content.items.amulets;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
-import io.netty.channel.kqueue.AcceptFilter;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

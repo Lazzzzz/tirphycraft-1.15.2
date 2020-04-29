@@ -2,14 +2,14 @@ package laz.tirphycraft.content;
 
 import static laz.tirphycraft.content.TirphycraftRegistries.DIMENSIONS;
 
+import java.util.function.Supplier;
+
 import laz.tirphycraft.world.dimension.froz.FrozModDimension;
 import laz.tirphycraft.world.dimension.gosyn.GosynModDimension;
 import laz.tirphycraft.world.dimension.laputa.LaputaModDimension;
 import laz.tirphycraft.world.dimension.noxis.NoxisModDimension;
 import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.fml.RegistryObject;
-
-import java.util.function.Supplier;
 
 public class TirphycraftDimensions {
 

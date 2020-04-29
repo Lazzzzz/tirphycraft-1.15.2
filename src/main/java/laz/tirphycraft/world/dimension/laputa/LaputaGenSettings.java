@@ -1,7 +1,7 @@
 package laz.tirphycraft.world.dimension.laputa;
 
-import net.minecraft.world.gen.EndGenerationSettings;
 import laz.tirphycraft.content.TirphycraftBlocks;
+import net.minecraft.world.gen.EndGenerationSettings;
 
 public class LaputaGenSettings extends EndGenerationSettings {
 

@@ -1,13 +1,13 @@
 package laz.tirphycraft.datagen;
 
+import static laz.tirphycraft.Tirphycraft.MOD_ID;
+
 import laz.tirphycraft.datagen.lang.TirphyLang;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
-
-import static laz.tirphycraft.Tirphycraft.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TirphyData {

@@ -8,7 +8,6 @@ import com.mojang.datafixers.Dynamic;
 import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;

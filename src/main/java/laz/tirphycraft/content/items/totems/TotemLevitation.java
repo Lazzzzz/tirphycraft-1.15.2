@@ -3,7 +3,6 @@ package laz.tirphycraft.content.items.totems;
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

@@ -1,10 +1,10 @@
 package laz.tirphycraft.content;
 
+import static laz.tirphycraft.content.TirphycraftRegistries.addArmor;
 import static laz.tirphycraft.content.TirphycraftRegistries.addItemClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTools;
-import static laz.tirphycraft.content.TirphycraftRegistries.addArmor;
 
 import laz.tirphycraft.content.items.amulets.AmuletAnti;
 import laz.tirphycraft.content.items.amulets.AmuletAttack1;

@@ -1,22 +1,14 @@
 package laz.tirphycraft;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.particle.GlintData.glintParticle;
 import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 import laz.tirphycraft.content.TirphycraftDimensions;
 import laz.tirphycraft.content.TirphycraftRegistries;
-import laz.tirphycraft.particle.GlintData;
 import laz.tirphycraft.particle.GlintParticle;
-import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.MinecraftGame;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.settings.ParticleStatus;
-import net.minecraft.entity.Entity;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;

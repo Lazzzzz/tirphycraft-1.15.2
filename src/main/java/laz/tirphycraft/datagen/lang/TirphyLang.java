@@ -1,15 +1,19 @@
 package laz.tirphycraft.datagen.lang;
 
+import static laz.tirphycraft.Tirphycraft.MOD_ID;
+import static laz.tirphycraft.content.TirphycraftRegistries.BIOMELIST;
+import static laz.tirphycraft.content.TirphycraftRegistries.ITEMLIST;
+import static laz.tirphycraft.content.TirphycraftRegistries.SIMPLE;
+import static laz.tirphycraft.content.TirphycraftRegistries.TILES;
+
+import org.apache.commons.lang3.text.WordUtils;
+
 import laz.tirphycraft.content.BlockRegistryObjectGroup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fml.RegistryObject;
-import org.apache.commons.lang3.text.WordUtils;
-
-import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftRegistries.*;
 
 public class TirphyLang extends LanguageProvider {
 

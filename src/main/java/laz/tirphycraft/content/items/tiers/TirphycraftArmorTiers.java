@@ -2,16 +2,16 @@ package laz.tirphycraft.content.items.tiers;
 
 import java.util.function.Supplier;
 
-import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.Tirphycraft;
+import laz.tirphycraft.content.TirphycraftItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.LazyValue;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public enum TirphycraftArmorTiers implements IArmorMaterial {
 	PYRODES(Tirphycraft.MOD_ID + ":pyrodes", 30, new int[] {4, 7, 8, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0f, () -> {

@@ -10,7 +10,6 @@ import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.GrassBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
@@ -26,6 +25,12 @@ public class TirphycraftBlocks {
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_STONE;
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;
+	 
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_BLUE;
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GREEN;
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_YELLOW;
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PINK;
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PURPLE;
 	 
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_COAL_ON_COKE;	
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_PYRODES;	
@@ -47,6 +52,10 @@ public class TirphycraftBlocks {
 	 
 	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_COPPIR; 
 	 
+	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> SUN_STONE; 
+	 
+	 
+	 
     public static void init(){
 
        addCubedBlock("block_pyrodes", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
@@ -65,11 +74,11 @@ public class TirphycraftBlocks {
        addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
        BLACK_CRYSTAL = addCubedBlock("black_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0)); //      
       
-       addBlockClass("laputa_blue", 	() -> new CrystalBlock(TirphyColor.BLUE));
-       addBlockClass("laputa_pink", 	() -> new CrystalBlock(TirphyColor.PINK));
-       addBlockClass("laputa_purple",	() -> new CrystalBlock(TirphyColor.PURPLE));
-       addBlockClass("laputa_yellow", 	() -> new CrystalBlock(TirphyColor.YELLOW));
-       addBlockClass("laputa_green", 	() -> new CrystalBlock(TirphyColor.GREEN));
+       LAPUTA_BLUE 	 = addBlockClass("laputa_blue", 	() -> new CrystalBlock(TirphyColor.BLUE));
+       LAPUTA_PINK 	 = addBlockClass("laputa_pink", 	() -> new CrystalBlock(TirphyColor.PINK));
+       LAPUTA_PURPLE = addBlockClass("laputa_purple",	() -> new CrystalBlock(TirphyColor.PURPLE));
+       LAPUTA_YELLOW = addBlockClass("laputa_yellow", 	() -> new CrystalBlock(TirphyColor.YELLOW));
+       LAPUTA_GREEN  = addBlockClass("laputa_green", 	() -> new CrystalBlock(TirphyColor.GREEN));
        
        LOG_COPPIR 	= addBlockClass("log_coppir", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_SILVIR 	= addBlockClass("log_silvir", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
@@ -90,7 +99,7 @@ public class TirphycraftBlocks {
        
        SAPLING_COPPIR = addBlockClass("coppir_sapling", () ->new TirphycraftSapling(() -> new CoppirTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
        
-       addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
+       SUN_STONE = addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
         
        addCubedBlock("histoire_ice", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(1));
         
@@ -100,7 +109,7 @@ public class TirphycraftBlocks {
         
        addCubedBlock("noxis_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        LAPUTA_STONE = addCubedBlock("laputa_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
-       addCubedBlock("froz_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
+       FROZ_STONE   = addCubedBlock("froz_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        
        addCubedBlock("noxis_bricks_carved", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        addCubedBlock("noxis_bricks_pillar", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
