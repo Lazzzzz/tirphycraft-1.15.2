@@ -6,6 +6,7 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTools;
 
+import laz.tirphycraft.content.items.Debug;
 import laz.tirphycraft.content.items.amulets.AmuletAnti;
 import laz.tirphycraft.content.items.amulets.AmuletAttack1;
 import laz.tirphycraft.content.items.amulets.AmuletAttack2;
@@ -89,6 +90,8 @@ public class TirphycraftItems {
 	public static Item ORIGIN_CHEST;
 	public static Item ORIGIN_HEAD;
 
+	public static RegistryObject<Item> FOOD1;	
+	
 	public static void init() {
 
 		PYRODES_FEET 	= new ArmorPyrodes(TirphycraftArmorTiers.PYRODES, EquipmentSlotType.FEET);
@@ -135,6 +138,8 @@ public class TirphycraftItems {
 		addItemClass("amulet_2_speed", AmuletSpeed2::new);
 		addItemClass("amulet_3_speed", AmuletSpeed3::new);
 
+		addItemClass("debug", Debug::new);
+		
 		addItemClass("totem_levitation", TotemLevitation::new);
 		addItemClass("totem_thunder", TotemThunder::new);
 
@@ -217,7 +222,7 @@ public class TirphycraftItems {
 		addSimpleFood("fruit_ball_red", 1);
 		addSimpleFood("fruit_ball_blue", 1);
 		addSimpleFood("fruit_ball_green", 1);
-		addSimpleFood("donangoblu_fruit", 2);
+		FOOD1 = addSimpleFood("donangoblu_fruit", 2);
 		addSimpleFood("kiwi", 1);
 	}
 

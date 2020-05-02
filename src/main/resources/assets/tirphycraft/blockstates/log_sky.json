@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "tirphycraft:block/logs/log_sky" },
+        "axis=z":     { "model": "tirphycraft:block/logs/log_sky", "x": 90 },
+        "axis=x":     { "model": "tirphycraft:block/logs/log_sky", "x": 90, "y": 90 }
+    }
+}

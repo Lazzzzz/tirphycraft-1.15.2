@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "tirphycraft:blocks/leaves/leaves_sky"
+    }
+}

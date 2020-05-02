@@ -3,60 +3,89 @@ package laz.tirphycraft.content;
 import static laz.tirphycraft.content.TirphycraftRegistries.addBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 
+import laz.tirphycraft.content.blocks.fluids.CO2Fluid;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
-import laz.tirphycraft.content.blocks.saplings.TirphycraftSapling;
+import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
+import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
+import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
+import laz.tirphycraft.content.blocks.plants.TirphycraftSapling;
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
+import laz.tirphycraft.world.features.trees.FrozTreeFeature;
+import laz.tirphycraft.world.features.trees.GoldirTreeFeature;
+import laz.tirphycraft.world.features.trees.SilvirTreeFeature;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
+
 public class TirphycraftBlocks {
 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_STONE;
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_STONE;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_BLUE;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GREEN;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_YELLOW;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PINK;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PURPLE;
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_COAL_ON_COKE;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_PYRODES;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_CRYSTAL;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_NIXIUM;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_TENIUM;	
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_COPPIR;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SILVIR;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_GOLDIR;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_FROZ;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_MUSHROOM;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_STEM;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_STONE;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_STONE;
 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_COPPIR;	
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_SILVIR;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_GOLDIR;
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_FROZ;
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_COPPIR; 
-	 
-	 public static BlockRegistryObjectGroup<Block, BlockItem, ?> SUN_STONE; 
-	 
-	 
-	 
-    public static void init(){
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_BLUE;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GREEN;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_YELLOW;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PINK;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PURPLE;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_COAL_ON_COKE;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_PYRODES;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_CRYSTAL;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_NIXIUM;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_TENIUM;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_COPPIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SILVIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_GOLDIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_FROZ;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SKY;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_MUSHROOM;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_STEM;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_COPPIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_SILVIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_GOLDIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_FROZ;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_SKY;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LEAVES_COPPIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LEAVES_SILVIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LEAVES_GOLDIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LEAVES_FROZ;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LEAVES_SKY;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_COPPIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_SILVIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_GOLDIR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> SAPLING_FROZ;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> SUN_STONE;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_COBBLESTONE;
+
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER1;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER2;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER3;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER4;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER5;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER6;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER7;
+
+	public static void init(){
 
        addCubedBlock("block_pyrodes", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
        addCubedBlock("block_heavy", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
@@ -84,6 +113,7 @@ public class TirphycraftBlocks {
        LOG_SILVIR 	= addBlockClass("log_silvir", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_GOLDIR 	= addBlockClass("log_goldir", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_FROZ   	= addBlockClass("log_froz", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+       LOG_SKY		= addBlockClass("log_sky", 		() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_MUSHROOM = addBlockClass("log_mushroom", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_STEM 	= addBlockClass("log_stem", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        
@@ -91,20 +121,40 @@ public class TirphycraftBlocks {
        PLANKS_SILVIR = addCubedBlock("planks_silvir", 	Block.Properties.from(Blocks.OAK_PLANKS));
        PLANKS_GOLDIR = addCubedBlock("planks_goldir", 	Block.Properties.from(Blocks.OAK_PLANKS));
        PLANKS_FROZ   = addCubedBlock("planks_froz",  	Block.Properties.from(Blocks.OAK_PLANKS));
+       PLANKS_SKY	 = addCubedBlock("planks_sky",  	Block.Properties.from(Blocks.OAK_PLANKS));
+       
+       LEAVES_COPPIR = addBlockClass("leaves_coppir", 	() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+       LEAVES_SILVIR = addBlockClass("leaves_silvir", 	() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+       LEAVES_GOLDIR = addBlockClass("leaves_goldir", 	() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+       LEAVES_FROZ	 = addBlockClass("leaves_froz", 	() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+       LEAVES_SKY	 = addBlockClass("leaves_sky", 		() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+   
+       SAPLING_COPPIR = addBlockClass("sapling_coppir", () ->new TirphycraftSapling(() -> new CoppirTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
+       SAPLING_SILVIR = addBlockClass("sapling_silvir", () ->new TirphycraftSapling(() -> new SilvirTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
+       SAPLING_GOLDIR = addBlockClass("sapling_goldir", () ->new TirphycraftSapling(() -> new GoldirTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
+       SAPLING_FROZ	  = addBlockClass("sapling_froz", 	() ->new TirphycraftSapling(() -> new FrozTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
+              
+       LAPUTA_FLOWER1 = addBlockClass("laputa_plant_grass", () -> new TirphycraftPlants(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
+       LAPUTA_FLOWER2 = addBlockClass("laputa_plant_grass_dark", () -> new TirphycraftPlants(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
+       LAPUTA_FLOWER3 = addBlockClass("laputa_fairy_flower", () -> new TirphycraftPlants(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
+       LAPUTA_FLOWER4 = addBlockClass("laputa_hydra_flower", () -> new TirphycraftPlants(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
+       LAPUTA_FLOWER5 = addBlockClass("laputa_bush", () -> new LaputaBushBlock(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
+       LAPUTA_FLOWER6 = addBlockClass("laputa_tall_grass", () -> new LaputaTallGrassBlock(Effects.SATURATION, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
+       LAPUTA_FLOWER7 = addBlockClass("noxis_thorns", () -> new TirphycraftPlants(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
+
        
        addBlockClass("stairs_coppir", 	() -> new StairsBlock(() -> PLANKS_COPPIR.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
        addBlockClass("stairs_silvir", 	() -> new StairsBlock(() -> PLANKS_SILVIR.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
        addBlockClass("stairs_goldir", 	() -> new StairsBlock(() -> PLANKS_GOLDIR.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
        addBlockClass("stairs_froz", 	() -> new StairsBlock(() -> PLANKS_FROZ.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
        
-       SAPLING_COPPIR = addBlockClass("coppir_sapling", () ->new TirphycraftSapling(() -> new CoppirTreeFeature(), Block.Properties.from(Blocks.OAK_SAPLING)));
-       
        SUN_STONE = addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
         
        addCubedBlock("histoire_ice", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(1));
         
        addCubedBlock("froz_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
-       addCubedBlock("laputa_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
+       LAPUTA_COBBLESTONE =  addCubedBlock("laputa_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        addCubedBlock("noxis_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
         
        addCubedBlock("noxis_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
@@ -124,6 +174,8 @@ public class TirphycraftBlocks {
        addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        
+       
+       
     }
-    
+
 }

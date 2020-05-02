@@ -22,18 +22,20 @@ public class CrystalSpikeFeature extends Feature<IFeatureConfig> {
 
 	@Override
 	public boolean place(IWorld world, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
-			BlockPos pos, IFeatureConfig config) {
+			BlockPos p, IFeatureConfig config) {
 				
 		BlockState BLOCK = randBlock(rand);
+		BlockPos pos = p;
+		for (int i = pos.getY() + 1; i > 0; i--) {
+			pos = new BlockPos(pos.getX(), i, pos.getZ());
+			if (world.getBlockState(pos) == TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState()) break;
+			if (i == 1) return false;
+		}
 		
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		if (world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial().isLiquid()
-				|| world.getBlockState(new BlockPos(x, y - 1, z)) != TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState()) {
-			return false;
-		}
 
 		int directionX = 0;
 		int directionZ = 0;

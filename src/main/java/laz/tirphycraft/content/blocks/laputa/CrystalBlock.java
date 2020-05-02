@@ -6,6 +6,7 @@ import laz.tirphycraft.particle.GlintData;
 import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.GlassBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
-public class CrystalBlock extends Block {
+public class CrystalBlock extends GlassBlock {
 	private TirphyColor color;
 	
 	public CrystalBlock(TirphyColor color) {
@@ -28,7 +29,7 @@ public class CrystalBlock extends Block {
 		this.color = color;
 	}
 	
-	
+	/*
 	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
@@ -47,6 +48,6 @@ public class CrystalBlock extends Block {
 			worldIn.addParticle(GlintData.glintParticle(color, random.nextInt(100) + 100), false, d0, d1, d2, 0.0D, 0.01D, 0.0D);
 		}
 	}
-	
+	*/
 }
 

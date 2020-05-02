@@ -17,7 +17,7 @@ public class FrozDimension extends Dimension {
 
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		return new FrozChunkGenerator(world, new FrozBiomeProvider(), new FrozGenSettings());
+		return new FrozChunkGenerator(world, new FrozBiomeProvider(this.world), new FrozGenSettings());
 	}
 
 	@Override

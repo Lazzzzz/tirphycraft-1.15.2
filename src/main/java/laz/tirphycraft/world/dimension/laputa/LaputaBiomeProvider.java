@@ -30,20 +30,21 @@ public class LaputaBiomeProvider extends BiomeProvider {
 	public static Biome[] dimensionBiomes = new Biome[]{
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_crystal")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_forest")),
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_jungle")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_oasis")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_magic")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_no_man_land")),
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_rainbow")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":laputa_plains")),
 		};
 
 	
 	private static final Set<Biome> biomeList = ImmutableSet.of(
 			TirphycraftBiomes.L_CRYTAL.get(),
 			TirphycraftBiomes.L_FOREST.get(),
-			TirphycraftBiomes.L_JUNGLE.get(),
+			TirphycraftBiomes.L_OASIS.get(),
 			TirphycraftBiomes.L_MAGIC.get(), 
 			TirphycraftBiomes.L_NML.get(),
-			TirphycraftBiomes.L_RAINBOW.get());
+			TirphycraftBiomes.L_PLAINS.get());
+	
 	private final Layer genBiomes;
 	private final Biome[] biomes;
 
@@ -55,15 +56,15 @@ public class LaputaBiomeProvider extends BiomeProvider {
 	}
 
 	private Layer[] makeTheWorld(long seed) {
-		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(25, seed, l);
+		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, seed, l);
 		IAreaFactory<LazyArea> parentLayer = IslandLayer.INSTANCE.apply(contextFactory.apply(1));
 		IAreaFactory<LazyArea> biomeLayer = (new BiomeLayerUtils()).apply(contextFactory.apply(200), parentLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1000), biomeLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1001), biomeLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1002), biomeLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1003), biomeLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1004), biomeLayer);
-		biomeLayer = ZoomLayer.FUZZY.apply(contextFactory.apply(1005), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1000), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1001), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1002), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1003), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1004), biomeLayer);
+		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1005), biomeLayer);
 		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), biomeLayer);
 		return new Layer[]{new Layer(biomeLayer), new Layer(voronoizoom)};
 	}
