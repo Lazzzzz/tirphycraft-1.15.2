@@ -7,8 +7,6 @@ import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;

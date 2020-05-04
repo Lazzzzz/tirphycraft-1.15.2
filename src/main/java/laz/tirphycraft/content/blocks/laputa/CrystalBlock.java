@@ -1,18 +1,10 @@
 package laz.tirphycraft.content.blocks.laputa;
 
-import java.util.Random;
-
-import laz.tirphycraft.particle.GlintData;
 import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
 public class CrystalBlock extends GlassBlock {

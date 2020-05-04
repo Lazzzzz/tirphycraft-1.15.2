@@ -3,7 +3,7 @@ package laz.tirphycraft.content;
 import static laz.tirphycraft.content.TirphycraftRegistries.addBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 
-import laz.tirphycraft.content.blocks.fluids.CO2Fluid;
+import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
@@ -84,6 +84,8 @@ public class TirphycraftBlocks {
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER5;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER6;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER7;
+	
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> POWDER_SNOW;
 
 	public static void init(){
 
@@ -174,6 +176,7 @@ public class TirphycraftBlocks {
        addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        
+       POWDER_SNOW = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        
        
     }

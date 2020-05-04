@@ -8,7 +8,6 @@ import javax.annotation.Nullable;
 
 import laz.tirphycraft.Tirphycraft;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;

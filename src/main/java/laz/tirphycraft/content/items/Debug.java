@@ -5,7 +5,6 @@ import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 import java.util.Random;
 
 import laz.tirphycraft.world.features.laputa.oasis.OasisBorderFeature;
-import laz.tirphycraft.world.features.laputa.tree.CrystalTreeFeature;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

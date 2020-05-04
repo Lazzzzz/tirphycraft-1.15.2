@@ -10,20 +10,22 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 
 public class TirphycraftUtils {
-    
-	public static int getHeight(ConfiguredSurfaceBuilder<?> surfaceBuilder, IWorld worldIn, SharedSeedRandom random, int x, int z) {
-    	int y = 0;
-    	for (int i = 255; i > 0; i--) {
-    		BlockPos p = new BlockPos(x, i, z);
-    		if (worldIn.getBlockState(p) == surfaceBuilder.config.getTop()) {
-    			y = i; 
-    			break;
-    		}
-    	}
-    	if (y == 0) return -1;
-    	return y;
-    }
-	
+
+	public static int getHeight(ConfiguredSurfaceBuilder<?> surfaceBuilder, IWorld worldIn, SharedSeedRandom random,
+			int x, int z) {
+		int y = 0;
+		for (int i = 255; i > 0; i--) {
+			BlockPos p = new BlockPos(x, i, z);
+			if (worldIn.getBlockState(p) == surfaceBuilder.config.getTop()) {
+				y = i;
+				break;
+			}
+		}
+		if (y == 0)
+			return -1;
+		return y;
+	}
+
 	public static void generateLeafNode(IWorld worldIn, Random rand, BlockPos position, BlockState LEAVES) {
 		worldIn.setBlockState(position.up(), LEAVES, 4);
 		worldIn.setBlockState(position.add(-1, 1, 0), LEAVES, 4);
@@ -44,7 +46,7 @@ public class TirphycraftUtils {
 					if (worldIn.getBlockState(position.add(x, y, -2)) == Blocks.AIR.getDefaultState())
 						worldIn.setBlockState(position.add(x, y, -2), LEAVES, 4);
 					if (worldIn.getBlockState(position.add(x, y, 2)) == Blocks.AIR.getDefaultState())
-						worldIn.setBlockState( position.add(x, y, 2), LEAVES, 4);
+						worldIn.setBlockState(position.add(x, y, 2), LEAVES, 4);
 
 				}
 			}

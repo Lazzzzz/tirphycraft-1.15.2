@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.ChunkGeneratorType;
 
 public class FrozDimension extends Dimension {
 
@@ -17,7 +18,7 @@ public class FrozDimension extends Dimension {
 
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		return new FrozChunkGenerator(world, new FrozBiomeProvider(this.world), new FrozGenSettings());
+		return ChunkGeneratorType.SURFACE.create(this.world, new FrozBiomeProvider(this.getWorld()), new FrozGenSettings());
 	}
 
 	@Override
@@ -76,5 +77,10 @@ public class FrozDimension extends Dimension {
 	@Override
 	public int getActualHeight() {
 		return 256;
+	}
+	
+	@Override
+	public int getSeaLevel() {
+		return 1;
 	}
 }

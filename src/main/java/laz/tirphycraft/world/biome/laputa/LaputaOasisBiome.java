@@ -3,8 +3,6 @@ package laz.tirphycraft.world.biome.laputa;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.Blocks;
-import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
