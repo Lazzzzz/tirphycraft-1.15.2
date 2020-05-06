@@ -7,10 +7,12 @@ import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
 
-public class FrozMountainsBiome extends FrozBiome {
-	public FrozMountainsBiome(Biome.Builder builder) {
-		super(builder);
+public class FrozPlainsBiome extends FrozBiome {
+
+    public FrozPlainsBiome(Biome.Builder builder) {
+        super(builder);
 		addFeature(Decoration.SURFACE_STRUCTURES,
-				Features.FROZEN_SPIKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(4))));
-	}
+				Features.FROZ_BIG_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+    }
+
 }

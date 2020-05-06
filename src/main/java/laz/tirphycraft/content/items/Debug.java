@@ -4,6 +4,8 @@ import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
 import java.util.Random;
 
+import laz.tirphycraft.world.features.froz.trees.FrozGiantTreeFeature;
+import laz.tirphycraft.world.features.froz.underground.GiantPillarFeature;
 import laz.tirphycraft.world.features.laputa.oasis.OasisBorderFeature;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -23,7 +25,7 @@ public class Debug extends Item {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		if (!worldIn.isRemote)
-			new OasisBorderFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+			new GiantPillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 					.place(worldIn, null, new Random(), playerIn.getPosition());
 
 		return super.onItemRightClick(worldIn, playerIn, handIn);

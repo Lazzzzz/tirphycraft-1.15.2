@@ -54,7 +54,7 @@ public class BoulderFeature extends Feature<NoFeatureConfig> {
 						BlockPos p = new BlockPos(pos.getX() + i, pos.getY() + j, pos.getZ() + k);
 						if (dx * dx + j * j + dz * dz < (size * size) / 64) {
 							setBlockState(worldIn, p, TirphycraftBlocks.ORE_TENIUM.get().getDefaultState());
-						}else setBlockState(worldIn, p, TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState());
+						} else setBlockState(worldIn, p, TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState());
 					}
 				}
 			}

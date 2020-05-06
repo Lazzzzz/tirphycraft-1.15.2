@@ -4,6 +4,7 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
+import laz.tirphycraft.content.blocks.froz.PowderSnowLayerBlock;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
@@ -19,6 +20,7 @@ import net.minecraft.block.Block.Properties;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.SnowBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
@@ -34,7 +36,11 @@ public class TirphycraftBlocks {
 
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_GRASS;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DIRT;
+	
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?>	FROZEN_CRYSTAL;
 
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_BLUE;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GREEN;
@@ -86,6 +92,7 @@ public class TirphycraftBlocks {
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER7;
 	
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> POWDER_SNOW;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> POWDER_SNOW_LAYER;
 
 	public static void init(){
 
@@ -102,8 +109,8 @@ public class TirphycraftBlocks {
        ORE_NIXIUM  		= addCubedBlock("ore_nixium", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(2));
        ORE_TENIUM		= addCubedBlock("ore_tenium", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(3));
        
-       addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
-       BLACK_CRYSTAL = addCubedBlock("black_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0)); //      
+       FROZEN_CRYSTAL =addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
+       BLACK_CRYSTAL  = addCubedBlock("black_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0)); //      
       
        LAPUTA_BLUE 	 = addBlockClass("laputa_blue", 	() -> new CrystalBlock(TirphyColor.BLUE));
        LAPUTA_PINK 	 = addBlockClass("laputa_pink", 	() -> new CrystalBlock(TirphyColor.PINK));
@@ -176,8 +183,11 @@ public class TirphycraftBlocks {
        addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        
-       POWDER_SNOW = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
-       
+       POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
+       POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
+       FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
+       FROZ_GRASS 		 = addCubedBlock("froz_grass", Block.Properties.from(Blocks.GRASS_BLOCK));
+
        
     }
 
