@@ -23,14 +23,13 @@ import net.minecraft.block.Block.Properties;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
-import net.minecraft.block.SnowBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.datafix.fixes.AddBedTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ToolType;
 
 public class TirphycraftBlocks {
@@ -105,7 +104,7 @@ public class TirphycraftBlocks {
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ANCIENT_YELLOW;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ANCIENT_GREEN;
 	
-	public static BlockRegistryObjectGroup<Block, BlockItem, ?> ALTAR;
+	public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;
 
 	public static void init(){
 
@@ -206,7 +205,7 @@ public class TirphycraftBlocks {
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
        FROZ_GRASS 		 = addCubedBlock("froz_grass", Block.Properties.from(Blocks.GRASS_BLOCK));
 
-       ALTAR = addTileEntity("altar", () -> new AltarBlock(Block.Properties.from(Blocks.STONE)), () -> new AltarTE());
+       ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
     }
 
 }
