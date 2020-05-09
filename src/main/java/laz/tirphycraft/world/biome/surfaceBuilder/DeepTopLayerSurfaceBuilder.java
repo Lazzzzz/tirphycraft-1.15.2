@@ -1,4 +1,4 @@
-package laz.tirphycraft.world.features;
+package laz.tirphycraft.world.biome.surfaceBuilder;
 
 import java.util.Random;
 import java.util.function.Function;

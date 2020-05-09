@@ -7,6 +7,7 @@ import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.content.TirphycraftBiomes;
 import laz.tirphycraft.content.TirphycraftBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -44,6 +45,16 @@ public class UnderGroundFeature extends Feature<NoFeatureConfig> {
 				return p;
 		}
 		return p;
+	}
+	
+	public void placeBlock(IWorld world, BlockPos pos, Random rand) {
+		int i = rand.nextInt(50);
+		if (i == 0)
+			setBlockState(world, pos, Blocks.PACKED_ICE.getDefaultState());
+		else if (i < 10)
+			setBlockState(world, pos, TirphycraftBlocks.FROZ_COBBLESTONE.get().getDefaultState());
+		else
+			setBlockState(world, pos, TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
 	}
 
 }

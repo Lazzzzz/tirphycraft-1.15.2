@@ -1,6 +1,8 @@
 package laz.tirphycraft.world.features;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.world.biome.surfaceBuilder.DeepTopLayerSurfaceBuilder;
+import laz.tirphycraft.world.biome.surfaceBuilder.FrozIcePlainsSurfaceBuilder;
 import laz.tirphycraft.world.features.froz.GiantIcePickFeature;
 import laz.tirphycraft.world.features.froz.IceCrystalFeature;
 import laz.tirphycraft.world.features.froz.IcePillarFeature;
@@ -27,14 +29,22 @@ import laz.tirphycraft.world.features.laputa.tree.DeadTreeFeature;
 import laz.tirphycraft.world.features.laputa.tree.HopperFlowerFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaSmallBushTreeFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaTreeFeature;
+import laz.tirphycraft.world.features.ore.OreDepositFeatures;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.placement.ConfiguredPlacement;
+import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class Features {
+	
+	public static ConfiguredFeature<NoFeatureConfig, ?> NIXIUM	= new OreDepositFeatures(TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_NIXIUM.get().getDefaultState(), 0, 30, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> TENIUM	= new OreDepositFeatures(TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_TENIUM.get().getDefaultState(), 10, 48, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	
 	public static ConfiguredFeature<IFeatureConfig, ?> ICE_PILLAR			= new IcePillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<IFeatureConfig, ?> ICE_CRYSTAL			= new IceCrystalFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
@@ -53,7 +63,7 @@ public class Features {
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_GIANT_PILLAR	= new GiantPillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 
 	
-	public static ConfiguredFeature<IFeatureConfig, ?>  LAPUTA_TREE 			= new LaputaTreeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<IFeatureConfig, ?>  LAPUTA_TREE 		= new LaputaTreeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<IFeatureConfig, ?>  LAPUTA_SMALL_BUSH 	= new LaputaSmallBushTreeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<IFeatureConfig, ?>  LAPUTA_ROCK_PICK 	= new LaputaSmallRockPickFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> LAPUTA_ISLAND	 	= new LaputaIslandFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
@@ -69,10 +79,10 @@ public class Features {
 	
 	//https://github.com/Glitchfiend/BiomesOPlenty/blob/801d32a4d6ab73f3fe19b89e55556cf529084214/src/main/java/biomesoplenty/common/world/gen/feature/DeepTopLayerSurfaceBuilder.java
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DEEP_TOP_LAYER = new DeepTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	//
+	public static final SurfaceBuilder<SurfaceBuilderConfig> ICE_PLAINS_FROZ = new FrozIcePlainsSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
 	public static final SurfaceBuilderConfig FROZ_SURFACE_CONFIG_DEFAULT = new SurfaceBuilderConfig(TirphycraftBlocks.FROZ_GRASS.get().getDefaultState(), TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(),TirphycraftBlocks.FROZ_DIRT.get().getDefaultState());
-	
+		
 	public static final Biome.Builder FROZ_BUILDER = new Biome.Builder().precipitation(Biome.RainType.SNOW).category(Biome.Category.ICY).scale(0.2F).temperature(-10F).downfall(0.3F).waterColor(4159204).waterFogColor(329011)
 			.parent((String) null);
 

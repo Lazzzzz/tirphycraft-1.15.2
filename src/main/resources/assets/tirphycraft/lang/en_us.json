@@ -1,0 +1,363 @@
+{
+  "itemGroup.tirphycraft_group": "Tirphycraft",
+ 
+  
+  "block.tirphycraft.block_pyrodes": "Pyrodes Block",
+  
+  "block.tirphycraft.block_heavy": "Heavy Block",
+  
+  "block.tirphycraft.block_nixium": "Nixium Block",
+  
+  "block.tirphycraft.block_coal_on_coke": "Coal on Coke Block",
+  
+  "block.tirphycraft.block_meteorite": "Meteorite Block",
+  
+  "block.tirphycraft.brick_meteorite": "Meteorite Brick",
+  
+  "block.tirphycraft.ore_coal_on_coke_ore": "Coal on Coke ore",
+  
+  "block.tirphycraft.ore_crystal": "Crystal Ore",
+  
+  "block.tirphycraft.ore_nixium": "Nixium Ore",
+  
+  "block.tirphycraft.ore_tenium": "Tenium Ore",
+  
+  "block.tirphycraft.frozen_crystal": "Frozen Crystal",
+  
+  "block.tirphycraft.black_crystal": "Black Crystal",
+  
+  "block.tirphycraft.laputa_blue": "Laputa Blue",
+
+  "block.tirphycraft.laputa_pink": "Laputa Pink",
+
+  "block.tirphycraft.laputa_purple": "Laputa Purple",
+
+  "block.tirphycraft.laputa_yellow": "Laputa Yellow",
+
+  "block.tirphycraft.laputa_green": "Laputa Green",
+  
+  "block.tirphycraft.log_coppir": "Coppir Log",
+
+  "block.tirphycraft.log_silvir": "Silvir Log",
+
+  "block.tirphycraft.log_goldir": "Goldir Log",
+
+  "block.tirphycraft.log_froz": "Froz Log",
+  
+  "block.tirphycraft.log_sky": "Sky Log",
+  
+  "block.tirphycraft.log_mushroom": "Mushroom Log",
+ 
+  "block.tirphycraft.log_stem": "Stem Log",
+  
+  "block.tirphycraft.planks_coppir": "Coppir Planks",
+  
+  "block.tirphycraft.planks_silvir": "Silvir planks",
+  
+  "block.tirphycraft.planks_goldir": "Goldir planks",
+
+  "block.tirphycraft.planks_froz": "Froz planks",
+
+  "block.tirphycraft.planks_sky": "Sky planks",
+
+  "block.tirphycraft.leaves_coppir": "Coppir Leaves",
+
+  "block.tirphycraft.leaves_goldir": "Goldir Leaves",
+
+  "block.tirphycraft.leaves_froz": "Froz Leaves",
+
+  "block.tirphycraft.leaves_silvir": "Silvir Leaves",
+
+  "block.tirphycraft.leaves_sky": "Sky Leaves",
+
+  "block.tirphycraft.sapling_coppir": "Coppir Sapling",
+
+  "block.tirphycraft.sapling_silvir": "Silvir Sapling",
+
+  "block.tirphycraft.sapling_goldir": "Goldir Sapling",
+
+  "block.tirphycraft.sapling_froz": "Froz Sapling",
+
+  "block.tirphycraft.laputa_plant_grass": "Laputa Grass",
+
+  "block.tirphycraft.laputa_plant_grass_dark": "Dark Laputa Grass",
+
+  "block.tirphycraft.laputa_fairy_flower": "Laputa Fairy Flower",
+
+  "block.tirphycraft.laputa_hydra_flower": "Laputa Hydra Flower",
+
+  "block.tirphycraft.laputa_bush": "Laputa Bush",
+
+  "block.tirphycraft.laputa_tall_grass": "Laputa Tall Grass",
+
+  "block.tirphycraft.noxis_thorns": "Noxis Thorns",
+
+  "block.tirphycraft.stairs_coppir": "Coppir Stairs",
+
+  "block.tirphycraft.stairs_silvir": "Silvir Stairs",
+
+  "block.tirphycraft.stairs_goldir": "Goldir Stairs",
+
+  "block.tirphycraft.stairs_froz": "Froz Stairs",
+
+  "block.tirphycraft.sun_stone": "Sun Stone",
+
+  "block.tirphycraft.histoire_ice": "Histoire Ice",
+
+  "block.tirphycraft.froz_cobblestone": "Froz Cobblestone",
+
+  "block.tirphycraft.laputa_cobblestone": "Laputa Cobblestone",
+
+  "block.tirphycraft.noxis_cobblestone": "Noxis Cobblestone",
+
+  "block.tirphycraft.noxis_stone": "Noxis Stone",
+
+  "block.tirphycraft.laputa_stone": "Laputa Stone",
+
+  "block.tirphycraft.froz_stone": "Froz Stone",
+
+  "block.tirphycraft.noxis_bricks_carved": "Carved Noxis Bricks",
+
+  "block.tirphycraft.noxis_bricks_pillar": "Noxis Bricks Pillar",
+
+  "block.tirphycraft.noxis_ash_lit": "Lit Noxis Ash",
+
+  "block.tirphycraft.laputa_grass": "Laputa Grass",
+
+  "block.tirphycraft.laputa_dirt": "Laputa Dirt",
+
+  "block.tirphycraft.brick_noxis": "Noxis Brick",
+
+  "block.tirphycraft.brick_laputa": "Laputa Brick",
+
+  "block.tirphycraft.brick_froz": "Froz Brick",
+
+
+  "item.tirphycraft.anti_amulet": "Anti Amulet",
+
+  "item.tirphycraft.amulet_1_health": "Amulet of One Health",
+
+  "item.tirphycraft.amulet_2_health": "Amulet of Two Health",
+
+  "item.tirphycraft.amulet_3_health": "Amulet of Three Health",
+
+  "item.tirphycraft.amulet_1_Speed": "Amulet of Speed One",
+
+  "item.tirphycraft.amulet_2_Speed": "Amulet of Speed Two",
+
+  "item.tirphycraft.amulet_3_Speed": "Amulet of Speed Three",
+
+  "item.tirphycraft.amulet_1_attack": "Amulet of Attack One",
+
+  "item.tirphycraft.amulet_2_attack": "Amulet of Attack Two",
+
+  "item.tirphycraft.amulet_3_attack": "Amulet of Attack Three",
+
+  "item.tirphycraft.totem_levitation": "Totem of Levitation",
+
+  "item.tirphycraft.totem_thunder": "Totem of Thunder",
+
+  "item.tirphycraft.tenium_ingot": "Tenium Ingot",
+
+  "item.tirphycraft.queen_heart": "Queen Heart",
+
+  "item.tirphycraft.ankh": "Ankh",
+
+  "item.tirphycraft.poseidon_eye": "Poseidon Eye",
+
+  "item.tirphycraft.staff_1_heal": "Staff of One Heal",
+
+  "item.tirphycraft.staff_2_heal": "Staff of Two Heals",
+
+  "item.tirphycraft.staff_3_heal": "Staff of Three Heals",
+
+   "item.tirphycraft.staff_1_teleportation": "Staff of Teleportation One",
+
+   "item.tirphycraft.staff_2_teleportation": "Staff of Teleportation Two",
+
+   "item.tirphycraft.staff_3_teleportation": "Staff of Teleportation Three",
+
+   "item.tirphycraft.staff_1_explosion": "Staff of Explosion One",
+
+   "item.tirphycraft.staff_2_explosion": "Staff of Explosion Two",
+
+   "item.tirphycraft.staff_3_explosion": "Staff of Explosion Three",
+
+   "item.tirphycraft.staff_1_fireball": "Staff of Fireball One",
+
+   "item.tirphycraft.staff_2_fireball": "Staff of Fireball Two",
+
+   "item.tirphycraft.staff_3_fireball": "Staff of Fireball Three",
+
+   "item.tirphycraft.return_clock": "Return Clock",
+
+   "item.tirphycraft.noxis_clock": "Noxis Clock",
+
+   "item.tirphycraft.laputa_clock": "Laputa_clock",
+
+   "item.tirphycraft.gosyn_clock": "Gosyn Clock",
+
+   "item.tirphycraft.froz_clock": "Froz Clock",
+
+   "item.tirphycraft.sun_tear": "Sun Tear",
+
+   "item.tirphycraft.feather_of_light": "Feather of Light",
+
+   "item.tirphycraft.pyrodes_axe": "Pyrodes Axe",
+
+   "item.tirphycraft.pyrodes_pickaxe": "Pyrodes Pickaxe",
+
+   "item.tirphycraft.pyrodes_sword": "Pyrodes Sword",
+
+   "item.tirphycraft.pyrodes_shovel": "Pyrodes Shovel",
+
+   "item.tirphycraft.pyrodes_hoe": "Pyrodes Hoe",
+
+   "item.tirphycraft.heavy_axe": "Heavy Axe",
+
+   "item.tirphycraft.heavy_pickaxe": "Heavy Pickaxe",
+
+   "item.tirphycraft.heavy_sword": "Heavy Sword",
+
+   "item.tirphycraft.heavy_shovel": "Heavy Shovel",
+
+   "item.tirphycraft.heavy_hoe": "Heavy Hoe",
+
+   "item.tirphycraft.nixium_axe": "Nixium Axe",
+
+   "item.tirphycraft.nixium_pickaxe": "Nixium Pickaxe",
+
+   "item.tirphycraft.nixium_sword": "Nixium Sword",
+
+   "item.tirphycraft.nixium_shovel": "Nixium Shovel",
+
+   "item.tirphycraft.nixium_hoe": "Nixium Hoe",
+
+   "item.tirphycraft.tenium_axe": "Tenium Axe",
+
+   "item.tirphycraft.tenium_pickaxe": "Tenium Pickaxe",
+
+   "item.tirphycraft.tenium_sword": "Tenium Sword",
+
+   "item.tirphycraft.tenium_shovel": "Tenium Shovel",
+
+   "item.tirphycraft.tenium_hoe": "Tenium Hoe",
+
+   "item.tirphycraft.pyrodes_boots": "Pyrodes Boots",
+
+   "item.tirphycraft.pyrodes_leggings": "Pyrodes Leggings",
+
+   "item.tirphycraft.pyrodes_chestplate": "Pyrodes Chestplate",
+
+   "item.tirphycraft.pyrodes_helmet": "Pyrodes Helmet",
+
+   "item.tirphycraft.heavy_boots": "Heavy Boots",
+
+   "item.tirphycraft.heavy_leggings": "Heavy Leggings",
+
+   "item.tirphycraft.heavy_chestplate": "Heavy Chestplate",
+
+   "item.tirphycraft.heavy_helmet": "Heavy Helmet",
+
+   "item.tirphycraft.nixium_boots": "Nixium Boots",
+
+   "item.tirphycraft.nixium_leggings": "Nixium Leggings",
+
+   "item.tirphycraft.nixium_chestplate": "Nixium Chestplate",
+
+   "item.tirphycraft.nixium_helmet": "Nixium Helmet",
+
+   "item.tirphycraft.tenium_boots": "Tenium Boots",
+
+   "item.tirphycraft.tenium_leggings": "Tenium Leggings",
+
+   "item.tirphycraft.tenium_chestplate": "Tenium Chestplate",
+
+   "item.tirphycraft.tenium_helmet": "Tenium Helmet",
+
+   "item.tirphycraft.rose_boots": "Rose Boots",
+
+   "item.tirphycraft.rose_leggings": "Rose Leggings",
+
+   "item.tirphycraft.rose_chestplate": "Rose Chestplate",
+
+   "item.tirphycraft.rose_helmet": "Rose Helmet",
+
+   "item.tirphycraft.origin_boots": "Origin Boots",
+
+   "item.tirphycraft.origin_leggings": "Origin Leggings",
+
+   "item.tirphycraft.origin_chestplate": "Origin Chestplate",
+
+   "item.tirphycraft.origin_helmet": "Origin Helmet",
+
+   "item.tirphycraft.fragment_blue": "Blue Fragment",
+
+   "item.tirphycraft.fragment_green": "Green Fragment",
+
+   "item.tirphycraft.fragment_red": "Red Fragment",
+
+   "item.tirphycraft.fragment_white": "White Fragment",
+
+   "item.tirphycraft.fragment_Yellow": "Yellow Fragment",
+
+   "item.tirphycraft.crystal": "Crystal",
+
+   "item.tirphycraft.crystal_purodes": "Pyrodes Crystal",
+
+   "item.tirphycraft.poly_pyrodes_crystal": "Poly Pyrodes Crystal",
+
+   "item.tirphycraft.coal_on_coke": "Coal on Coke",
+
+   "item.tirphycraft.heavy_ingot": "Heavy Ingot",
+
+   "item.tirphycraft.nixium_ingot": "Nixium Ingot",
+
+   "item.tirphycraft.blue_rose_shard": "Blue Rose Shard",
+
+    "item.tirphycraft.diamond_nugget": "Diamond Nugget",
+
+    "item.tirphycraft.mummy_wraps": "Mummy Wraps",
+
+    "item.tirphycraft.empty_syringe": "Empty Syringe",
+
+    "item.tirphycraft.blue_rose_petal": "Blue Rose Petal",
+
+    "item.tirphycraft.froz_key": "Froz Key",
+
+    "item.tirphycraft.origin_matter": "Origin Matter",
+
+    "item.tirphycraft.origin_ingot": "Origin Ingot",
+
+    "item.tirphycraft.explosion_core": "Explosion Core",
+
+    "item.tirphycraft.sea_core": "Sea Core",
+
+    "item.tirphycraft.life_core": "Life Core",
+
+    "item.tirphycraft.stick_crystal": "Crystal Stick",
+
+    "item.tirphycraft.stick_coppir": "Coppir Stick",
+
+    "item.tirphycraft.stick_silvir": "Silvir Stick",
+
+    "item.tirphycraft.stick_goldir": "Goldir Stick",
+
+    "item.tirphycraft.frozen_buffalo_raw": "Raw Frozen Buffalo",
+
+    "item.tirphycraft.frozen_buffalo": "Frozen Buffalo",
+
+    "item.tirphycraft.frozen_boarchop_raw": "Raw Frozen Boarchop",
+
+    "item.tirphycraft.frozen_boarchop": "Frozen Boarchop",
+
+    "item.tirphycraft.fruit_ball_red": "Red Fruit Ball",
+
+    "item.tirphycraft.fruit_ball_blue": "Blue Fruit Ball",
+
+    "item.tirphycraft.fruit_ball_green": "Green Fruit Ball",
+
+    "item.tirphycraft.donangoblu_fruit": "Donangoblu Fruit",
+
+    "item.tirphycraft.kiwi": "Kiwi"
+}

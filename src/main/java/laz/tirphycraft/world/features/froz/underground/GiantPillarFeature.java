@@ -26,23 +26,36 @@ public class GiantPillarFeature extends UnderGroundFeature {
 		BlockPos pos = getGroundPos(worldIn, rand, p);
 		BlockPos pos2 = getTopPos(worldIn, rand, p);
 		int size = 0;
-		
+		int hole = rand.nextInt(6);
+
 		while (true) {
 			size++;
 			if (worldIn.getBlockState(pos.up(size)) == TirphycraftBlocks.FROZ_STONE.get().getDefaultState()
 					|| pos.up(size).getY() > 48)
 				break;
-			setBlockState(worldIn, pos.up(size), TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
+			placeBlock(worldIn, pos.up(size), rand);
 		}
-		if (size < 3) return false;
-		
-		int s = (int) (size / (2));
-		
+		if (hole > 1) {
+			setBlockState(worldIn, new BlockPos(pos.getX(), (pos.getY() + size / 2) - hole / 2 - 1, pos.getZ()),
+					Blocks.ICE.getDefaultState());
+			setBlockState(worldIn, new BlockPos(pos.getX(), (pos.getY() + size / 2) + hole / 2, pos.getZ()),
+					Blocks.ICE.getDefaultState());
+
+			for (int i = (pos.getY() + size / 2) - hole / 2; i < (pos.getY() + size / 2) + hole / 2; i++) {
+				setBlockState(worldIn, new BlockPos(pos.getX(), i, pos.getZ()), Blocks.AIR.getDefaultState());
+			}
+		}
+
+		if (size < 3)
+			return false;
+
+		int s = (int) Math.min((size / (2)), size - (hole / 2) - 1);
+
 		generatePickTop(worldIn, rand, pos.add(1, 0, 0), rand.nextInt(s));
 		generatePickTop(worldIn, rand, pos.add(-1, 0, 0), rand.nextInt(s));
 		generatePickTop(worldIn, rand, pos.add(0, 0, 1), rand.nextInt(s));
 		generatePickTop(worldIn, rand, pos.add(0, 0, -1), rand.nextInt(s));
-		
+
 		generatePickBottom(worldIn, rand, pos2.add(1, 0, 0), rand.nextInt(s));
 		generatePickBottom(worldIn, rand, pos2.add(-1, 0, 0), rand.nextInt(s));
 		generatePickBottom(worldIn, rand, pos2.add(0, 0, 1), rand.nextInt(s));
@@ -55,7 +68,7 @@ public class GiantPillarFeature extends UnderGroundFeature {
 		for (int i = position.getY() + size; i > 0; i--) {
 			BlockPos p = new BlockPos(position.getX(), i, position.getZ());
 			if (worldIn.getBlockState(p).getMaterial() != Material.ROCK)
-				setBlockState(worldIn, p, TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
+				placeBlock(worldIn, p, rand);
 			else
 				break;
 		}
@@ -72,12 +85,12 @@ public class GiantPillarFeature extends UnderGroundFeature {
 		}
 		return true;
 	}
-	
+
 	public boolean generatePickBottom(IWorld worldIn, Random rand, BlockPos position, int size) {
 		for (int i = position.getY() - size; i < 48; i++) {
 			BlockPos p = new BlockPos(position.getX(), i, position.getZ());
 			if (worldIn.getBlockState(p).getMaterial() != Material.ROCK)
-				setBlockState(worldIn, p, TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
+				placeBlock(worldIn, p, rand);
 			else
 				break;
 		}
@@ -94,4 +107,5 @@ public class GiantPillarFeature extends UnderGroundFeature {
 		}
 		return true;
 	}
+
 }

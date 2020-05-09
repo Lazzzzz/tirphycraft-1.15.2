@@ -43,6 +43,7 @@ public class Tirphycraft {
 	private void clientSetup(FMLClientSetupEvent event) {
 		RenderType cutout = RenderType.getCutout();
 		RenderType opaque = RenderType.getTranslucent();
+		
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_COPPIR.get(), cutout);
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_SILVIR.get(), cutout);
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_GOLDIR.get(), cutout);
@@ -61,6 +62,12 @@ public class Tirphycraft {
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER5.get(), cutout);
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER6.get(), cutout);
         RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER7.get(), cutout);
+        
+        RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_BLUE.get(), cutout);
+        RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_GREEN.get(), cutout);
+        RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_WHITE.get(), cutout);
+        RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_RED.get(), cutout);
+        RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_YELLOW.get(), cutout);
         
 	}
 

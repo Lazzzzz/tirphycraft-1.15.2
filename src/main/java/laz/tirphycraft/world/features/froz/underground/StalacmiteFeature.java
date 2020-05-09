@@ -58,11 +58,10 @@ public class StalacmiteFeature extends UnderGroundFeature {
 					BlockPos p = new BlockPos(pos.getX() + i, pos.getY(), pos.getZ() + k);
 					if (i != 0 && k != 0) {
 						if (rand.nextInt(5) > 0) {
-							worldIn.setBlockState(p, TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), 4);
+							placeBlock(worldIn, p, rand);
 						}
 					} else
-						worldIn.setBlockState(p, TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), 4);
-
+						placeBlock(worldIn, p, rand);
 				}
 
 			}
@@ -71,5 +70,5 @@ public class StalacmiteFeature extends UnderGroundFeature {
 		return true;
 
 	}
-
+	
 }
