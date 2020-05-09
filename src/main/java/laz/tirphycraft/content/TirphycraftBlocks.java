@@ -191,9 +191,9 @@ public class TirphycraftBlocks {
        ANCIENT_RED 	  = addCubedBlock("ancient_stone_red", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
        ANCIENT_GREEN  = addCubedBlock("ancient_stone_green", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
          
-       addCubedBlock("brick_noxis", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
-       addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
-       addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
+       addCubedBlock("brick_noxis", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0).notSolid());
+       addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0).notSolid());
+       addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0).notSolid());
        
        POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
