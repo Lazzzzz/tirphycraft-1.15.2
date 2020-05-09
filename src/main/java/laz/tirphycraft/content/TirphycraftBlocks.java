@@ -185,11 +185,11 @@ public class TirphycraftBlocks {
        LAPUTA_GRASS = addCubedBlock("laputa_grass", Properties.from(Blocks.GRASS_BLOCK));
        LAPUTA_DIRT  = addCubedBlock("laputa_dirt", Block.Properties.create(Material.GOURD).harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5f, 0).sound(SoundType.GROUND));
 
-       ANCIENT_BLUE   = addCubedBlock("ancient_stone_blue", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
-       ANCIENT_WHITE  = addCubedBlock("ancient_stone_white", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
-       ANCIENT_YELLOW = addCubedBlock("ancient_stone_yellow", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
-       ANCIENT_RED 	  = addCubedBlock("ancient_stone_red", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
-       ANCIENT_GREEN  = addCubedBlock("ancient_stone_green", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
+       ANCIENT_BLUE   = addCubedBlock("ancient_stone_blue", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
+       ANCIENT_WHITE  = addCubedBlock("ancient_stone_white", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
+       ANCIENT_YELLOW = addCubedBlock("ancient_stone_yellow", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
+       ANCIENT_RED 	  = addCubedBlock("ancient_stone_red", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
+       ANCIENT_GREEN  = addCubedBlock("ancient_stone_green", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0));
          
        addCubedBlock("brick_noxis", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0).notSolid());
        addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0).notSolid());
