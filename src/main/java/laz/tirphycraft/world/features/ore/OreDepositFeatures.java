@@ -43,7 +43,6 @@ public class OreDepositFeatures extends Feature<NoFeatureConfig> {
 		
 		int y = rand.nextInt(Math.min(MAX, 255 - MIN)) + MIN;
 		BlockPos pos = new BlockPos(p.getX(), y, p.getZ());
-		System.out.println(pos);
 		generateChunk(worldIn, pos, rand);			
 		
 		return false;
