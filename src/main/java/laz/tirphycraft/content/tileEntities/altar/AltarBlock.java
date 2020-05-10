@@ -30,8 +30,9 @@ public class AltarBlock extends Block {
 			if(player.isCrouching()){
 				((AltarTE) tile).extractItem(0);
 			}
+			return ActionResultType.SUCCESS;
 		}
-		return ActionResultType.SUCCESS;
+		return ActionResultType.FAIL;
 	}
 
 	@Nullable
@@ -39,9 +40,9 @@ public class AltarBlock extends Block {
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
 		return new AltarTE();
 	}
-	
+
 	@Override
-	public boolean hasTileEntity() {
+	public boolean hasTileEntity(BlockState state) {
 		return true;
 	}
 }
