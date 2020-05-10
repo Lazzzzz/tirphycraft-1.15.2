@@ -40,11 +40,9 @@ public class OreDepositFeatures extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos p, NoFeatureConfig config) {
 		if (rand.nextInt(LUCK+1) > 0) return false;
-		
 		int y = rand.nextInt(Math.min(MAX, 255 - MIN)) + MIN;
 		BlockPos pos = new BlockPos(p.getX(), y, p.getZ());
 		generateChunk(worldIn, pos, rand);			
-		
 		return false;
 	}
 

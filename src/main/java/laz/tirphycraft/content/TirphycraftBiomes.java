@@ -16,9 +16,13 @@ import laz.tirphycraft.world.biome.laputa.LaputaPlainsBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStage.Decoration;
+import net.minecraft.world.gen.placement.FrequencyConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class TirphycraftBiomes {
 	public static RegistryObject<Biome> F_DESERT;
@@ -41,7 +45,6 @@ public class TirphycraftBiomes {
 		F_MOUNTAINS = addBiome("froz_mountains", () -> new FrozMountainsBiome(Features.FROZ_BUILDER.surfaceBuilder(new ConfiguredSurfaceBuilder(Features.DEEP_TOP_LAYER, new SurfaceBuilderConfig(TirphycraftBlocks.POWDER_SNOW.get().getDefaultState(),TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(),	TirphycraftBlocks.FROZ_DIRT.get().getDefaultState()))).depth(5.5F)));
 		F_ICE_PLAINS = addBiome("froz_ice_plains", () -> new FrozIcePlains(Features.FROZ_BUILDER.surfaceBuilder(new ConfiguredSurfaceBuilder(Features.ICE_PLAINS_FROZ, Features.FROZ_SURFACE_CONFIG_DEFAULT)).depth(0.2F)));
 
-		
 		L_CRYTAL = addBiome("laputa_crystal", () -> new LaputaCrystalBiome());
 		L_FOREST = addBiome("laputa_forest", () -> new LaputaForestBiome());
 		L_OASIS = addBiome("laputa_oasis", () -> new LaputaOasisBiome());
@@ -49,6 +52,7 @@ public class TirphycraftBiomes {
 		L_METEORITE = addBiome("laputa_meteorite", () -> new LaputaMeteoriteBiome());
 		L_NML = addBiome("laputa_no_man_land", () -> new LaputaNMLBiome());
 		L_PLAINS = addBiome("laputa_plains", () -> new LaputaPlainsBiome());
+		
 	}
 
 }

@@ -2,6 +2,8 @@ package laz.tirphycraft.content.tileEntities.altar;
 
 import javax.annotation.Nullable;
 
+import laz.tirphycraft.Tirphycraft;
+import laz.tirphycraft.content.TirphycraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,10 +28,11 @@ public class AltarBlock extends Block {
 		TileEntity tile = world.getTileEntity(pos);
 		ItemStack stack = player.getHeldItem(hand);
 		if(tile instanceof AltarTE){
-			((AltarTE) tile).insertItem(0,stack);
-			if(player.isCrouching()){
-				((AltarTE) tile).extractItem(0);
-			}
+			if (stack.getItem() == TirphycraftItems.FRAGMENT_BLUE.get()) ((AltarTE) tile).insertItem(0, stack);
+			if (stack.getItem() == TirphycraftItems.FRAGMENT_RED.get()) ((AltarTE) tile).insertItem(1, stack);
+			if (stack.getItem() == TirphycraftItems.FRAGMENT_GREEN.get()) ((AltarTE) tile).insertItem(2, stack);
+			if (stack.getItem() == TirphycraftItems.FRAGMENT_YELLOW.get()) ((AltarTE) tile).insertItem(3, stack);
+			if (stack.getItem() == TirphycraftItems.FRAGMENT_WHITE.get()) ((AltarTE) tile).insertItem(4, stack);
 			return ActionResultType.SUCCESS;
 		}
 		return ActionResultType.FAIL;

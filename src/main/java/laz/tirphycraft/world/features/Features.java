@@ -30,21 +30,25 @@ import laz.tirphycraft.world.features.laputa.tree.HopperFlowerFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaSmallBushTreeFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
+import laz.tirphycraft.world.features.overworld.AltarFeature;
+import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.placement.ConfiguredPlacement;
-import net.minecraft.world.gen.placement.CountRangeConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class Features {
 	
-	public static ConfiguredFeature<NoFeatureConfig, ?> NIXIUM	= new OreDepositFeatures(TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_NIXIUM.get().getDefaultState(), 0, 30, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
-	public static ConfiguredFeature<NoFeatureConfig, ?> TENIUM	= new OreDepositFeatures(TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_TENIUM.get().getDefaultState(), 10, 48, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> ALTAR			= new AltarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+
+	
+	public static ConfiguredFeature<NoFeatureConfig, ?> PYRODES			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_PYRODES.get().getDefaultState(), 15, 90, 10, 40, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> CRYSTAL			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_CRYSTAL.get().getDefaultState(), 0, 25, 10, 45, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> COAL_ON_COKE	= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_COAL_ON_COKE.get().getDefaultState(), 0, 90, 5, 15, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> NIXIUM			= new OreDepositFeatures(TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_NIXIUM.get().getDefaultState(), 0, 30, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> TENIUM			= new OreDepositFeatures(TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_TENIUM.get().getDefaultState(), 10, 48, 5, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	
 	public static ConfiguredFeature<IFeatureConfig, ?> ICE_PILLAR			= new IcePillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<IFeatureConfig, ?> ICE_CRYSTAL			= new IceCrystalFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);

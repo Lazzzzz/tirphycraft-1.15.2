@@ -60,6 +60,12 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> ROSE_SHARD;
 	public static RegistryObject<Item> ORIGIN_INGOT;
 	
+	public static RegistryObject<Item> FRAGMENT_BLUE;
+	public static RegistryObject<Item> FRAGMENT_RED;
+	public static RegistryObject<Item> FRAGMENT_YELLOW;
+	public static RegistryObject<Item> FRAGMENT_WHITE;
+	public static RegistryObject<Item> FRAGMENT_GREEN;
+	
 	public static Item PYRODES_FEET;
 	public static Item PYRODES_LEGS;
 	public static Item PYRODES_CHEST;
@@ -184,11 +190,11 @@ public class TirphycraftItems {
 		addArmor("rose", ROSE_FEET, ROSE_LEGS, ROSE_CHEST, ROSE_HEAD);
 		addArmor("origin", ORIGIN_FEET, ORIGIN_LEGS, ORIGIN_CHEST, ORIGIN_HEAD);
 						
-		addSimpleItem("fragment_blue", 16);
-		addSimpleItem("fragment_green", 16);
-		addSimpleItem("fragment_red", 16);
-		addSimpleItem("fragment_white", 16);
-		addSimpleItem("fragment_yellow", 16);
+		FRAGMENT_BLUE 	= addSimpleItem("fragment_blue", 1);
+		FRAGMENT_GREEN 	= addSimpleItem("fragment_green", 1);
+		FRAGMENT_RED 	= addSimpleItem("fragment_red", 1);
+		FRAGMENT_WHITE	= addSimpleItem("fragment_white", 1);
+		FRAGMENT_YELLOW	= addSimpleItem("fragment_yellow", 1);
 		
 		// ITEMS
 		addSimpleItem("crystal", 64);
