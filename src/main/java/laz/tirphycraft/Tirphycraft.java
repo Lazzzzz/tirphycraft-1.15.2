@@ -56,8 +56,8 @@ public class Tirphycraft {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES) {
-			if (biome == Biomes.PLAINS) biome.addFeature(Decoration.SURFACE_STRUCTURES,	Features.ALTAR.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-			
+			biome.addFeature(Decoration.SURFACE_STRUCTURES,	Features.ANCIENT_STONE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.COAL_ON_COKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,

@@ -50,12 +50,26 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 	}
 
 	public void checkForFragment() {
-		if (this.getItemInSlot(0).getItem() != Items.AIR && this.getItemInSlot(1).getItem() != Items.AIR
-				&& this.getItemInSlot(2).getItem() != Items.AIR && this.getItemInSlot(3).getItem() != Items.AIR
-				&& this.getItemInSlot(4).getItem() != Items.AIR) {
+		boolean blue = false;
+		boolean red = false;
+		boolean white = false;
+		boolean yellow = false;
+		boolean green = false;		
+		
+		for (int i = -4; i <= 4; i++) {
+			for (int j = -4; j <= 4; j++) {
+				for (int k = -4; k <= 4; k++) {
+					if (world.getBlockState(pos.add(i,j,k)) == TirphycraftBlocks.ANCIENT_BLUE.get().getDefaultState()) 		blue = true;
+					if (world.getBlockState(pos.add(i,j,k)) == TirphycraftBlocks.ANCIENT_RED.get().getDefaultState()) 		red = true;
+					if (world.getBlockState(pos.add(i,j,k)) == TirphycraftBlocks.ANCIENT_GREEN.get().getDefaultState()) 	white = true;
+					if (world.getBlockState(pos.add(i,j,k)) == TirphycraftBlocks.ANCIENT_YELLOW.get().getDefaultState()) 	yellow = true;
+					if (world.getBlockState(pos.add(i,j,k)) == TirphycraftBlocks.ANCIENT_WHITE.get().getDefaultState()) 	green = true;
+				}
+			}
+		}
+		if (blue && red && white && yellow && green) {
 			activate = true;
 			spawnLightning(pos);
-
 		}
 	}
 
@@ -64,6 +78,7 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 				world.getHeight(Type.WORLD_SURFACE, pos.getX(), pos.getZ()) - 1, pos.getZ() + 0.5f, false);
 
 		world.addEntity(m);
+
 		if (world.isRemote()) {
 			ClientWorld c = (ClientWorld) world;
 			c.addLightning(m);
@@ -75,7 +90,12 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 			return false;
 		BlockPos pos = new BlockPos(p.getX(), world.getHeight(Type.WORLD_SURFACE, p.getX(), p.getZ()) - 1, p.getZ());
 		BlockState block = world.getBlockState(pos);
-		if (block == Blocks.AIR.getDefaultState())
+		if (block == Blocks.AIR.getDefaultState() 
+				|| block == TirphycraftBlocks.ANCIENT_BLUE.get().getDefaultState() 
+				|| block == TirphycraftBlocks.ANCIENT_RED.get().getDefaultState() 
+				|| block == TirphycraftBlocks.ANCIENT_GREEN.get().getDefaultState() 
+				|| block == TirphycraftBlocks.ANCIENT_YELLOW.get().getDefaultState() 
+				|| block == TirphycraftBlocks.ANCIENT_WHITE.get().getDefaultState())
 			return false;
 		world.removeBlock(pos, false);
 		FallingBlockEntity e = new FallingBlockEntity(world, pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f, block);
@@ -91,13 +111,15 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 	@Override
 	public CompoundNBT write(CompoundNBT compound) {
 		compound.putBoolean("activate", this.activate);
+		compound.putInt("timer", this.timer);
 		return super.write(compound);
 	}
-	
+
 	@Override
 	public void read(CompoundNBT compound) {
 		this.activate = compound.getBoolean("activate");
+		this.timer = compound.getInt("timer");
 		super.read(compound);
 	}
-	
+
 }

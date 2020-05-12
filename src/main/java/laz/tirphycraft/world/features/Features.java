@@ -31,6 +31,7 @@ import laz.tirphycraft.world.features.laputa.tree.LaputaSmallBushTreeFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
 import laz.tirphycraft.world.features.overworld.AltarFeature;
+import laz.tirphycraft.world.features.overworld.FragmentFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -41,8 +42,8 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class Features {
 	
-	public static ConfiguredFeature<NoFeatureConfig, ?> ALTAR			= new AltarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
-
+	public static ConfiguredFeature<NoFeatureConfig, ?> ANCIENT_STONE	= new FragmentFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	
 	
 	public static ConfiguredFeature<NoFeatureConfig, ?> PYRODES			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_PYRODES.get().getDefaultState(), 15, 90, 10, 40, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> CRYSTAL			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_CRYSTAL.get().getDefaultState(), 0, 25, 10, 45, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
