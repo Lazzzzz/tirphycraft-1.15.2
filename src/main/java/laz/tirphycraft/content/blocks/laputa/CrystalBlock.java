@@ -15,6 +15,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
+import java.util.Random;
+
 public class CrystalBlock extends GlassBlock {
 	private TirphyColor color;
 	
@@ -36,7 +38,7 @@ public class CrystalBlock extends GlassBlock {
 		spawnParticles(worldIn, pos, rand);
 	}
 
-	private void spawnParticles(World worldIn, BlockPos pos,  Random random) {
+	private void spawnParticles(World worldIn, BlockPos pos, Random random) {
 		int i = pos.getX();
 		int j = pos.getY();
 		int k = pos.getZ();

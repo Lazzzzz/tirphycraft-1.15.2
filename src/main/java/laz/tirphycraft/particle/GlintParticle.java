@@ -23,8 +23,7 @@ public class GlintParticle extends SpriteTexturedParticle {
         motionX = speedX;
         motionY = speedY;
         motionZ = speedZ;
-        particleScale = 1.0f + (rand.nextFloat() * 0.6f) + (rand.nextFloat() * 0.6f);
-        particleScale *= data.getMaxAge();
+        particleScale = (rand.nextFloat() * 0.3f) + (rand.nextFloat() * 0.3f);
         particleBlue = data.getColor().getBlue();
         particleGreen = data.getColor().getGreen();
         particleRed = data.getColor().getRed();
@@ -71,6 +70,12 @@ public class GlintParticle extends SpriteTexturedParticle {
             builder.pos((double)avector3f[2].getX(), (double)avector3f[2].getY(), (double)avector3f[2].getZ()).tex(f7, f5).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j).endVertex();
             builder.pos((double)avector3f[3].getX(), (double)avector3f[3].getY(), (double)avector3f[3].getZ()).tex(f7, f6).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j).endVertex();
         }
+    }
+
+    @Override
+    public void tick() {
+        particleScale = (float) (particleScale - 0.001);
+        super.tick();
     }
 
     public float getGlowBrightness() {
