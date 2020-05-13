@@ -21,7 +21,7 @@ public class FrozForestBiome extends FrozBiome {
     public FrozForestBiome(Biome.Builder builder) {
         super(builder);
 		addFeature(Decoration.SURFACE_STRUCTURES,
-				Features.ROOT_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(3))));
+				Features.ROOT_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(12))));
     }
 
     @Override

@@ -84,11 +84,11 @@ public class Tirphycraft {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PURPLE.get(), opaque);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PINK.get(), opaque);
 		
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_COPPIR.get(), opaque);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SILVIR.get(), opaque);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_GOLDIR.get(), opaque);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_FROZ.get(), opaque);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SKY.get(), opaque);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_COPPIR.get(), cutout);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SILVIR.get(), cutout);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_GOLDIR.get(), cutout);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_FROZ.get(), cutout);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SKY.get(), cutout);
 		
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER1.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER2.get(), cutout);

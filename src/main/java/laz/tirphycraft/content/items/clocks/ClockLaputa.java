@@ -32,13 +32,14 @@ public class ClockLaputa extends Item {
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getHeldItem(hand);
         if(!world.isRemote()){
+        	DimensionType t = player.dimension;
             ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
             DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "laputa_dim"), LAPUTA_DIM.get(), null, true);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
             playerEntity.teleport(targetWorld, player.getPosX(), player.getPosY() ,player.getPosZ(), player.rotationYaw, player.rotationPitch);
 			BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
 			if (p.getY() < 2) {
-				dimensionType = DimensionManager.getRegistry().getByValue(1);
+				dimensionType = t;
 	            targetWorld = playerEntity.getServer().getWorld(dimensionType);
 	            playerEntity.teleport(targetWorld, player.getPosX() ,player.getPosY(), player.getPosZ(), player.rotationYaw, player.rotationPitch);
 			} else player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());

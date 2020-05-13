@@ -6,6 +6,7 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.util.TirphycraftUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -29,9 +30,9 @@ public class FrozRootFeature extends Feature<NoFeatureConfig> {
 		BlockPos pos = getPos(worldIn, rand, p);
 		if (pos == null)
 			return false;
-		int size = rand.nextInt(3) + 1;
-		//makeBrench(worldIn, rand, pos, size);
-
+		int size = rand.nextInt(3) + 5;
+		makeBrench(worldIn, rand, pos, size);
+		
 		return true;
 	}
 
@@ -46,27 +47,38 @@ public class FrozRootFeature extends Feature<NoFeatureConfig> {
 
 	}
 
-	void makeBrench(IWorld world, Random rand, BlockPos pos, int size) {
-		boolean roof = false;
-		for (int i = 0; i < size; i++) {
-			if (world.getBlockState(pos.up(i)).getBlock() != LEAVES.getBlock())
-				world.setBlockState(pos.up(i), LOG, 4);
-			else {
-				roof = true;
-				break;
+	boolean makeBrench(IWorld world, Random rand, BlockPos pos, int size) {
+		for (int i = 0; i < 110; i++) {
+			if (world.getBlockState(pos.up(i)).getBlock() == LEAVES.getBlock()) break;
+			if (i == 101) return false;
+		}
+		if (size > 2) {
+			for (int i = 0; i < size; i++) {
+				if (world.getBlockState(pos.up(i)).getBlock() == LEAVES.getBlock())
+					return false;
+				setBlockState(world, pos.up(i), LOG);
 			}
-		}
-		if (!roof) {
-			int i = rand.nextInt(4);
-			if (i == 0)
+
+			if (rand.nextBoolean())
 				makeBrench(world, rand, pos.up(size - 1).east(), (int) (size / 2));
-			if (i == 1)
+			if (rand.nextBoolean())
 				makeBrench(world, rand, pos.up(size - 1).west(), (int) (size / 2));
-			if (i == 2)
+			if (rand.nextBoolean())
 				makeBrench(world, rand, pos.up(size - 1).north(), (int) (size / 2));
-			if (i == 3)
+			if (rand.nextBoolean())
 				makeBrench(world, rand, pos.up(size - 1).south(), (int) (size / 2));
+
+			return true;
 		}
+		for (int i = 0; i < 130; i++) {
+			if (world.getBlockState(pos.up(i)).getBlock() == LEAVES.getBlock()) {
+				setBlockState(world, pos.up(i), LOG);
+				return true;
+			}
+			setBlockState(world, pos.up(i), LOG);
+		}
+		
+		return true;
 	}
 
 }

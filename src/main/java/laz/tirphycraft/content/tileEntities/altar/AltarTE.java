@@ -4,6 +4,7 @@ import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
 
 import java.awt.Dimension;
+import java.util.List;
 import java.util.Random;
 
 import javax.swing.text.html.parser.Entity;
@@ -23,11 +24,14 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.OverworldDimension;
 import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.event.world.BlockEvent.EntityPlaceEvent;
 
 public class AltarTE extends InventoryTile implements ITickableTileEntity {
 	boolean activate = false;
@@ -47,7 +51,7 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 
 	@Override
 	public void tick() {
-		
+
 		checkForFragment();
 		if (activate) {
 			if (timer > 0) {
@@ -66,23 +70,26 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 					particles();
 				timer--;
 			} else {
-				world.setBlockState(pos.down(), Blocks.STONE_BRICKS.getDefaultState());
-				world.destroyBlock(pos, false);
+				timer = maxtimer;
+				activate = false;
 				world.destroyBlock(blue_p, false);
 				world.destroyBlock(red_p, false);
 				world.destroyBlock(green_p, false);
 				world.destroyBlock(white_p, false);
 				world.destroyBlock(yellow_p, false);
 				if (!world.isRemote()) {
-					for (int i = 0; i < 10; i++) {
-						
-						PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ());
+					List<PlayerEntity> l = world.getEntitiesWithinAABB(PlayerEntity.class,
+							new AxisAlignedBB(pos.getX() - 10, pos.getY() - 10, pos.getZ() - 10, pos.getX() + 10,
+									pos.getY() + 10, pos.getZ() + 10));
+					for (int i = 0; i < l.size(); i++) {
+						PlayerEntity player = l.get(i);
 						if (player != null) {
 							ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
 							DimensionType dimensionType = DimensionManager.registerOrGetDimension(
 									new ResourceLocation(MOD_ID, "froz_dim"), FROZ_DIM.get(), null, true);
 							ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-							playerEntity.teleport(targetWorld, pos.getX(), 255 ,pos.getZ(), player.rotationYaw, player.rotationPitch);
+							playerEntity.teleport(targetWorld, pos.getX(), 255, pos.getZ(), player.rotationYaw,
+									player.rotationPitch);
 							BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
 							player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
 						}
@@ -136,6 +143,8 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 			timer = maxtimer;
 			activate = false;
 		}
+		if (!(world.getDimension() instanceof OverworldDimension))
+			activate = false;
 	}
 
 	public void spawnLightning(BlockPos pos) {
