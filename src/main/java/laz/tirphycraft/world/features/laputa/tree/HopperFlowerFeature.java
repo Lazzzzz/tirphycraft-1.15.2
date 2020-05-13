@@ -10,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.feature.Feature;
@@ -18,7 +19,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 public class HopperFlowerFeature extends Feature<NoFeatureConfig> {
 
 	BlockState LOG = TirphycraftBlocks.LOG_STEM.get().getDefaultState();
-	BlockState LEAVES =  TirphycraftBlocks.LOG_COPPIR.get().getDefaultState();
+	BlockState LEAVES;
 	
 	public HopperFlowerFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);
@@ -41,7 +42,7 @@ public class HopperFlowerFeature extends Feature<NoFeatureConfig> {
 				|| worldIn.getBlockState(pos.down().south().west()) == LEAVES) {
 			return false;
 		}
-
+		selectPetal(rand);
 		int size = rand.nextInt(7)+5;
 		int head_size = rand.nextInt(3)+4;
 		float offsetx = (rand.nextInt(5)) / 10f - 0.25f;
@@ -83,6 +84,26 @@ public class HopperFlowerFeature extends Feature<NoFeatureConfig> {
 					}
 				}
 			}
+		}
+	}
+	
+	void selectPetal(Random rand) {
+		switch (rand.nextInt(5)) {
+		case 0:
+			LEAVES = TirphycraftBlocks.PETAL_BLUE.get().getDefaultState();
+			break;
+		case 1:
+			LEAVES = TirphycraftBlocks.PETAL_RED.get().getDefaultState();
+			break;
+		case 2:
+			LEAVES = TirphycraftBlocks.PETAL_YELLOW.get().getDefaultState();
+			break;
+		case 3:
+			LEAVES = TirphycraftBlocks.PETAL_GREEN.get().getDefaultState();
+			break;
+		case 4:
+			LEAVES = TirphycraftBlocks.PETAL_PURPLE.get().getDefaultState();
+			break;
 		}
 	}
 	

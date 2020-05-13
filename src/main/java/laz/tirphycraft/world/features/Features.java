@@ -86,7 +86,7 @@ public class Features {
 	//https://github.com/Glitchfiend/BiomesOPlenty/blob/801d32a4d6ab73f3fe19b89e55556cf529084214/src/main/java/biomesoplenty/common/world/gen/feature/DeepTopLayerSurfaceBuilder.java
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DEEP_TOP_LAYER = new DeepTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
-	public static final SurfaceBuilderConfig FROZ_SURFACE_CONFIG_DEFAULT = new SurfaceBuilderConfig(TirphycraftBlocks.FROZ_GRASS.get().getDefaultState(), TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(),TirphycraftBlocks.FROZ_DIRT.get().getDefaultState());
+	public static final SurfaceBuilderConfig FROZ_SURFACE_CONFIG_DEFAULT = new SurfaceBuilderConfig(TirphycraftBlocks.POWDER_SNOW.get().getDefaultState(), TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(),TirphycraftBlocks.FROZ_DIRT.get().getDefaultState());
 		
 	public static final Biome.Builder FROZ_BUILDER = new Biome.Builder().precipitation(Biome.RainType.SNOW).category(Biome.Category.ICY).scale(0.2F).temperature(-10F).downfall(0.3F).waterColor(4159204).waterFogColor(329011)
 			.parent((String) null);

@@ -39,7 +39,6 @@ public class TirphycraftBlocks {
 
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;
-	public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_GRASS;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DIRT;
 	
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;
@@ -94,6 +93,12 @@ public class TirphycraftBlocks {
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER5;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER6;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER7;
+	
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_BLUE;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_GREEN;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_PURPLE;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_RED;
+	public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_YELLOW;
 	
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> POWDER_SNOW;
 	public static BlockRegistryObjectGroup<Block, BlockItem, ?> POWDER_SNOW_LAYER;
@@ -164,6 +169,11 @@ public class TirphycraftBlocks {
        LAPUTA_FLOWER6 = addBlockClass("laputa_tall_grass", () -> new LaputaTallGrassBlock(Effects.SATURATION, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
        LAPUTA_FLOWER7 = addBlockClass("noxis_thorns", () -> new TirphycraftPlants(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
 
+       PETAL_BLUE = addCubedBlock("petal_block_blue", Block.Properties.from(Blocks.CACTUS));    
+       PETAL_RED = addCubedBlock("petal_block_red", Block.Properties.from(Blocks.CACTUS));    
+       PETAL_YELLOW = addCubedBlock("petal_block_yellow", Block.Properties.from(Blocks.CACTUS));    
+       PETAL_GREEN = addCubedBlock("petal_block_green", Block.Properties.from(Blocks.CACTUS));    
+       PETAL_PURPLE = addCubedBlock("petal_block_purple", Block.Properties.from(Blocks.CACTUS));    
        
        addBlockClass("stairs_coppir", 	() -> new StairsBlock(() -> PLANKS_COPPIR.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
        addBlockClass("stairs_silvir", 	() -> new StairsBlock(() -> PLANKS_SILVIR.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)));
@@ -203,7 +213,6 @@ public class TirphycraftBlocks {
        POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
-       FROZ_GRASS 		 = addCubedBlock("froz_grass", Block.Properties.from(Blocks.GRASS_BLOCK));
 
        ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
     }
