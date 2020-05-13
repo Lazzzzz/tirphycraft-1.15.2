@@ -11,8 +11,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 
@@ -31,7 +33,9 @@ public class ClockNoxis extends Item {
             ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
             DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "noxis_dim"), NOXIS_DIM.get(), null, true);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-            playerEntity.teleport(targetWorld, 0,64,0, player.rotationYaw, player.rotationPitch);
+            playerEntity.teleport(targetWorld, 0,255,0, player.rotationYaw, player.rotationPitch);
+			BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
+			player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
         }
         return ActionResult.resultPass(stack);
     }

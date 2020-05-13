@@ -8,8 +8,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 
@@ -29,7 +31,9 @@ public class ClockReturn extends Item {
             @SuppressWarnings("deprecation")
 			DimensionType dimensionType = DimensionManager.getRegistry().getByValue(1);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-            playerEntity.teleport(targetWorld, player.getPosX(),64, player.getPosY(), player.rotationYaw, player.rotationPitch);
+            playerEntity.teleport(targetWorld, player.getPosX() ,255, player.getPosZ(), player.rotationYaw, player.rotationPitch);
+			BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
+			player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
         }
         return ActionResult.resultPass(stack);
     }

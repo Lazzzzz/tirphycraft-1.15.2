@@ -31,7 +31,7 @@ public class ClockGosyn extends Item {
             ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
             DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "gosyn_dim"), GOSYN_DIM.get(), null, true);
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-            playerEntity.teleport(targetWorld, player.getPosX(),64,player.getPosY(), player.rotationYaw, player.rotationPitch);
+            playerEntity.teleport(targetWorld, player.getPosX(),64,player.getPosZ(), player.rotationYaw, player.rotationPitch);
         }
         return ActionResult.resultPass(stack);
     }

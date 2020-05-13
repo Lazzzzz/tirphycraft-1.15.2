@@ -15,8 +15,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
-import java.util.Random;
-
 public class CrystalBlock extends GlassBlock {
 	private TirphyColor color;
 	

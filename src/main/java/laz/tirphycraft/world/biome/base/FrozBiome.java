@@ -10,11 +10,7 @@ import net.minecraft.block.SnowBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.GenerationStage.Decoration;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
 
@@ -46,7 +42,7 @@ public class FrozBiome extends Biome {
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed) {
 		super.buildSurface(random, chunkIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed);
 		for (int i = -3; i < 0; i++) {
-			if (chunkIn.getBlockState(new BlockPos(x, startHeight + i, z)) == TirphycraftBlocks.FROZ_GRASS.get()
+			if (chunkIn.getBlockState(new BlockPos(x, startHeight + i, z)) == TirphycraftBlocks.POWDER_SNOW.get()
 					.getDefaultState()) {
 				chunkIn.setBlockState(new BlockPos(x, startHeight + i + 1, z), TirphycraftBlocks.POWDER_SNOW_LAYER.get()
 						.getDefaultState().with(SnowBlock.LAYERS, random.nextInt(4) + 1), false);

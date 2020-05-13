@@ -7,7 +7,8 @@ public enum TirphyColor {
     RED(2, 1, 0, 0),
     YELLOW(3, 1, 1, 0),
     PINK(4, 1f, 0.5f, 0.5f),
-    PURPLE(5, 0.5f, 0, 1);
+    PURPLE(5, 0.5f, 0, 1),
+    WHITE(6, 1, 1, 1);
 
     private final float index;
     private final float blue;
@@ -51,6 +52,8 @@ public enum TirphyColor {
             	return PINK;
             case 5:
             	return PURPLE;
+            case 6:
+            	return WHITE;
             default:
                 throw new IllegalStateException("Unexpected variant: " + index);
         }

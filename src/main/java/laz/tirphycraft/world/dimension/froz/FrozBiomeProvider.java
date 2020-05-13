@@ -28,16 +28,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class FrozBiomeProvider extends BiomeProvider {
 
 	public static Biome[] dimensionBiomes = new Biome[]{
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_desert")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_mountains")),
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_plains")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_ice_plains")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_forest")),
 		};
 	
 	private static final Set<Biome> biomeList = ImmutableSet.of(
-			TirphycraftBiomes.F_DESERT.get(),
-			TirphycraftBiomes.F_PLAINS.get(),
 			TirphycraftBiomes.F_ICE_PLAINS.get(),
+			TirphycraftBiomes.F_FOREST.get(),
 			TirphycraftBiomes.F_MOUNTAINS.get());
 	
 	private final Layer genBiomes;

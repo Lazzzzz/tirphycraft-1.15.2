@@ -2,13 +2,9 @@ package laz.tirphycraft.content.blocks.froz;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class PowderSnowBlock extends Block {

@@ -11,6 +11,8 @@ public class FrozIcePlains extends FrozBiome {
 
     public FrozIcePlains(Biome.Builder builder) {
         super(builder);
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.FROZ_BIG_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
     }
 
 }

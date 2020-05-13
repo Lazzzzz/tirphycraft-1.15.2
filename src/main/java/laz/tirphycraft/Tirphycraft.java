@@ -3,10 +3,16 @@ package laz.tirphycraft;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.TirphycraftDimensions;
 import laz.tirphycraft.content.TirphycraftRegistries;
 import laz.tirphycraft.particle.GlintParticle;
+import laz.tirphycraft.world.biome.base.FrozBiome;
+import laz.tirphycraft.world.biome.base.LaputaBiome;
+import laz.tirphycraft.world.biome.noxis.NoxisBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -14,7 +20,6 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
@@ -29,9 +34,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(MOD_ID)
 public class Tirphycraft {
@@ -56,7 +58,7 @@ public class Tirphycraft {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES) {
-			biome.addFeature(Decoration.SURFACE_STRUCTURES,	Features.ANCIENT_STONE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome)) biome.addFeature(Decoration.SURFACE_STRUCTURES,	Features.ANCIENT_STONE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.COAL_ON_COKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
@@ -81,7 +83,13 @@ public class Tirphycraft {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_YELLOW.get(), opaque);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PURPLE.get(), opaque);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PINK.get(), opaque);
-
+		
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_COPPIR.get(), opaque);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SILVIR.get(), opaque);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_GOLDIR.get(), opaque);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_FROZ.get(), opaque);
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SKY.get(), opaque);
+		
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER1.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER2.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER3.get(), cutout);

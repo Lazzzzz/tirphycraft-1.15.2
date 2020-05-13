@@ -2,13 +2,13 @@ package laz.tirphycraft.world.features;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.world.biome.surfaceBuilder.DeepTopLayerSurfaceBuilder;
-import laz.tirphycraft.world.biome.surfaceBuilder.FrozIcePlainsSurfaceBuilder;
 import laz.tirphycraft.world.features.froz.GiantIcePickFeature;
 import laz.tirphycraft.world.features.froz.IceCrystalFeature;
 import laz.tirphycraft.world.features.froz.IcePillarFeature;
 import laz.tirphycraft.world.features.froz.MountainsCrystalFeature;
 import laz.tirphycraft.world.features.froz.SmallRockPickFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozGiantTreeFeature;
+import laz.tirphycraft.world.features.froz.trees.FrozRootFeature;
 import laz.tirphycraft.world.features.froz.underground.GiantPillarFeature;
 import laz.tirphycraft.world.features.froz.underground.StalacmiteFeature;
 import laz.tirphycraft.world.features.froz.underground.StalactiteFeature;
@@ -30,7 +30,6 @@ import laz.tirphycraft.world.features.laputa.tree.HopperFlowerFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaSmallBushTreeFeature;
 import laz.tirphycraft.world.features.laputa.tree.LaputaTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
-import laz.tirphycraft.world.features.overworld.AltarFeature;
 import laz.tirphycraft.world.features.overworld.FragmentFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
@@ -66,6 +65,8 @@ public class Features {
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_STALAGMITE		= new StalacmiteFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_STALAGTITE		= new StalactiteFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_GIANT_PILLAR	= new GiantPillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> ROOT_TREE			= new FrozRootFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+
 
 	
 	public static ConfiguredFeature<IFeatureConfig, ?>  LAPUTA_TREE 		= new LaputaTreeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
@@ -84,7 +85,6 @@ public class Features {
 	
 	//https://github.com/Glitchfiend/BiomesOPlenty/blob/801d32a4d6ab73f3fe19b89e55556cf529084214/src/main/java/biomesoplenty/common/world/gen/feature/DeepTopLayerSurfaceBuilder.java
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DEEP_TOP_LAYER = new DeepTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> ICE_PLAINS_FROZ = new FrozIcePlainsSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
 	public static final SurfaceBuilderConfig FROZ_SURFACE_CONFIG_DEFAULT = new SurfaceBuilderConfig(TirphycraftBlocks.FROZ_GRASS.get().getDefaultState(), TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(),TirphycraftBlocks.FROZ_DIRT.get().getDefaultState());
 		

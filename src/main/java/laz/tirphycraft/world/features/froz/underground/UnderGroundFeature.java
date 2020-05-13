@@ -5,7 +5,6 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBiomes;
 import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;

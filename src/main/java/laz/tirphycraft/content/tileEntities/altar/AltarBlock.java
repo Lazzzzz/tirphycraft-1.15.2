@@ -2,20 +2,11 @@ package laz.tirphycraft.content.tileEntities.altar;
 
 import javax.annotation.Nullable;
 
-import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
 
 public class AltarBlock extends Block {
 
