@@ -23,17 +23,25 @@ public class TirphyLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        for (BlockRegistryObjectGroup simple: SIMPLE){
-            this.addItem(simple::getItem, WordUtils.capitalizeFully(simple.getName().replace("_", " ")));
+        for (BlockRegistryObjectGroup simple : SIMPLE) {
+            if (simple != null) {
+                this.addItem(simple::getItem, WordUtils.capitalizeFully(simple.getName().replace("_", " ")));
+            }
         }
-        for (BlockRegistryObjectGroup tiles: TILES){
-            this.addItem(tiles::getItem, WordUtils.capitalizeFully(tiles.getName().replace("_", " ")));
+        for (BlockRegistryObjectGroup tiles : TILES) {
+            if (tiles != null) {
+                this.addItem(tiles::getItem, WordUtils.capitalizeFully(tiles.getName().replace("_", " ")));
+            }
         }
-        for (RegistryObject<Item> item: ITEMLIST){
-            this.addItem(item, WordUtils.capitalizeFully(item.getId().getPath().replace("_", " ")));
+        for (RegistryObject<Item> item : ITEMLIST) {
+            if (item != null) {
+                this.addItem(item, WordUtils.capitalizeFully(item.getId().getPath().replace("_", " ")));
+            }
         }
-        for (RegistryObject<Biome> biome: BIOMELIST){
-            this.addBiome(biome, WordUtils.capitalizeFully(biome.getId().getPath().replace("_", " ")));
+        for (RegistryObject<Biome> biome : BIOMELIST) {
+            if (biome != null) {
+                this.addBiome(biome, WordUtils.capitalizeFully(biome.getId().getPath().replace("_", " ")));
+            }
         }
     }
 }
