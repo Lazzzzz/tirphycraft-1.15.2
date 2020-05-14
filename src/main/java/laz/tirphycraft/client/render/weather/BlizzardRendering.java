@@ -75,9 +75,9 @@ public class BlizzardRendering implements IRenderHandler {
 			RenderSystem.enableBlend();
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.defaultAlphaFunc();
-			int l = 20;
+			int l = 30;
 			if (mc.gameSettings.fancyGraphics) {
-				l = 40;
+				l = 60;
 			}
 
 			int i1 = -1;
@@ -89,8 +89,8 @@ public class BlizzardRendering implements IRenderHandler {
 				for (int k1 = i - l; k1 <= i + l; ++k1) {
 					int l1 = (j1 - k + 64) * 128 + k1 - i + 64;
 
-					double d0 = (double) this.rainxs[l1] * 0.1D;
-					double d1 = (double) this.rainys[l1] * 0.1D;
+					double d0 = (double) this.rainxs[l1] * 0.5D;
+					double d1 = (double) this.rainys[l1] * 0.5D;
 
 					blockpos$mutableblockpos.setPos(k1, 0, j1);
 
