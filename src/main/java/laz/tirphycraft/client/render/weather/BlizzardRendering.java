@@ -34,8 +34,8 @@ public class BlizzardRendering implements IRenderHandler {
 				float f = (float) (j - 64);
 				float f1 = (float) (i - 64);
 				float f2 = MathHelper.sqrt(f * f + f1 * f1);
-				this.rainxs[i << 5 | j] = f1 / f2;
-				this.rainys[i << 5 | j] = f / f2;
+				this.rainxs[i << 7 | j] = f1 / f2;
+				this.rainys[i << 7 | j] = f / f2;
 			}
 		}
 	}
@@ -87,10 +87,10 @@ public class BlizzardRendering implements IRenderHandler {
 
 			for (int j1 = k - l; j1 <= k + l; ++j1) {
 				for (int k1 = i - l; k1 <= i + l; ++k1) {
-					int l1 = (j1 - k + 64) * 64 + k1 - i + 64;
+					int l1 = (j1 - k + 64) * 128 + k1 - i + 64;
 
-					double d0 = (double) this.rainxs[l1] * 0.5D;
-					double d1 = (double) this.rainys[l1] * 0.5D;
+					double d0 = (double) this.rainxs[l1] * 0.1D;
+					double d1 = (double) this.rainys[l1] * 0.1D;
 
 					blockpos$mutableblockpos.setPos(k1, 0, j1);
 
@@ -149,26 +149,22 @@ public class BlizzardRendering implements IRenderHandler {
 							int j4 = (l3 * 3 + 240) / 4;
 							int k4 = (i4 * 3 + 240) / 4;
 							bufferbuilder
-									.pos((double) k1 - xIn - d0 + 0.5D, (double) k2 - yIn,
-											(double) j1 - zIn - d1 + 0.5D)
+									.pos((double) k1 - xIn - d0 + 0.5D, (double) k2 - yIn, (double) j1 - zIn - d1 + 0.5D)
 									.tex(0.0F + f7, (float) j2 * 0.25F + f6 + f8).color(1.0F, 1.0F, 1.0F, f10)
 									.lightmap(k4, j4).endVertex();
 
 							bufferbuilder
-									.pos((double) k1 - xIn + d0 + 0.5D, (double) k2 - yIn,
-											(double) j1 - zIn + d1 + 0.5D)
+									.pos((double) k1 - xIn + d0 + 0.5D, (double) k2 - yIn,	(double) j1 - zIn + d1 + 0.5D)
 									.tex(1.0F + f7, (float) j2 * 0.25F + f6 + f8).color(1.0F, 1.0F, 1.0F, f10)
 									.lightmap(k4, j4).endVertex();
 
 							bufferbuilder
-									.pos((double) k1 - xIn + d0 + 0.5D, (double) j2 - yIn,
-											(double) j1 - zIn + d1 + 0.5D)
+									.pos((double) k1 - xIn + d0 + 0.5D, (double) j2 - yIn, (double) j1 - zIn + d1 + 0.5D)
 									.tex(1.0F + f7, (float) k2 * 0.25F + f6 + f8).color(1.0F, 1.0F, 1.0F, f10)
 									.lightmap(k4, j4).endVertex();
 
 							bufferbuilder
-									.pos((double) k1 - xIn - d0 + 0.5D, (double) j2 - yIn,
-											(double) j1 - zIn - d1 + 0.5D)
+									.pos((double) k1 - xIn - d0 + 0.5D, (double) j2 - yIn, (double) j1 - zIn - d1 + 0.5D)
 									.tex(0.0F + f7, (float) k2 * 0.25F + f6 + f8).color(1.0F, 1.0F, 1.0F, f10)
 									.lightmap(k4, j4).endVertex();
 						}
