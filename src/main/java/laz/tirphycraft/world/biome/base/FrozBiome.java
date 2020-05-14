@@ -21,7 +21,7 @@ public class FrozBiome extends Biome {
 
 	protected FrozBiome(Biome.Builder builder) {
 		super(builder);
-
+		
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
