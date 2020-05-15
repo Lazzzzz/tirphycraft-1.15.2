@@ -3,6 +3,7 @@ package laz.tirphycraft.datagen;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 
 import laz.tirphycraft.datagen.lang.TirphyLang;
+import laz.tirphycraft.datagen.loot.TirphyLootsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +20,7 @@ public class TirphyData {
 
         if (event.includeClient()) {
             dataGenerator.addProvider(new TirphyLang(dataGenerator));
+            dataGenerator.addProvider(new TirphyLootsProvider(dataGenerator));
         }
     }
 

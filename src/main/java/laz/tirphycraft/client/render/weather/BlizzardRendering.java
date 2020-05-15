@@ -72,9 +72,15 @@ public class BlizzardRendering implements IRenderHandler {
 			RenderSystem.enableBlend();
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.defaultAlphaFunc();
+<<<<<<< Updated upstream
 			int l = 5;
 			if (mc.gameSettings.fancyGraphics) {
 				l = 10;
+=======
+			int l = 15;
+			if (mc.gameSettings.fancyGraphics) {
+				l = 30;
+>>>>>>> Stashed changes
 			}
 
 			int i1 = -1;
