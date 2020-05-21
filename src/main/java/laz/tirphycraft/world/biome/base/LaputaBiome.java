@@ -1,8 +1,11 @@
 package laz.tirphycraft.world.biome.base;
 
+import java.util.Random;
+
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphycraftUtils;
 import laz.tirphycraft.world.features.Features;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
@@ -55,6 +58,12 @@ public class LaputaBiome extends Biome {
 		super.decorate(stage, chunkGenerator, worldIn, seed, random, pos);
 	}
 
+	@Override
+	public void buildSurface(Random random, IChunk chunkIn, int x, int z, int startHeight, double noise,
+			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed) {
+		super.buildSurface(random, chunkIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed);
+	}
+	
 	private void placeGround(IWorld worldIn, SharedSeedRandom random, BlockPos pos) {
 		switch (random.nextInt(80)) {
 		case 0:

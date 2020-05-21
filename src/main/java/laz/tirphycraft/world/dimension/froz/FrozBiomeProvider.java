@@ -31,11 +31,13 @@ public class FrozBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_mountains")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_ice_plains")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_forest")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Tirphycraft.MOD_ID + ":froz_canyon")),
 		};
 	
 	private static final Set<Biome> biomeList = ImmutableSet.of(
 			TirphycraftBiomes.F_ICE_PLAINS.get(),
 			TirphycraftBiomes.F_FOREST.get(),
+			TirphycraftBiomes.F_CANYON.get(),
 			TirphycraftBiomes.F_MOUNTAINS.get());
 	
 	private final Layer genBiomes;

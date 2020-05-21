@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XX",
+    "X|",
+    " |"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:poly_crystal_pyrodes"
+    },
+    "|": {
+      "item": "tirphycraft:stick_crystal"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:pyrodes_axe"
+  }
+}

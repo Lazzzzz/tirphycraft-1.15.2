@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:block_pyrodes"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:poly_crystal_pyrodes",
+    "count": 9
+  }
+}

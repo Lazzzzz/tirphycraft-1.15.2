@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X",
+    "X",
+    "|"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:heavy_ingot"
+    },
+    "|": {
+      "item": "tirphycraft:stick_crystal"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:heavy_sword"
+  }
+}

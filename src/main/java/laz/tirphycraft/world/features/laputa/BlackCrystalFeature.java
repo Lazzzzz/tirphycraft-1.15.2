@@ -27,10 +27,10 @@ public class BlackCrystalFeature extends Feature<IFeatureConfig>{
 			BlockPos position, IFeatureConfig config) {
 		{
 			while (worldIn.isAirBlock(position) && position.getY() > 2) {
-				position = position.down();
+				position = position.down(2);
 			}
 
-			if (worldIn.getBlockState(position).getBlock() != TirphycraftBlocks.LAPUTA_GRASS.get()) {
+			if (worldIn.getBlockState(position).getBlock() != TirphycraftBlocks.POWDER_SNOW.get()) {
 				return false;
 			} else {
 				position = position.up(rand.nextInt(4));
@@ -57,7 +57,7 @@ public class BlackCrystalFeature extends Feature<IFeatureConfig>{
 								Block block = iblockstate.getBlock();
 
 								if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, k, j1))
-										|| block == TirphycraftBlocks.LAPUTA_DIRT.get() || block == TirphycraftBlocks.LAPUTA_GRASS.get()) {
+										|| block == TirphycraftBlocks.POWDER_SNOW_LAYER.get() || block == TirphycraftBlocks.FROZ_DIRT.get() || block == TirphycraftBlocks.POWDER_SNOW.get()) {
 									 this.setBlockState(worldIn, position.add(i1, k, j1),
 											TirphycraftBlocks.BLACK_CRYSTAL.get().getDefaultState());
 								}
@@ -67,7 +67,7 @@ public class BlackCrystalFeature extends Feature<IFeatureConfig>{
 									block = iblockstate.getBlock();
 
 									if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, -k, j1))
-											|| block == TirphycraftBlocks.LAPUTA_DIRT.get() || block == TirphycraftBlocks.LAPUTA_GRASS.get()) {
+											|| block == TirphycraftBlocks.FROZ_DIRT.get() || block == TirphycraftBlocks.POWDER_SNOW_LAYER.get() || block == TirphycraftBlocks.POWDER_SNOW.get()) {
 										this.setBlockState(worldIn, position.add(i1, -k, j1),
 												TirphycraftBlocks.BLACK_CRYSTAL.get().getDefaultState());
 									}
@@ -98,8 +98,8 @@ public class BlackCrystalFeature extends Feature<IFeatureConfig>{
 							BlockState iblockstate1 = worldIn.getBlockState(blockpos);
 							Block block1 = iblockstate1.getBlock();
 
-							if (!iblockstate1.getBlock().isAir(iblockstate1, worldIn, blockpos) && block1 != TirphycraftBlocks.LAPUTA_DIRT.get()
-									&& block1 != TirphycraftBlocks.LAPUTA_GRASS.get() && block1 != TirphycraftBlocks.BLACK_CRYSTAL.get()) {
+							if (!iblockstate1.getBlock().isAir(iblockstate1, worldIn, blockpos) && block1 != TirphycraftBlocks.FROZ_DIRT.get()
+									&& block1 != TirphycraftBlocks.POWDER_SNOW_LAYER.get() && block1 != TirphycraftBlocks.POWDER_SNOW.get() && block1 != TirphycraftBlocks.BLACK_CRYSTAL.get()) {
 								break;
 							}
 

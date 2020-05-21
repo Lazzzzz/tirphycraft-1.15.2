@@ -59,8 +59,7 @@ public class IceCrystalFeature extends Feature<IFeatureConfig> {
 
 							if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, k, j1))
 									|| block == Blocks.ICE) {
-								this.setBlockState(worldIn, position.add(i1, k, j1),
-										Blocks.ICE.getDefaultState());
+								setIce(worldIn, position.add(i1, k, j1), rand);
 							}
 
 							if (k != 0 && l > 1) {
@@ -69,8 +68,7 @@ public class IceCrystalFeature extends Feature<IFeatureConfig> {
 
 								if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, -k, j1))
 										|| block == Blocks.ICE) {
-									this.setBlockState(worldIn, position.add(i1, -k, j1),
-											Blocks.ICE.getDefaultState());
+									setIce(worldIn, position.add(i1, -k, j1), rand);
 								}
 							}
 						}
@@ -103,7 +101,7 @@ public class IceCrystalFeature extends Feature<IFeatureConfig> {
 							break;
 						}
 
-						this.setBlockState(worldIn, blockpos, Blocks.ICE.getDefaultState());
+						setIce(worldIn, blockpos, rand);
 						blockpos = blockpos.down();
 						--j2;
 
@@ -117,5 +115,10 @@ public class IceCrystalFeature extends Feature<IFeatureConfig> {
 
 			return true;
 		}
+	}
+	
+	private void setIce(IWorld world, BlockPos pos, Random rand) {
+		if (rand.nextInt(5) > 0) world.setBlockState(pos, Blocks.ICE.getDefaultState(), 4);
+		else world.setBlockState(pos, Blocks.PACKED_ICE.getDefaultState(), 4);
 	}
 }

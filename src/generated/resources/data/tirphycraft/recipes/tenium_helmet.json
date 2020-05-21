@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:tenium_ingot"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:tenium_helmet"
+  }
+}

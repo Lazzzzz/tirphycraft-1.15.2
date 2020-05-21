@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:block_meteorite"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:brick_meteorite",
+    "count": 4
+  }
+}

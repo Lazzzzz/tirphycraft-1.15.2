@@ -71,6 +71,7 @@ public class TirphycraftRegistries {
 		TIRPH_BIOMES.register(eventBus);
 		DIMENSIONS.register(eventBus);
 		FLUIDS.register(eventBus);
+		
 	}
 
 	public static void init(IEventBus eventBus) {
@@ -131,24 +132,35 @@ public class TirphycraftRegistries {
 				.food(new Food.Builder().hunger(food).saturation(food).build())));
 	}
 
-	public static void addTools(String name, IItemTier tier) {
+	public static RegistryObject<Item> addAxe(String name, IItemTier tier) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
-		ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_axe",
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_axe",
 				() -> new AxeItem(tier, 5.0F, -3.0F, (new Item.Properties()).group(ITEM_GROUP)));
+	}
+	public static RegistryObject<Item> addPickaxe(String name, IItemTier tier) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
-		ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_pickaxe",
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_pickaxe",
 				() -> new PickaxeItem(tier, 1, -2.8F, (new Item.Properties()).group(ITEM_GROUP)));
+	}
+	public static RegistryObject<Item> addSword(String name, IItemTier tier) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
-		ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_sword",
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_sword",
 				() -> new SwordItem(tier, 3, -2.4F, (new Item.Properties()).group(ITEM_GROUP)));
+	}
+	public static RegistryObject<Item> addShovel(String name, IItemTier tier) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
-		ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_shovel",
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_shovel",
 				() -> new ShovelItem(tier, 1.5F, -3.0F, (new Item.Properties()).group(ITEM_GROUP)));
+	}
+	
+	public static RegistryObject<Item> addHoe(String name, IItemTier tier) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
-		ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_hoe",
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_hoe",
 				() -> new HoeItem(tier, -1F, (new Item.Properties()).group(ITEM_GROUP)));
 	}
 
+	
+	
 	public static RegistryObject<Item> addFeet(String name, Item item) {
 		ITEMLIST_INT = ++ITEMLIST_INT;
 		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name + "_boots", () -> item);

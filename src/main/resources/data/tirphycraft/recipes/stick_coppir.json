@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:planks_coppir"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:stick_coppir",
+    "count": 4
+  }
+}

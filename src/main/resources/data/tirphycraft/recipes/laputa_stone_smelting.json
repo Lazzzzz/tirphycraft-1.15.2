@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tirphycraft:laputa_cobblestone"
+  },
+  "result": "tirphycraft:laputa_stone",
+  "experience": 0.1,
+  "cookingtime": 200
+}

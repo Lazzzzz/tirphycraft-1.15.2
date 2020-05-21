@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:log_sky"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:planks_sky",
+    "count": 4
+  }
+}

@@ -27,6 +27,8 @@ public class FrozGiantTreeFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
+		if (worldIn.getBlockState(pos.down(2)) != TirphycraftBlocks.POWDER_SNOW.get().getDefaultState()) return false;
+		
 		float f = (float) (rand.nextInt(3) + 5);
 		BlockPos p = pos;
 		int totalSize = 0;

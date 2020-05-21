@@ -26,8 +26,9 @@ public class SmallRockPickFeature extends Feature<IFeatureConfig>{
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, IFeatureConfig config) {
 		
-		if (position.getY() > 80 || position.getY() == 0) return false;
-		int r1 = rand.nextInt(6) + 4;
+		if (position.getY() == 0 || worldIn.getBlockState(position.down(2)) != TirphycraftBlocks.POWDER_SNOW.get().getDefaultState() || rand.nextInt(3) == 0) return false;
+		
+		int r1 = rand.nextInt(3) + 4;
 		generatePick(worldIn, position, r1);
 		
 		int r2 = rand.nextInt(5) + 1;

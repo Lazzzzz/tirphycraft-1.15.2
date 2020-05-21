@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:block_heavy"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:heavy_ingot",
+    "count": 9
+  }
+}

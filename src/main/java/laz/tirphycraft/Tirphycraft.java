@@ -12,7 +12,7 @@ import laz.tirphycraft.content.TirphycraftRegistries;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.world.biome.base.FrozBiome;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
-import laz.tirphycraft.world.biome.noxis.NoxisBiome;
+import laz.tirphycraft.world.biome.base.NoxisBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;

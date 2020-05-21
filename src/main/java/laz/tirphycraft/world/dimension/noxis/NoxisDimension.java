@@ -17,7 +17,7 @@ public class NoxisDimension extends Dimension {
 
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		return new NoxisChunkGenerator(world, new NoxisBiomeProvider(), new NoxisGenSettings());
+		return new NoxisChunkGenerator(world, new NoxisBiomeProvider(world), new NoxisGenSettings());
 	}
 
 	@Override

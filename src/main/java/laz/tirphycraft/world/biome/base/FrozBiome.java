@@ -21,7 +21,7 @@ public class FrozBiome extends Biome {
 
 	protected FrozBiome(Biome.Builder builder) {
 		super(builder);
-		
+
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
@@ -30,6 +30,12 @@ public class FrozBiome extends Biome {
 				Features.FROZ_GIANT_PILLAR.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.NIXIUM.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.HISTOIRE_ICE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.SURFACE_STRUCTURES, 
+				Features.SMALL_ROCK_PICK_FROZ.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.ICE_CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 	}
 
 	@Override
@@ -40,7 +46,7 @@ public class FrozBiome extends Biome {
 	@Override
 	public void buildSurface(Random random, IChunk chunkIn, int x, int z, int startHeight, double noise,
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed) {
-		super.buildSurface(random, chunkIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed);
+		super.buildSurface(random, chunkIn, x, z, startHeight, noise, defaultBlock, defaultFluid, 0, seed);
 		for (int i = -3; i < 0; i++) {
 			if (chunkIn.getBlockState(new BlockPos(x, startHeight + i, z)) == TirphycraftBlocks.POWDER_SNOW.get()
 					.getDefaultState()) {
@@ -53,15 +59,15 @@ public class FrozBiome extends Biome {
 
 	}
 
-	private boolean makeCave(IChunk chunkIn, Random random, int x, int z, int startHeight) {
+	public boolean makeCave(IChunk chunkIn, Random random, int x, int z, int startHeight) {
 		int top = 0;
 		for (int i = startHeight; i > this.caveStartY; i--) {
 			BlockPos p = new BlockPos(x, i, z);
-			if (chunkIn.getBlockState(p) == TirphycraftBlocks.FROZ_STONE.get().getDefaultState()) {
+			if (chunkIn.getBlockState(p) == TirphycraftBlocks.FROZ_STONE.get().getDefaultState()
+					|| chunkIn.getBlockState(p) == Blocks.ICE.getDefaultState()
+					|| chunkIn.getBlockState(p) == Blocks.PACKED_ICE.getDefaultState()) {
 				top = i;
-
 				boolean noair = true;
-
 				for (int j = i; j > 0; j--) {
 					p = new BlockPos(x, j, z);
 					if (chunkIn.getBlockState(p) == Blocks.AIR.getDefaultState()) {
@@ -69,10 +75,7 @@ public class FrozBiome extends Biome {
 						break;
 					}
 				}
-
-				if (noair)
-					break;
-
+				if (noair) break;
 			}
 
 			if (i == this.caveStartY + 1)

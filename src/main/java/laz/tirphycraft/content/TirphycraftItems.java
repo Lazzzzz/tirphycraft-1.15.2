@@ -4,7 +4,11 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addArmor;
 import static laz.tirphycraft.content.TirphycraftRegistries.addItemClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
-import static laz.tirphycraft.content.TirphycraftRegistries.addTools;
+import static laz.tirphycraft.content.TirphycraftRegistries.addAxe;
+import static laz.tirphycraft.content.TirphycraftRegistries.addPickaxe;
+import static laz.tirphycraft.content.TirphycraftRegistries.addShovel;
+import static laz.tirphycraft.content.TirphycraftRegistries.addSword;
+import static laz.tirphycraft.content.TirphycraftRegistries.addHoe;
 
 import laz.tirphycraft.content.items.Debug;
 import laz.tirphycraft.content.items.amulets.AmuletAnti;
@@ -53,50 +57,141 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class TirphycraftItems {
 
-	public static RegistryObject<Item> CRYSTAL_PYRODES;
-	public static RegistryObject<Item> HEAVY_INGOT;
-	public static RegistryObject<Item> NIXIUM_INGOT;
-	public static RegistryObject<Item> TENIUM_INGOT;
-	public static RegistryObject<Item> ROSE_SHARD;
-	public static RegistryObject<Item> ORIGIN_INGOT;
+	public static RegistryObject<Item> CRYSTAL_PYRODES;//
+	public static RegistryObject<Item> HEAVY_INGOT;//
+	public static RegistryObject<Item> NIXIUM_INGOT;//
+	public static RegistryObject<Item> TENIUM_INGOT;//
+	public static RegistryObject<Item> ROSE_SHARD;///
+	public static RegistryObject<Item> ORIGIN_INGOT;///
 	
-	public static RegistryObject<Item> FRAGMENT_BLUE;
-	public static RegistryObject<Item> FRAGMENT_RED;
-	public static RegistryObject<Item> FRAGMENT_YELLOW;
-	public static RegistryObject<Item> FRAGMENT_WHITE;
-	public static RegistryObject<Item> FRAGMENT_GREEN;
+	public static RegistryObject<Item> FRAGMENT_BLUE;///
+	public static RegistryObject<Item> FRAGMENT_RED;///
+	public static RegistryObject<Item> FRAGMENT_YELLOW;///
+	public static RegistryObject<Item> FRAGMENT_WHITE;///
+	public static RegistryObject<Item> FRAGMENT_GREEN;///
+
+	public static RegistryObject<Item> AMULET_ANTI;//
+	public static RegistryObject<Item> AMULET_HEALTH_2;//
+	public static RegistryObject<Item> AMULET_HEALTH_3;//
+	public static RegistryObject<Item> AMULET_HEALTH_1;//
+	public static RegistryObject<Item> AMULET_ATTACK_2;//
+	public static RegistryObject<Item> AMULET_ATTACK_3;//
+	public static RegistryObject<Item> AMULET_ATTACK_1;//
+	public static RegistryObject<Item> AMULET_SPEED_2;//
+	public static RegistryObject<Item> AMULET_SPEED_3;//
+	public static RegistryObject<Item> AMULET_SPEED_1;//
+	public static RegistryObject<Item> TOTEM_LEVITATION;//
+	public static RegistryObject<Item> TOTEM_THUNDER;//
+
+	public static RegistryObject<Item> COAL_ON_COKE;//
+	public static RegistryObject<Item> DIAMOND_NUGGET;///
+	public static RegistryObject<Item> MUMMY_WRAPS;///
+	public static RegistryObject<Item> EMPTY_SYRINGE;///
+	public static RegistryObject<Item> BLUE_ROSE_PETAL;///
+	public static RegistryObject<Item> FROZ_KEY;///
+	public static RegistryObject<Item> ORIGIN_MATTER;///
+	public static RegistryObject<Item> EXPLOSION_CORE;///
+	public static RegistryObject<Item> SEA_CORE;///
+	public static RegistryObject<Item> LIFE_CORE;///
+	public static RegistryObject<Item> STICK_CRYSTAL;//
+	public static RegistryObject<Item> STICK_COPPIR;//
+	public static RegistryObject<Item> STICK_SILVIR;//
+	public static RegistryObject<Item> STICK_GOLDIR;//
+	public static RegistryObject<Item> FROZEN_BUFFALO_RAW;///
+	public static RegistryObject<Item> FROZEN_BUFFALO;///
+	public static RegistryObject<Item> FROZEN_BOARCHOP_RAW;///
+	public static RegistryObject<Item> FROZEN_BOARCHOP;///
+	public static RegistryObject<Item> FRUIT_BALL_RED;//
+	public static RegistryObject<Item> FRUIT_BALL_BLUE;//
+	public static RegistryObject<Item> FRUIT_BALL_GREEN;//
+	public static RegistryObject<Item> KIWI;///
+
+	public static RegistryObject<Item> QUEEN_HEART;//
+	public static RegistryObject<Item> ANKH;///
+	public static RegistryObject<Item> POSEIDON_EYE;///
+
+	public static RegistryObject<Item> STAFF_1_HEAL;//
+	public static RegistryObject<Item> STAFF_2_HEAL;//
+	public static RegistryObject<Item> STAFF_3_HEAL;//
+	public static RegistryObject<Item> STAFF_1_TELEPORTATION;//
+	public static RegistryObject<Item> STAFF_2_TELEPORTATION;//
+	public static RegistryObject<Item> STAFF_3_TELEPORTATION;//
+	public static RegistryObject<Item> STAFF_1_EXPLOSION;//
+	public static RegistryObject<Item> STAFF_2_EXPLOSION;//
+	public static RegistryObject<Item> STAFF_3_EXPLOSION;//
+	public static RegistryObject<Item> STAFF_1_FIREBALL;//
+	public static RegistryObject<Item> STAFF_2_FIREBALL;//
+	public static RegistryObject<Item> STAFF_3_FIREBALL;//
+
+	public static RegistryObject<Item> RETURN_CLOCK;//
+	public static RegistryObject<Item> NOXIS_CLOCK;//
+	public static RegistryObject<Item> LAPUTA_CLOCK;//
+	public static RegistryObject<Item> GOSYN_CLOCK;//
+	public static RegistryObject<Item> FROZ_CLOCK;//
+
+	public static RegistryObject<Item> SUN_TEAR;//
+	public static RegistryObject<Item> FEATHER_OF_LIGHT;//		
 	
-	public static Item PYRODES_FEET;
+	public static RegistryObject<Item> CRYSTAL;//
+	public static RegistryObject<Item> CRYSTAL_PURODES;//
+	public static RegistryObject<Item> DEBUG;//
+
+
+	public static Item PYRODES_FEET;//
 	public static Item PYRODES_LEGS;
 	public static Item PYRODES_CHEST;
 	public static Item PYRODES_HEAD;
 
-	public static Item HEAVY_FEET;
+	public static Item HEAVY_FEET;//
 	public static Item HEAVY_LEGS;
 	public static Item HEAVY_CHEST;
 	public static Item HEAVY_HEAD;	
 	
-	public static Item NIXIUM_FEET;
+	public static Item NIXIUM_FEET;//
 	public static Item NIXIUM_LEGS;
 	public static Item NIXIUM_CHEST;
 	public static Item NIXIUM_HEAD;
 
-	public static Item TENIUM_FEET;
+	public static Item TENIUM_FEET;//
 	public static Item TENIUM_LEGS;
 	public static Item TENIUM_CHEST;
 	public static Item TENIUM_HEAD;
 
-	public static Item ROSE_FEET;
+	public static Item ROSE_FEET;//
 	public static Item ROSE_LEGS;
 	public static Item ROSE_CHEST;
 	public static Item ROSE_HEAD;
 
-	public static Item ORIGIN_FEET;
+	public static Item ORIGIN_FEET;//
 	public static Item ORIGIN_LEGS;
 	public static Item ORIGIN_CHEST;
 	public static Item ORIGIN_HEAD;
+	
+	public static RegistryObject<Item> PYRODES_AXE;//
+	public static RegistryObject<Item> PYRODES_PICKAXE;
+	public static RegistryObject<Item> PYRODES_SWORD;
+	public static RegistryObject<Item> PYRODES_SHOVEL;
+	public static RegistryObject<Item> PYRODES_HOE;
 
-	public static RegistryObject<Item> FOOD1;	
+	public static RegistryObject<Item> HEAVY_AXE;//
+	public static RegistryObject<Item> HEAVY_PICKAXE;
+	public static RegistryObject<Item> HEAVY_SWORD;
+	public static RegistryObject<Item> HEAVY_SHOVEL;
+	public static RegistryObject<Item> HEAVY_HOE;
+
+	public static RegistryObject<Item> NIXIUM_AXE;//
+	public static RegistryObject<Item> NIXIUM_PICKAXE;
+	public static RegistryObject<Item> NIXIUM_SWORD;
+	public static RegistryObject<Item> NIXIUM_SHOVEL;
+	public static RegistryObject<Item> NIXIUM_HOE;
+
+	public static RegistryObject<Item> TENIUM_AXE;//
+	public static RegistryObject<Item> TENIUM_PICKAXE;
+	public static RegistryObject<Item> TENIUM_SWORD;
+	public static RegistryObject<Item> TENIUM_SHOVEL;
+	public static RegistryObject<Item> TENIUM_HOE;
+	
+	public static RegistryObject<Item> FOOD1;//	
 	
 	public static void init() {
 
@@ -130,58 +225,78 @@ public class TirphycraftItems {
 		ORIGIN_CHEST	= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.CHEST);
 		ORIGIN_HEAD		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.HEAD);
 		
-		addItemClass("anti_amulet", AmuletAnti::new);
+		AMULET_ANTI = addItemClass("anti_amulet", AmuletAnti::new);
 
-		addItemClass("amulet_1_health", AmuletHealth1::new);
-		addItemClass("amulet_2_health", AmuletHealth2::new);
-		addItemClass("amulet_3_health", AmuletHealth3::new);
+		AMULET_HEALTH_2 = addItemClass("amulet_2_health", AmuletHealth2::new);
+		AMULET_HEALTH_3 = addItemClass("amulet_3_health", AmuletHealth3::new);
+		AMULET_HEALTH_1 = addItemClass("amulet_1_health", AmuletHealth1::new);
 
-		addItemClass("amulet_1_attack", AmuletAttack1::new);
-		addItemClass("amulet_2_attack", AmuletAttack2::new);
-		addItemClass("amulet_3_attack", AmuletAttack3::new);
+		AMULET_ATTACK_2 = addItemClass("amulet_2_attack", AmuletAttack2::new);
+		AMULET_ATTACK_3 = addItemClass("amulet_3_attack", AmuletAttack3::new);
+		AMULET_ATTACK_1 = addItemClass("amulet_1_attack", AmuletAttack1::new);
 
-		addItemClass("amulet_1_speed", AmuletSpeed1::new);
-		addItemClass("amulet_2_speed", AmuletSpeed2::new);
-		addItemClass("amulet_3_speed", AmuletSpeed3::new);
+		AMULET_SPEED_2 = addItemClass("amulet_2_speed", AmuletSpeed2::new);
+		AMULET_SPEED_3 = addItemClass("amulet_3_speed", AmuletSpeed3::new);
+		AMULET_SPEED_1 = addItemClass("amulet_1_speed", AmuletSpeed1::new);
 
-		addItemClass("debug", Debug::new);
+		DEBUG = addItemClass("debug", Debug::new);
 		
-		addItemClass("totem_levitation", TotemLevitation::new);
-		addItemClass("totem_thunder", TotemThunder::new);
+		TOTEM_LEVITATION = addItemClass("totem_levitation", TotemLevitation::new);
+		TOTEM_THUNDER = addItemClass("totem_thunder", TotemThunder::new);
 
 		TENIUM_INGOT = addItemClass("tenium_ingot", ItemShiny::new);
 		
-		addItemClass("queen_heart", ItemShiny::new);
-		addItemClass("ankh", ItemShiny::new);
-		addItemClass("poseidon_eye", ItemShiny::new);
 
-		addItemClass("staff_1_heal", StaffHeal1::new);
-		addItemClass("staff_2_heal", StaffHeal2::new);
-		addItemClass("staff_3_heal", StaffHeal3::new);
-		addItemClass("staff_1_teleportation", StaffTeleportation1::new);
-		addItemClass("staff_2_teleportation", StaffTeleportation2::new);
-		addItemClass("staff_3_teleportation", StaffTeleportation3::new);
-		addItemClass("staff_1_explosion", StaffExplosion1::new);
-		addItemClass("staff_2_explosion", StaffExplosion2::new);
-		addItemClass("staff_3_explosion", StaffExplosion3::new);
-		addItemClass("staff_1_fireball", StaffFireBall1::new);
-		addItemClass("staff_2_fireball", StaffFireBall2::new);
-		addItemClass("staff_3_fireball", StaffFireBall3::new);
-		
-		addItemClass("return_clock",ClockReturn::new);
-		addItemClass("noxis_clock",ClockNoxis::new);
-		addItemClass("laputa_clock", ClockLaputa::new);
-		addItemClass("gosyn_clock",ClockGosyn::new);
-		addItemClass("froz_clock",ClockFroz::new);
+		QUEEN_HEART = addItemClass("queen_heart", ItemShiny::new);
+		ANKH = addItemClass("ankh", ItemShiny::new);
+		POSEIDON_EYE = addItemClass("poseidon_eye", ItemShiny::new);
 
-		addItemClass("sun_tear", ArtefactSunTear::new);
-		addItemClass("feather_of_light", ArtefactFeatherOfLight::new);
+		STAFF_1_HEAL = addItemClass("staff_1_heal", StaffHeal1::new);
+		STAFF_2_HEAL = addItemClass("staff_2_heal", StaffHeal2::new);
+		STAFF_3_HEAL = addItemClass("staff_3_heal", StaffHeal3::new);
+		STAFF_1_TELEPORTATION = addItemClass("staff_1_teleportation", StaffTeleportation1::new);
+		STAFF_2_TELEPORTATION = addItemClass("staff_2_teleportation", StaffTeleportation2::new);
+		STAFF_3_TELEPORTATION = addItemClass("staff_3_teleportation", StaffTeleportation3::new);
+		STAFF_1_EXPLOSION = addItemClass("staff_1_explosion", StaffExplosion1::new);
+		STAFF_2_EXPLOSION = addItemClass("staff_2_explosion", StaffExplosion2::new);
+		STAFF_3_EXPLOSION = addItemClass("staff_3_explosion", StaffExplosion3::new);
+		STAFF_1_FIREBALL = addItemClass("staff_1_fireball", StaffFireBall1::new);
+		STAFF_2_FIREBALL = addItemClass("staff_2_fireball", StaffFireBall2::new);
+		STAFF_3_FIREBALL = addItemClass("staff_3_fireball", StaffFireBall3::new);
+		
+		RETURN_CLOCK = addItemClass("return_clock",ClockReturn::new);
+		NOXIS_CLOCK = addItemClass("noxis_clock",ClockNoxis::new);
+		LAPUTA_CLOCK = addItemClass("laputa_clock", ClockLaputa::new);
+		GOSYN_CLOCK = addItemClass("gosyn_clock",ClockGosyn::new);
+		FROZ_CLOCK = addItemClass("froz_clock",ClockFroz::new);
+
+		SUN_TEAR = addItemClass("sun_tear", ArtefactSunTear::new);
+		FEATHER_OF_LIGHT = addItemClass("feather_of_light", ArtefactFeatherOfLight::new);
 		
 		
-		addTools("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
-		addTools("heavy", TirphycraftToolTiers.HEAVY_TOOL);
-		addTools("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
-		addTools("tenium", TirphycraftToolTiers.TENIUM_TOOL);
+		PYRODES_AXE = addAxe("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
+		PYRODES_PICKAXE = addPickaxe("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
+		PYRODES_SWORD = addSword("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
+		PYRODES_SHOVEL = addShovel("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
+		PYRODES_HOE = addHoe("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
+		
+		HEAVY_AXE = addAxe("heavy", TirphycraftToolTiers.HEAVY_TOOL);
+		HEAVY_PICKAXE = addPickaxe("heavy", TirphycraftToolTiers.HEAVY_TOOL);
+		HEAVY_SWORD = addSword("heavy", TirphycraftToolTiers.HEAVY_TOOL);
+		HEAVY_SHOVEL = addShovel("heavy", TirphycraftToolTiers.HEAVY_TOOL);
+		HEAVY_HOE = addHoe("heavy", TirphycraftToolTiers.HEAVY_TOOL);
+
+		NIXIUM_AXE = addAxe("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
+		NIXIUM_PICKAXE = addPickaxe("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
+		NIXIUM_SWORD = addSword("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
+		NIXIUM_SHOVEL = addShovel("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
+		NIXIUM_HOE = addHoe("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
+
+		TENIUM_AXE = addAxe("tenium", TirphycraftToolTiers.TENIUM_TOOL);
+		TENIUM_PICKAXE = addPickaxe("tenium", TirphycraftToolTiers.TENIUM_TOOL);
+		TENIUM_SWORD = addSword("tenium", TirphycraftToolTiers.TENIUM_TOOL);
+		TENIUM_SHOVEL = addShovel("tenium", TirphycraftToolTiers.TENIUM_TOOL);
+		TENIUM_HOE = addHoe("tenium", TirphycraftToolTiers.TENIUM_TOOL);
 
 		addArmor("pyrodes", PYRODES_FEET, PYRODES_LEGS, PYRODES_CHEST, PYRODES_HEAD);
 		addArmor("heavy", HEAVY_FEET, HEAVY_LEGS, HEAVY_CHEST, HEAVY_HEAD);
@@ -197,39 +312,39 @@ public class TirphycraftItems {
 		FRAGMENT_YELLOW	= addSimpleItem("fragment_yellow", 1);
 		
 		// ITEMS
-		addSimpleItem("crystal", 64);
-		addSimpleItem("crystal_purodes", 64);
+		CRYSTAL = addSimpleItem("crystal", 64);
+		CRYSTAL_PURODES = addSimpleItem("crystal_purodes", 64);
 		
-		CRYSTAL_PYRODES = addSimpleItem("poly_crystal_pyrodes", 64);
-		addSimpleItem("coal_on_coke", 64);
 		HEAVY_INGOT  = addSimpleItem("heavy_ingot", 64);
 		NIXIUM_INGOT = addSimpleItem("nixium_ingot", 64);
 		ROSE_SHARD   = addSimpleItem("blue_rose_shard", 64);
-		addSimpleItem("diamond_nugget", 64);
-		addSimpleItem("mummy_wraps", 16);
-		addSimpleItem("empty_syringe", 64);
-		addSimpleItem("blue_rose_petal", 64);
-		addSimpleItem("froz_key", 3);
-		addSimpleItem("origin_matter", 64);
-		ORIGIN_INGOT = addSimpleItem("origin_ingot", 64);
-		addSimpleItem("explosion_core", 64);
-		addSimpleItem("sea_core", 64);
-		addSimpleItem("life_core", 64);
-
-		addSimpleItem("stick_crystal", 64);
-		addSimpleItem("stick_coppir", 64);
-		addSimpleItem("stick_silvir", 64);
-		addSimpleItem("stick_goldir", 64);
-
-		addSimpleFood("frozen_buffalo_raw", 2);
-		addSimpleFood("frozen_buffalo", 9);
-		addSimpleFood("frozen_boarchop_raw", 2);
-		addSimpleFood("frozen_boarchop", 9);
-		addSimpleFood("fruit_ball_red", 1);
-		addSimpleFood("fruit_ball_blue", 1);
-		addSimpleFood("fruit_ball_green", 1);
+		CRYSTAL_PYRODES = addSimpleItem("poly_crystal_pyrodes", 64);
+		
+		COAL_ON_COKE = addSimpleItem("coal_on_coke", 64);
+		DIAMOND_NUGGET = addSimpleItem("diamond_nugget", 64);
+		MUMMY_WRAPS = addSimpleItem("mummy_wraps", 16);
+		EMPTY_SYRINGE = addSimpleItem("empty_syringe", 64);
+		BLUE_ROSE_PETAL = addSimpleItem("blue_rose_petal", 64);
+		FROZ_KEY = addSimpleItem("froz_key", 3);
+		ORIGIN_MATTER = addSimpleItem("origin_matter", 64);
+		EXPLOSION_CORE = addSimpleItem("explosion_core", 64);
+		SEA_CORE = addSimpleItem("sea_core", 64);
+		LIFE_CORE = addSimpleItem("life_core", 64);
+		STICK_CRYSTAL = addSimpleItem("stick_crystal", 64);
+		STICK_COPPIR = addSimpleItem("stick_coppir", 64);
+		STICK_SILVIR = addSimpleItem("stick_silvir", 64);
+		STICK_GOLDIR = addSimpleItem("stick_goldir", 64);
+		FROZEN_BUFFALO_RAW = addSimpleFood("frozen_buffalo_raw", 2);
+		FROZEN_BUFFALO = addSimpleFood("frozen_buffalo", 9);
+		FROZEN_BOARCHOP_RAW = addSimpleFood("frozen_boarchop_raw", 2);
+		FROZEN_BOARCHOP = addSimpleFood("frozen_boarchop", 9);
+		FRUIT_BALL_RED = addSimpleFood("fruit_ball_red", 1);
+		FRUIT_BALL_BLUE = addSimpleFood("fruit_ball_blue", 1);
+		FRUIT_BALL_GREEN = addSimpleFood("fruit_ball_green", 1);
+		KIWI = addSimpleFood("kiwi", 1);
+		
 		FOOD1 = addSimpleFood("donangoblu_fruit", 2);
-		addSimpleFood("kiwi", 1);
+		ORIGIN_INGOT = addSimpleItem("origin_ingot", 64);
 	}
 
 }

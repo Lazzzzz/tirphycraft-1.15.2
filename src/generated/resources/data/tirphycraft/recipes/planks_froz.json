@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:log_froz"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:planks_froz",
+    "count": 4
+  }
+}

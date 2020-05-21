@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:planks_silvir"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:stick_silvir",
+    "count": 4
+  }
+}

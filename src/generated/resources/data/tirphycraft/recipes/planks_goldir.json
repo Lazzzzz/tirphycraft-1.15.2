@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:log_goldir"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:planks_goldir",
+    "count": 4
+  }
+}

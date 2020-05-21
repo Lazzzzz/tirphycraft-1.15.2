@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:noxis_stone"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:noxis_bricks_pillar",
+    "count": 2
+  }
+}

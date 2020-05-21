@@ -6,6 +6,8 @@ import net.minecraft.world.gen.OverworldGenSettings;
 
 public class FrozGenSettings extends OverworldGenSettings {
 
+	private final int field_202215_m = 0;
+	
 	public FrozGenSettings(){
         this.defaultBlock = TirphycraftBlocks.FROZ_STONE.get().getDefaultState();
         this.defaultFluid = Blocks.ICE.getDefaultState();

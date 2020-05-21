@@ -49,7 +49,7 @@ public class GiantPillarFeature extends UnderGroundFeature {
 		if (size < 3)
 			return false;
 
-		int s = (int) Math.min((size / (2)), size - (hole / 2) - 1);
+		int s = Math.max((int) Math.min((size / (2)), size - (hole / 2) - 1), 1);
 
 		generatePickTop(worldIn, rand, pos.add(1, 0, 0), rand.nextInt(s));
 		generatePickTop(worldIn, rand, pos.add(-1, 0, 0), rand.nextInt(s));

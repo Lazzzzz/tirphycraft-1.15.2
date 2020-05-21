@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:laputa_stone"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:brick_laputa",
+    "count": 4
+  }
+}

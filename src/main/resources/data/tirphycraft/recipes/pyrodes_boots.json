@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:poly_crystal_pyrodes"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:pyrodes_boots"
+  }
+}

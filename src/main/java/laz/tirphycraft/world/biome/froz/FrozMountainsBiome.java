@@ -12,5 +12,9 @@ public class FrozMountainsBiome extends FrozBiome {
 		super(builder);
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZEN_SPIKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(4))));
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.BLACK_SPIKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.FROZ_BUSH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 	}
 }

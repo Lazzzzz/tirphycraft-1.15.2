@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tirphycraft:ore_tenium"
+  },
+  "result": "tirphycraft:tenium_ingot",
+  "experience": 0.1,
+  "cookingtime": 200
+}

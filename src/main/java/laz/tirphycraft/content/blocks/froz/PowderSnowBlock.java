@@ -2,6 +2,7 @@ package laz.tirphycraft.content.blocks.froz;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -16,14 +17,14 @@ public class PowderSnowBlock extends Block {
 
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-		worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
-		super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
+		if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState() || worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState()) worldIn.destroyBlock(pos, false);
+		else worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
 	}
 	
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
-		super.onEntityWalk(worldIn, pos, entityIn);
+		if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState() || worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState()) worldIn.destroyBlock(pos, false);
+		else worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
 	}
 
 }

@@ -27,10 +27,10 @@ public class GiantIcePickFeature extends Feature<IFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, IFeatureConfig config) {
-		if (position.getY() == 0 || position.getY() > 100)
+		if (position.getY() == 0 || position.getY() > 100 || rand.nextInt(5) > 0)
 			return false;
 
-		int size = rand.nextInt(50) + 10;
+		int size = rand.nextInt(30) + 10;
 		setPick(worldIn, rand, position, size);
 
 		return true;

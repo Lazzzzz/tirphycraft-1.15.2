@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:froz_stone"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:brick_froz",
+    "count": 4
+  }
+}

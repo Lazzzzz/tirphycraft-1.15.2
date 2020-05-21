@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:crystal"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:stick_crystal",
+    "count": 4
+  }
+}

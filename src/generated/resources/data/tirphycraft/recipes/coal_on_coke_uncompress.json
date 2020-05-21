@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:block_coal_on_coke"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:coal_on_coke",
+    "count": 9
+  }
+}

@@ -13,6 +13,15 @@ public class FrozIcePlains extends FrozBiome {
         super(builder);
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_BIG_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.SNOW_TRAP.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.GIANT_ICE_PICK.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.FROZ_BUSH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(2))));
     }
 
 }
