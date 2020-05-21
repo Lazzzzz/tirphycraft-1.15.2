@@ -24,7 +24,7 @@ public class NoxisDeadBushFeature extends Feature<NoFeatureConfig>{
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 		if (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK) return false;
-		else setBlockState(worldIn, pos, TirphycraftBlocks.LAPUTA_FLOWER7.get().getDefaultState());
+		else setBlockState(worldIn, pos, TirphycraftBlocks.NOXIS_FLOWER1.get().getDefaultState());
 		return false;
 	}
 

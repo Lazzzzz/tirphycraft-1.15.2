@@ -111,7 +111,7 @@ public class TirphyLootsBlock extends BlockLootTables {
         this.registerSilkTouch(TirphycraftBlocks.LAPUTA_FLOWER4.getBlock());
         this.registerSilkTouch(TirphycraftBlocks.LAPUTA_FLOWER5.getBlock());
         this.registerSilkTouch(TirphycraftBlocks.LAPUTA_FLOWER6.getBlock());
-        this.registerSilkTouch(TirphycraftBlocks.LAPUTA_FLOWER7.getBlock());
+        this.registerSilkTouch(TirphycraftBlocks.NOXIS_FLOWER1.getBlock());
         this.registerSilkTouch(TirphycraftBlocks.PETAL_BLUE.getBlock());
         this.registerSilkTouch(TirphycraftBlocks.PETAL_GREEN.getBlock());
         this.registerSilkTouch(TirphycraftBlocks.PETAL_PURPLE.getBlock());

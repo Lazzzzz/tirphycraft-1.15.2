@@ -85,9 +85,9 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 						if (player != null) {
 							ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
 							DimensionType dimensionType = DimensionManager.registerOrGetDimension(
-									new ResourceLocation(MOD_ID, "froz_dim"), FROZ_DIM.get(), null, true);
+									new ResourceLocation(MOD_ID, "noxis_dim"), FROZ_DIM.get(), null, true);
 							ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-							playerEntity.teleport(targetWorld, pos.getX(), 255, pos.getZ(), player.rotationYaw,
+							playerEntity.teleport(targetWorld, 0, 255, 0, player.rotationYaw,
 									player.rotationPitch);
 							BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
 							player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());

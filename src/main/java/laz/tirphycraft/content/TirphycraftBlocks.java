@@ -12,6 +12,7 @@ import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
 import laz.tirphycraft.content.blocks.noxis.NoxisThornsBlock;
 import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
 import laz.tirphycraft.content.blocks.plants.TirphycraftSapling;
+import laz.tirphycraft.content.blocks.teleporter.TeleporterFrozBlock;
 import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.util.TirphyColor;
@@ -65,6 +66,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SILVIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_GOLDIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_FROZ;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SKY;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_DEAD;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_MUSHROOM;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_STEM;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PLANKS_COPPIR;//
@@ -90,7 +92,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER3;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER4;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER5;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER6;//
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER7;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_FLOWER1;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_FLOWER1;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_BLUE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_GREEN;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_PURPLE;//
@@ -116,8 +119,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_NOXIS;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_STONE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_LAPUTA;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_FROZ;//
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_ROSE;
 
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_TELEPORTER;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 
@@ -153,6 +156,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        LOG_SKY		= addBlockClass("log_sky", 		() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_MUSHROOM = addBlockClass("log_mushroom", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        LOG_STEM 	= addBlockClass("log_stem", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+       LOG_DEAD 	= addBlockClass("log_dead", 	() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
        
        PLANKS_COPPIR = addCubedBlock("planks_coppir", 	Block.Properties.from(Blocks.OAK_PLANKS));
        PLANKS_SILVIR = addCubedBlock("planks_silvir", 	Block.Properties.from(Blocks.OAK_PLANKS));
@@ -178,7 +182,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        LAPUTA_FLOWER4 = addBlockClass("laputa_hydra_flower", () -> new TirphycraftPlants(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
        LAPUTA_FLOWER5 = addBlockClass("laputa_bush", () -> new LaputaBushBlock(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
        LAPUTA_FLOWER6 = addBlockClass("laputa_tall_grass", () -> new LaputaTallGrassBlock(Effects.SATURATION, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-       LAPUTA_FLOWER7 = addBlockClass("noxis_thorns", () -> new NoxisThornsBlock(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
+       NOXIS_FLOWER1 = addBlockClass("noxis_thorns", () -> new NoxisThornsBlock(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
 
        PETAL_BLUE = addCubedBlock("petal_block_blue", Block.Properties.from(Blocks.CACTUS));    
        PETAL_RED = addCubedBlock("petal_block_red", Block.Properties.from(Blocks.CACTUS));    
@@ -224,8 +228,11 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
+    
+       FROZ_TELEPORTER = addBlockClass("froz_teleporter", () -> new TeleporterFrozBlock());
 
-        ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
+       
+       ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
     }
 
 }

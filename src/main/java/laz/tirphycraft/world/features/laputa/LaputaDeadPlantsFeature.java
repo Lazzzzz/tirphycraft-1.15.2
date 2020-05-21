@@ -24,7 +24,7 @@ public class LaputaDeadPlantsFeature extends Feature<NoFeatureConfig> {
 			BlockPos pos, NoFeatureConfig config) {
 		if (worldIn.getBlockState(pos.down()) == TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState()) {
 			if (rand.nextInt(10) < 8) {
-				setBlockState(worldIn, pos, TirphycraftBlocks.LAPUTA_FLOWER7.get().getDefaultState());
+				setBlockState(worldIn, pos, TirphycraftBlocks.NOXIS_FLOWER1.get().getDefaultState());
 			} else {
 				setBlockState(worldIn, pos, TirphycraftBlocks.LAPUTA_FLOWER2.get().getDefaultState());
 			}
