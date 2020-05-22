@@ -1,0 +1,15 @@
+{
+	"variants": 
+	{
+		"axis=z": 
+		{
+			"model": "tirphycraft:block/portal/laputa_portal",
+			"y": 90
+		},
+
+		"axis=x": 
+		{
+			"model": "tirphycraft:block/portal/laputa_portal"
+		}
+	}
+}

@@ -55,7 +55,7 @@ public class LaputaDimension extends Dimension {
 
 	@Override
 	public boolean isSurfaceWorld() {
-		return false;
+		return true;
 	}
 
 	@OnlyIn(Dist.CLIENT)

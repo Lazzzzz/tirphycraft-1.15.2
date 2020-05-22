@@ -42,7 +42,7 @@ public class ClockLaputa extends Item {
 				dimensionType = t;
 	            targetWorld = playerEntity.getServer().getWorld(dimensionType);
 	            playerEntity.teleport(targetWorld, player.getPosX() ,player.getPosY(), player.getPosZ(), player.rotationYaw, player.rotationPitch);
-			} else player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
+			} else 	player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
         }
         return ActionResult.resultPass(stack);
     }

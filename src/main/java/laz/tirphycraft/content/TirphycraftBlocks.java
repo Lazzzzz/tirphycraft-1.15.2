@@ -2,6 +2,7 @@ package laz.tirphycraft.content;
 
 import static laz.tirphycraft.content.TirphycraftRegistries.addBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
+import static laz.tirphycraft.content.TirphycraftRegistries.addOnlyBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTileEntity;
 
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
@@ -12,7 +13,10 @@ import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
 import laz.tirphycraft.content.blocks.noxis.NoxisThornsBlock;
 import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
 import laz.tirphycraft.content.blocks.plants.TirphycraftSapling;
-import laz.tirphycraft.content.blocks.teleporter.TeleporterFrozBlock;
+import laz.tirphycraft.content.blocks.teleporter.froz.TeleporterFrozBlock;
+import laz.tirphycraft.content.blocks.teleporter.froz.__TeleporterFrozBlock;
+import laz.tirphycraft.content.blocks.teleporter.laputa.TeleporterLaputaBlock;
+import laz.tirphycraft.content.blocks.teleporter.laputa.__TeleporterLaputaBlock;
 import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.util.TirphyColor;
@@ -121,6 +125,10 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_LAPUTA;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_FROZ;//
 
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_TELEPORTER;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> __FROZ_TELEPORTER;
+
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_TELEPORTER;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 
@@ -229,8 +237,12 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
     
-       FROZ_TELEPORTER = addBlockClass("froz_teleporter", () -> new TeleporterFrozBlock());
-
+       FROZ_TELEPORTER = addOnlyBlockClass("froz_portal", () -> new TeleporterFrozBlock());
+       __FROZ_TELEPORTER = addOnlyBlockClass("froz_portal_null", () -> new __TeleporterFrozBlock());
+       
+       LAPUTA_TELEPORTER = addOnlyBlockClass("laputa_portal", () -> new TeleporterLaputaBlock());
+       __LAPUTA_TELEPORTER = addOnlyBlockClass("laputa_portal_null", () -> new __TeleporterLaputaBlock());
+       
        
        ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
     }
