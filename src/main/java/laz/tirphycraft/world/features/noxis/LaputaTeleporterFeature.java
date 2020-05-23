@@ -30,10 +30,11 @@ public class LaputaTeleporterFeature extends Feature<NoFeatureConfig> {
 			BlockPos pos, NoFeatureConfig config) {
 
 		BlockState PORTAL = TirphycraftBlocks.LAPUTA_TELEPORTER.get().getDefaultState();
+		BlockState PORTAL_ = TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState();
 		
 		pos = worldIn.getHeight(Type.WORLD_SURFACE, pos).down();
-		if (worldIn.getBlockState(pos.down(2)) == PORTAL)
-			return false;
+		System.out.println(worldIn.getBlockState(pos.down(2)));
+		if (worldIn.getBlockState(pos.down(2)) == PORTAL || worldIn.getBlockState(pos.down(2)) == PORTAL_) return false;
 
 		int radius = 8;
 		for (int i = -radius; i <= radius; i++) {
@@ -79,7 +80,7 @@ public class LaputaTeleporterFeature extends Feature<NoFeatureConfig> {
 		for (int i = -1; i < 2; i++) {
 			for (int j = -1; j < 2; j++) {
 				if (!(i == 0 && j == 0))
-					setBlockState(worldIn, pos.add(i, j+2, 0), TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState());
+					setBlockState(worldIn, pos.add(i, j+2, 0), PORTAL_);
 
 			}
 		}
