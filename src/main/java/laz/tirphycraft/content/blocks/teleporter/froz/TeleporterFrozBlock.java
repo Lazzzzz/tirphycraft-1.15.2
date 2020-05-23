@@ -38,7 +38,7 @@ public class TeleporterFrozBlock extends Block {
 
 	public TeleporterFrozBlock() {
 		super(Block.Properties.create(Material.GLASS).doesNotBlockMovement().noDrops().tickRandomly()
-				.hardnessAndResistance(-1.0F));
+				.hardnessAndResistance(-1.0F, 3600000.0F));
 		this.setDefaultState(this.stateContainer.getBaseState().with(AXIS, Direction.Axis.X));
 	}
 
@@ -55,28 +55,6 @@ public class TeleporterFrozBlock extends Block {
 	}
 	
 
-	@Override
-	public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-		if (state == this.getDefaultState()) {
-			for (int i = -1; i < 2; i++) {
-				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0))
-						worldIn.setBlockState(pos.add(i, j, 0), TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState());
-
-				}
-			}
-		} else {
-			for (int i = -1; i < 2; i++) {
-				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0))
-						worldIn.setBlockState(pos.add(i, j, 0), TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState());
-				}
-			}
-
-		}
-		super.onBlockAdded(state, worldIn, pos, oldState, isMoving);
-	}
-	
 	@Override
 	public void onPlayerDestroy(IWorld worldIn, BlockPos pos, BlockState state) {
 		if (state == this.getDefaultState()) {

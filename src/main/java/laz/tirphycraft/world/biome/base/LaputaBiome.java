@@ -24,7 +24,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 public class LaputaBiome extends Biome {
 
 	protected LaputaBiome() {
-		super(new Biome.Builder().precipitation(RainType.NONE).scale(0.3f).temperature(5f).waterColor(3093151)
+		super(new Biome.Builder().precipitation(RainType.NONE).scale(0.01f).temperature(5f).waterColor(3093151)
 				.waterFogColor(3093151).category(Category.PLAINS).downfall(0).depth(1.2f)
 				.surfaceBuilder(SurfaceBuilder.DEFAULT,
 						new SurfaceBuilderConfig(TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState(),

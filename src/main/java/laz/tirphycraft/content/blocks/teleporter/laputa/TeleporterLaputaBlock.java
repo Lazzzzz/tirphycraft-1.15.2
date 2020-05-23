@@ -1,22 +1,18 @@
 package laz.tirphycraft.content.blocks.teleporter.laputa;
 
-import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.LAPUTA_DIM;
-
 import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.util.TirphyLaputaTeleporter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -24,10 +20,6 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.gen.Heightmap.Type;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.common.DimensionManager;
 
 public class TeleporterLaputaBlock extends Block {
 
@@ -37,7 +29,7 @@ public class TeleporterLaputaBlock extends Block {
 
 	public TeleporterLaputaBlock() {
 		super(Block.Properties.create(Material.GLASS).doesNotBlockMovement().noDrops().tickRandomly()
-				.hardnessAndResistance(-1.0F));
+				.hardnessAndResistance(-1.0F, 3600000.0F));
 		this.setDefaultState(this.stateContainer.getBaseState().with(AXIS, Direction.Axis.X));
 	}
 
@@ -51,29 +43,6 @@ public class TeleporterLaputaBlock extends Block {
 		default:
 			return X_AABB;
 		}
-	}
-	
-
-	@Override
-	public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-		if (state == this.getDefaultState()) {
-			for (int i = -1; i < 2; i++) {
-				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0))
-						worldIn.setBlockState(pos.add(i, j, 0), TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState());
-
-				}
-			}
-		} else {
-			for (int i = -1; i < 2; i++) {
-				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0))
-						worldIn.setBlockState(pos.add(i, j, 0), TirphycraftBlocks.__LAPUTA_TELEPORTER.get().getDefaultState());
-				}
-			}
-
-		}
-		super.onBlockAdded(state, worldIn, pos, oldState, isMoving);
 	}
 	
 	@Override
@@ -130,22 +99,8 @@ public class TeleporterLaputaBlock extends Block {
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) entityIn;
-			if (!worldIn.isRemote()) {
-				ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
-	            DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "laputa_dim"), LAPUTA_DIM.get(), null, true);
-	            ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-				playerEntity.teleport(targetWorld, player.getPosX(), 255, player.getPosZ(), player.rotationYaw,	player.rotationPitch);
-				BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
-				if (p.getY() > 3) player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
-				else {
-					p = new BlockPos(player.getPosX(), 65, player.getPosZ());
-					makePlatform(worldIn, p);
-					player.setPositionAndUpdate(p.getX(), p.getY()+1, p.getZ());
-				}
-			}
-
+	        TirphyLaputaTeleporter.teleport(worldIn, player);
 		}
-
 		super.onEntityCollision(state, worldIn, pos, entityIn);
 	}
 	

@@ -30,10 +30,6 @@ public class __TeleporterLaputaBlock extends TeleporterLaputaBlock {
 
 	
 	@Override
-	public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-	}
-	
-	@Override
 	public void onPlayerDestroy(IWorld worldIn, BlockPos pos, BlockState state) {
 	}
 

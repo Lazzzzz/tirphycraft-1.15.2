@@ -9,6 +9,7 @@ import laz.tirphycraft.world.features.froz.trees.FrozBushFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozRootFeature;
 import laz.tirphycraft.world.features.froz.underground.GiantPillarFeature;
 import laz.tirphycraft.world.features.froz.underground.SnowTrapFeature;
+import laz.tirphycraft.world.features.noxis.FrozTeleporterFeature;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,7 @@ public class Debug extends Item {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		if (!worldIn.isRemote)
-			new FlatRockFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+			new FrozTeleporterFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 					.place(worldIn, null, new Random(), playerIn.getPosition());
 
 		return super.onItemRightClick(worldIn, playerIn, handIn);

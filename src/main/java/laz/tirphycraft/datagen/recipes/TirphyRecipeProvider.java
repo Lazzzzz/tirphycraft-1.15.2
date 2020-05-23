@@ -358,7 +358,7 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		
 		ShapedRecipeBuilder.shapedRecipe(TirphycraftItems.NOXIS_CLOCK.get(), 1)
 		.key('X', Items.CLOCK)
-		.key('Y', TirphycraftItems.NIXIUM_INGOT.get())
+		.key('Y', TirphycraftBlocks.NOXIS_COBBLESTONE.getItem())
 		.patternLine(" Y ")
 		.patternLine("YXY")
 		.patternLine(" Y ")

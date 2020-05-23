@@ -18,8 +18,12 @@ public class NoxisMainBiome extends NoxisBiome {
     @Override
     public void decorate(Decoration stage, ChunkGenerator<? extends GenerationSettings> chunkGenerator, IWorld worldIn,
     		long seed, SharedSeedRandom random, BlockPos pos) {
-    	if (pos.getX() == 16 && pos.getZ() == 16) {
+    	if (pos.getX() == 0 && pos.getZ() == -32) {
     		Features.FROZ_TELEPORTER.place(worldIn, chunkGenerator, random, pos);
+    	}
+    	
+    	if (pos.getX() == 0 && pos.getZ() == 32) {
+    		Features.LAPUTA_TELEPORTER.place(worldIn, chunkGenerator, random, pos);
     	}
     	super.decorate(stage, chunkGenerator, worldIn, seed, random, pos);
     }

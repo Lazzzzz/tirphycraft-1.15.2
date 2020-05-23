@@ -38,6 +38,10 @@ public class TirphyLootsBlock extends BlockLootTables {
         this.registerLootTable(TirphycraftBlocks.FROZ_STONE.getBlock(), (p_218490_0_) -> {
             return droppingWithSilkTouch(p_218490_0_, TirphycraftBlocks.FROZ_COBBLESTONE.getBlock());
          });
+        
+        this.registerLootTable(TirphycraftBlocks.LOG_DEAD.getBlock(), (p_218490_0_) -> {
+            return droppingWithSilkTouch(p_218490_0_, TirphycraftBlocks.LOG_DEAD.getBlock());
+         });
         this.registerLootTable(TirphycraftBlocks.LAPUTA_STONE.getBlock(), (p_218490_0_) -> {
             return droppingWithSilkTouch(p_218490_0_, TirphycraftBlocks.LAPUTA_COBBLESTONE.getBlock());
          });       
