@@ -15,5 +15,6 @@ public class TirphycraftEntities {
 		ENTITY_KRETUN = TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity",
 				() -> EntityType.Builder.<EntityKretun>create(EntityKretun::new, EntityClassification.CREATURE)
 						.size(1f, 1f).build(new ResourceLocation(Tirphycraft.MOD_ID, "kretun_entity").toString()));
+		
 	}
 }

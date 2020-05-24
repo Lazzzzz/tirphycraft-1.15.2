@@ -14,6 +14,7 @@ public class EntityKretunRender extends MobRenderer<EntityKretun, EntityKretunMo
 	public EntityKretunRender(EntityRendererManager manager, EntityKretunModel<EntityKretun> model) {
 		super(manager, model, 0.0f);
 		this.entityModel = model;
+		
 	}
 
 	@Override

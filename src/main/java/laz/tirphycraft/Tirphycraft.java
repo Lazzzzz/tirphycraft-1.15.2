@@ -116,6 +116,7 @@ public class Tirphycraft {
 
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_KRETUN.get(),
 				m -> new EntityKretunRender(m, new EntityKretunModel<>()));
+		
 
 	}
 

@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class EntityKretun extends CreatureEntity {
 	
 	public boolean bite = false; //model animation
-	public float step = 0.01f;   //model animation
+	public float step = 0.01f; //model animation
 	
 	public EntityKretun(EntityType<? extends EntityKretun> entityType, World world) {
 		 super(entityType, world);
