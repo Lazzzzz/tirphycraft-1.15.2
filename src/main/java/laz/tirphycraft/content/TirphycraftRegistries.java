@@ -80,6 +80,7 @@ public class TirphycraftRegistries {
 		TirphycraftTiles.init();
 		TirphycraftDimensions.init();
 		TirphycraftBiomes.init();
+		TirphycraftEntities.init();
 
 		register(eventBus);
 	}
@@ -202,7 +203,7 @@ public class TirphycraftRegistries {
 		BIOMES_INT = ++BIOMES_INT;
 		return BIOMELIST[BIOMES_INT] = TIRPH_BIOMES.register(name, biomeSupplier);
 	}
-
+	
 	public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> addTileEntity(String name,
 			Supplier<Block> blockSupplier, Supplier<TileEntity> tileSupplier) {
 		TILE_INT = ++TILE_INT;
@@ -220,5 +221,5 @@ public class TirphycraftRegistries {
 	private static <B extends Block> Function<B, BlockItem> tileItemCreator(int size) {
 		return block -> new BlockItem(block, new Item.Properties().maxStackSize(size).group(ITEM_GROUP));
 	}
-
+	
 }

@@ -5,6 +5,7 @@ import laz.tirphycraft.world.biome.surfaceBuilder.DeepTopLayerSurfaceBuilder;
 import laz.tirphycraft.world.features.froz.GiantIcePickFeature;
 import laz.tirphycraft.world.features.froz.IceCrystalFeature;
 import laz.tirphycraft.world.features.froz.IcePillarFeature;
+import laz.tirphycraft.world.features.froz.MajesticRoseFeature;
 import laz.tirphycraft.world.features.froz.MountainsCrystalFeature;
 import laz.tirphycraft.world.features.froz.SmallRockPickFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozBushFeature;
@@ -79,6 +80,7 @@ public class Features {
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_STALAGTITE		= new StalactiteFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_GIANT_PILLAR	= new GiantPillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> ROOT_TREE			= new FrozRootFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> MAJESTIC_ROSE		= new MajesticRoseFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 
 
 	

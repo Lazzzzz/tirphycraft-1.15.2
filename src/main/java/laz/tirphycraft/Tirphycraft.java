@@ -6,8 +6,10 @@ import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import laz.tirphycraft.client.render.entities.froz.EntityKretunRender;
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.TirphycraftDimensions;
+import laz.tirphycraft.content.TirphycraftEntities;
 import laz.tirphycraft.content.TirphycraftRegistries;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.world.biome.base.FrozBiome;
@@ -28,6 +30,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -96,13 +99,18 @@ public class Tirphycraft {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER4.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER5.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_FLOWER6.get(), cutout);
+		
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.NOXIS_FLOWER1.get(), cutout);
+		
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.FROZ_FLOWER1.get(), cutout);
 
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_BLUE.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_GREEN.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_WHITE.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_RED.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_YELLOW.get(), cutout);
+		
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_KRETUN.get(), EntityKretunRender::new);
 
 	}
 

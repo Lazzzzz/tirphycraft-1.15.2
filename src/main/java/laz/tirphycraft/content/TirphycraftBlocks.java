@@ -7,6 +7,7 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addTileEntity;
 
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
 import laz.tirphycraft.content.blocks.froz.PowderSnowLayerBlock;
+import laz.tirphycraft.content.blocks.froz.RosePlantsBlock;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
@@ -191,7 +192,9 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        LAPUTA_FLOWER5 = addBlockClass("laputa_bush", () -> new LaputaBushBlock(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
        LAPUTA_FLOWER6 = addBlockClass("laputa_tall_grass", () -> new LaputaTallGrassBlock(Effects.SATURATION, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
        NOXIS_FLOWER1 = addBlockClass("noxis_thorns", () -> new NoxisThornsBlock(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-
+       FROZ_FLOWER1 = addBlockClass("majestic_rose", () -> new RosePlantsBlock(Effects.SLOWNESS, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
+       
+       
        PETAL_BLUE = addCubedBlock("petal_block_blue", Block.Properties.from(Blocks.CACTUS));    
        PETAL_RED = addCubedBlock("petal_block_red", Block.Properties.from(Blocks.CACTUS));    
        PETAL_YELLOW = addCubedBlock("petal_block_yellow", Block.Properties.from(Blocks.CACTUS));    

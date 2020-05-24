@@ -35,6 +35,7 @@ import laz.tirphycraft.content.items.clocks.ClockLaputa;
 import laz.tirphycraft.content.items.clocks.ClockNoxis;
 import laz.tirphycraft.content.items.clocks.ClockReturn;
 import laz.tirphycraft.content.items.other.ItemShiny;
+import laz.tirphycraft.content.items.other.itemFuel;
 import laz.tirphycraft.content.items.staff.StaffExplosion1;
 import laz.tirphycraft.content.items.staff.StaffExplosion2;
 import laz.tirphycraft.content.items.staff.StaffExplosion3;
@@ -320,7 +321,7 @@ public class TirphycraftItems {
 		ROSE_SHARD   = addSimpleItem("blue_rose_shard", 64);
 		CRYSTAL_PYRODES = addSimpleItem("poly_crystal_pyrodes", 64);
 		
-		COAL_ON_COKE = addSimpleItem("coal_on_coke", 64);
+		COAL_ON_COKE = addItemClass("coal_on_coke", () -> new itemFuel(2400));
 		DIAMOND_NUGGET = addSimpleItem("diamond_nugget", 64);
 		MUMMY_WRAPS = addSimpleItem("mummy_wraps", 16);
 		EMPTY_SYRINGE = addSimpleItem("empty_syringe", 64);
