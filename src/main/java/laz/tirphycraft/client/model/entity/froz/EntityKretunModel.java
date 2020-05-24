@@ -4,8 +4,10 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import laz.tirphycraft.content.entities.froz.EntityKretun;
+import net.minecraft.client.renderer.entity.model.BeeModel;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.GuardianModel;
+import net.minecraft.client.renderer.entity.model.ZombieModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.model.ModelRenderer.ModelBox;
 import net.minecraft.entity.Entity;
@@ -21,7 +23,7 @@ public class EntityKretunModel<T extends EntityKretun> extends EntityModel<T> {
 	public EntityKretunModel() {
 		textureWidth = 64;
 		textureHeight = 64;
-
+		
 		Body = new ModelRenderer(this);
 		Body.setRotationPoint(0.0F, 23.0F, 0.0F);
 		Body.setTextureOffset(28, 37).addBox(-2.0F, -3.0F, -2.0F, 4, 4, 4, 0.0F, false);
@@ -76,5 +78,11 @@ public class EntityKretunModel<T extends EntityKretun> extends EntityModel<T> {
 			//System.out.println("not bite");
 			if (Leaf1.rotateAngleX > 0) Leaf1.rotateAngleX -= e.step;
 		}
+	}
+	
+	@Override
+	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
+		// TODO Auto-generated method stub
+		super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
 	}
 }
