@@ -1,5 +1,7 @@
 package laz.tirphycraft.client.model.entity.froz;
 
+import org.apache.http.util.EntityUtils;
+
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -69,7 +71,7 @@ public class EntityKretunModel<T extends EntityKretun> extends SegmentedModel<En
 	@Override
 	public void setRotationAngles(EntityKretun entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
 			float netHeadYaw, float headPitch) {
-		if (entityIn.getHealth() < 9) {
+		if (entityIn.getBite() == true) {
 			//System.out.println("bite");
 			if (this.Leaf1.rotateAngleX < 1.6) this.Leaf1.rotateAngleX += entityIn.step * 10;
 			
