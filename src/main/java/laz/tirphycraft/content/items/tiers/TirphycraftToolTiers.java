@@ -4,21 +4,31 @@ import java.util.function.Supplier;
 
 import laz.tirphycraft.content.TirphycraftItems;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 
 public enum TirphycraftToolTiers implements IItemTier {
 
-	PYRODES_TOOL(3, 2000, 10.0f, 3.5F, 15, () -> {
+	PYRODES_TOOL(3, 2000, 7.0f, 3.5F, 15, () -> {
 		return Ingredient.fromItems(TirphycraftItems.CRYSTAL_PYRODES.get());
 	}),
-	HEAVY_TOOL(2, 3500, 7.0F, 3.0F, 14, () -> {
+	HEAVY_TOOL(2, 3500, 6.0F, 3.0F, 14, () -> {
 		return Ingredient.fromItems(TirphycraftItems.HEAVY_INGOT.get());
 	}),
-	NIXIUM_TOOL(3, 2800, 15F, 6.0F, 20, () -> {
+
+	PICITE_TOOL(2, 8000, 5, 3.0F, 20, () -> {
+		return Ingredient.fromItems(TirphycraftItems.PICITE_INGOT.get());
+	}),
+	
+	HISTICE_TOOL(2, 750, 9, 1.0F, 20, () -> {
+		return Ingredient.fromItems(TirphycraftItems.HISTICE_GEM.get());
+	}),
+	
+	NIXIUM_TOOL(3, 2800, 10, 6.0F, 20, () -> {
 		return Ingredient.fromItems(TirphycraftItems.NIXIUM_INGOT.get());
 	}),
-	TENIUM_TOOL(4, 5000, 20F, 9.0F, 30, () -> {
+	TENIUM_TOOL(4, 5000, 10, 9.0F, 30, () -> {
 		return Ingredient.fromItems(TirphycraftItems.TENIUM_INGOT.get());
 	});
 

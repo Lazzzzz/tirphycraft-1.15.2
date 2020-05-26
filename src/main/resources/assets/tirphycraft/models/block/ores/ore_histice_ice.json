@@ -1,6 +1,6 @@
 {
    "parent": "block/cube_all",
    "textures": {
-       "all": "tirphycraft:blocks/histoire_ice"
+       "all": "tirphycraft:blocks/ores/ore_histice_ice"
    }
 }

@@ -45,6 +45,8 @@ public class TirphycraftBlocks {
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_PYRODES;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_HEAVY;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_NIXIUM;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_PICITE;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_HISTICE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_COAL_ON_COKE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLOCK_METEORITE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_METEORITE;//
@@ -54,6 +56,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_STONE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DIRT;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> BASALT;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZEN_CRYSTAL;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_BLUE;//
@@ -66,6 +69,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_PYRODES;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_CRYSTAL;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_NIXIUM;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_TENIUM;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_PICITE;//
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> ORE_HISTICE_ICE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_COPPIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_SILVIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LOG_GOLDIR;//
@@ -115,7 +120,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> STAIRS_COPPIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> STAIRS_SILIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> STAIRS_GOLDIR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> STAIRS_FROZ;//
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> HISTOIRE_ICE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_COBBLESTONE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_BRICKS_CARVED;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_BRICKS_PILLAR;//
@@ -127,6 +131,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_FROZ;//
 
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> __FROZ_TELEPORTER;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_PORTAL_BRICK;
+
 
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
@@ -139,7 +145,10 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        BLOCK_PYRODES = addCubedBlock("block_pyrodes", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
        BLOCK_HEAVY = addCubedBlock("block_heavy", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
        BLOCK_NIXIUM = addCubedBlock("block_nixium", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
-       BLOCK_COAL_ON_COKE = addCubedBlock("block_coal_on_coke", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(0));
+       BLOCK_COAL_ON_COKE = addCubedBlock("block_coal_on_coke", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
+       BLOCK_PICITE = addCubedBlock("block_picite", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
+       BLOCK_HISTICE = addCubedBlock("block_histice_ice", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
+       
        BLOCK_METEORITE = addCubedBlock("block_meteorite", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 100).sound(SoundType.STONE).harvestLevel(2));
        BRICKS_METEORITE = addCubedBlock("brick_meteorite", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 100).sound(SoundType.STONE).harvestLevel(2));
        
@@ -147,9 +156,11 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        ORE_PYRODES      = addCubedBlock("ore_pyrodes", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(1));
        ORE_CRYSTAL 		= addCubedBlock("ore_crystal", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(1));
        ORE_NIXIUM  		= addCubedBlock("ore_nixium", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(2));
+       ORE_PICITE		= addCubedBlock("ore_picite", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(3));
        ORE_TENIUM		= addCubedBlock("ore_tenium", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(3));
-       
-       FROZEN_CRYSTAL =addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
+       ORE_HISTICE_ICE  = addCubedBlock("ore_histice_ice", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(1));
+              
+       FROZEN_CRYSTAL = addCubedBlock("frozen_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0));//
        BLACK_CRYSTAL  = addCubedBlock("black_crystal", Block.Properties.create(Material.GLASS).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.GLASS).harvestLevel(0)); //      
       
        LAPUTA_BLUE 	 = addBlockClass("laputa_blue", 	() -> new CrystalBlock(TirphyColor.BLUE));
@@ -208,8 +219,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        
        SUN_STONE = addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
         
-       HISTOIRE_ICE = addCubedBlock("histoire_ice", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(1));
-        
+   
        FROZ_COBBLESTONE   = addCubedBlock("froz_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        LAPUTA_COBBLESTONE =  addCubedBlock("laputa_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        NOXIS_COBBLESTONE = addCubedBlock("noxis_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
@@ -217,6 +227,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        NOXIS_STONE  = addCubedBlock("noxis_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        LAPUTA_STONE = addCubedBlock("laputa_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        FROZ_STONE   = addCubedBlock("froz_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
+       BASALT = addCubedBlock("basalt", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        
        NOXIS_BRICKS_CARVED = addCubedBlock("noxis_bricks_carved", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
        NOXIS_BRICKS_PILLAR = addCubedBlock("noxis_bricks_pillar", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 15).sound(SoundType.STONE).harvestLevel(0));
@@ -236,6 +247,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        BRICKS_LAPUTA = addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        BRICKS_FROZ = addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        
+       FROZ_PORTAL_BRICK = addCubedBlock("brick_froz_portal", Block.Properties.create(Material.ROCK).hardnessAndResistance(-1.0F, 3600000.0F).noDrops());
+    	   
        POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));

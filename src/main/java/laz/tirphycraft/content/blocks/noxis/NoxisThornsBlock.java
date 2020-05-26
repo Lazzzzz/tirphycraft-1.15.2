@@ -36,6 +36,8 @@ public class NoxisThornsBlock extends TirphycraftPlants{
 		if (state.getBlock() == this)
 			return worldIn.getBlockState(blockpos).canSustainPlant(worldIn, blockpos, Direction.UP, this);
 		return this.isValidGround(worldIn.getBlockState(blockpos), worldIn, blockpos);
+	
 	}
+	
 	
 }

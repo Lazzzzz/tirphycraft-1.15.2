@@ -115,7 +115,7 @@ public class Tirphycraft {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_YELLOW.get(), cutout);
 
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_KRETUN.get(),
-				m -> new EntityKretunRender(m, new EntityKretunModel<>()));
+				EntityKretunRender::new);
 
 	}
 

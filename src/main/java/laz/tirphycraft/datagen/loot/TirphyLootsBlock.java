@@ -144,7 +144,7 @@ public class TirphyLootsBlock extends BlockLootTables {
         this.registerDropSelfLootTable(TirphycraftBlocks.STAIRS_GOLDIR.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.STAIRS_FROZ.getBlock());
 
-        this.registerDropSelfLootTable(TirphycraftBlocks.HISTOIRE_ICE.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.ORE_HISTICE_ICE.getBlock());
         
         this.registerDropSelfLootTable(TirphycraftBlocks.NOXIS_COBBLESTONE.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.NOXIS_BRICKS_CARVED.getBlock());

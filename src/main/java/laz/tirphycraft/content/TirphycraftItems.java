@@ -54,6 +54,7 @@ import laz.tirphycraft.content.items.totems.TotemLevitation;
 import laz.tirphycraft.content.items.totems.TotemThunder;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemTier;
 import net.minecraftforge.fml.RegistryObject;
 
 public class TirphycraftItems {
@@ -62,8 +63,11 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> HEAVY_INGOT;//
 	public static RegistryObject<Item> NIXIUM_INGOT;//
 	public static RegistryObject<Item> TENIUM_INGOT;//
+	public static RegistryObject<Item> HISTICE_GEM;///
+	public static RegistryObject<Item> PICITE_INGOT;///
 	public static RegistryObject<Item> ROSE_SHARD;///
 	public static RegistryObject<Item> ORIGIN_INGOT;///
+	
 	
 	public static RegistryObject<Item> FRAGMENT_BLUE;///
 	public static RegistryObject<Item> FRAGMENT_RED;///
@@ -98,6 +102,8 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> STICK_COPPIR;//
 	public static RegistryObject<Item> STICK_SILVIR;//
 	public static RegistryObject<Item> STICK_GOLDIR;//
+	public static RegistryObject<Item> STICK_FROZ;//
+	
 	public static RegistryObject<Item> FROZEN_BUFFALO_RAW;///
 	public static RegistryObject<Item> FROZEN_BUFFALO;///
 	public static RegistryObject<Item> FROZEN_BOARCHOP_RAW;///
@@ -179,6 +185,30 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> HEAVY_SWORD;
 	public static RegistryObject<Item> HEAVY_SHOVEL;
 	public static RegistryObject<Item> HEAVY_HOE;
+	
+	public static RegistryObject<Item> FROZ_WOODEN_AXE;//
+	public static RegistryObject<Item> FROZ_WOODEN_PICKAXE;
+	public static RegistryObject<Item> FROZ_WOODEN_SWORD;
+	public static RegistryObject<Item> FROZ_WOODEN_SHOVEL;
+	public static RegistryObject<Item> FROZ_WOODEN_HOE;
+	
+	public static RegistryObject<Item> FROZ_STONE_AXE;//
+	public static RegistryObject<Item> FROZ_STONE_PICKAXE;
+	public static RegistryObject<Item> FROZ_STONE_SWORD;
+	public static RegistryObject<Item> FROZ_STONE_SHOVEL;
+	public static RegistryObject<Item> FROZ_STONE_HOE;
+	
+	public static RegistryObject<Item> HISTICE_AXE;//
+	public static RegistryObject<Item> HISTICE_PICKAXE;
+	public static RegistryObject<Item> HISTICE_SWORD;
+	public static RegistryObject<Item> HISTICE_SHOVEL;
+	public static RegistryObject<Item> HISTICE_HOE;
+	
+	public static RegistryObject<Item> PICITE_AXE;//
+	public static RegistryObject<Item> PICITE_PICKAXE;
+	public static RegistryObject<Item> PICITE_SWORD;
+	public static RegistryObject<Item> PICITE_SHOVEL;
+	public static RegistryObject<Item> PICITE_HOE;	
 
 	public static RegistryObject<Item> NIXIUM_AXE;//
 	public static RegistryObject<Item> NIXIUM_PICKAXE;
@@ -274,7 +304,6 @@ public class TirphycraftItems {
 		SUN_TEAR = addItemClass("sun_tear", ArtefactSunTear::new);
 		FEATHER_OF_LIGHT = addItemClass("feather_of_light", ArtefactFeatherOfLight::new);
 		
-		
 		PYRODES_AXE = addAxe("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
 		PYRODES_PICKAXE = addPickaxe("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
 		PYRODES_SWORD = addSword("pyrodes", TirphycraftToolTiers.PYRODES_TOOL);
@@ -287,6 +316,30 @@ public class TirphycraftItems {
 		HEAVY_SHOVEL = addShovel("heavy", TirphycraftToolTiers.HEAVY_TOOL);
 		HEAVY_HOE = addHoe("heavy", TirphycraftToolTiers.HEAVY_TOOL);
 
+		FROZ_WOODEN_AXE = addAxe("froz_wooden", ItemTier.WOOD);
+		FROZ_WOODEN_PICKAXE = addPickaxe("froz_wooden",ItemTier.WOOD);
+		FROZ_WOODEN_SWORD = addSword("froz_wooden", ItemTier.WOOD);
+		FROZ_WOODEN_SHOVEL = addShovel("froz_wooden", ItemTier.WOOD);
+		FROZ_WOODEN_HOE = addHoe("froz_wooden", ItemTier.WOOD);
+		
+		FROZ_STONE_AXE = addAxe("froz_stone", ItemTier.STONE);
+		FROZ_STONE_PICKAXE = addPickaxe("froz_stone",ItemTier.STONE);
+		FROZ_STONE_SWORD = addSword("froz_stone", ItemTier.STONE);
+		FROZ_STONE_SHOVEL = addShovel("froz_stone", ItemTier.STONE);
+		FROZ_STONE_HOE = addHoe("froz_stone", ItemTier.STONE);
+		
+		HISTICE_AXE = addAxe("histice", TirphycraftToolTiers.HISTICE_TOOL);
+		HISTICE_PICKAXE = addPickaxe("histice",TirphycraftToolTiers.HISTICE_TOOL);
+		HISTICE_SWORD = addSword("histice", TirphycraftToolTiers.HISTICE_TOOL);
+		HISTICE_SHOVEL = addShovel("histice", TirphycraftToolTiers.HISTICE_TOOL);
+		HISTICE_HOE = addHoe("histice", TirphycraftToolTiers.HISTICE_TOOL);
+		
+		PICITE_AXE = addAxe("picite", TirphycraftToolTiers.PICITE_TOOL);
+		PICITE_PICKAXE = addPickaxe("picite", TirphycraftToolTiers.PICITE_TOOL);
+		PICITE_SWORD = addSword("picite", TirphycraftToolTiers.PICITE_TOOL);
+		PICITE_SHOVEL = addShovel("picite", TirphycraftToolTiers.PICITE_TOOL);
+		PICITE_HOE = addHoe("picite", TirphycraftToolTiers.PICITE_TOOL);
+				
 		NIXIUM_AXE = addAxe("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
 		NIXIUM_PICKAXE = addPickaxe("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
 		NIXIUM_SWORD = addSword("nixium", TirphycraftToolTiers.NIXIUM_TOOL);
@@ -320,6 +373,8 @@ public class TirphycraftItems {
 		NIXIUM_INGOT = addSimpleItem("nixium_ingot", 64);
 		ROSE_SHARD   = addSimpleItem("blue_rose_shard", 64);
 		CRYSTAL_PYRODES = addSimpleItem("poly_crystal_pyrodes", 64);
+		HISTICE_GEM = addSimpleItem("histice_gem", 64);
+		PICITE_INGOT = addSimpleItem("picite_ingot", 64);
 		
 		COAL_ON_COKE = addItemClass("coal_on_coke", () -> new itemFuel(2400));
 		DIAMOND_NUGGET = addSimpleItem("diamond_nugget", 64);
@@ -335,6 +390,7 @@ public class TirphycraftItems {
 		STICK_COPPIR = addSimpleItem("stick_coppir", 64);
 		STICK_SILVIR = addSimpleItem("stick_silvir", 64);
 		STICK_GOLDIR = addSimpleItem("stick_goldir", 64);
+		STICK_FROZ  = addSimpleItem("stick_froz", 64);
 		FROZEN_BUFFALO_RAW = addSimpleFood("frozen_buffalo_raw", 2);
 		FROZEN_BUFFALO = addSimpleFood("frozen_buffalo", 9);
 		FROZEN_BOARCHOP_RAW = addSimpleFood("frozen_boarchop_raw", 2);

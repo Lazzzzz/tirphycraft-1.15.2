@@ -2,6 +2,7 @@ package laz.tirphycraft.content;
 
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.froz.EntityKretun;
+import net.minecraft.client.renderer.entity.model.IronGolemModel;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;

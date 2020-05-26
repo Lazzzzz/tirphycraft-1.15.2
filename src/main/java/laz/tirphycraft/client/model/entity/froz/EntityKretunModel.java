@@ -1,18 +1,17 @@
 package laz.tirphycraft.client.model.entity.froz;
 
+import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import laz.tirphycraft.content.entities.froz.EntityKretun;
-import net.minecraft.client.renderer.entity.model.BeeModel;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.model.GuardianModel;
-import net.minecraft.client.renderer.entity.model.ZombieModel;
+import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.client.renderer.model.ModelRenderer.ModelBox;
-import net.minecraft.entity.Entity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class EntityKretunModel<T extends EntityKretun> extends EntityModel<T> {
+@OnlyIn(Dist.CLIENT)
+public class EntityKretunModel<T extends EntityKretun> extends SegmentedModel<EntityKretun> {
 	
 	private final ModelRenderer Body;
 	private final ModelRenderer Leaf1;
@@ -21,9 +20,10 @@ public class EntityKretunModel<T extends EntityKretun> extends EntityModel<T> {
 	private final ModelRenderer leaf4;
 
 	public EntityKretunModel() {
+		
 		textureWidth = 64;
 		textureHeight = 64;
-		
+	
 		Body = new ModelRenderer(this);
 		Body.setRotationPoint(0.0F, 23.0F, 0.0F);
 		Body.setTextureOffset(28, 37).addBox(-2.0F, -3.0F, -2.0F, 4, 4, 4, 0.0F, false);
@@ -62,27 +62,25 @@ public class EntityKretunModel<T extends EntityKretun> extends EntityModel<T> {
 	@Override
 	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
 			float red, float green, float blue, float alpha) {
-		Body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
+		this.Body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 		
 	}
 
 	@Override
-	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
+	public void setRotationAngles(EntityKretun entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
 			float netHeadYaw, float headPitch) {
-		EntityKretun e = entityIn;
-		if (e.bite) {
+		if (entityIn.getHealth() < 9) {
 			//System.out.println("bite");
-			if (Leaf1.rotateAngleX < 1.6) Leaf1.rotateAngleX += e.step * 10;
+			if (this.Leaf1.rotateAngleX < 1.6) this.Leaf1.rotateAngleX += entityIn.step * 10;
 			
 		} else {
 			//System.out.println("not bite");
-			if (Leaf1.rotateAngleX > 0) Leaf1.rotateAngleX -= e.step;
+			if (this.Leaf1.rotateAngleX > 0) this.Leaf1.rotateAngleX -= entityIn.step;
 		}
 	}
 	
 	@Override
-	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
-		// TODO Auto-generated method stub
-		super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
+	public Iterable<ModelRenderer> getParts() {
+		return ImmutableList.of(this.Body);
 	}
 }

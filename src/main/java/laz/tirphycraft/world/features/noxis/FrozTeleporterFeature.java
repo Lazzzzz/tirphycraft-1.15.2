@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class FrozTeleporterFeature extends Feature<NoFeatureConfig> {
 
-	private final BlockState FRAME = TirphycraftBlocks.BRICKS_FROZ.get().getDefaultState();
+	private final BlockState FRAME = TirphycraftBlocks.FROZ_PORTAL_BRICK.get().getDefaultState();
 
 	public FrozTeleporterFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);

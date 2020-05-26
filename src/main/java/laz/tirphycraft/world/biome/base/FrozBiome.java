@@ -31,7 +31,9 @@ public class FrozBiome extends Biome {
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.NIXIUM.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
-				Features.HISTOIRE_ICE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+				Features.PICITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.SURFACE_STRUCTURES,
+				Features.HISTICE_ICE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES, 
 				Features.SMALL_ROCK_PICK_FROZ.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
