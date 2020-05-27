@@ -15,7 +15,8 @@ public class FrozFurnaceContainerScreen extends ContainerScreen<FrozFurnaceConta
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-		TirphyDrawable.FROZ_FURNACE.draw(guiLeft, guiTop, 176, 166);
+		//TirphyDrawable.FROZ_FURNACE.draw(guiLeft, guiTop, 176, 166);
+		TirphyDrawable.FROZ_FURNACE_UPDATE.draw(guiLeft + 176, guiLeft + 14, 24, 17);
 	}
 	
 	@Override

@@ -34,13 +34,14 @@ public class FrozFurnaceBlock extends Block {
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
 			Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote && worldIn.getTileEntity(pos) instanceof FrozFurnaceTE) {
-			FrozFurnaceTE te = (FrozFurnaceTE) worldIn.getTileEntity(pos);
-			FrozFurnaceProvider p = new FrozFurnaceProvider();
-			p.setInventory(te.getInventory());
-			NetworkHooks.openGui((ServerPlayerEntity) player, p, pos);
+		if (!worldIn.isRemote) {
+			TileEntity te = worldIn.getTileEntity(pos);
+			if (te instanceof FrozFurnaceTE) {
+				NetworkHooks.openGui((ServerPlayerEntity) player, (FrozFurnaceTE) te, pos);
+			}
 		}
 		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+
 	}
 
 	@Override
