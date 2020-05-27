@@ -29,7 +29,7 @@ public class FrozDimension extends Dimension {
 
 	@Override
 	public BlockPos findSpawn(ChunkPos chunkPosIn, boolean checkValid) {
-		
+
 		return null;
 	}
 
@@ -58,7 +58,7 @@ public class FrozDimension extends Dimension {
 
 	@Override
 	public boolean isSurfaceWorld() {
-		return true;
+		return false;
 	}
 
 	@OnlyIn(Dist.CLIENT)
@@ -71,7 +71,7 @@ public class FrozDimension extends Dimension {
 		f1 = f1 * (f * 0.94F + 0.06F);
 		f2 = f2 * (f * 0.94F + 0.06F);
 		f3 = f3 * (f * 0.91F + 0.09F);
-		return new Vec3d(0,0,0);
+		return new Vec3d(f1, f2, f3);
 	}
 
 	@Override
@@ -98,13 +98,12 @@ public class FrozDimension extends Dimension {
 	public int getSeaLevel() {
 		return 1;
 	}
-	
-	
-    @Override
-    public IRenderHandler getSkyRenderer() {
+
+	@Override
+	public IRenderHandler getSkyRenderer() {
 		return super.getSkyRenderer();
-    }
-	
+	}
+
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public IRenderHandler getWeatherRenderer() {

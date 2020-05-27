@@ -6,7 +6,6 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.util.TirphycraftUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;

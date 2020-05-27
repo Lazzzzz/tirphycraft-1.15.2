@@ -4,7 +4,6 @@ import java.util.function.Supplier;
 
 import laz.tirphycraft.content.TirphycraftItems;
 import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 

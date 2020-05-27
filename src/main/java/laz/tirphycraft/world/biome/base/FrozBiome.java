@@ -3,10 +3,12 @@ package laz.tirphycraft.world.biome.base;
 import java.util.Random;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftEntities;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -22,6 +24,8 @@ public class FrozBiome extends Biome {
 	protected FrozBiome(Biome.Builder builder) {
 		super(builder);
 
+		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_KRETUN, 10, 1, 1));
+		
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
@@ -40,6 +44,7 @@ public class FrozBiome extends Biome {
 				Features.ICE_CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.MAJESTIC_ROSE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+
 	}
 
 	@Override
@@ -79,7 +84,8 @@ public class FrozBiome extends Biome {
 						break;
 					}
 				}
-				if (noair) break;
+				if (noair)
+					break;
 			}
 
 			if (i == this.caveStartY + 1)

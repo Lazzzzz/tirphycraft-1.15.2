@@ -2,7 +2,6 @@ package laz.tirphycraft.datagen.loot;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import javax.annotation.Nonnull;
 
@@ -10,16 +9,8 @@ import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.content.TirphycraftRegistries;
-import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.loot.BlockLootTables;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Items;
-import net.minecraft.world.storage.loot.ItemLootEntry;
-import net.minecraft.world.storage.loot.RandomValueRange;
-import net.minecraft.world.storage.loot.functions.ApplyBonus;
-import net.minecraft.world.storage.loot.functions.SetCount;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class TirphyLootsBlock extends BlockLootTables {

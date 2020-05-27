@@ -10,7 +10,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.Heightmap.Type;
@@ -103,7 +102,7 @@ public class FrozTeleporterFeature extends Feature<NoFeatureConfig> {
 		int max_size = 4;
 		int y = worldIn.getHeight(Type.WORLD_SURFACE, pos).getY();
 		for (int k = y + rand.nextInt(max_size) + 1; k >= y - 1; k--) {
-			setBlockState(worldIn, new BlockPos(pos.getX(), k, pos.getZ()), FRAME);
+			setBlockState(worldIn, new BlockPos(pos.getX(), k, pos.getZ()), TirphycraftBlocks.BRICKS_FROZ.get().getDefaultState());
 		}
 
 	}

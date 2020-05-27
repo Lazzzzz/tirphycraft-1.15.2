@@ -3,15 +3,12 @@ package laz.tirphycraft.util;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.content.TirphycraftDimensions.LAPUTA_DIM;
 
-import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftDimensions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 

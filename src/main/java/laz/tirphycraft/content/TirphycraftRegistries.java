@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
@@ -50,6 +51,8 @@ public class TirphycraftRegistries {
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPE = new DeferredRegister<>(ForgeRegistries.ENTITIES,
 			MOD_ID);
 	public static final DeferredRegister<Biome> TIRPH_BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, MOD_ID);
+	
+	public static final DeferredRegister<ContainerType<?>> TIRPHY_CONTAINER = new DeferredRegister<>(ForgeRegistries.CONTAINERS, MOD_ID);
 
 	public static int SIMPLE_INT = 0;
 	public static int ITEMLIST_INT = 0;
@@ -71,6 +74,7 @@ public class TirphycraftRegistries {
 		TIRPH_BIOMES.register(eventBus);
 		DIMENSIONS.register(eventBus);
 		FLUIDS.register(eventBus);
+		TIRPHY_CONTAINER.register(eventBus);
 		
 	}
 
@@ -78,9 +82,11 @@ public class TirphycraftRegistries {
 		TirphycraftBlocks.init();
 		TirphycraftItems.init();
 		TirphycraftTiles.init();
-		TirphycraftDimensions.init();
-		TirphycraftBiomes.init();
 		TirphycraftEntities.init();
+		TirphycraftDimensions.init();
+		TirphycraftContainer.init();
+		TirphycraftBiomes.init();
+		
 
 		register(eventBus);
 	}

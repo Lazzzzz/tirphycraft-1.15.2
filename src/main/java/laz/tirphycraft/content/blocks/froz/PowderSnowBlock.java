@@ -1,6 +1,7 @@
 package laz.tirphycraft.content.blocks.froz;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
@@ -14,17 +15,29 @@ public class PowderSnowBlock extends Block {
 		super(properties);
 	}
 
-
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-		if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState() || worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState()) worldIn.destroyBlock(pos, false);
-		else worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
+		if (entityIn.getType() != TirphycraftEntities.ENTITY_KRETUN) {
+
+			if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState()
+					|| worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState())
+				worldIn.destroyBlock(pos, false);
+			else
+				worldIn.setBlockState(pos,
+						TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
+		}
 	}
-	
+
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState() || worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState()) worldIn.destroyBlock(pos, false);
-		else worldIn.setBlockState(pos, TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
+		if (entityIn.getType() != TirphycraftEntities.ENTITY_KRETUN) {
+			if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState()
+					|| worldIn.getBlockState(pos.down()) == TirphycraftBlocks.POWDER_SNOW.get().getDefaultState())
+				worldIn.destroyBlock(pos, false);
+			else
+				worldIn.setBlockState(pos,
+						TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
+		}
 	}
 
 }

@@ -1,14 +1,14 @@
 package laz.tirphycraft.content;
 
 import static laz.tirphycraft.content.TirphycraftRegistries.addArmor;
-import static laz.tirphycraft.content.TirphycraftRegistries.addItemClass;
-import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
-import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.content.TirphycraftRegistries.addAxe;
+import static laz.tirphycraft.content.TirphycraftRegistries.addHoe;
+import static laz.tirphycraft.content.TirphycraftRegistries.addItemClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addPickaxe;
 import static laz.tirphycraft.content.TirphycraftRegistries.addShovel;
+import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleFood;
+import static laz.tirphycraft.content.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.content.TirphycraftRegistries.addSword;
-import static laz.tirphycraft.content.TirphycraftRegistries.addHoe;
 
 import laz.tirphycraft.content.items.Debug;
 import laz.tirphycraft.content.items.amulets.AmuletAnti;

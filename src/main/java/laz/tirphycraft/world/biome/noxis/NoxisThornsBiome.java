@@ -5,8 +5,6 @@ import java.util.Random;
 import laz.tirphycraft.world.biome.base.NoxisBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.placement.FrequencyConfig;

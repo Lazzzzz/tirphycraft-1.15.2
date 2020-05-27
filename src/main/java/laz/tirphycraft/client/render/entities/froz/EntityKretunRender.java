@@ -12,12 +12,12 @@ public class EntityKretunRender extends MobRenderer<EntityKretun, EntityKretunMo
 	protected static final ResourceLocation TEXTURE =  new ResourceLocation(Tirphycraft.MOD_ID, "textures/entity/froz/kretun.png");
 	
 	public EntityKretunRender(EntityRendererManager manager) {
-		super(manager, new EntityKretunModel<EntityKretun>(), 0.0f);
+		super(manager, new EntityKretunModel<>(), 0.0f);
 	}
 
 	@Override
 	public ResourceLocation getEntityTexture(EntityKretun entity) {
 		return TEXTURE;
 	}
-
+	
 }

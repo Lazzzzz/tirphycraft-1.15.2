@@ -20,6 +20,8 @@ import laz.tirphycraft.content.blocks.teleporter.laputa.TeleporterLaputaBlock;
 import laz.tirphycraft.content.blocks.teleporter.laputa.__TeleporterLaputaBlock;
 import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
+import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
+import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import laz.tirphycraft.world.features.trees.FrozTreeFeature;
@@ -138,6 +140,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> FROZ_FURNACE;//
 
 
 	public static void init(){
@@ -259,8 +262,8 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
        LAPUTA_TELEPORTER = addOnlyBlockClass("laputa_portal", () -> new TeleporterLaputaBlock());
        __LAPUTA_TELEPORTER = addOnlyBlockClass("laputa_portal_null", () -> new __TeleporterLaputaBlock());
        
-       
-       ALTAR = addTileEntity("altar", AltarBlock::new, AltarTE::new);
+       ALTAR 		= addTileEntity("altar", AltarBlock::new, AltarTE::new);
+       FROZ_FURNACE = addTileEntity("froz_furnace", FrozFurnaceBlock::new, FrozFurnaceTE::new);
     }
 
 }

@@ -3,11 +3,9 @@ package laz.tirphycraft.content.blocks.teleporter.froz;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;

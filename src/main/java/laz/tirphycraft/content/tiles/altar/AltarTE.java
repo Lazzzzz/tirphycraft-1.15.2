@@ -3,11 +3,8 @@ package laz.tirphycraft.content.tiles.altar;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
 
-import java.awt.Dimension;
 import java.util.List;
 import java.util.Random;
-
-import javax.swing.text.html.parser.Entity;
 
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.tiles.InventoryTile;
@@ -21,7 +18,6 @@ import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -31,7 +27,6 @@ import net.minecraft.world.dimension.OverworldDimension;
 import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.event.world.BlockEvent.EntityPlaceEvent;
 
 public class AltarTE extends InventoryTile implements ITickableTileEntity {
 	boolean activate = false;
