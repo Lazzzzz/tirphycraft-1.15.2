@@ -3,6 +3,9 @@ package laz.tirphycraft;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,9 +14,12 @@ import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.TirphycraftContainer;
 import laz.tirphycraft.content.TirphycraftDimensions;
 import laz.tirphycraft.content.TirphycraftEntities;
+import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.content.TirphycraftRegistries;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceContainerScreen;
 import laz.tirphycraft.particle.GlintParticle;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipeInit;
 import laz.tirphycraft.world.biome.base.FrozBiome;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.biome.base.NoxisBiome;
@@ -44,23 +50,23 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod(MOD_ID)
 public class Tirphycraft {
 	public static final String MOD_ID = "tirphycraft";
-
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-
 	public static final TirphycraftGroup ITEM_GROUP = new TirphycraftGroup(MOD_ID + "_group");
 
+	public static final ArrayList<FrozFurnaceRecipe> FROZ_RECIPES = new ArrayList<FrozFurnaceRecipe>();
+	
 	public Tirphycraft() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverStartup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		TirphycraftRegistries.init(bus);
+		
 	}
 
 	private void serverStartup(FMLServerStartedEvent event) {
-		DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "froz_dim"),
-				TirphycraftDimensions.FROZ_DIM.get(), null, true);
-	}
+		DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "froz_dim"), TirphycraftDimensions.FROZ_DIM.get(), null, true);
+	}	
 
 	private void setup(final FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES) {
@@ -75,6 +81,8 @@ public class Tirphycraft {
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
+
+		FrozFurnaceRecipeInit.init();
 		
 	}
 
@@ -116,11 +124,10 @@ public class Tirphycraft {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_RED.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_YELLOW.get(), cutout);
 
-		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_KRETUN,
-				EntityKretunRender::new);
-		
-		ScreenManager.registerFactory(TirphycraftContainer.FROZ_FURNACE_CONTAINER.get(), FrozFurnaceContainerScreen::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_KRETUN, EntityKretunRender::new);
 
+		ScreenManager.registerFactory(TirphycraftContainer.FROZ_FURNACE_CONTAINER.get(),
+				FrozFurnaceContainerScreen::new);
 	}
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

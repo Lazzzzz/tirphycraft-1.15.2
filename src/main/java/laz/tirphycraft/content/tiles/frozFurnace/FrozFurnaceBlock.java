@@ -2,14 +2,14 @@ package laz.tirphycraft.content.tiles.frozFurnace;
 
 import javax.annotation.Nullable;
 
+import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FurnaceBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -23,6 +23,7 @@ public class FrozFurnaceBlock extends Block {
 
 	public FrozFurnaceBlock() {
 		super(Block.Properties.from(Blocks.STONE));
+
 	}
 
 	@Nullable
@@ -38,9 +39,10 @@ public class FrozFurnaceBlock extends Block {
 			TileEntity te = worldIn.getTileEntity(pos);
 			if (te instanceof FrozFurnaceTE) {
 				NetworkHooks.openGui((ServerPlayerEntity) player, (FrozFurnaceTE) te, pos);
+				return ActionResultType.SUCCESS;
 			}
 		}
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		return ActionResultType.FAIL;
 
 	}
 

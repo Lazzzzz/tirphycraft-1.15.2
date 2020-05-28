@@ -5,6 +5,7 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 import static laz.tirphycraft.content.TirphycraftRegistries.addOnlyBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTileEntity;
 
+import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
 import laz.tirphycraft.content.blocks.froz.PowderSnowLayerBlock;
 import laz.tirphycraft.content.blocks.froz.RosePlantsBlock;
@@ -22,6 +23,7 @@ import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import laz.tirphycraft.world.features.trees.FrozTreeFeature;
@@ -142,8 +144,7 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> FROZ_FURNACE;//
 
-
-	public static void init(){
+public static void init(){
 
        BLOCK_PYRODES = addCubedBlock("block_pyrodes", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));
        BLOCK_HEAVY = addCubedBlock("block_heavy", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 15).sound(SoundType.METAL).harvestLevel(2));

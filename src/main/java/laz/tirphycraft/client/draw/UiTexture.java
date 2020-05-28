@@ -57,7 +57,7 @@ public class UiTexture {
 			float uf = u + du * x2;
 			float vi = v + dv * y1;
 			float vf = v + dv * y2;
-
+			
 			Tessellator tesselator = Tessellator.getInstance();
 			BufferBuilder buffbuilder = tesselator.getBuffer();
 			buffbuilder.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);

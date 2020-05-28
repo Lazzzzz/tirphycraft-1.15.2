@@ -21,6 +21,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -75,7 +76,7 @@ public class TirphycraftRegistries {
 		DIMENSIONS.register(eventBus);
 		FLUIDS.register(eventBus);
 		TIRPHY_CONTAINER.register(eventBus);
-		
+
 	}
 
 	public static void init(IEventBus eventBus) {
@@ -86,9 +87,8 @@ public class TirphycraftRegistries {
 		TirphycraftDimensions.init();
 		TirphycraftContainer.init();
 		TirphycraftBiomes.init();
-		
-
 		register(eventBus);
+
 	}
 
 	public static final FluidRegistryObjectGroup<ForgeFlowingFluid.Source, ForgeFlowingFluid.Flowing> CO2 = new FluidRegistryObjectGroup<>(
