@@ -4,22 +4,23 @@ import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import laz.tirphycraft.client.render.entities.froz.EntityKretunRender;
+import laz.tirphycraft.client.tiles.BookOfKnowledgeContainerScreen;
+import laz.tirphycraft.client.tiles.FrozFurnaceContainerScreen;
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.TirphycraftContainer;
 import laz.tirphycraft.content.TirphycraftDimensions;
 import laz.tirphycraft.content.TirphycraftEntities;
-import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.content.TirphycraftRegistries;
-import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceContainerScreen;
 import laz.tirphycraft.particle.GlintParticle;
+import laz.tirphycraft.recipes.book.BookOfKnowledgeRecipe;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipeInit;
+import laz.tirphycraft.util.book.BookItemInfo;
 import laz.tirphycraft.world.biome.base.FrozBiome;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.biome.base.NoxisBiome;
@@ -54,6 +55,7 @@ public class Tirphycraft {
 	public static final TirphycraftGroup ITEM_GROUP = new TirphycraftGroup(MOD_ID + "_group");
 
 	public static final ArrayList<FrozFurnaceRecipe> FROZ_RECIPES = new ArrayList<FrozFurnaceRecipe>();
+	public static final ArrayList<BookItemInfo> BOOK_OF_KNOWLEDGE = new ArrayList<BookItemInfo>();
 	
 	public Tirphycraft() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -83,6 +85,7 @@ public class Tirphycraft {
 		}
 
 		FrozFurnaceRecipeInit.init();
+		BookOfKnowledgeRecipe.init();
 		
 	}
 
@@ -128,6 +131,8 @@ public class Tirphycraft {
 
 		ScreenManager.registerFactory(TirphycraftContainer.FROZ_FURNACE_CONTAINER.get(),
 				FrozFurnaceContainerScreen::new);
+		ScreenManager.registerFactory(TirphycraftContainer.BOOK_OF_KNOWLEDGE_CONTAINER.get(),
+				BookOfKnowledgeContainerScreen::new);
 	}
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

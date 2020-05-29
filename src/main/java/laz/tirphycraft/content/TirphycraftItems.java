@@ -36,6 +36,7 @@ import laz.tirphycraft.content.items.clocks.ClockNoxis;
 import laz.tirphycraft.content.items.clocks.ClockReturn;
 import laz.tirphycraft.content.items.other.ItemShiny;
 import laz.tirphycraft.content.items.other.itemFuel;
+import laz.tirphycraft.content.items.other.book.BookOfKnowledge;
 import laz.tirphycraft.content.items.staff.StaffExplosion1;
 import laz.tirphycraft.content.items.staff.StaffExplosion2;
 import laz.tirphycraft.content.items.staff.StaffExplosion3;
@@ -59,6 +60,8 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class TirphycraftItems {
 
+	public static RegistryObject<Item> BOOK_OF_KNOWLEDGE;//
+	
 	public static RegistryObject<Item> CRYSTAL_PYRODES;//
 	public static RegistryObject<Item> HEAVY_INGOT;//
 	public static RegistryObject<Item> NIXIUM_INGOT;//
@@ -255,6 +258,8 @@ public class TirphycraftItems {
 		ORIGIN_LEGS		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.LEGS);
 		ORIGIN_CHEST	= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.CHEST);
 		ORIGIN_HEAD		= new ArmorOrigin(TirphycraftArmorTiers.ORIGIN, EquipmentSlotType.HEAD);
+		
+		BOOK_OF_KNOWLEDGE = addItemClass("book_of_knowledge", BookOfKnowledge::new);
 		
 		AMULET_ANTI = addItemClass("anti_amulet", AmuletAnti::new);
 

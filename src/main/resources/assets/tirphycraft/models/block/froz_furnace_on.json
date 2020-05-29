@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "tirphycraft:blocks/froz_furnace_top",
+        "front": "tirphycraft:blocks/froz_furnace_front_on",
+        "side": "tirphycraft:blocks/froz_furnace_side"
+    }
+}

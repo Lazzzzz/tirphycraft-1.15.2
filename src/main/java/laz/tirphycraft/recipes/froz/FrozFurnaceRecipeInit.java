@@ -8,6 +8,7 @@ public class FrozFurnaceRecipeInit {
 
 	public static void init() {
 	     Tirphycraft.FROZ_RECIPES.add(new FrozFurnaceRecipe(TirphycraftBlocks.ORE_NIXIUM.get(), TirphycraftItems.NIXIUM_INGOT.get()));
+	     Tirphycraft.FROZ_RECIPES.add(new FrozFurnaceRecipe(TirphycraftBlocks.ORE_PICITE.get(), TirphycraftItems.PICITE_INGOT.get()));
 	}
 	
 }

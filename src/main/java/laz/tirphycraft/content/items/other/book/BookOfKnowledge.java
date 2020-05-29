@@ -1,4 +1,4 @@
-package laz.tirphycraft.content.items;
+package laz.tirphycraft.content.items.other.book;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
@@ -12,17 +12,17 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class Debug extends Item {
+public class BookOfKnowledge extends Item {
 
-	public Debug() {
-		super(new Item.Properties().group(ITEM_GROUP).maxDamage(1));
+	public BookOfKnowledge() {
+		super(new Item.Properties().group(ITEM_GROUP).maxStackSize(1));
 	}
-
+	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		ItemStack item = playerIn.getHeldItem(handIn);
 		if (!worldIn.isRemote) {
-			NetworkHooks.openGui((ServerPlayerEntity) playerIn, null);
+			NetworkHooks.openGui((ServerPlayerEntity) playerIn, new BookOfKnowledgeProvider());
 			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, item);
 		}
 		return new ActionResult<ItemStack>(ActionResultType.PASS, item);

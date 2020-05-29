@@ -64,6 +64,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 									fuel1.setCount(fuel1.getCount() - 3);
 									fuel2.setCount(fuel2.getCount() - 3);
 									input.setCount(input.getCount() - 1);
+									world.setBlockState(pos, TirphycraftBlocks.FROZ_FURNACE.get().getDefaultState().with(FrozFurnaceBlock.LIT, true));
 								}
 							}
 						}
@@ -83,6 +84,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 					furnaceContent.set(4, new ItemStack(Tirphycraft.FROZ_RECIPES.get(recipe).out));
 				else
 					furnaceContent.get(4).setCount(furnaceContent.get(4).getCount() + 1);
+				world.setBlockState(pos, TirphycraftBlocks.FROZ_FURNACE.get().getDefaultState().with(FrozFurnaceBlock.LIT, false));
 			}
 			recipe = -1;
 		}
@@ -93,7 +95,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 	}
 
 	public int isRecipeGood(Item item) {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < Tirphycraft.FROZ_RECIPES.size(); i++) {
 			if (Tirphycraft.FROZ_RECIPES.get(i).in == item)
 				return i;
 		}
@@ -153,6 +155,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 	public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
 		read(pkt.getNbtCompound());
 	}
+	
 
 	@Override
 	public CompoundNBT getUpdateTag() {

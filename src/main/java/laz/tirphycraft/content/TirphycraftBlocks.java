@@ -5,7 +5,6 @@ import static laz.tirphycraft.content.TirphycraftRegistries.addCubedBlock;
 import static laz.tirphycraft.content.TirphycraftRegistries.addOnlyBlockClass;
 import static laz.tirphycraft.content.TirphycraftRegistries.addTileEntity;
 
-import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
 import laz.tirphycraft.content.blocks.froz.PowderSnowLayerBlock;
 import laz.tirphycraft.content.blocks.froz.RosePlantsBlock;
@@ -23,7 +22,6 @@ import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
-import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import laz.tirphycraft.world.features.trees.FrozTreeFeature;
