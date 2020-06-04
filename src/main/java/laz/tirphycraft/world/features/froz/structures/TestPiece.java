@@ -7,6 +7,7 @@ import java.util.Random;
 import com.google.common.collect.ImmutableMap;
 
 import laz.tirphycraft.Tirphycraft;
+import laz.tirphycraft.util.structures.FrozDungeonHelper;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
@@ -38,8 +39,7 @@ public class TestPiece {
 	 * access them with the following resource locations below. The MODID and ':' are important too.
 	 */
 	private static final ResourceLocation LEFT_SIDE = new ResourceLocation(Tirphycraft.MOD_ID + ":test");
-	private static final ResourceLocation RIGHT_SIDE = new ResourceLocation(Tirphycraft.MOD_ID + ":test2");
-	private static final Map<ResourceLocation, BlockPos> OFFSET = ImmutableMap.of(LEFT_SIDE, new BlockPos(0, 1, 0), RIGHT_SIDE, new BlockPos(0, 1, 0));
+	private static final Map<ResourceLocation, BlockPos> OFFSET = ImmutableMap.of(LEFT_SIDE, new BlockPos(0, 1, 0));
 
 
 	/*
@@ -50,29 +50,18 @@ public class TestPiece {
 		int x = pos.getX();
 		int z = pos.getZ();
 
-		//This is how we factor in rotation for multi-piece structures. 
-		//
-		//I would recommend using the OFFSET map above to have each piece at correct height relative of each other 
-		//and keep the X and Z equal to 0. And then in rotations, have the centermost piece have a rotation 
-		//of 0, 0, 0 and then have all other pieces' rotation be based off of the bottommost left corner of 
-		//that piece (the corner that is smallest in X and Z). 
-		//
-		//Lots of trial and error may be needed to get this right for your structure.
-		BlockPos rotationOffSet = new BlockPos(0, 0, 0).rotate(rotation);
-		BlockPos blockpos = rotationOffSet.add(x, pos.getY(), z);
-		pieceList.add(new TestPiece.Piece(templateManager, LEFT_SIDE, blockpos, rotation));
-
-		rotationOffSet = new BlockPos(-10, 0, 0).rotate(rotation);
-		blockpos = rotationOffSet.add(x, pos.getY(), z);
-		pieceList.add(new TestPiece.Piece(templateManager, RIGHT_SIDE, blockpos, rotation));
+		FrozDungeonHelper helper = new FrozDungeonHelper(40, 40, 0, 0, random);
+		helper.generateGrid();
+		FrozDungeonHelper.cells grid [][] = helper.getGrid();
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				BlockPos rotationOffSet = new BlockPos(i * 8, 0, j * 8).rotate(rotation);
+				BlockPos blockpos = rotationOffSet.add(x, pos.getY(), z);
+				pieceList.add(new TestPiece.Piece(templateManager, LEFT_SIDE, blockpos, rotation));
+			}
+		}
 	}
 
-	/*
-	 * Here's where some voodoo happens. Most of this doesn't need to be touched but you do have to pass in the
-	 * IStructurePieceType you registered into the super constructors.
-	 * 
-	 * The method you will most likely want to touch is the handleDataMarker method.
-	 */
 	public static class Piece extends TemplateStructurePiece
 	{
 		private ResourceLocation resourceLocation;
@@ -151,10 +140,7 @@ public class TestPiece {
 		@Override
 		public boolean func_225577_a_(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn, MutableBoundingBox structureBoundingBoxIn, ChunkPos chunkPos)
 		{
-			PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setMirror(Mirror.NONE);
-			BlockPos blockpos = TestPiece.OFFSET.get(this.resourceLocation);
-			this.templatePosition.add(Template.transformedBlockPos(placementsettings, new BlockPos(0 - blockpos.getX(), 0, 0 - blockpos.getZ())));
-
+			
 			return super.func_225577_a_(worldIn, p_225577_2_, randomIn, structureBoundingBoxIn, chunkPos);
 		}
 	}

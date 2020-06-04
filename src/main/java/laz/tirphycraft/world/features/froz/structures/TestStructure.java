@@ -40,8 +40,8 @@ public class TestStructure extends Structure<NoFeatureConfig>
 	protected ChunkPos getStartPositionForPosition(ChunkGenerator<?> chunkGenerator, Random random, int x, int z, int spacingOffsetsX, int spacingOffsetsZ)
 	{
 		//this means Run Down Houses cannot be closer than 7 chunks or more than 12 chunks
-		int maxDistance = 12;
-		int minDistance = 7;
+		int maxDistance = 30;
+		int minDistance = 10;
 
 		int xTemp = x + maxDistance * spacingOffsetsX;
 		int ztemp = z + maxDistance * spacingOffsetsZ;
