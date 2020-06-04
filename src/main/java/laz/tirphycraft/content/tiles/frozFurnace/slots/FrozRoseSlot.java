@@ -1,6 +1,6 @@
 package laz.tirphycraft.content.tiles.frozFurnace.slots;
 
-import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;

@@ -1,14 +1,14 @@
 package laz.tirphycraft.content.tiles.altar;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.FROZ_DIM;
 
 import java.util.List;
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.tiles.InventoryTile;
 import laz.tirphycraft.particle.GlintData;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -19,6 +19,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 
-public class AltarTE extends InventoryTile implements ITickableTileEntity {
+public class AltarTE extends TileEntity implements ITickableTileEntity {
 	boolean activate = false;
 	int maxtimer = 300;
 	int timer = maxtimer;
@@ -41,7 +42,7 @@ public class AltarTE extends InventoryTile implements ITickableTileEntity {
 	BlockPos white_p;
 
 	public AltarTE() {
-		super(TirphycraftBlocks.ALTAR.getTileEntityType(), 5);
+		super(TirphycraftBlocks.ALTAR.getTileEntityType());
 	}
 
 	@Override

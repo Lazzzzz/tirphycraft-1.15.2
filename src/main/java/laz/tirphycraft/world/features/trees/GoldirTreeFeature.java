@@ -2,7 +2,7 @@ package laz.tirphycraft.world.features.trees;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;

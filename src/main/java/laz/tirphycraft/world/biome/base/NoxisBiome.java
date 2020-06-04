@@ -2,15 +2,20 @@ package laz.tirphycraft.world.biome.base;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.world.features.Features;
+import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.DarkForestBiome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.GenerationStage.Decoration;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
@@ -27,7 +32,10 @@ public class NoxisBiome extends Biome {
 
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.NOXIS_DEAD_BUSH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(10))));
-
+//	    addStructure(StructureFeatures.RUN_DOWN_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+//		addFeature(Decoration.SURFACE_STRUCTURES, StructureFeatures.RUN_DOWN_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+//				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+//	
 	}
 
 	@Override
@@ -75,6 +83,8 @@ public class NoxisBiome extends Biome {
 			if (chunkIn.getBlockState(pos) == TirphycraftBlocks.NOXIS_STONE.get().getDefaultState()) {
 				if (random.nextInt(17) == 0) chunkIn.setBlockState(pos, TirphycraftBlocks.NOXIS_ASH_LIT.get().getDefaultState(), false);
 				else if (random.nextInt(17) == 0) chunkIn.setBlockState(pos, TirphycraftBlocks.NOXIS_COBBLESTONE.get().getDefaultState(), false);
+				else if (random.nextInt(40) == 0) chunkIn.setBlockState(pos, TirphycraftBlocks.NOXIS_FIRE.get().getDefaultState(), false);
+				
 				break;
 			}
 		}

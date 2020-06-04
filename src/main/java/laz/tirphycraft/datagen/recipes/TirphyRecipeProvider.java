@@ -2,8 +2,8 @@ package laz.tirphycraft.datagen.recipes;
 
 import java.util.function.Consumer;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;

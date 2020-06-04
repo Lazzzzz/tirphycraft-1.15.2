@@ -1,6 +1,6 @@
 package laz.tirphycraft.event;
 
-import laz.tirphycraft.content.TirphycraftBiomes;
+import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;

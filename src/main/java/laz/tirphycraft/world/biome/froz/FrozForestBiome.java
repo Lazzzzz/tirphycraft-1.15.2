@@ -2,7 +2,7 @@ package laz.tirphycraft.world.biome.froz;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.world.biome.base.FrozBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.BlockState;

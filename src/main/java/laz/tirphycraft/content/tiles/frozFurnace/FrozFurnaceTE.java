@@ -3,7 +3,7 @@ package laz.tirphycraft.content.tiles.frozFurnace;
 import javax.annotation.Nullable;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;

@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.content.TirphycraftItems;
-import laz.tirphycraft.content.TirphycraftRegistries;
+import laz.tirphycraft.registry.TirphycraftRegistries;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraftforge.registries.ForgeRegistries;

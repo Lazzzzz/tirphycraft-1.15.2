@@ -2,8 +2,8 @@ package laz.tirphycraft.content.blocks.laputa.flowers;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;

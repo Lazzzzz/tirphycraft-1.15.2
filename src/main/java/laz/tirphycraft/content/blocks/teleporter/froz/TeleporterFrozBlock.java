@@ -1,7 +1,7 @@
 package laz.tirphycraft.content.blocks.teleporter.froz;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.FROZ_DIM;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

@@ -1,8 +1,8 @@
 package laz.tirphycraft.recipes.froz;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 
 public class FrozFurnaceRecipeInit {
 
