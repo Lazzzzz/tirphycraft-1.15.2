@@ -52,4 +52,12 @@ public class TirphycraftUtils {
 			}
 		}
 	}
+	
+	public static double hypot(double x, double y, double z) {
+		double xx = x*x;
+		double yy = y*y;
+		double zz = z*z;
+		
+		return Math.sqrt(xx + yy + zz);
+	}
 }

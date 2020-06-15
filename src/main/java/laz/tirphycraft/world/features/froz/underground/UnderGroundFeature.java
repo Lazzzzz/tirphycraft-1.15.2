@@ -6,9 +6,11 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.feature.Feature;
@@ -54,6 +56,11 @@ public class UnderGroundFeature extends Feature<NoFeatureConfig> {
 			setBlockState(world, pos, TirphycraftBlocks.FROZ_COBBLESTONE.get().getDefaultState());
 		else
 			setBlockState(world, pos, TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
+	}
+	
+	public void setBlockState(IWorld worldIn, BlockPos pos, BlockState state) {
+		if (worldIn.getBlockState(pos) == Blocks.AIR.getDefaultState())
+			worldIn.setBlockState(pos, state, 3);
 	}
 
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tirphycraft",
+  "ingredients": [
+    {
+      "item": "tirphycraft:block_picite"
+    }
+  ],
+  "result": {
+    "item": "tirphycraft:picite_ingot",
+    "count": 9
+  }
+}

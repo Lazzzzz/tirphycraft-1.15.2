@@ -14,10 +14,10 @@ public class FrozDungeonHelper {
 	private Vec2f oldPos [];
 	private Random rand;
 
-	public FrozDungeonHelper(int sizeX, int sizeY, int posX, int posY, Random random) {
+	public FrozDungeonHelper(int sizeX, int sizeY, Random random) {
 		this.sizeX  = sizeX;
 		this.sizeY  = sizeY;
-		this.point  = new Vec2f(posX, posY);
+		this.point  = new Vec2f(0, 0);
 		this.rand   = random;
 		this.oldPos = new Vec2f [this.sizeX * this.sizeY]; 
 		initGrid();
@@ -25,14 +25,14 @@ public class FrozDungeonHelper {
 
 	private void initGrid() {
 		this.grid = new cells[this.sizeX][this.sizeY];
-		for (int i = 0; i < this.grid.length; i++) {
-			for (int j = 0; j < this.grid[i].length; j++) {
+		for (int i = 0; i < this.sizeX; i++) {
+			for (int j = 0; j < this.sizeY; j++) {
 				this.grid[i][j] = new cells(i, j);
 			}
 		}
 	}
 
-	public void generateGrid() {
+	public FrozDungeonHelper generateGrid() {
 		int i = 0;
 		boolean done = false;
 		while (!done) {		
@@ -46,6 +46,8 @@ public class FrozDungeonHelper {
 				goToCells(next);
 			}
 		}
+		
+		return this;
 	}
 
 	private int getNextCells() {
@@ -83,7 +85,36 @@ public class FrozDungeonHelper {
 	private boolean isValidMove(float f, float y) {
 		if (f < 0 || f >= this.sizeX || y < 0 || y >= this.sizeY)
 			return false;
+		
 		return !this.grid[(int) f][(int) y].isVisited();
+	}
+	
+	public boolean[] getWalls(int i, int j) {
+		return this.grid[i][j].getWalls();
+	}
+	
+	public cells getLeftCells(int pos) {
+		return this.grid[0][pos];
+	}
+	
+	public cells getRightCells(int pos) {
+		return this.grid[this.sizeX-1][pos];
+	}
+	
+	public cells getTopCells(int pos) {
+		return this.grid[pos][this.sizeY - 1];
+	}
+	
+	public cells getBottomCells(int pos) {
+		return this.grid[pos][0];
+	}
+	
+	public int getSizeX() {
+		return this.sizeX;
+	}
+	
+	public int getSizeY() {
+		return this.sizeY;
 	}
 
 	private void goToCells(int dir) {
@@ -129,7 +160,7 @@ public class FrozDungeonHelper {
 		private final int posY;
 		private boolean visited = false;
 		private boolean[] walls = { true, true, true, true};
-
+		
 		public cells(int posX, int posY) {
 			this.posX = posX;
 			this.posY = posY;
@@ -164,4 +195,5 @@ public class FrozDungeonHelper {
 			return this.walls;
 		}
 	}
+
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:histice_gem"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:block_histice_ice"
+  }
+}

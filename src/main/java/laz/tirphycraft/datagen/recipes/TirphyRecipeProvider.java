@@ -29,22 +29,27 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		compress(TirphycraftBlocks.BLOCK_COAL_ON_COKE.getItem(), TirphycraftItems.COAL_ON_COKE.get(), consumer);
 		compress(TirphycraftBlocks.BLOCK_HEAVY.getItem(), TirphycraftItems.HEAVY_INGOT.get(), consumer);
 		compress(TirphycraftBlocks.BLOCK_PYRODES.getItem(), TirphycraftItems.CRYSTAL_PYRODES.get(), consumer);
+		compress(TirphycraftBlocks.BLOCK_PICITE.getItem(), TirphycraftItems.PICITE_INGOT.get(), consumer);
+		compress(TirphycraftBlocks.BLOCK_HISTICE.getItem(), TirphycraftItems.HISTICE_GEM.get(), consumer);
 		
 		uncompress(TirphycraftItems.NIXIUM_INGOT.get(), TirphycraftBlocks.BLOCK_NIXIUM.getItem(), consumer);
 		uncompress(TirphycraftItems.COAL_ON_COKE.get(), TirphycraftBlocks.BLOCK_COAL_ON_COKE.getItem(), consumer);
 		uncompress(TirphycraftItems.HEAVY_INGOT.get(), TirphycraftBlocks.BLOCK_HEAVY.getItem(), consumer);
 		uncompress(TirphycraftItems.CRYSTAL_PYRODES.get(), TirphycraftBlocks.BLOCK_PYRODES.getItem(), consumer);
+		uncompress(TirphycraftItems.PICITE_INGOT.get(), TirphycraftBlocks.BLOCK_PICITE.getItem(), consumer);
+		uncompress(TirphycraftItems.HISTICE_GEM.get(), TirphycraftBlocks.BLOCK_HISTICE.getItem(), consumer);
+		
 		
 		bricks(TirphycraftBlocks.BRICKS_METEORITE.getItem(), TirphycraftBlocks.BLOCK_METEORITE.getItem(), consumer);
 		bricks(TirphycraftBlocks.BRICKS_LAPUTA.getItem(), TirphycraftBlocks.LAPUTA_STONE.getItem(), consumer);
 		bricks(TirphycraftBlocks.BRICKS_NOXIS.getItem(), TirphycraftBlocks.NOXIS_STONE.getItem(), consumer);
-
+		bricks(TirphycraftBlocks.BRICKS_FROZ.getItem(), TirphycraftBlocks.FROZ_STONE.getItem(), consumer);
+		
 		single(TirphycraftBlocks.PLANKS_COPPIR.getItem(), TirphycraftBlocks.LOG_COPPIR.getItem(), 4, consumer);
 		single(TirphycraftBlocks.PLANKS_SILVIR.getItem(), TirphycraftBlocks.LOG_SILVIR.getItem(), 4, consumer);
 		single(TirphycraftBlocks.PLANKS_GOLDIR.getItem(), TirphycraftBlocks.LOG_GOLDIR.getItem(), 4, consumer);
 		single(TirphycraftBlocks.PLANKS_FROZ.getItem(), TirphycraftBlocks.LOG_FROZ.getItem(), 4, consumer);
 		single(TirphycraftBlocks.PLANKS_SKY.getItem(), TirphycraftBlocks.LOG_SKY.getItem(), 4, consumer);
-		single(TirphycraftBlocks.BRICKS_FROZ.getItem(), TirphycraftBlocks.FROZ_STONE.getItem(), 4, consumer);
 		
 		stairs(TirphycraftBlocks.STAIRS_COPPIR.getItem(), TirphycraftBlocks.PLANKS_COPPIR.getItem(), consumer);
 		stairs(TirphycraftBlocks.STAIRS_GOLDIR.getItem(), TirphycraftBlocks.PLANKS_GOLDIR.getItem(), consumer);
@@ -55,6 +60,7 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		stick(TirphycraftItems.STICK_COPPIR.get(), TirphycraftBlocks.PLANKS_COPPIR.getItem(), consumer);
 		stick(TirphycraftItems.STICK_SILVIR.get(), TirphycraftBlocks.PLANKS_SILVIR.getItem(), consumer);
 		stick(TirphycraftItems.STICK_GOLDIR.get(), TirphycraftBlocks.PLANKS_GOLDIR.getItem(), consumer);
+		stick(TirphycraftItems.STICK_FROZ.get(), TirphycraftBlocks.PLANKS_FROZ.getItem(), consumer);
 
 		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftBlocks.FROZ_COBBLESTONE.getItem(),
 				TirphycraftBlocks.FROZ_STONE.getItem());
@@ -62,9 +68,6 @@ public class TirphyRecipeProvider extends RecipeProvider {
 				TirphycraftBlocks.LAPUTA_STONE.getItem());
 		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftItems.CRYSTAL_PYRODES.get(),
 				TirphycraftItems.CRYSTAL_PURODES.get());
-		
-		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftBlocks.ORE_NIXIUM.getItem(),
-				TirphycraftItems.NIXIUM_INGOT.get());
 		
 		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftBlocks.ORE_TENIUM.getItem(),
 				TirphycraftItems.TENIUM_INGOT.get());
@@ -119,6 +122,30 @@ public class TirphyRecipeProvider extends RecipeProvider {
 				  TirphycraftItems.TENIUM_SWORD.get(), 
 				  TirphycraftItems.TENIUM_SHOVEL.get(), 
 				  TirphycraftItems.TENIUM_HOE.get(), TirphycraftItems.TENIUM_INGOT.get(), TirphycraftItems.STICK_CRYSTAL.get(), consumer);
+		
+		tools(TirphycraftItems.FROZ_WOODEN_AXE.get(), 
+				  TirphycraftItems.FROZ_WOODEN_PICKAXE.get(), 
+				  TirphycraftItems.FROZ_WOODEN_SWORD.get(), 
+				  TirphycraftItems.FROZ_WOODEN_SHOVEL.get(), 
+				  TirphycraftItems.FROZ_WOODEN_HOE.get(), TirphycraftBlocks.PLANKS_FROZ.getItem(), TirphycraftItems.STICK_FROZ.get(), consumer);
+
+		tools(TirphycraftItems.FROZ_STONE_AXE.get(), 
+				  TirphycraftItems.FROZ_STONE_PICKAXE.get(), 
+				  TirphycraftItems.FROZ_STONE_SWORD.get(), 
+				  TirphycraftItems.FROZ_STONE_SHOVEL.get(), 
+				  TirphycraftItems.FROZ_STONE_HOE.get(), TirphycraftBlocks.FROZ_COBBLESTONE.getItem(), TirphycraftItems.STICK_FROZ.get(), consumer);
+
+		tools(TirphycraftItems.PICITE_AXE.get(), 
+				  TirphycraftItems.PICITE_PICKAXE.get(), 
+				  TirphycraftItems.PICITE_SWORD.get(), 
+				  TirphycraftItems.PICITE_SHOVEL.get(), 
+				  TirphycraftItems.PICITE_HOE.get(), TirphycraftItems.PICITE_INGOT.get(), TirphycraftItems.STICK_FROZ.get(), consumer);
+
+		tools(TirphycraftItems.HISTICE_AXE.get(), 
+				  TirphycraftItems.HISTICE_PICKAXE.get(), 
+				  TirphycraftItems.HISTICE_SWORD.get(), 
+				  TirphycraftItems.HISTICE_SHOVEL.get(), 
+				  TirphycraftItems.HISTICE_HOE.get(), TirphycraftItems.HISTICE_GEM.get(), TirphycraftItems.STICK_FROZ.get(), consumer);
 		
 		staff(TirphycraftItems.STAFF_1_EXPLOSION.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
 		staff(TirphycraftItems.STAFF_1_HEAL.get(), TirphycraftItems.LIFE_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
@@ -299,6 +326,14 @@ public class TirphyRecipeProvider extends RecipeProvider {
 	}
 	
 	private void setupRecipe(Consumer<IFinishedRecipe> consumer) {
+		ShapedRecipeBuilder.shapedRecipe(TirphycraftBlocks.FROZ_FURNACE.getItem())
+		.key('X', TirphycraftBlocks.FROZ_COBBLESTONE.getItem())
+		.patternLine("XXX")
+		.patternLine("X X")
+		.patternLine("XXX")
+		.setGroup("tirphycraft").addCriterion("has_material", this.hasItem(TirphycraftBlocks.FROZ_COBBLESTONE.getItem()))
+		.build(consumer);
+		
 		ShapedRecipeBuilder.shapedRecipe(TirphycraftBlocks.SUN_STONE.getItem())
 		.key('X', Blocks.GLOWSTONE.asItem())
 		.key('Z', Blocks.STONE.asItem())
@@ -308,7 +343,7 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		.setGroup("tirphycraft").addCriterion("has_material", this.hasItem(Blocks.GLOWSTONE.asItem()))
 		.build(consumer);
 		
-		ShapedRecipeBuilder.shapedRecipe(TirphycraftBlocks.POWDER_SNOW_LAYER.getItem())
+		ShapedRecipeBuilder.shapedRecipe(TirphycraftBlocks.POWDER_SNOW_LAYER.getItem(), 6)
 		.key('X', TirphycraftBlocks.POWDER_SNOW.getItem())
 		.patternLine("XXX")
 		.setGroup("tirphycraft")
@@ -382,6 +417,11 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		.patternLine(" Y ")
 		.setGroup("tirphycraft")
 		.addCriterion("has_material", this.hasItem(Items.CLOCK)).build(consumer);
+		
+		ShapelessRecipeBuilder.shapelessRecipe(TirphycraftItems.BOOK_OF_KNOWLEDGE.get(), 1)
+		.addIngredient(Items.BOOK)
+		.setGroup("tirphycraft")
+		.addCriterion("has_material", this.hasItem(Items.BOOK)).build(consumer);
 	
 	
 	}

@@ -32,8 +32,7 @@ public class Debug extends Item {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		ItemStack item = playerIn.getHeldItem(handIn);
 		if (!worldIn.isRemote) {
-			FrozDungeonHelper help = new FrozDungeonHelper(20, 20, 10, 10, new Random());
-			help.generateGrid();
+//			FrozDungeonHelper maze = new FrozDungeonHelper(40, new Random());
 		}
 		return new ActionResult<ItemStack>(ActionResultType.PASS, item);
 	}

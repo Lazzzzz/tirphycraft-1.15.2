@@ -3,9 +3,9 @@ package laz.tirphycraft.world.features;
 import java.util.Locale;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.world.features.froz.structures.TestPiece;
-import laz.tirphycraft.world.features.froz.structures.TestPiece.Piece;
-import laz.tirphycraft.world.features.froz.structures.TestStructure;
+import laz.tirphycraft.world.features.froz.structures.FrozDungeonPiece;
+import laz.tirphycraft.world.features.froz.structures.FrozDungeonPiece.Piece;
+import laz.tirphycraft.world.features.froz.structures.FrozDungeonStructure;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -16,8 +16,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class StructureFeatures {
 	//Static instance of our structure so we can reference it and add it to biomes easily.
-	public static Structure<NoFeatureConfig> RUN_DOWN_HOUSE = new TestStructure(NoFeatureConfig::deserialize);
-	public static IStructurePieceType RDHP = TestPiece.Piece::new;
+	public static Structure<NoFeatureConfig> FROZ_DUNGEON = new FrozDungeonStructure(NoFeatureConfig::deserialize);
+	public static IStructurePieceType FROZ_DUNGEON_PIECE = FrozDungeonPiece.Piece::new;
 
 
 	/*
@@ -33,8 +33,8 @@ public class StructureFeatures {
 		 * It is always a good idea to register your regular features too so that other mods
 		 * can use them too directly from the Forge Registry. It great for mod compatibility.
 		 */
-		Tirphycraft.register(registry, RUN_DOWN_HOUSE, "run_down_house");
-		register(RDHP, "RDHP");
+		Tirphycraft.register(registry, FROZ_DUNGEON, "froz_dungeon");
+		register(FROZ_DUNGEON_PIECE, "froz_dungeon_piece");
 	}
 
 

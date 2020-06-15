@@ -18,6 +18,7 @@ import net.minecraft.util.math.MathHelper;
 public class FrozenSoldierModel<T extends EntityFrozenSoldier> extends BipedModel<EntityFrozenSoldier> implements IHasArm {
 	private final ModelRenderer Jaw;
 	private final ModelRenderer eyes;
+	private boolean glow = false;
 
 	public FrozenSoldierModel(float modelSize) {
 		super(modelSize);
@@ -69,6 +70,8 @@ public class FrozenSoldierModel<T extends EntityFrozenSoldier> extends BipedMode
 			float headPitch) {
 		super.setRotationAngles(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 		
+		this.glow = entity.dungeon;
+		
 		Jaw.rotateAngleX = entity.getAnimation().getPart();
 		
 		eyes.rotateAngleX = this.bipedHead.rotateAngleX;
@@ -87,7 +90,7 @@ public class FrozenSoldierModel<T extends EntityFrozenSoldier> extends BipedMode
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
 			float green, float blue, float alpha) {
 		this.bipedBody.render(matrixStack, buffer, packedLight, packedOverlay);
-		eyes.render(matrixStack, buffer.lightmap(255), 255, packedOverlay, red, blue, green, alpha);
+		eyes.render(matrixStack, buffer.lightmap(255), 255, packedOverlay, red, blue, green, alpha);			
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

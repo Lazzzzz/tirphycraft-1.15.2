@@ -27,7 +27,7 @@ public class TirphyLootsProvider extends LootTableProvider {
     @Override
     @Nonnull
     public String getName() {
-        return "Workshop Loot Tables";
+        return "Tirphycraft Loot Tables";
     }
 
     @Override

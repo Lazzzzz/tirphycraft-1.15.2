@@ -11,6 +11,7 @@ import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.data.loot.BlockLootTables;
+import net.minecraft.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class TirphyLootsBlock extends BlockLootTables {
@@ -28,6 +29,10 @@ public class TirphyLootsBlock extends BlockLootTables {
     	
         this.registerLootTable(TirphycraftBlocks.FROZ_STONE.getBlock(), (p_218490_0_) -> {
             return droppingWithSilkTouch(p_218490_0_, TirphycraftBlocks.FROZ_COBBLESTONE.getBlock());
+         });
+        
+        this.registerLootTable(TirphycraftBlocks.NOXIS_FIRE.getBlock(), (p_218490_0_) -> {
+            return droppingWithSilkTouch(p_218490_0_, TirphycraftBlocks.NOXIS_COBBLESTONE.getBlock());
          });
         
         this.registerLootTable(TirphycraftBlocks.LOG_DEAD.getBlock(), (p_218490_0_) -> {
@@ -57,11 +62,34 @@ public class TirphyLootsBlock extends BlockLootTables {
          this.registerLootTable(TirphycraftBlocks.ORE_CRYSTAL.getBlock(), (p_218548_0_) -> {
         	 return droppingItemWithFortune(p_218548_0_, TirphycraftItems.CRYSTAL.get());
         });
+         
+         this.registerLootTable(TirphycraftBlocks.FROZ_FLOWER1.getBlock(), (p_218548_0_) -> {
+        	 return droppingItemWithFortune(p_218548_0_, TirphycraftItems.BLUE_ROSE_PETAL.get());
+        });
         
+         
+         this.registerLootTable(TirphycraftBlocks.ORE_HISTICE_ICE.getBlock(), (p_218548_0_) -> {
+        	 return droppingItemWithFortune(p_218548_0_, TirphycraftItems.HISTICE_GEM.get());
+        });
+         
+         this.registerLootTable(TirphycraftBlocks.FROZ_DUNGEON_SPIKE.getBlock(), (p_218548_0_) -> {
+        	 return droppingItemWithFortune(p_218548_0_, Items.BONE);
+        });
+         
         this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_PYRODES.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_HEAVY.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_NIXIUM.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_COAL_ON_COKE.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_PICITE.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_HISTICE.getBlock());
+        
+        this.registerDropSelfLootTable(TirphycraftBlocks.BASALT.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.FROZ_FURNACE.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.BOSS_SPAWNER_0.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.FROZ_DUNGEON_TRAP1.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.FROZ_DUNGEON_TRAP2.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.FROZ_DUNGEON_TRAP3.getBlock());
+        
         
         this.registerDropSelfLootTable(TirphycraftBlocks.BLOCK_METEORITE.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.BRICKS_METEORITE.getBlock());
@@ -135,7 +163,7 @@ public class TirphyLootsBlock extends BlockLootTables {
         this.registerDropSelfLootTable(TirphycraftBlocks.STAIRS_GOLDIR.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.STAIRS_FROZ.getBlock());
 
-        this.registerDropSelfLootTable(TirphycraftBlocks.ORE_HISTICE_ICE.getBlock());
+        this.registerDropSelfLootTable(TirphycraftBlocks.ORE_PICITE.getBlock());
         
         this.registerDropSelfLootTable(TirphycraftBlocks.NOXIS_COBBLESTONE.getBlock());
         this.registerDropSelfLootTable(TirphycraftBlocks.NOXIS_BRICKS_CARVED.getBlock());

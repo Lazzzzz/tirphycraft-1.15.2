@@ -8,6 +8,11 @@ import static laz.tirphycraft.registry.TirphycraftRegistries.addTileEntity;
 import laz.tirphycraft.content.blocks.froz.PowderSnowBlock;
 import laz.tirphycraft.content.blocks.froz.PowderSnowLayerBlock;
 import laz.tirphycraft.content.blocks.froz.RosePlantsBlock;
+import laz.tirphycraft.content.blocks.froz.dungeon.FireTrapBlock;
+import laz.tirphycraft.content.blocks.froz.dungeon.FrozDungeonBricks;
+import laz.tirphycraft.content.blocks.froz.dungeon.PotionTrapBlock;
+import laz.tirphycraft.content.blocks.froz.dungeon.SpikeBlock;
+import laz.tirphycraft.content.blocks.froz.dungeon.SpikeTrapBlock;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
@@ -23,6 +28,8 @@ import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
+import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerBlock;
+import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerTE;
 import laz.tirphycraft.registry.BlockRegistryObjectGroup;
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
@@ -144,6 +151,26 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> FROZ_FURNACE;//
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> BOSS_SPAWNER_0;
+
+
+//froz dungeon
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_TRAP1;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_TRAP2;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_TRAP3;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_SPIKE;
+
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT0;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT1;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT2;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT3;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT4;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT5;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT6;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT7;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT8;
+//
+
 
 public static void init(){
 
@@ -267,7 +294,24 @@ public static void init(){
        
        ALTAR 		= addTileEntity("altar", AltarBlock::new, AltarTE::new);
        FROZ_FURNACE = addTileEntity("froz_furnace", FrozFurnaceBlock::new, FrozFurnaceTE::new);
+       BOSS_SPAWNER_0 = addTileEntity("boss_spawner_0", TirphyBossSpawnerBlock::new, TirphyBossSpawnerTE::new);
 
+       FROZ_DUNGEON_TRAP1 = addOnlyBlockClass("froz_dungeon_t1", () -> new SpikeTrapBlock());
+       FROZ_DUNGEON_TRAP2 = addOnlyBlockClass("froz_dungeon_t2", () -> new FireTrapBlock());
+       FROZ_DUNGEON_TRAP3 = addOnlyBlockClass("froz_dungeon_t3", () -> new PotionTrapBlock());
+       FROZ_DUNGEON_SPIKE = addOnlyBlockClass("froz_dungeon_spike", () -> new SpikeBlock());
+      
+       FROZ_DUNGEON_VARIANT0 = addOnlyBlockClass("froz_dungeon_v0", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT1 = addOnlyBlockClass("froz_dungeon_v1", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT2 = addOnlyBlockClass("froz_dungeon_v2", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT3 = addOnlyBlockClass("froz_dungeon_v3", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT4 = addOnlyBlockClass("froz_dungeon_v4", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT5 = addOnlyBlockClass("froz_dungeon_v5", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT6 = addOnlyBlockClass("froz_dungeon_v6", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT7 = addOnlyBlockClass("froz_dungeon_v7", () -> new FrozDungeonBricks());
+       FROZ_DUNGEON_VARIANT8 = addOnlyBlockClass("froz_dungeon_v8", () -> new FrozDungeonBricks());
+       
+       
     }
 
 }

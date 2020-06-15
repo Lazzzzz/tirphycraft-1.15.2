@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 5,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_speed",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_attack",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_health",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:nixium_ingot",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:histice_gem",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:picite_ingot",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:blue_rose_shard",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ice",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:packed_ice",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:log_froz",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

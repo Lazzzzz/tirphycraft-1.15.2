@@ -278,17 +278,17 @@ public class TirphycraftItems {
 		
 		AMULET_ANTI = addItemClass("anti_amulet", AmuletAnti::new);
 
+		AMULET_HEALTH_1 = addItemClass("amulet_1_health", AmuletHealth1::new);
 		AMULET_HEALTH_2 = addItemClass("amulet_2_health", AmuletHealth2::new);
 		AMULET_HEALTH_3 = addItemClass("amulet_3_health", AmuletHealth3::new);
-		AMULET_HEALTH_1 = addItemClass("amulet_1_health", AmuletHealth1::new);
 
+		AMULET_ATTACK_1 = addItemClass("amulet_1_attack", AmuletAttack1::new);
 		AMULET_ATTACK_2 = addItemClass("amulet_2_attack", AmuletAttack2::new);
 		AMULET_ATTACK_3 = addItemClass("amulet_3_attack", AmuletAttack3::new);
-		AMULET_ATTACK_1 = addItemClass("amulet_1_attack", AmuletAttack1::new);
 
+		AMULET_SPEED_1 = addItemClass("amulet_1_speed", AmuletSpeed1::new);
 		AMULET_SPEED_2 = addItemClass("amulet_2_speed", AmuletSpeed2::new);
 		AMULET_SPEED_3 = addItemClass("amulet_3_speed", AmuletSpeed3::new);
-		AMULET_SPEED_1 = addItemClass("amulet_1_speed", AmuletSpeed1::new);
 
 		DEBUG = addItemClass("debug", Debug::new);
 		

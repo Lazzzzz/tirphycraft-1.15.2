@@ -1,12 +1,11 @@
 package laz.tirphycraft.content.tiles.altar;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.registry.init.TirphycraftDimensions.FROZ_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.NOXIS_DIM;
 
 import java.util.List;
 import java.util.Random;
 
-import laz.tirphycraft.content.tiles.InventoryTile;
 import laz.tirphycraft.particle.GlintData;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphyColor;
@@ -81,7 +80,7 @@ public class AltarTE extends TileEntity implements ITickableTileEntity {
 						if (player != null) {
 							ServerPlayerEntity playerEntity = (ServerPlayerEntity) player;
 							DimensionType dimensionType = DimensionManager.registerOrGetDimension(
-									new ResourceLocation(MOD_ID, "noxis_dim"), FROZ_DIM.get(), null, true);
+									new ResourceLocation(MOD_ID, "noxis_dim"), NOXIS_DIM.get(), null, true);
 							ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
 							playerEntity.teleport(targetWorld, 0, 255, 0, player.rotationYaw,
 									player.rotationPitch);

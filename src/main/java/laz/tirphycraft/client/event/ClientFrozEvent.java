@@ -27,8 +27,8 @@ public class ClientFrozEvent {
 				event.setDensity(timer);
 			
 			} else if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM
-					.get() && player.getPosition().getY() < 48 && timer < maxFog / 10) {
-				if (timer < maxFog / 10)
+					.get() && player.getPosition().getY() < 48 && timer < maxFog / 7) {
+				if (timer < maxFog / 7)
 					timer += steps * 2;
 				event.setCanceled(true);
 				event.setDensity(timer);

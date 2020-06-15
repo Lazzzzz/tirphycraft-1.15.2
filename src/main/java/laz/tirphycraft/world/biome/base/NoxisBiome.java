@@ -32,10 +32,6 @@ public class NoxisBiome extends Biome {
 
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.NOXIS_DEAD_BUSH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(10))));
-	    addStructure(StructureFeatures.RUN_DOWN_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-		addFeature(Decoration.SURFACE_STRUCTURES, StructureFeatures.RUN_DOWN_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-	
 	}
 
 	@Override

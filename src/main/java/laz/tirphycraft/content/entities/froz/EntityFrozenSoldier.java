@@ -29,9 +29,24 @@ import net.minecraft.world.World;
 public class EntityFrozenSoldier extends MonsterEntity {
 
 	public WinterSoldierAnimation animation = new WinterSoldierAnimation(); 
+	public boolean dungeon;
 	
 	public EntityFrozenSoldier(EntityType<? extends EntityFrozenSoldier> entityType, World world) {
 		super(entityType, world);
+		this.dungeon = false;
+		for (int k = 0; k < 4; k++) {
+			this.inventoryArmorDropChances[k] = 0;
+		}
+		this.inventoryHandsDropChances[0] = 0;
+		this.inventoryHandsDropChances[1] = 0;
+	}
+	
+	public EntityFrozenSoldier(EntityType<? extends EntityFrozenSoldier> entityType, World world, boolean dungeon) {
+		super(entityType, world);
+		this.dungeon = dungeon;
+		for (int k = 0; k < 4; k++) {
+			this.inventoryArmorDropChances[k] = 0;
+		}
 	}
 
 	@Override
@@ -76,17 +91,27 @@ public class EntityFrozenSoldier extends MonsterEntity {
 	}
 	
 	@Override
+	public void read(CompoundNBT compound) {
+		this.dungeon = compound.getBoolean("dungeon");
+		super.read(compound);
+	}
+	
+	@Override
+	public void writeAdditional(CompoundNBT compound) {
+		compound.putBoolean("dungeon", this.dungeon);
+		super.writeAdditional(compound);
+	}
+	
+	@Override
 	public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
 			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
-		for (int i = 0; i < 4; i++) {
-			this.inventoryArmorDropChances[i] = 0;
-		}
-		int r = worldIn.getRandom().nextInt(20);
 		if (rand.nextInt(10) == 0) this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(TirphycraftItems.DRAUGRIR_LEGS));
 		if (rand.nextInt(10) == 0) this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(TirphycraftItems.DRAUGRIR_FEET));
 		if (rand.nextInt(10) == 0) this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(TirphycraftItems.DRAUGRIR_CHEST));
 		if (rand.nextInt(10) == 0) this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(TirphycraftItems.DRAUGRIR_HEAD));
+
 		
+		int r = worldIn.getRandom().nextInt(20);
 		if (r == 0) this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(TirphycraftItems.HISTICE_SWORD.get()));
 		else if (r > 0 && r <= 3) this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(TirphycraftItems.PICITE_SWORD.get()));
 		else if (r > 3 && r <= 9) {
