@@ -5,8 +5,12 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
+<<<<<<< HEAD
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
+=======
+import laz.tirphycraft.content.TirphycraftBlocks;
+>>>>>>> parent of 2669fca... structure
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;

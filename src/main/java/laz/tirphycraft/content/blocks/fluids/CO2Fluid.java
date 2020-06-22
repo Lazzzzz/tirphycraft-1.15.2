@@ -1,6 +1,6 @@
 package laz.tirphycraft.content.blocks.fluids;
 
-import laz.tirphycraft.registry.TirphycraftRegistries;
+import laz.tirphycraft.content.TirphycraftRegistries;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.entity.Entity;

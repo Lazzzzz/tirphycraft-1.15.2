@@ -4,8 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class BookItemInfo {
-	private final int maxSizeX = 24;
-	private final int maxSizeY = 50;
+	private final int maxSizeX = 32;
+	private final int maxSizeY = 10;
 	private final Item item;
 	private int lines = 0;
 	
@@ -20,7 +20,7 @@ public class BookItemInfo {
 	public BookItemInfo(Block block, String text) {
 		this.info = new String[maxSizeY];
 		this.item = block.asItem();
-		if (setText(text) == false) this.lines = -1;
+		setText(text);
 	}
 
 	public boolean setText(String text) {
@@ -30,10 +30,6 @@ public class BookItemInfo {
 		}	
 		
 		int size = getNbLine(text.length());
-		if (size >= getMaxSize()) {
-			return false;
-		}
-		
 		String word [] = text.split(" ");
 		int index = 0;;
 		

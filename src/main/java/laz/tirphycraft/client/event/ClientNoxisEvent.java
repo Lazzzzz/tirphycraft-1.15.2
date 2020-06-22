@@ -1,8 +1,8 @@
 package laz.tirphycraft.client.event;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.registry.init.TirphycraftBiomes;
-import laz.tirphycraft.registry.init.TirphycraftDimensions;
+import laz.tirphycraft.content.TirphycraftBiomes;
+import laz.tirphycraft.content.TirphycraftDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;

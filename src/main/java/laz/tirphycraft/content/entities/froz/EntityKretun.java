@@ -2,8 +2,8 @@ package laz.tirphycraft.content.entities.froz;
 
 import java.util.List;
 
+import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.entities.animation.KretunAnimation;
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.CreatureEntity;
@@ -31,6 +31,17 @@ public class EntityKretun extends CreatureEntity {
 	protected void registerAttributes() {
 		super.registerAttributes();
 		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0);
+	}
+
+	@Override
+	public void onCollideWithPlayer(PlayerEntity entityIn) {
+
+	}
+
+	@Override
+	public void tick() {
+		this.setMotion(0, this.getMotion().y / 2, 0);
+		super.tick();
 	}
 
 	@Override

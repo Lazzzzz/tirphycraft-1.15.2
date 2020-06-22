@@ -2,8 +2,8 @@ package laz.tirphycraft.world.biome.base;
 
 import java.util.Random;
 
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import laz.tirphycraft.registry.init.TirphycraftEntities;
+import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftEntities;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
@@ -51,11 +51,15 @@ public class FrozBiome extends Biome {
 				Features.ICE_CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.MAJESTIC_ROSE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+<<<<<<< HEAD
 	    
 		addStructure(StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		addFeature(Decoration.UNDERGROUND_STRUCTURES, StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	
+=======
+
+>>>>>>> parent of 2669fca... structure
 	}
 
 	@Override

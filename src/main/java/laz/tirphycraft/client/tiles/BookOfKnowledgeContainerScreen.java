@@ -17,17 +17,17 @@ public class BookOfKnowledgeContainerScreen extends ContainerScreen<BookOfKnowle
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-		TirphyDrawable.BOOK_OF_KNOWLEDGE_0.draw(guiLeft - 62, guiTop - 20, 300, 200);
-
+		TirphyDrawable.BOOK_OF_KNOWLEDGE_0.draw(guiLeft, guiTop - 8, 176, 174);
+		
 		BookItemInfo info = this.container.selected;
-		this.font.drawString("Shift click on a item to", guiLeft - 38, guiTop - 7, 000000);
-		this.font.drawString("get info", guiLeft, guiTop + 2, 000000);
-		if (info != null) {
+		
+		if (info == null)
+			this.font.drawString("shift click on item to get info", guiLeft + 6, guiTop, 000000);
+		else {
 			for (int i = 0; i <= info.getLines(); i++) {
-				this.font.drawString(info.info[i], guiLeft + 98, guiTop + 10 + (i * 10), 000000);
+				this.font.drawString(info.info[i], guiLeft + 6, guiTop + i * 9f, 000000);
 			}
 		}
-
 	}
 
 	@Override

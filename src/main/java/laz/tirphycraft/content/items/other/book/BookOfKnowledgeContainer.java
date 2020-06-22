@@ -1,9 +1,8 @@
 package laz.tirphycraft.content.items.other.book;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.registry.init.TirphycraftContainer;
+import laz.tirphycraft.content.TirphycraftContainer;
 import laz.tirphycraft.util.book.BookItemInfo;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -21,12 +20,16 @@ public class BookOfKnowledgeContainer extends Container implements INamedContain
 	public BookOfKnowledgeContainer(int id, PlayerInventory inv) {
 		super(TirphycraftContainer.BOOK_OF_KNOWLEDGE_CONTAINER.get(), id);
 
-		for (int k = 0; k < 8; k++) {
-			for (int i = 0; i < 5; i++) {
-				int pos = i + (k*5);
-				if (pos < 36) this.addSlot(new Slot(inv, pos, -38 + (i*25), 15 + (k * 18)));
+		for (int i = 0; i < 3; ++i) {
+			for (int j = 0; j < 9; ++j) {
+				this.addSlot(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
+
+		for (int k = 0; k < 9; ++k) {
+			this.addSlot(new Slot(inv, k, 8 + k * 18, 142));
+		}
+
 	}
 
 	@Override
@@ -60,7 +63,7 @@ public class BookOfKnowledgeContainer extends Container implements INamedContain
 			}
 		}
 		
-		return new BookItemInfo(Blocks.AIR,	"No info");
+		return null;
 	}
 
 }

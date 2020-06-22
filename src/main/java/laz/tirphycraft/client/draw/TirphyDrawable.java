@@ -17,6 +17,6 @@ public class TirphyDrawable {
 	public static final IDrawable FROZ_FURNACE_1 = FROZ_FURNACE_ARROW.getArea(0, 0, 24, 17);
 	public static final IDrawable FROZ_FURNACE_2 = FROZ_FURNACE_BURN.getArea(0, 0, 14, 14);
 	
-	public static final IDrawable BOOK_OF_KNOWLEDGE_0 = BOOK_OF_KNOWLEDGE.getArea(0, 0, 240, 160);
+	public static final IDrawable BOOK_OF_KNOWLEDGE_0 = BOOK_OF_KNOWLEDGE.getArea(0, 0, 176, 174);
 	
 }

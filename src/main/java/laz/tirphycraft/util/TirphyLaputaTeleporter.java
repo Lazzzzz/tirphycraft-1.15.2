@@ -1,7 +1,7 @@
 package laz.tirphycraft.util;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.registry.init.TirphycraftDimensions.LAPUTA_DIM;
+import static laz.tirphycraft.content.TirphycraftDimensions.LAPUTA_DIM;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -29,7 +29,7 @@ public class TirphyLaputaTeleporter {
 							new BlockPos(player.getPosX() + (i * 16), player.getPosY(), player.getPosZ() + (j * 16)));
 
 					if (spawn != null) {
-						playerEntity.teleport(targetWorld, spawn.getX() + 0.5f, spawn.getY() + 3, spawn.getZ()+ 0.5f,
+						playerEntity.teleport(targetWorld, spawn.getX(), spawn.getY() + 3, spawn.getZ(),
 								player.rotationYaw, player.rotationPitch);
 						flag = true;
 					}

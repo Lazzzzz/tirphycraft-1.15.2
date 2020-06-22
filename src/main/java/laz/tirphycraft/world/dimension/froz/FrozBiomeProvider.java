@@ -6,7 +6,7 @@ import java.util.function.LongFunction;
 import com.google.common.collect.ImmutableSet;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.registry.init.TirphycraftBiomes;
+import laz.tirphycraft.content.TirphycraftBiomes;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;

@@ -1,6 +1,6 @@
 package laz.tirphycraft.world.dimension.froz;
 
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.OverworldGenSettings;
 
@@ -24,6 +24,8 @@ public class FrozGenSettings extends OverworldGenSettings {
 	public int getBiomeId() {
 		return -1;
 	}
+	
+	
 
 	@Override
 	public int getBedrockFloorHeight() {

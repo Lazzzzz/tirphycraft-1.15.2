@@ -1,6 +1,6 @@
 package laz.tirphycraft;
 
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

@@ -1,7 +1,7 @@
 package laz.tirphycraft.content.blocks.froz;
 
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import laz.tirphycraft.registry.init.TirphycraftEntities;
+import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;

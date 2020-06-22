@@ -1,7 +1,7 @@
 package laz.tirphycraft.client.event;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.registry.init.TirphycraftBiomes;
+import laz.tirphycraft.content.TirphycraftBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.api.distmarker.Dist;
