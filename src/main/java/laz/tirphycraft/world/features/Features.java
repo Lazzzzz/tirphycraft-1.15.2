@@ -107,7 +107,10 @@ public class Features {
 	
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+>>>>>>> parent of 2669fca... structure
 =======
 >>>>>>> parent of 2669fca... structure
 	//https://github.com/Glitchfiend/BiomesOPlenty/blob/801d32a4d6ab73f3fe19b89e55556cf529084214/src/main/java/biomesoplenty/common/world/gen/feature/DeepTopLayerSurfaceBuilder.java

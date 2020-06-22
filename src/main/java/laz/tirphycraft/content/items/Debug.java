@@ -11,6 +11,10 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import net.minecraftforge.fml.network.NetworkHooks;
+>>>>>>> parent of 2669fca... structure
 =======
 import net.minecraftforge.fml.network.NetworkHooks;
 >>>>>>> parent of 2669fca... structure
@@ -26,7 +30,12 @@ public class Debug extends Item {
 		ItemStack item = playerIn.getHeldItem(handIn);
 		if (!worldIn.isRemote) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 //			FrozDungeonHelper maze = new FrozDungeonHelper(40, new Random());
+=======
+			NetworkHooks.openGui((ServerPlayerEntity) playerIn, null);
+			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, item);
+>>>>>>> parent of 2669fca... structure
 =======
 			NetworkHooks.openGui((ServerPlayerEntity) playerIn, null);
 			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, item);

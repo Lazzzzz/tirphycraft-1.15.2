@@ -52,11 +52,15 @@ public class FrozBiome extends Biome {
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.MAJESTIC_ROSE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 <<<<<<< HEAD
+<<<<<<< HEAD
 	    
 		addStructure(StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		addFeature(Decoration.UNDERGROUND_STRUCTURES, StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	
+=======
+
+>>>>>>> parent of 2669fca... structure
 =======
 
 >>>>>>> parent of 2669fca... structure

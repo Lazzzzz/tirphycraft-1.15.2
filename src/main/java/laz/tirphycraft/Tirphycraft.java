@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.recipes.RecipeInit;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
@@ -17,6 +18,20 @@ import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import laz.tirphycraft.registry.render.TirphycraftBlockRender;
 import laz.tirphycraft.registry.render.TirphycraftEntitiesRender;
 import laz.tirphycraft.registry.render.TirphycraftGuiRender;
+=======
+import laz.tirphycraft.client.render.entities.froz.EntityKretunRender;
+import laz.tirphycraft.client.tiles.BookOfKnowledgeContainerScreen;
+import laz.tirphycraft.client.tiles.FrozFurnaceContainerScreen;
+import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.content.TirphycraftContainer;
+import laz.tirphycraft.content.TirphycraftDimensions;
+import laz.tirphycraft.content.TirphycraftEntities;
+import laz.tirphycraft.content.TirphycraftRegistries;
+import laz.tirphycraft.particle.GlintParticle;
+import laz.tirphycraft.recipes.book.BookOfKnowledgeRecipe;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
+import laz.tirphycraft.recipes.froz.FrozFurnaceRecipeInit;
+>>>>>>> parent of 2669fca... structure
 =======
 import laz.tirphycraft.client.render.entities.froz.EntityKretunRender;
 import laz.tirphycraft.client.tiles.BookOfKnowledgeContainerScreen;
@@ -91,9 +106,12 @@ public class Tirphycraft {
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		RecipeInit.init();		
 }
 =======
+=======
+>>>>>>> parent of 2669fca... structure
 
 		FrozFurnaceRecipeInit.init();
 		BookOfKnowledgeRecipe.init();
@@ -160,6 +178,7 @@ public class Tirphycraft {
 			event.getRegistry().register(GLINT_PARTICLE.setRegistryName(MOD_ID, "glint"));
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		@SubscribeEvent
 		public static void onRegisterFeatures(final RegistryEvent.Register<Feature<?>> event)
@@ -174,6 +193,9 @@ public class Tirphycraft {
 		entry.setRegistryName(new ResourceLocation(Tirphycraft.MOD_ID, registryKey));
 		registry.register(entry);
 		return entry;
+=======
+
+>>>>>>> parent of 2669fca... structure
 =======
 
 >>>>>>> parent of 2669fca... structure

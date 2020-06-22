@@ -3,7 +3,11 @@ package laz.tirphycraft.content.items.armor;
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import laz.tirphycraft.registry.init.TirphycraftItems;
+=======
+import laz.tirphycraft.content.TirphycraftItems;
+>>>>>>> parent of 2669fca... structure
 =======
 import laz.tirphycraft.content.TirphycraftItems;
 >>>>>>> parent of 2669fca... structure

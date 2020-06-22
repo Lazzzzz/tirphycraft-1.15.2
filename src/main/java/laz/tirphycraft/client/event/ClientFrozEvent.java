@@ -26,6 +26,7 @@ public class ClientFrozEvent {
 				event.setCanceled(true);
 				event.setDensity(timer);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
 			} else if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM
 					.get() && player.getPosition().getY() < 48 && timer < maxFog / 7) {
@@ -34,6 +35,8 @@ public class ClientFrozEvent {
 				event.setCanceled(true);
 				event.setDensity(timer);
 			
+=======
+>>>>>>> parent of 2669fca... structure
 =======
 >>>>>>> parent of 2669fca... structure
 			} else {

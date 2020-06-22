@@ -28,12 +28,15 @@ import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
+<<<<<<< HEAD:src/main/java/laz/tirphycraft/content/TirphycraftBlocks.java
 <<<<<<< HEAD:src/main/java/laz/tirphycraft/registry/init/TirphycraftBlocks.java
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerBlock;
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerTE;
 import laz.tirphycraft.registry.BlockRegistryObjectGroup;
 =======
 >>>>>>> parent of 2669fca... structure:src/main/java/laz/tirphycraft/content/TirphycraftBlocks.java
+=======
+>>>>>>> parent of 2669fca... structure:src/main/java/laz/tirphycraft/registry/init/TirphycraftBlocks.java
 import laz.tirphycraft.util.TirphyColor;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import laz.tirphycraft.world.features.trees.FrozTreeFeature;
@@ -306,6 +309,7 @@ public static void init(){
        
        ALTAR 		= addTileEntity("altar", AltarBlock::new, AltarTE::new);
        FROZ_FURNACE = addTileEntity("froz_furnace", FrozFurnaceBlock::new, FrozFurnaceTE::new);
+<<<<<<< HEAD:src/main/java/laz/tirphycraft/content/TirphycraftBlocks.java
 <<<<<<< HEAD:src/main/java/laz/tirphycraft/registry/init/TirphycraftBlocks.java
        BOSS_SPAWNER_0 = addTileEntity("boss_spawner_0", TirphyBossSpawnerBlock::new, TirphyBossSpawnerTE::new);
 
@@ -326,6 +330,8 @@ public static void init(){
        
 =======
 >>>>>>> parent of 2669fca... structure:src/main/java/laz/tirphycraft/content/TirphycraftBlocks.java
+=======
+>>>>>>> parent of 2669fca... structure:src/main/java/laz/tirphycraft/registry/init/TirphycraftBlocks.java
     }
 
 }

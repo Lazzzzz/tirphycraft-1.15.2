@@ -2,7 +2,11 @@ package laz.tirphycraft.content.tiles.altar;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import static laz.tirphycraft.registry.init.TirphycraftDimensions.NOXIS_DIM;
+=======
+import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
+>>>>>>> parent of 2669fca... structure
 =======
 import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
 >>>>>>> parent of 2669fca... structure
@@ -11,7 +15,10 @@ import java.util.List;
 import java.util.Random;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 2669fca... structure
 import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.tiles.InventoryTile;
 >>>>>>> parent of 2669fca... structure
