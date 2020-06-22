@@ -12,7 +12,6 @@ import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.DarkForestBiome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.IFeatureConfig;
@@ -32,8 +31,8 @@ public class FrozBiome extends Biome {
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_FROZEN_SOLDIER, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_CROCROCASSE, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_LOMBRA, 10, 1, 1));
-		
-		
+		addSpawn(EntityClassification.MISC, new SpawnListEntry(TirphycraftEntities.ENTITY_MOTHMOTH, 10, 1, 6));
+
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,

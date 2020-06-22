@@ -7,7 +7,6 @@ import java.util.Random;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
-import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.util.math.AxisAlignedBB;

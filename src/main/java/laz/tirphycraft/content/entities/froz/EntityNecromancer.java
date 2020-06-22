@@ -11,7 +11,6 @@ import laz.tirphycraft.content.entities.goal.necromancer.TeleportGoal;
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerTE;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftItems;
-import net.minecraft.command.impl.KillCommand;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;

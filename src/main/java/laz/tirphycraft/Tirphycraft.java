@@ -9,19 +9,11 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import laz.tirphycraft.client.render.entities.froz.KretunRender;
-import laz.tirphycraft.client.tiles.BookOfKnowledgeContainerScreen;
-import laz.tirphycraft.client.tiles.FrozFurnaceContainerScreen;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.recipes.RecipeInit;
-import laz.tirphycraft.recipes.book.BookOfKnowledgeRecipe;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
-import laz.tirphycraft.recipes.froz.FrozFurnaceRecipeInit;
 import laz.tirphycraft.registry.TirphycraftRegistries;
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import laz.tirphycraft.registry.init.TirphycraftContainer;
 import laz.tirphycraft.registry.init.TirphycraftDimensions;
-import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.registry.render.TirphycraftBlockRender;
 import laz.tirphycraft.registry.render.TirphycraftEntitiesRender;
 import laz.tirphycraft.registry.render.TirphycraftGuiRender;
@@ -32,9 +24,6 @@ import laz.tirphycraft.world.biome.base.NoxisBiome;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.ScreenManager;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -47,7 +36,6 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -80,7 +68,7 @@ public class Tirphycraft {
 	}	
 
 	private void setup(final FMLCommonSetupEvent event) {
-		for (Biome biome : ForgeRegistries.BIOMES) {
+	for (Biome biome : ForgeRegistries.BIOMES) {
 			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome))
 				biome.addFeature(Decoration.SURFACE_STRUCTURES, Features.ANCIENT_STONE
 						.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
@@ -92,9 +80,8 @@ public class Tirphycraft {
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
-
 		RecipeInit.init();		
-	}
+}
 
 	private void clientSetup(FMLClientSetupEvent event) {
 		TirphycraftBlockRender.init();
@@ -119,8 +106,6 @@ public class Tirphycraft {
 		public static void onRegisterFeatures(final RegistryEvent.Register<Feature<?>> event)
 		{
 			StructureFeatures.registerFeatures(event);
-
-			LOGGER.log(Level.INFO, "features/structures registered.");
 		}
 
 	}

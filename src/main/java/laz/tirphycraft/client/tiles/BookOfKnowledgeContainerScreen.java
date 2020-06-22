@@ -2,7 +2,6 @@ package laz.tirphycraft.client.tiles;
 
 import laz.tirphycraft.client.draw.TirphyDrawable;
 import laz.tirphycraft.content.items.other.book.BookOfKnowledgeContainer;
-import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.book.BookItemInfo;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;

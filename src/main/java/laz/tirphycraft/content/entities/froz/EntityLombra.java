@@ -88,6 +88,7 @@ public class EntityLombra extends MonsterEntity {
 	@Override
 	public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
 			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
+		if (this.getPosY() >= 120) this.remove();
 		for (double i = this.getPosY(); i < 120; i++) {
 			if (i == 119) this.remove();
 			BlockPos pos = new BlockPos(this.getPosX(), i, this.getPosZ());

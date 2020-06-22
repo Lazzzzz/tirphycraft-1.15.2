@@ -4,7 +4,6 @@ import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftItems;
 import laz.tirphycraft.util.book.BookItemInfo;
-import net.minecraft.client.renderer.entity.model.BipedModel;
 
 public class BookOfKnowledgeRecipe {
 	public static void init() {

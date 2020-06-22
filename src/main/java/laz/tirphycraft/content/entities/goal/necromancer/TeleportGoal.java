@@ -1,18 +1,11 @@
 package laz.tirphycraft.content.entities.goal.necromancer;
 
 import java.util.EnumSet;
-import java.util.List;
 import java.util.Random;
 
-import laz.tirphycraft.content.entities.froz.EntityFrozenSoldier;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
-import laz.tirphycraft.registry.init.TirphycraftEntities;
-import laz.tirphycraft.registry.init.TirphycraftItems;
 import laz.tirphycraft.util.TirphycraftUtils;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
 public class TeleportGoal extends Goal {

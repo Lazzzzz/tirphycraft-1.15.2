@@ -54,12 +54,10 @@ import laz.tirphycraft.content.items.tiers.TirphycraftArmorTiers;
 import laz.tirphycraft.content.items.tiers.TirphycraftToolTiers;
 import laz.tirphycraft.content.items.totems.TotemLevitation;
 import laz.tirphycraft.content.items.totems.TotemThunder;
-import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTier;
+import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 
 public class TirphycraftItems {

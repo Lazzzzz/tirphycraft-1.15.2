@@ -1,27 +1,19 @@
 package laz.tirphycraft.world.features.froz.structures;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
-import org.apache.logging.log4j.Level;
-
-import com.google.common.collect.ImmutableMap;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
-import laz.tirphycraft.registry.init.TirphycraftItems;
 import laz.tirphycraft.util.structures.FrozDungeonHelper;
 import laz.tirphycraft.world.features.StructureFeatures;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.ChestBlock;
 import net.minecraft.command.arguments.BlockStateParser;
-import net.minecraft.command.impl.LocateCommand;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.ChestTileEntity;
@@ -30,7 +22,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.WeightedSpawnerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
@@ -284,7 +275,7 @@ public class FrozDungeonPiece {
 		}
 
 		@Override
-		public boolean func_225577_a_(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn,
+		public boolean create(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn,
 				MutableBoundingBox structureBoundingBoxIn, ChunkPos chunkPos) {
 			this.placeSettings.setBoundingBox(structureBoundingBoxIn);
 			this.boundingBox = this.template.getMutableBoundingBox(this.placeSettings, this.templatePosition);

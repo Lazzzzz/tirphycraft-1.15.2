@@ -2,7 +2,6 @@ package laz.tirphycraft.content.blocks.froz.dungeon;
 
 import java.util.Random;
 
-import laz.tirphycraft.particle.GlintData;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
