@@ -5,7 +5,6 @@ import laz.tirphycraft.client.render.entities.froz.FrozenSoldierRender;
 import laz.tirphycraft.client.render.entities.froz.KretunRender;
 import laz.tirphycraft.client.render.entities.froz.LombraRender;
 import laz.tirphycraft.client.render.entities.froz.MissileBatRender;
-import laz.tirphycraft.client.render.entities.froz.MothMothRender;
 import laz.tirphycraft.client.render.entities.froz.NecromancerRender;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -18,7 +17,6 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_MISSILE_BAT, MissileBatRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_CROCROCASSE, CrococasseRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_LOMBRA, LombraRender::new);
-		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_MOTHMOTH, MothMothRender::new);
 	}
 	
 }

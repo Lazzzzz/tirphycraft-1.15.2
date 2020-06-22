@@ -5,10 +5,15 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import laz.tirphycraft.content.entities.froz.EntityFrozenSoldier;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.client.renderer.entity.SkeletonRenderer;
 import net.minecraft.client.renderer.entity.model.BipedModel;
+import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.IHasArm;
+import net.minecraft.client.renderer.entity.model.SkeletonModel;
+import net.minecraft.client.renderer.entity.model.ZombieModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.MathHelper;
 
 public class FrozenSoldierModel<T extends EntityFrozenSoldier> extends BipedModel<EntityFrozenSoldier> implements IHasArm {
 	private final ModelRenderer Jaw;

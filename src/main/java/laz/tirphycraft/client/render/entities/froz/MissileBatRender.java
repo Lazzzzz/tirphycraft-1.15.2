@@ -4,8 +4,10 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 import laz.tirphycraft.client.model.entity.froz.MissileBatModel;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
+import net.minecraft.client.renderer.entity.BatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 

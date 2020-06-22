@@ -20,7 +20,7 @@ public class ClientLaputaEvent {
 	public static void onSetupFogDensity(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
-			if (player.getEntityWorld().getBiome(player.getPosition()) == TirphycraftBiomes.L_NML.get() && player.getPosY() < 100) {
+			if (player.getEntityWorld().getBiome(player.getPosition()) == TirphycraftBiomes.L_NML.get()) {
 				if (timer < maxFog)
 					timer += steps;
 				event.setCanceled(true);

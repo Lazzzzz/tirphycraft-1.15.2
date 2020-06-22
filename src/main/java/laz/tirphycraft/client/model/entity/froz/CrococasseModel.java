@@ -5,7 +5,10 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import laz.tirphycraft.content.entities.froz.EntityCrococasse;
 import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.entity.model.PigModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 3.5.3

@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.util.math.MathHelper;
 
 public class MissileBatModel extends SegmentedModel<EntityMissileBat> {

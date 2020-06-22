@@ -1,5 +1,7 @@
 package laz.tirphycraft.content.blocks.froz.dungeon;
 
+import org.apache.http.util.EntityUtils;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

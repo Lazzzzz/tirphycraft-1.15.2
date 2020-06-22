@@ -1,5 +1,6 @@
 package laz.tirphycraft.content.entities.froz;
 
+import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.animation.WinterSoldierAnimation;
 import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.entity.EntityType;
@@ -15,9 +16,11 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IWorld;

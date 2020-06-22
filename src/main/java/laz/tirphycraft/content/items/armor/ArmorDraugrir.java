@@ -3,8 +3,8 @@ package laz.tirphycraft.content.items.armor;
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.client.model.entity.armor.DraugrirChestModel;
 import laz.tirphycraft.client.model.entity.armor.DraugrirFeetModel;
+import laz.tirphycraft.client.model.entity.armor.DraugrirChestModel;
 import laz.tirphycraft.client.model.entity.armor.DraugrirHelmetModel;
 import laz.tirphycraft.client.model.entity.armor.DraugrirLegsModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
@@ -16,6 +16,8 @@ import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ArmorDraugrir extends ArmorItem {
 

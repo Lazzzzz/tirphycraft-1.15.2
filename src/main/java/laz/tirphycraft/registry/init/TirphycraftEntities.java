@@ -6,7 +6,6 @@ import laz.tirphycraft.content.entities.froz.EntityFrozenSoldier;
 import laz.tirphycraft.content.entities.froz.EntityKretun;
 import laz.tirphycraft.content.entities.froz.EntityLombra;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
-import laz.tirphycraft.content.entities.froz.EntityMothMoth;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
 import laz.tirphycraft.registry.TirphycraftRegistries;
 import net.minecraft.entity.EntityClassification;
@@ -20,7 +19,6 @@ public class TirphycraftEntities {
 	public static EntityType<EntityMissileBat> ENTITY_MISSILE_BAT;
 	public static EntityType<EntityCrococasse> ENTITY_CROCROCASSE;
 	public static EntityType<EntityLombra> ENTITY_LOMBRA;
-	public static EntityType<EntityMothMoth> ENTITY_MOTHMOTH;
 
 	public static void init() {
 		
@@ -42,15 +40,11 @@ public class TirphycraftEntities {
 		ENTITY_LOMBRA = EntityType.Builder.<EntityLombra>create(EntityLombra::new, EntityClassification.MONSTER)
 				.size(1f, 1.5f).build(Tirphycraft.MOD_ID + ":lombra");
 		
-		ENTITY_MOTHMOTH = EntityType.Builder.<EntityMothMoth>create(EntityMothMoth::new, EntityClassification.MISC)
-				.size(1.8F, 2.5F).build(Tirphycraft.MOD_ID + ":mothmoth");
-		
 		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", () -> ENTITY_KRETUN);
 		TirphycraftRegistries.ENTITY_TYPE.register("frozen_soldier_entity", () -> ENTITY_FROZEN_SOLDIER);
 		TirphycraftRegistries.ENTITY_TYPE.register("necromancer", () -> ENTITY_NECROMANCER);
 		TirphycraftRegistries.ENTITY_TYPE.register("missile_bat", () -> ENTITY_MISSILE_BAT);
 		TirphycraftRegistries.ENTITY_TYPE.register("crocrocasse", () -> ENTITY_CROCROCASSE);
 		TirphycraftRegistries.ENTITY_TYPE.register("lombra", () -> ENTITY_LOMBRA);
-		TirphycraftRegistries.ENTITY_TYPE.register("mothmoth", () -> ENTITY_MOTHMOTH);
 	}
 }

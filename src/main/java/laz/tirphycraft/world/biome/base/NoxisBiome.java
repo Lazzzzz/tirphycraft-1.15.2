@@ -9,8 +9,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.DarkForestBiome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.GenerationStage.Decoration;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
@@ -30,8 +32,7 @@ public class NoxisBiome extends Biome {
 
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.NOXIS_DEAD_BUSH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(10))));
-		
-}
+	}
 
 	@Override
 	public void buildSurface(Random random, IChunk chunkIn, int x, int z, int startHeight, double noise,

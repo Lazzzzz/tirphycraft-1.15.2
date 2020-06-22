@@ -2,7 +2,9 @@ package laz.tirphycraft.content.tiles.spawner;
 
 import javax.annotation.Nullable;
 
+import laz.tirphycraft.content.tiles.altar.AltarTE;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.TileEntity;

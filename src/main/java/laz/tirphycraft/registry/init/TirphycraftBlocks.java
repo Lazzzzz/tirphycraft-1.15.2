@@ -19,7 +19,6 @@ import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
 import laz.tirphycraft.content.blocks.noxis.NoxisFireBlock;
 import laz.tirphycraft.content.blocks.noxis.NoxisThornsBlock;
 import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
-import laz.tirphycraft.content.blocks.plants.TirphycraftRoofPlants;
 import laz.tirphycraft.content.blocks.plants.TirphycraftSapling;
 import laz.tirphycraft.content.blocks.teleporter.froz.TeleporterFrozBlock;
 import laz.tirphycraft.content.blocks.teleporter.froz.__TeleporterFrozBlock;
@@ -116,9 +115,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER5;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_FLOWER6;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> NOXIS_FLOWER1;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_FLOWER1;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_FLOWER2;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_FLOWER3;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_FLOWER4;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_BLUE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_GREEN;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> PETAL_PURPLE;//
@@ -148,7 +144,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> BRICKS_FROZ;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> __FROZ_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_PORTAL_BRICK;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_PORTAL_BRICK;
 
 
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_TELEPORTER;
@@ -174,7 +169,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT6;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT7;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT8;
-
 //
 
 
@@ -241,11 +235,7 @@ public static void init(){
        LAPUTA_FLOWER5 = addBlockClass("laputa_bush", () -> new LaputaBushBlock(Effects.SATURATION, 7, Block.Properties.from(Blocks.DANDELION)));
        LAPUTA_FLOWER6 = addBlockClass("laputa_tall_grass", () -> new LaputaTallGrassBlock(Effects.SATURATION, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
        NOXIS_FLOWER1 = addBlockClass("noxis_thorns", () -> new NoxisThornsBlock(Effects.WITHER, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-      
        FROZ_FLOWER1 = addBlockClass("majestic_rose", () -> new RosePlantsBlock(Effects.SLOWNESS, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-       FROZ_FLOWER2 = addBlockClass("frozen_moss", () -> new TirphycraftRoofPlants(Effects.SLOWNESS, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-       FROZ_FLOWER3 = addBlockClass("frozen_fern", () -> new TirphycraftPlants(Effects.SLOWNESS, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
-       FROZ_FLOWER4 = addBlockClass("spirit_grass", () -> new TirphycraftPlants(Effects.SLOWNESS, 7, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT).tickRandomly()));
        
        
        PETAL_BLUE = addCubedBlock("petal_block_blue", Block.Properties.from(Blocks.CACTUS));    
@@ -290,10 +280,8 @@ public static void init(){
        BRICKS_LAPUTA = addCubedBlock("brick_laputa", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        BRICKS_FROZ = addCubedBlock("brick_froz", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        
-       FROZ_PORTAL_BRICK   = addCubedBlock("brick_froz_portal", Block.Properties.create(Material.ROCK).hardnessAndResistance(-1.0F, 3600000.0F).noDrops());
-       LAPUTA_PORTAL_BRICK = addCubedBlock("brick_laputa_portal", Block.Properties.create(Material.ROCK).hardnessAndResistance(-1.0F, 3600000.0F).noDrops());
-   	
-       
+       FROZ_PORTAL_BRICK = addCubedBlock("brick_froz_portal", Block.Properties.create(Material.ROCK).hardnessAndResistance(-1.0F, 3600000.0F).noDrops());
+    	   
        POWDER_SNOW 		 = addBlockClass("powder_snow", () -> new PowderSnowBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        POWDER_SNOW_LAYER = addBlockClass("powder_snow_layer", () -> new PowderSnowLayerBlock(Block.Properties.from(Blocks.SNOW_BLOCK)));
        FROZ_DIRT 		 = addCubedBlock("froz_dirt", Block.Properties.from(Blocks.DIRT));
@@ -321,7 +309,8 @@ public static void init(){
        FROZ_DUNGEON_VARIANT5 = addOnlyBlockClass("froz_dungeon_v5", () -> new FrozDungeonBricks());
        FROZ_DUNGEON_VARIANT6 = addOnlyBlockClass("froz_dungeon_v6", () -> new FrozDungeonBricks());
        FROZ_DUNGEON_VARIANT7 = addOnlyBlockClass("froz_dungeon_v7", () -> new FrozDungeonBricks());
-       FROZ_DUNGEON_VARIANT8 = addOnlyBlockClass("froz_dungeon_v8", () -> new FrozDungeonBricks());       
+       FROZ_DUNGEON_VARIANT8 = addOnlyBlockClass("froz_dungeon_v8", () -> new FrozDungeonBricks());
+       
        
     }
 

@@ -5,7 +5,6 @@ import java.util.Random;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphycraftUtils;
 import laz.tirphycraft.world.features.Features;
-import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.SharedSeedRandom;
@@ -16,10 +15,8 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.GenerationStage.Decoration;
-import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
@@ -38,11 +35,6 @@ public class LaputaBiome extends Biome {
 				.withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.01f, 1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.TENIUM.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-		
-		addStructure(StructureFeatures.LAPUTA_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-		addFeature(Decoration.SURFACE_STRUCTURES, StructureFeatures.LAPUTA_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-	
 	}
 
 	@Override

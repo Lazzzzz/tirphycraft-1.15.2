@@ -14,7 +14,7 @@ public class CommonLaputaEvent {
 	@SubscribeEvent
 	public static void onSetupFogDensity(PlayerTickEvent event) {
 		PlayerEntity player = event.player;
-		if (player.getEntityWorld().getBiome(player.getPosition()) == TirphycraftBiomes.L_NML.get() && player.getPosY() < 100) {
+		if (player.getEntityWorld().getBiome(player.getPosition()) == TirphycraftBiomes.L_NML.get()) {
 			player.addPotionEffect(new EffectInstance(Effects.NAUSEA, 5*20, 1));
 		}
 	}
