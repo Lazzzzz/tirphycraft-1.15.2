@@ -2,7 +2,6 @@ package laz.tirphycraft.content.blocks.gs;
 
 import laz.tirphycraft.content.items.seed.SeedT1;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

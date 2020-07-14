@@ -1,6 +1,5 @@
 package laz.tirphycraft.registry.init;
 
-import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addArmor;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addAxe;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addHoe;

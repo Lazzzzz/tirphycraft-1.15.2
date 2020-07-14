@@ -1,9 +1,7 @@
 package laz.tirphycraft.client.render.entities.laputa;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.client.model.entity.froz.KretunModel;
 import laz.tirphycraft.client.model.entity.laputa.ButterflyModel;
-import laz.tirphycraft.content.entities.froz.EntityKretun;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;

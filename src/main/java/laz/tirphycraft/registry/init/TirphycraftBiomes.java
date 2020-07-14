@@ -19,7 +19,6 @@ import laz.tirphycraft.world.biome.noxis.NoxisPlainsBiome;
 import laz.tirphycraft.world.biome.noxis.NoxisThornsBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;

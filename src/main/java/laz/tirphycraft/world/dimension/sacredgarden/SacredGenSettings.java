@@ -1,7 +1,6 @@
 package laz.tirphycraft.world.dimension.sacredgarden;
 
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.OverworldGenSettings;
 
 public class SacredGenSettings extends OverworldGenSettings {

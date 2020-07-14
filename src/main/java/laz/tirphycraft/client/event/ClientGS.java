@@ -16,7 +16,6 @@ public class ClientGS {
 		ItemStack item = event.player.getHeldItemMainhand();
 		if (item.getItem() instanceof SeedT1) {
 			
-			
 		}
 		
 	}

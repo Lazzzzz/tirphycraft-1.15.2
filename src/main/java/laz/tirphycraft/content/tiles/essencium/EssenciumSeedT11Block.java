@@ -2,7 +2,6 @@ package laz.tirphycraft.content.tiles.essencium;
 
 import javax.annotation.Nullable;
 
-import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerTE;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

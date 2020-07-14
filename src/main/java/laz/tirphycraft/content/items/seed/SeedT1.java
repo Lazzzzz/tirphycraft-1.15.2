@@ -1,9 +1,7 @@
 package laz.tirphycraft.content.items.seed;
 
 import laz.tirphycraft.Tirphycraft;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 public class SeedT1 extends Item{
 
