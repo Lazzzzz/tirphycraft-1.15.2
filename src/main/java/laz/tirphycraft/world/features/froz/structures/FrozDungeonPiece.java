@@ -275,7 +275,7 @@ public class FrozDungeonPiece {
 		}
 
 		@Override
-		public boolean create(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn,
+		public boolean func_225577_a_(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn,
 				MutableBoundingBox structureBoundingBoxIn, ChunkPos chunkPos) {
 			this.placeSettings.setBoundingBox(structureBoundingBoxIn);
 			this.boundingBox = this.template.getMutableBoundingBox(this.placeSettings, this.templatePosition);

@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
@@ -30,7 +30,7 @@ public class LaputaSmallBushTreeFeature extends Feature<IFeatureConfig>{
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, IFeatureConfig config) {
-		
+		if (position.getY() > 120) return false;
 			if (!(worldIn.getBlockState(position.down()).isSolid())) return false;
 			
 			int size = rand.nextInt(2) + 1;

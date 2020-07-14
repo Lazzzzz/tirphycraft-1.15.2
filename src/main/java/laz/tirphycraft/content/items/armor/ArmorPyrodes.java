@@ -2,7 +2,7 @@ package laz.tirphycraft.content.items.armor;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
-import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;

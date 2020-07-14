@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphycraftUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -29,7 +29,7 @@ public class LaputaTreeFeature extends Feature<IFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, IFeatureConfig config) {
-
+		if (pos.getY() > 120) return false;
 		if (pos.getY() == 0) return false;
 		if (worldIn.getBlockState(pos.down()) != TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState()
 		 && worldIn.getBlockState(pos.down()) != TirphycraftBlocks.LAPUTA_COBBLESTONE.get().getDefaultState()

@@ -2,12 +2,12 @@ package laz.tirphycraft.content.tiles.frozFurnace;
 
 import java.util.Objects;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.content.TirphycraftContainer;
-import laz.tirphycraft.content.TirphycraftItems;
 import laz.tirphycraft.content.tiles.frozFurnace.slots.FrozFuelSlot;
 import laz.tirphycraft.content.tiles.frozFurnace.slots.FrozOutputSLot;
 import laz.tirphycraft.content.tiles.frozFurnace.slots.FrozRoseSlot;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftContainer;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

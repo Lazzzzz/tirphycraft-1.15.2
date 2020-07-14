@@ -1,7 +1,7 @@
 package laz.tirphycraft.content.blocks.teleporter.froz;
 
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.FROZ_DIM;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -115,7 +115,7 @@ public class TeleporterFrozBlock extends Block {
 				playerEntity.teleport(targetWorld, player.getPosX(), 255, player.getPosZ(), player.rotationYaw,
 						player.rotationPitch);
 				BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
-				player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
+				player.setPositionAndUpdate(p.getX(), p.getY() + 3, p.getZ());
 			}
 
 		}

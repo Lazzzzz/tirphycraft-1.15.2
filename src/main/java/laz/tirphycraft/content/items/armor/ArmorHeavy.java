@@ -2,15 +2,7 @@ package laz.tirphycraft.content.items.armor;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import laz.tirphycraft.registry.init.TirphycraftItems;
-=======
-import laz.tirphycraft.content.TirphycraftItems;
->>>>>>> parent of 2669fca... structure
-=======
-import laz.tirphycraft.content.TirphycraftItems;
->>>>>>> parent of 2669fca... structure
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -45,5 +37,4 @@ public class ArmorHeavy extends ArmorItem {
 		}
 	}
 
-	
 }

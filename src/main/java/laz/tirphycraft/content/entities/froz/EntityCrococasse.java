@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class EntityCrococasse extends MonsterEntity {
 
-	public EntityCrococasse(EntityType<? extends MonsterEntity> type, World worldIn) {
+	public EntityCrococasse(EntityType<? extends EntityCrococasse> type, World worldIn) {
 		super(type, worldIn);
 	}
 

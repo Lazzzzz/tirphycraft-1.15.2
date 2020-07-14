@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.material.Material;
@@ -30,7 +30,7 @@ public class LaputaSmallRockPickFeature extends Feature<IFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, IFeatureConfig config) {
-
+		if (position.getY() > 120) return false;
 		if (worldIn.getBlockState(position.down()) != TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState()
 				&& worldIn.getBlockState(position.down()) != TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState()
 				&& worldIn.getBlockState(position.down()) != TirphycraftBlocks.LAPUTA_COBBLESTONE.get().getDefaultState())

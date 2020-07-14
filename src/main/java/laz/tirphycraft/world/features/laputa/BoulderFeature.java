@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -26,6 +26,7 @@ public class BoulderFeature extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 		if (pos.getY() < 1) return false;
+		if (pos.getY() > 120) return false;
 		int size = rand.nextInt(8) + 1;
 		
 		for (int i = -size; i < size; i++) {

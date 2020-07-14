@@ -1,6 +1,6 @@
 package laz.tirphycraft.world.features;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.world.biome.surfaceBuilder.DeepTopLayerSurfaceBuilder;
 import laz.tirphycraft.world.features.froz.GiantIcePickFeature;
 import laz.tirphycraft.world.features.froz.IceCrystalFeature;
@@ -52,7 +52,7 @@ public class Features {
 	
 	
 	public static ConfiguredFeature<NoFeatureConfig, ?> PYRODES			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_PYRODES.get().getDefaultState(), 15, 90, 10, 40, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
-	public static ConfiguredFeature<NoFeatureConfig, ?> CRYSTAL			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_CRYSTAL.get().getDefaultState(), 0, 25, 10, 45, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> CRYSTAL			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_CRYSTAL.get().getDefaultState(), 0, 95, 10, 45, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> COAL_ON_COKE	= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_COAL_ON_COKE.get().getDefaultState(), 0, 90, 5, 15, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> NIXIUM			= new OreDepositFeatures(TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_NIXIUM.get().getDefaultState(), 0, 10, 1, 35, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> HISTICE_ICE		= new OreDepositFeatures(TirphycraftBlocks.FROZ_STONE.get().getDefaultState(), TirphycraftBlocks.ORE_HISTICE_ICE.get().getDefaultState(), 30, 48, 3, 10, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
@@ -104,15 +104,6 @@ public class Features {
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_TELEPORTER		= new FrozTeleporterFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> LAPUTA_TELEPORTER	= new LaputaTeleporterFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 
-	
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
->>>>>>> parent of 2669fca... structure
-=======
->>>>>>> parent of 2669fca... structure
 	//https://github.com/Glitchfiend/BiomesOPlenty/blob/801d32a4d6ab73f3fe19b89e55556cf529084214/src/main/java/biomesoplenty/common/world/gen/feature/DeepTopLayerSurfaceBuilder.java
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DEEP_TOP_LAYER = new DeepTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	

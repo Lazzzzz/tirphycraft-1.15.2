@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class LaputaTeleporterFeature extends Feature<NoFeatureConfig> {
 
-	private final BlockState FRAME = TirphycraftBlocks.LAPUTA_PORTAL_BRICK.get().getDefaultState();
+	private final BlockState FRAME = TirphycraftBlocks.BRICKS_LAPUTA.get().getDefaultState();
 
 	public LaputaTeleporterFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);
@@ -102,7 +102,7 @@ public class LaputaTeleporterFeature extends Feature<NoFeatureConfig> {
 		int max_size = 4;
 		int y = worldIn.getHeight(Type.WORLD_SURFACE, pos).getY();
 		for (int k = y + rand.nextInt(max_size) + 1; k >= y - 1; k--) {
-			setBlockState(worldIn, new BlockPos(pos.getX(), k, pos.getZ()), TirphycraftBlocks.BRICKS_LAPUTA.get().getDefaultState());
+			setBlockState(worldIn, new BlockPos(pos.getX(), k, pos.getZ()), FRAME);
 		}
 
 	}

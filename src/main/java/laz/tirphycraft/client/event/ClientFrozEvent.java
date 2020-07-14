@@ -1,7 +1,7 @@
 package laz.tirphycraft.client.event;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.content.TirphycraftDimensions;
+import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,7 +16,7 @@ public class ClientFrozEvent {
 	static float steps = 0.0001f;
 
 	@SubscribeEvent
-	public static void onSetupFogDensity(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
+	public static void frozFog(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
 			if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM.get()
@@ -25,8 +25,6 @@ public class ClientFrozEvent {
 					timer += steps * 5;
 				event.setCanceled(true);
 				event.setDensity(timer);
-<<<<<<< HEAD
-<<<<<<< HEAD
 			
 			} else if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM
 					.get() && player.getPosition().getY() < 48 && timer < maxFog / 7) {
@@ -35,17 +33,13 @@ public class ClientFrozEvent {
 				event.setCanceled(true);
 				event.setDensity(timer);
 			
-=======
->>>>>>> parent of 2669fca... structure
-=======
->>>>>>> parent of 2669fca... structure
 			} else {
 				if (timer > 0)
 					timer -= steps * 10;
-				if (timer != 0) {
-					event.setCanceled(true);
-					event.setDensity(timer);
-				}
+					if (timer != 0) {
+						event.setCanceled(true);
+						event.setDensity(timer);
+					}
 			}
 		}
 	}

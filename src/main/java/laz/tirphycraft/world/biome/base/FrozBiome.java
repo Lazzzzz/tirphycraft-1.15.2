@@ -2,8 +2,8 @@ package laz.tirphycraft.world.biome.base;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
-import laz.tirphycraft.content.TirphycraftEntities;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
@@ -27,12 +27,12 @@ public class FrozBiome extends Biome {
 	protected FrozBiome(Biome.Builder builder) {
 		super(builder);
 
-		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_KRETUN, 10, 1, 1));
+		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_KRETUN, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_FROZEN_SOLDIER, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_CROCROCASSE, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_LOMBRA, 10, 1, 1));
-		addSpawn(EntityClassification.MISC, new SpawnListEntry(TirphycraftEntities.ENTITY_MOTHMOTH, 10, 1, 6));
-
+		
+		
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
@@ -51,19 +51,11 @@ public class FrozBiome extends Biome {
 				Features.ICE_CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.MAJESTIC_ROSE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-<<<<<<< HEAD
-<<<<<<< HEAD
 	    
 		addStructure(StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		addFeature(Decoration.UNDERGROUND_STRUCTURES, StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	
-=======
-
->>>>>>> parent of 2669fca... structure
-=======
-
->>>>>>> parent of 2669fca... structure
 	}
 
 	@Override

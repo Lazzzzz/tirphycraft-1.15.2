@@ -2,7 +2,7 @@ package laz.tirphycraft.content.items.clocks;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.GOSYN_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.GOSYN_DIM;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;

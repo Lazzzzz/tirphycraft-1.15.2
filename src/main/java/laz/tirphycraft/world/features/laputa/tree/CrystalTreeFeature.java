@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -25,6 +25,8 @@ public class CrystalTreeFeature extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 
+		if (pos.getY() > 120) return false;
+		
 		for (int j = 0; j < 3; j++) {
 			for (int k = 0; k < 3; k++) {
 				BlockState block = worldIn.getBlockState(pos.add(j, -1, k));

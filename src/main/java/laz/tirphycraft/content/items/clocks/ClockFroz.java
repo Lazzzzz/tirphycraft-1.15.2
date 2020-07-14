@@ -2,7 +2,7 @@ package laz.tirphycraft.content.items.clocks;
 
 import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
-import static laz.tirphycraft.content.TirphycraftDimensions.FROZ_DIM;
+import static laz.tirphycraft.registry.init.TirphycraftDimensions.FROZ_DIM;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -35,7 +35,7 @@ public class ClockFroz extends Item {
             ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
             playerEntity.teleport(targetWorld, player.getPosX(), 255, player.getPosZ(), player.rotationYaw, player.rotationPitch);
 			BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
-			player.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
+			player.setPositionAndUpdate(p.getX(), p.getY()+ 3, p.getZ());
         }
         return ActionResult.resultPass(stack);
     }

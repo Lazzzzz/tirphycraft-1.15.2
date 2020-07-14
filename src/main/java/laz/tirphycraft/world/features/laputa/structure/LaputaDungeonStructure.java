@@ -3,13 +3,9 @@ package laz.tirphycraft.world.features.laputa.structure;
 import java.util.Random;
 import java.util.function.Function;
 
-import org.apache.logging.log4j.Level;
-
 import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.world.features.laputa.structure.pieces.IslandPiece;
-import net.minecraft.util.Rotation;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -18,8 +14,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.structure.DesertPyramidPiece;
-import net.minecraft.world.gen.feature.structure.DesertPyramidStructure;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -89,7 +83,7 @@ public class LaputaDungeonStructure extends Structure<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean canBeGenerated(BiomeManager p_225558_1_, ChunkGenerator<?> chunkGen, Random rand, int chunkPosX,
+	public boolean func_225558_a_(BiomeManager p_225558_1_, ChunkGenerator<?> chunkGen, Random rand, int chunkPosX,
 			int chunkPosZ, Biome biome) {
 		ChunkPos chunkpos = this.getStartPositionForPosition(chunkGen, rand, chunkPosX, chunkPosZ, 0, 0);
 
@@ -114,15 +108,15 @@ public class LaputaDungeonStructure extends Structure<NoFeatureConfig> {
 		public void init(ChunkGenerator<?> generator, TemplateManager templateManagerIn, int chunkX, int chunkZ,
 				Biome biomeIn) {
 
-			int x = (chunkX * 16) + 8;
-			int z = (chunkZ * 16) + 8;
+			int x = chunkX * 16;
+			int z = chunkZ * 16;
 
 			int surfaceY = 180;
 			BlockPos blockpos = new BlockPos(x, surfaceY, z);
 
-	        IslandPiece islandPiece = new IslandPiece(this.rand, chunkX * 16, surfaceY, chunkZ * 16);
-			this.components.add(islandPiece);
-			
+	        IslandPiece MainIslandPiece = new IslandPiece(this.rand, x, surfaceY, z);
+			this.components.add(MainIslandPiece);
+
 			this.recalculateStructureSize();
 		}
 

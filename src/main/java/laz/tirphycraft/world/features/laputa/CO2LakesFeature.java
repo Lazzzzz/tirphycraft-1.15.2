@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftRegistries;
+import laz.tirphycraft.registry.TirphycraftRegistries;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -23,6 +23,7 @@ public class CO2LakesFeature extends Feature<NoFeatureConfig>{
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
+		if (pos.getY() > 120) return false;
 		int size = rand.nextInt(3)+2;
 		for (int i = -size; i < size; i++) {
 			for (int j= -size; j < size; j++) {

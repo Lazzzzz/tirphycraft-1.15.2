@@ -36,9 +36,6 @@ public class TirphycraftBlockRender {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.NOXIS_FLOWER1.get(), cutout);
 
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.FROZ_FLOWER1.get(), cutout);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.FROZ_FLOWER2.get(), cutout);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.FROZ_FLOWER3.get(), cutout);
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.FROZ_FLOWER4.get(), cutout);
 
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_BLUE.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.ANCIENT_GREEN.get(), cutout);

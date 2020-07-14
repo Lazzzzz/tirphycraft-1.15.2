@@ -18,6 +18,7 @@ public class SpikeTrapBlock extends Block {
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof PlayerEntity) {
 			worldIn.setBlockState(pos.up(), TirphycraftBlocks.FROZ_DUNGEON_SPIKE.get().getDefaultState());
+	        worldIn.setBlockState(pos, TirphycraftBlocks.FROZ_DUNGEON_VARIANT0.get().getDefaultState());
 		}
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}

@@ -2,7 +2,7 @@ package laz.tirphycraft.content.items.tiers;
 
 import java.util.function.Supplier;
 
-import laz.tirphycraft.content.TirphycraftItems;
+import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;

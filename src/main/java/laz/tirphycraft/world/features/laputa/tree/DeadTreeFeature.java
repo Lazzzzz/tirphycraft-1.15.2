@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.material.Material;
@@ -28,7 +28,7 @@ public class DeadTreeFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos p, NoFeatureConfig config) {
-
+		if (p.getY() > 120) return false;
 		if (p.getY() == 0 || worldIn.getBlockState(p.down()) == TirphycraftBlocks.LAPUTA_STONE.get().getDefaultState() || worldIn.getBlockState(p.down()) == TirphycraftBlocks.LAPUTA_COBBLESTONE.get().getDefaultState())
 			return false;
 

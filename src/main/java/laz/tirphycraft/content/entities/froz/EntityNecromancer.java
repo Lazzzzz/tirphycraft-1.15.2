@@ -19,10 +19,12 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.item.ExperienceOrbEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -59,7 +61,7 @@ public class EntityNecromancer extends MonsterEntity {
 	private static final DataParameter<BlockPos> SPAWN = EntityDataManager.createKey(EntityNecromancer.class,
 			DataSerializers.BLOCK_POS);
 
-	public EntityNecromancer(EntityType<? extends MonsterEntity> type, World worldIn) {
+	public EntityNecromancer(EntityType<? extends EntityNecromancer> type, World worldIn) {
 		super(type, worldIn);
 	}
 
@@ -190,7 +192,24 @@ public class EntityNecromancer extends MonsterEntity {
 	}
 
 	@Override
+	public boolean isImmuneToExplosions() {
+		return true;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source.getImmediateSource() instanceof AbstractArrowEntity) {
+			return false;
+		}
+		return super.attackEntityFrom(source, amount);
+	}
+
+	@Override
 	public boolean hitByEntity(Entity entityIn) {
+		if (entityIn instanceof AbstractArrowEntity) {
+			return false;
+		}
+
 		if (!world.isRemote && c1 != null && c2 != null && spawn != null) {
 			Random rand = this.getRNG();
 			double x = this.c2.getX() - this.c1.getX() - 2;
@@ -278,7 +297,7 @@ public class EntityNecromancer extends MonsterEntity {
 		for (int i = 0; i < k.size(); i++) {
 			k.get(i).remove();
 		}
-		
+
 		List<EntityMissileBat> kk = world.getEntitiesWithinAABB(EntityMissileBat.class, box);
 		for (int i = 0; i < kk.size(); i++) {
 			kk.get(i).remove();
@@ -288,14 +307,20 @@ public class EntityNecromancer extends MonsterEntity {
 		TileEntity tile = world.getTileEntity(spawn);
 		if (tile instanceof TirphyBossSpawnerTE)
 			((TirphyBossSpawnerTE) tile).isDone(true);
-		
+
 		if (!world.isRemote) {
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(TirphycraftItems.DRAUGRIR_CHEST, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(TirphycraftItems.DRAUGRIR_FEET, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(TirphycraftItems.DRAUGRIR_HEAD, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(TirphycraftItems.DRAUGRIR_LEGS, 1)));
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftItems.DRAUGRIR_CHEST, 1)));
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftItems.DRAUGRIR_FEET, 1)));
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftItems.DRAUGRIR_HEAD, 1)));
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftItems.DRAUGRIR_LEGS, 1)));
 		}
-		
+
+		this.world.addEntity(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), 1000));
+
 		super.onDeath(cause);
 	}
 

@@ -1,6 +1,6 @@
 package laz.tirphycraft.content.blocks.teleporter.laputa;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphyLaputaTeleporter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

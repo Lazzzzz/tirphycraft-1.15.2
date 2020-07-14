@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +25,7 @@ public class LightPadFeature extends Feature<IFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, IFeatureConfig config) {
 		int basePathWidth = 3;
-
+		if (position.getY() > 120) return false;
 		while (worldIn.isAirBlock(position) && position.getY() > 2) {
 			position = position.down();
 		}

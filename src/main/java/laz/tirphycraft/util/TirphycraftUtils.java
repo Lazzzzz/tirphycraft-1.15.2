@@ -14,7 +14,7 @@ public class TirphycraftUtils {
 	public static int getHeight(ConfiguredSurfaceBuilder<?> surfaceBuilder, IWorld worldIn, SharedSeedRandom random,
 			int x, int z) {
 		int y = 0;
-		for (int i = 255; i > 0; i--) {
+		for (int i = 120; i > 0; i--) {
 			BlockPos p = new BlockPos(x, i, z);
 			if (worldIn.getBlockState(p) == surfaceBuilder.config.getTop()) {
 				y = i;

@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +27,7 @@ public class HopperFlowerFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
-
+		if (pos.getY() > 120) return false;
 		if (!(worldIn.getBlockState(pos.down()).isSolid() 
 				&& worldIn.getBlockState(pos.down().west()).isSolid()
 				&& worldIn.getBlockState(pos.down().south()).isSolid()

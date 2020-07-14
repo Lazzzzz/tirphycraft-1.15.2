@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -23,6 +23,7 @@ public class FragmentFeature extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 		if (rand.nextInt(40) > 0) return false;
+		if (!worldIn.getBlockState(pos.down()).isSolid()) return false;
 		switch (rand.nextInt(5)) {
 		case 0:
 			setBlockState(worldIn, pos, TirphycraftBlocks.ANCIENT_BLUE.get().getDefaultState());

@@ -2,9 +2,9 @@ package laz.tirphycraft.content.blocks.froz;
 
 import java.util.Random;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.blocks.plants.TirphycraftPlants;
 import laz.tirphycraft.particle.GlintData;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.TirphyColor;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

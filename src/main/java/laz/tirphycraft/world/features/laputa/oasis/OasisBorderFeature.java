@@ -5,8 +5,8 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBiomes;
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBiomes;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -26,7 +26,7 @@ public class OasisBorderFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos position, NoFeatureConfig config) {
-		if (position.getY() == 0 || position.getY() > 100 || position.getY() > 60)
+		if (position.getY() == 0 || position.getY() > 100)
 			return false;
 
 		Biome south = worldIn.getBiome(position.add(16, 0, 0));

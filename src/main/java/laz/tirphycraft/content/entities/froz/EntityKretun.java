@@ -2,15 +2,15 @@ package laz.tirphycraft.content.entities.froz;
 
 import java.util.List;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
 import laz.tirphycraft.content.entities.animation.KretunAnimation;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
-import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +18,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class EntityKretun extends CreatureEntity {
+public class EntityKretun extends MonsterEntity {
 
 	public KretunAnimation animation = new KretunAnimation();
 
@@ -32,17 +32,8 @@ public class EntityKretun extends CreatureEntity {
 		super.registerAttributes();
 		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0);
 	}
-
-	@Override
-	public void onCollideWithPlayer(PlayerEntity entityIn) {
-
-	}
-
-	@Override
-	public void tick() {
-		this.setMotion(0, this.getMotion().y / 2, 0);
-		super.tick();
-	}
+	
+	
 
 	@Override
 	public void livingTick() {
@@ -89,7 +80,7 @@ public class EntityKretun extends CreatureEntity {
 
 	@Override
 	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
-		if (this.getPosition().getY() > 50) {
+		if (this.getPosition().getY() > 60) {
 			for (int i = -1 ; i < 2; i ++) {
 				for (int j = -1 ; j < 2; j ++) {
 					if (this.world.getBlockState(this.getPosition().add(i,0,j)).getBlock() != TirphycraftBlocks.POWDER_SNOW_LAYER.getBlock()) return false;

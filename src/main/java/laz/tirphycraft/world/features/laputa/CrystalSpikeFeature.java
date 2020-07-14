@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 
-import laz.tirphycraft.content.TirphycraftBlocks;
+import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -23,7 +23,7 @@ public class CrystalSpikeFeature extends Feature<IFeatureConfig> {
 	@Override
 	public boolean place(IWorld world, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos p, IFeatureConfig config) {
-				
+		if (p.getY() > 120) return false;
 		BlockState BLOCK = randBlock(rand);
 		BlockPos pos = p;
 		for (int i = pos.getY() + 1; i > 0; i--) {
