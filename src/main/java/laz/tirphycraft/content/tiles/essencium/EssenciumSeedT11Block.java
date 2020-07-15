@@ -17,7 +17,7 @@ public class EssenciumSeedT11Block extends Block {
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return new EssenciumSeedTileBase(3, 1, TirphycraftBlocks.SEEDT11.getTileEntityType());
+		return new EssenciumSeedTileBase(3, 1, 0, TirphycraftBlocks.SEEDT11.getTileEntityType());
 	}
 
 	@Override

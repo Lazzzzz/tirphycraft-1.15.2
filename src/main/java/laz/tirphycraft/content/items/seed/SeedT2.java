@@ -13,9 +13,9 @@ import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class SeedT1 extends Item {
+public class SeedT2 extends Item {
 
-	public SeedT1() {
+	public SeedT2() {
 		super(new Item.Properties().group(Tirphycraft.ITEM_GROUP).maxStackSize(64));
 	}
 
@@ -24,7 +24,7 @@ public class SeedT1 extends Item {
 		if (entityIn instanceof PlayerEntity && world.isRemote) {
 			PlayerEntity player = (PlayerEntity) entityIn;
 			ItemStack item = player.getHeldItemMainhand();
-			if (item.getItem() instanceof SeedT1) {
+			if (item.getItem() instanceof SeedT2) {
 				RayTraceResult ray = rayTrace(world, player, RayTraceContext.FluidMode.NONE);
 
 				if (ray.getType() == RayTraceResult.Type.BLOCK) {
@@ -33,7 +33,7 @@ public class SeedT1 extends Item {
 						for (int i = -1; i < 2; i++) {
 							for (int j = -1; j < 2; j++) {
 								BlockPos p = blockpos.add(i, 1, j);
-								if (world.getBlockState(p) == TirphycraftBlocks.EXTRACTOR1.get().getDefaultState()) {
+								if (world.getBlockState(p) == TirphycraftBlocks.EXTRACTOR2.get().getDefaultState()) {
 									world.addParticle(ParticleTypes.CRIT, blockpos.getX() + world.rand.nextFloat(),
 											blockpos.getY() + 1, blockpos.getZ() + world.rand.nextFloat(), 0, 0.01, 0);
 								}

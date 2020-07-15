@@ -13,7 +13,9 @@ import laz.tirphycraft.content.blocks.froz.dungeon.FrozDungeonBricks;
 import laz.tirphycraft.content.blocks.froz.dungeon.PotionTrapBlock;
 import laz.tirphycraft.content.blocks.froz.dungeon.SpikeBlock;
 import laz.tirphycraft.content.blocks.froz.dungeon.SpikeTrapBlock;
-import laz.tirphycraft.content.blocks.gs.ExtractorBlock;
+import laz.tirphycraft.content.blocks.gs.ExtractorT1Block;
+import laz.tirphycraft.content.blocks.gs.ExtractorT2Block;
+import laz.tirphycraft.content.blocks.gs.ExtractorT3Block;
 import laz.tirphycraft.content.blocks.gs.SacredDirt;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonBricks;
@@ -166,8 +168,20 @@ public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> LAPUTA_ACTI
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> LAPUTA_ACTIVATOR_DOWN;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT11;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT12;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT13;
+
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT21;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT22;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT23;
+
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT31;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT32;
+public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT33;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR1;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR2;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR3;
 
 //froz dungeon
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_TRAP1;
@@ -319,9 +333,12 @@ public static void init(){
        BOSS_SPAWNER_0 = addTileEntity("boss_spawner_0", TirphyBossSpawnerBlock::new, TirphyBossSpawnerTE::new);
        LAPUTA_ACTIVATOR_DOWN = addTileEntity("laputa_dungeon_v3", LaputaActivatorDown::new, LaputaActivatorDownTE::new);
        LAPUTA_ACTIVATOR = addTileEntity("laputa_dungeon_v4", LaputaActivator::new, LaputaActivatorTE::new);
-       SEEDT11 = addTileEntity("seedt11", EssenciumSeedT11Block::new, () -> new EssenciumSeedTileBase(3, 1, SEEDT11.getTileEntityType()));	
        
-       EXTRACTOR1 = addBlockClass("extractor1", ExtractorBlock::new);
+       SEEDT11 = addTileEntity("seedt11", EssenciumSeedT11Block::new, () -> new EssenciumSeedTileBase(3, 1, 0, SEEDT11.getTileEntityType()));	
+       
+       EXTRACTOR1 = addBlockClass("extractor1", ExtractorT1Block::new);
+       EXTRACTOR2 = addBlockClass("extractor2", ExtractorT2Block::new);
+       EXTRACTOR3 = addBlockClass("extractor3", ExtractorT3Block::new);
        
        FROZ_DUNGEON_TRAP1 = addOnlyBlockClass("froz_dungeon_t1", SpikeTrapBlock::new);
        FROZ_DUNGEON_TRAP2 = addOnlyBlockClass("froz_dungeon_t2", FireTrapBlock::new);

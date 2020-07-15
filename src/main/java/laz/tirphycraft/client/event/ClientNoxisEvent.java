@@ -22,8 +22,7 @@ public class ClientNoxisEvent {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
 			World world = player.getEntityWorld();
-			if (world.getDimension().getType().getModType() == TirphycraftDimensions.NOXIS_DIM.get()
-					&& world.getBiome(player.getPosition()) == TirphycraftBiomes.N_THORNS.get()) {
+			if (world.getBiome(player.getPosition()) == TirphycraftBiomes.N_THORNS.get()) {
 				if (timer < maxFog)
 					timer += steps * 10;
 				event.setCanceled(true);

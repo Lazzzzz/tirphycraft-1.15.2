@@ -207,7 +207,7 @@ public class EntityNecromancer extends MonsterEntity {
 	@Override
 	public boolean hitByEntity(Entity entityIn) {
 		if (entityIn instanceof AbstractArrowEntity) {
-			return false;
+			return true;
 		}
 
 		if (!world.isRemote && c1 != null && c2 != null && spawn != null) {

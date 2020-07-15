@@ -18,11 +18,13 @@ public class EssenciumSeedTileBase extends TileEntity implements ITickableTileEn
 	private int cycle = 0;
 	private int max_cycle = 0;
 	private int tier = 1;
+	private int type = 0; //0 melee //1 range
 
-	public EssenciumSeedTileBase(int max_cyle, int tier, TileEntityType<?> tileEntityTypeIn) {
+	public EssenciumSeedTileBase(int max_cyle, int tier, int type, TileEntityType<?> tileEntityTypeIn) {
 		super(tileEntityTypeIn);
 		this.max_cycle = max_cyle;
 		this.tier = tier;
+		this.type = type;
 	}
 
 	@Override
@@ -49,29 +51,46 @@ public class EssenciumSeedTileBase extends TileEntity implements ITickableTileEn
 
 	}
 
+	public int getCycle() {
+		return this.cycle;
+	}
+
+	public int getTier() {
+		return this.tier;
+	}
+
+	public boolean isMature() {
+		return cycle == max_cycle;
+	}
+
+	public boolean isMelee() {
+		if (this.type == 0) return true;
+		return false;
+	}
+	
 	private void spawnParticles() {
 		int i = pos.getX();
 		int j = pos.getY();
 		int k = pos.getZ();
-		if (world.rand.nextInt(50) == 0) {
+		if (world.rand.nextInt(100) == 0) {
 			double d0 = (double) ((float) i + world.rand.nextFloat());
 			double d1 = (double) ((float) j + world.rand.nextFloat());
 			double d2 = (double) ((float) k + world.rand.nextFloat());
 			switch (tier) {
 			case 1:
-				world.addParticle(GlintData.glintParticle(TirphyColor.PURPLE, world.rand.nextInt(50) + 50),
-						false, d0, d1, d2, 0.0D, 0.08D, 0.0D);
+				world.addParticle(GlintData.glintParticle(TirphyColor.PURPLE, world.rand.nextInt(50) + 100), false, d0,
+						d1, d2, 0.0D, 0.08D, 0.0D);
 				break;
 			case 2:
-				world.addParticle(GlintData.glintParticle(TirphyColor.YELLOW, world.rand.nextInt(50) + 50),
-						false, d0, d1, d2, 0.0D, 0.08D, 0.0D);
+				world.addParticle(GlintData.glintParticle(TirphyColor.YELLOW, world.rand.nextInt(50) + 100), false, d0,
+						d1, d2, 0.0D, 0.08D, 0.0D);
 				break;
 			case 3:
-				world.addParticle(GlintData.glintParticle(TirphyColor.BLUE, world.rand.nextInt(50) + 50), false,
-						d0, d1, d2, 0.0D, 0.08D, 0.0D);
+				world.addParticle(GlintData.glintParticle(TirphyColor.BLUE, world.rand.nextInt(50) + 100), false, d0,
+						d1, d2, 0.0D, 0.08D, 0.0D);
 			}
 		}
-		
+
 	}
 
 	public boolean getExtractor() {
@@ -99,6 +118,7 @@ public class EssenciumSeedTileBase extends TileEntity implements ITickableTileEn
 		this.cycle = compound.getInt("cycle");
 		this.max_cycle = compound.getInt("max_cycle");
 		this.tier = compound.getInt("tier");
+		this.type = compound.getInt("type");
 		super.read(compound);
 	}
 
@@ -107,6 +127,7 @@ public class EssenciumSeedTileBase extends TileEntity implements ITickableTileEn
 		compound.putInt("cycle", this.cycle);
 		compound.putInt("max_cycle", this.max_cycle);
 		compound.putInt("tier", this.tier);
+		compound.putInt("type", this.type);
 		return super.write(compound);
 	}
 

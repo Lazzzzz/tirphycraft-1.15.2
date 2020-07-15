@@ -8,6 +8,7 @@ import laz.tirphycraft.content.entities.froz.EntityLombra;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
+import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
 import laz.tirphycraft.registry.TirphycraftRegistries;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -22,6 +23,8 @@ public class TirphycraftEntities {
 	public static EntityType<EntityLombra> ENTITY_LOMBRA;
 	
 	public static EntityType<EntityButterfly> ENTITY_BUTTERFLY;
+	public static EntityType<EntityTreeSpirit> ENTITY_SPIRIT_TREE;
+	
 
 	public static void init() {
 		
@@ -47,6 +50,8 @@ public class TirphycraftEntities {
 		ENTITY_BUTTERFLY = EntityType.Builder.<EntityButterfly>create(EntityButterfly::new, EntityClassification.AMBIENT)
 				.size(0.5f, 0.5f).build(Tirphycraft.MOD_ID + ":butterfly");
 		
+		ENTITY_SPIRIT_TREE = EntityType.Builder.<EntityTreeSpirit>create(EntityTreeSpirit::new, EntityClassification.MONSTER)
+				.size(0.8f, 3f).build(Tirphycraft.MOD_ID + ":spirit_tree");
 		
 		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", () -> ENTITY_KRETUN);
 		TirphycraftRegistries.ENTITY_TYPE.register("frozen_soldier_entity", () -> ENTITY_FROZEN_SOLDIER);
@@ -55,5 +60,6 @@ public class TirphycraftEntities {
 		TirphycraftRegistries.ENTITY_TYPE.register("crocrocasse", () -> ENTITY_CROCROCASSE);
 		TirphycraftRegistries.ENTITY_TYPE.register("lombra", () -> ENTITY_LOMBRA);
 		TirphycraftRegistries.ENTITY_TYPE.register("butterfly", () -> ENTITY_BUTTERFLY);
+		TirphycraftRegistries.ENTITY_TYPE.register("spirit_tree", () -> ENTITY_SPIRIT_TREE);
 	}
 }

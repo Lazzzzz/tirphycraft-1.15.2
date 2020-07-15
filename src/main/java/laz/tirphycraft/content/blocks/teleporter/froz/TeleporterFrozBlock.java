@@ -11,6 +11,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectType;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -116,6 +120,7 @@ public class TeleporterFrozBlock extends Block {
 						player.rotationPitch);
 				BlockPos p = player.world.getHeight(Type.WORLD_SURFACE, player.getPosition());
 				player.setPositionAndUpdate(p.getX(), p.getY() + 3, p.getZ());
+				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 20 * 10, 5));
 			}
 
 		}

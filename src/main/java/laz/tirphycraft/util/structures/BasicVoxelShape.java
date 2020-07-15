@@ -127,7 +127,7 @@ public class BasicVoxelShape {
 			}
 			for (int i = 0; i < 2; i++) {
 				for (int j = 0; j < 2; j++) {
-					IslandPiece.placeBrick(world, new BlockPos(x0 + i, y0, z0 + j), rand);					
+					if (rand.nextInt(20) > 1) IslandPiece.placeBrick(world, new BlockPos(x0 + i, y0, z0 + j), rand);					
 				}
 			}
 		}

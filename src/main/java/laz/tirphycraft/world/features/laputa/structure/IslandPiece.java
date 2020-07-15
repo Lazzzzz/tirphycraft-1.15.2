@@ -50,7 +50,36 @@ public class IslandPiece extends ScatteredStructurePiece {
 		generateSurface(world, p, rand);
 		generateRoot(world, p, rand);
 		makeCastle(world, p, rand);
+		generateBossRoom(world, p, rand);
 		return false;
+	}
+
+	private void generateBossRoom(IWorld world, BlockPos p, Random rand) {
+		for (int i = -size; i <= size; i++) {
+			for (int j = -size; j <= -3; j++) {
+				for (int k = -size; k <= size; k++) {
+					if (i * i + j * j + k * k <= (size - 12) * (size - 12)) {
+						if (i * i + j * j + k * k >= (size - 14) * (size - 14))
+							world.setBlockState(p.add(i, j, k),
+									TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+						else {
+							if (j < -25)
+								world.setBlockState(p.add(i, j, k), Blocks.LAVA.getDefaultState(), 2);
+							else
+								world.setBlockState(p.add(i, j, k), Blocks.AIR.getDefaultState(), 2);
+						}
+					}
+				}
+			}
+		}
+
+		for (int i = -size; i <= size; i++) {
+			for (int k = -size; k <= size; k++) {
+				if (i * i + k * k <= 30 * 30) {
+					world.setBlockState(p.add(i, -17, k),TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+				}
+			}
+		}
 	}
 
 	private void generateIsland(IWorld world, BlockPos p, Random rand) {
@@ -89,7 +118,6 @@ public class IslandPiece extends ScatteredStructurePiece {
 				}
 			}
 		}
-
 	}
 
 	private void generateSurface(IWorld world, BlockPos pos, Random rand) {
@@ -154,32 +182,64 @@ public class IslandPiece extends ScatteredStructurePiece {
 	}
 
 	private void makeCastle(IWorld world, BlockPos pos, Random rand) {
-		BasicVoxelShape.TowerCylinder(world, pos, 56, 18, 3, rand);
-		BasicVoxelShape.cylinder(world, pos.up(16), 55, 2, 1, Blocks.AIR.getDefaultState());
+		makeOuterWalls(world, pos, rand);
 
 		CastleHelper helper = new CastleHelper(world.getWorld(), pos, rand, size - 16);
 		helper.generateTowerArea();
 		ArrayList<AxisAlignedBB> areas = helper.getAreas();
 		for (int i = 0; i < areas.size(); i++) {
 			AxisAlignedBB area = areas.get(i);
-			makeTower(world, new BlockPos(area.getCenter()), rand, (int) area.getXSize() - 1, rand.nextInt(10) + 20);
+			// makeTower(world, new BlockPos(area.getCenter()), rand, (int) area.getXSize()
+			// - 1, rand.nextInt(10) + 20);
+		}
+	}
+
+	private void makeOuterWalls(IWorld world, BlockPos pos, Random rand) {
+		ArrayList<BlockPos> towerPos = new ArrayList<BlockPos>();
+		towerPos.add(pos.add(54, -4, 0));
+		towerPos.add(pos.add(38, -4, 38));
+		towerPos.add(pos.add(0, -4, 54));
+		towerPos.add(pos.add(-38, -4, 38));
+		towerPos.add(pos.add(-54, -4, 0));
+		towerPos.add(pos.add(-38, -4, -38));
+		towerPos.add(pos.add(0, -4, -54));
+		towerPos.add(pos.add(38, -4, -38));
+
+		for (int i = 0; i < towerPos.size(); i++) {
+			makeTower(world, towerPos.get(i), rand, 4, 27);
+			BasicVoxelShape.sphere(world, towerPos.get(i), 4,
+					TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
+		}
+
+		for (int i = -1; i < towerPos.size() - 1; i++) {
+			for (int j = 3; j < 20; j++) {
+				if (i == -1)
+					BasicVoxelShape.Castleline(world, towerPos.get(0).up(j), towerPos.get(towerPos.size() - 1).up(j), 1,
+							rand);
+				else
+					BasicVoxelShape.Castleline(world, towerPos.get(i).up(j), towerPos.get(i + 1).up(j), 1, rand);
+			}
 		}
 	}
 
 	public static void placeBrick(IWorld world, BlockPos p, Random rand) {
-		switch (rand.nextInt(4)) {
-		case 0:
-			world.setBlockState(p, TirphycraftBlocks.BRICKS_LAPUTA.get().getDefaultState(), 2);
-			break;
-		case 1:
-			world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
-			break;
-		case 2:
-			world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT1.get().getDefaultState(), 2);
-			break;
-		case 3:
-			world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT2.get().getDefaultState(), 2);
-			break;
+		if (rand.nextInt(15) == 0)
+			world.setBlockState(p, Blocks.AIR.getDefaultState(), 2);
+		else {
+			switch (rand.nextInt(4)) {
+			case 0:
+				world.setBlockState(p, TirphycraftBlocks.BRICKS_LAPUTA.get().getDefaultState(), 2);
+				break;
+			case 1:
+				world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+				break;
+			case 2:
+				world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT1.get().getDefaultState(), 2);
+				break;
+			case 3:
+				world.setBlockState(p, TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT2.get().getDefaultState(), 2);
+				break;
+			}
 		}
 	}
 
