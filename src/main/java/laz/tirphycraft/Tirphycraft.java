@@ -5,6 +5,7 @@ import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 import java.util.ArrayList;
 
+import laz.tirphycraft.util.CapHandler;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -78,7 +79,7 @@ public class Tirphycraft {
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
-
+		CapHandler.init();
 		RecipeInit.init();
 	}
 
