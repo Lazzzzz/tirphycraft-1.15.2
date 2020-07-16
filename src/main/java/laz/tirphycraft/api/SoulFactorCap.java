@@ -3,7 +3,6 @@ package laz.tirphycraft.api;
 import laz.tirphycraft.api.soulfactor.ISoulFactor;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.util.LazyOptional;
@@ -26,5 +25,22 @@ public class SoulFactorCap {
     public static int removeSoulFactor(final PlayerEntity player){
         return getPlayerSoulFactor(player).map(ISoulFactor::removeSoulFactor).orElse(0);
     }
+
+    public static boolean activateBadEffect(final PlayerEntity player){
+        return getPlayerSoulFactor(player).map(ISoulFactor::activateBadEffect).orElse(false);
+    }
+
+    public static boolean  activateGoodEffect(final PlayerEntity player){
+        return getPlayerSoulFactor(player).map(ISoulFactor::activateGoodEffect).orElse(false);
+    }
+
+    public static void goodSoulEffect(final PlayerEntity player){
+        getPlayerSoulFactor(player).ifPresent(ISoulFactor::goodSoulFactorEffect);
+    }
+
+    public static void badSoulEffect(final PlayerEntity player){
+        getPlayerSoulFactor(player).ifPresent(ISoulFactor::badSoulFactorEffect);
+    }
+
 
 }

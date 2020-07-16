@@ -14,6 +14,8 @@ import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
+import static laz.tirphycraft.api.SoulFactorCap.*;
+
 @EventBusSubscriber
 public class CommonLaputaEvent {
 
@@ -34,5 +36,13 @@ public class CommonLaputaEvent {
 						player.rotationPitch);
 			}
 		}
+		if(!player.world.isRemote()) {
+			if (activateBadEffect(player)) {
+				badSoulEffect(player);
+			} else if (activateGoodEffect(player)) {
+				goodSoulEffect(player);
+			}
+		}
+
 	}
 }
