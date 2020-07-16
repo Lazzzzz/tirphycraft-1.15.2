@@ -18,6 +18,8 @@ import laz.tirphycraft.content.blocks.gs.ExtractorT2Block;
 import laz.tirphycraft.content.blocks.gs.ExtractorT3Block;
 import laz.tirphycraft.content.blocks.gs.SacredDirt;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
+import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonActivatorOff;
+import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonActivatorOn;
 import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonBricks;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaBushBlock;
 import laz.tirphycraft.content.blocks.laputa.flowers.LaputaTallGrassBlock;
@@ -35,10 +37,6 @@ import laz.tirphycraft.content.tiles.essencium.EssenciumSeedT11Block;
 import laz.tirphycraft.content.tiles.essencium.EssenciumSeedTileBase;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
-import laz.tirphycraft.content.tiles.laputaActivator.LaputaActivator;
-import laz.tirphycraft.content.tiles.laputaActivator.LaputaActivatorDown;
-import laz.tirphycraft.content.tiles.laputaActivator.LaputaActivatorDownTE;
-import laz.tirphycraft.content.tiles.laputaActivator.LaputaActivatorTE;
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerBlock;
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerTE;
 import laz.tirphycraft.registry.BlockRegistryObjectGroup;
@@ -164,8 +162,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> FROZ_FURNACE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> BOSS_SPAWNER_0;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> LAPUTA_ACTIVATOR;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> LAPUTA_ACTIVATOR_DOWN;
 
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT11;
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT12;
@@ -204,6 +200,9 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_VARIANT
 public static BlockRegistryObjectGroup<Block, BlockItem, ?>	LAPUTA_DUNGEON_VARIANT0;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DUNGEON_VARIANT1;
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DUNGEON_VARIANT2;
+
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_ACTIVATOR_ON;
+public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_ACTIVATOR_OFF;
 //
 
 public static void init(){
@@ -331,8 +330,6 @@ public static void init(){
        ALTAR 		= addTileEntity("altar", AltarBlock::new, AltarTE::new);
        FROZ_FURNACE = addTileEntity("froz_furnace", FrozFurnaceBlock::new, FrozFurnaceTE::new);
        BOSS_SPAWNER_0 = addTileEntity("boss_spawner_0", TirphyBossSpawnerBlock::new, TirphyBossSpawnerTE::new);
-       LAPUTA_ACTIVATOR_DOWN = addTileEntity("laputa_dungeon_v3", LaputaActivatorDown::new, LaputaActivatorDownTE::new);
-       LAPUTA_ACTIVATOR = addTileEntity("laputa_dungeon_v4", LaputaActivator::new, LaputaActivatorTE::new);
        
        SEEDT11 = addTileEntity("seedt11", EssenciumSeedT11Block::new, () -> new EssenciumSeedTileBase(3, 1, 0, SEEDT11.getTileEntityType()));	
        
@@ -358,6 +355,9 @@ public static void init(){
        LAPUTA_DUNGEON_VARIANT0 = addOnlyBlockClass("laputa_dungeon_v0", LaputaDungeonBricks::new);
        LAPUTA_DUNGEON_VARIANT1 = addOnlyBlockClass("laputa_dungeon_v1", LaputaDungeonBricks::new);
        LAPUTA_DUNGEON_VARIANT2 = addOnlyBlockClass("laputa_dungeon_v2", LaputaDungeonBricks::new);
+       
+       LAPUTA_ACTIVATOR_OFF = addOnlyBlockClass("laputa_dungeon_v3", LaputaDungeonActivatorOff::new);
+       LAPUTA_ACTIVATOR_ON  = addOnlyBlockClass("laputa_dungeon_v4", LaputaDungeonActivatorOn::new);
        
    }
 

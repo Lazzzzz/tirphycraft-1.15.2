@@ -7,6 +7,8 @@ import laz.tirphycraft.client.render.entities.froz.LombraRender;
 import laz.tirphycraft.client.render.entities.froz.MissileBatRender;
 import laz.tirphycraft.client.render.entities.froz.NecromancerRender;
 import laz.tirphycraft.client.render.entities.laputa.ButterFlyRender;
+import laz.tirphycraft.client.render.entities.laputa.SpiritHeartRender;
+import laz.tirphycraft.client.render.entities.laputa.SpiritMinionRender;
 import laz.tirphycraft.client.render.entities.laputa.SpiritTreeRender;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -21,6 +23,8 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_LOMBRA, LombraRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BUTTERFLY, ButterFlyRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_TREE, SpiritTreeRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_MINION, SpiritMinionRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_HEART, SpiritHeartRender::new);
 	}
 	
 }

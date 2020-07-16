@@ -3,7 +3,6 @@ package laz.tirphycraft.world.features.laputa.structure;
 import java.util.ArrayList;
 import java.util.Random;
 
-import laz.tirphycraft.content.tiles.laputaActivator.LaputaActivatorDownTE;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.structures.BasicVoxelShape;
 import laz.tirphycraft.util.structures.CastleHelper;
@@ -12,7 +11,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -60,8 +58,11 @@ public class IslandPiece extends ScatteredStructurePiece {
 				for (int k = -size; k <= size; k++) {
 					if (i * i + j * j + k * k <= (size - 12) * (size - 12)) {
 						if (i * i + j * j + k * k >= (size - 14) * (size - 14))
-							world.setBlockState(p.add(i, j, k),
-									TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+							if (rand.nextInt(20) == 0)
+								world.setBlockState(p.add(i, j, k), Blocks.GLOWSTONE.getDefaultState(), 2);
+							else
+								world.setBlockState(p.add(i, j, k),
+										TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
 						else {
 							if (j < -25)
 								world.setBlockState(p.add(i, j, k), Blocks.LAVA.getDefaultState(), 2);
@@ -75,11 +76,37 @@ public class IslandPiece extends ScatteredStructurePiece {
 
 		for (int i = -size; i <= size; i++) {
 			for (int k = -size; k <= size; k++) {
-				if (i * i + k * k <= 30 * 30) {
-					world.setBlockState(p.add(i, -17, k),TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+				if (i * i + k * k <= (size - 8) * (size - 8)) {
+					placeBrick(world, p.add(i, -3, k), rand);
+
 				}
 			}
 		}
+
+		for (int i = -size; i <= size; i++) {
+			for (int k = -size; k <= size; k++) {
+				if (i * i + k * k <= 30 * 30) {
+					if (rand.nextInt(20) == 0)
+						world.setBlockState(p.add(i, -17, k), Blocks.GLOWSTONE.getDefaultState(), 2);
+					else
+						world.setBlockState(p.add(i, -17, k),
+								TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState(), 2);
+				}
+			}
+		}
+
+		BlockPos p1 = p.add(48, -17, 0);
+		BlockPos p2 = p.add(-48, -17, 0);
+		BlockPos p3 = p.add(0, -17, 48);
+		BlockPos p4 = p.add(0, -17, -48);
+
+		for (int i = -2; i < 5; i++) {
+			BasicVoxelShape.line(world, p1.add(0, 0, i), p2.add(0, 0, i), 1,
+					TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
+			BasicVoxelShape.line(world, p3.add(i, 0, 0), p4.add(i, 0, 0), 1,
+					TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
+		}
+
 	}
 
 	private void generateIsland(IWorld world, BlockPos p, Random rand) {
@@ -260,10 +287,6 @@ public class IslandPiece extends ScatteredStructurePiece {
 			}
 		}
 		placeBrick(world, p.up(2), rand);
-		world.setBlockState(p.up(3), TirphycraftBlocks.LAPUTA_ACTIVATOR_DOWN.get().getDefaultState(), 2);
-		TileEntity tile = world.getTileEntity(p.up(3));
-		if (tile instanceof LaputaActivatorDownTE) {
-			((LaputaActivatorDownTE) tile).setCenter(center);
-		}
+		world.setBlockState(p.up(3), TirphycraftBlocks.LAPUTA_ACTIVATOR_OFF.get().getDefaultState(), 2);
 	}
 }

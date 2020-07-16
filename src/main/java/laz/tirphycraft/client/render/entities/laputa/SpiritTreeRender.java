@@ -1,5 +1,7 @@
 package laz.tirphycraft.client.render.entities.laputa;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.client.model.entity.laputa.SpiritTreeModel;
 import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
@@ -18,6 +20,13 @@ public class SpiritTreeRender extends MobRenderer<EntityTreeSpirit, SpiritTreeMo
 	@Override
 	public ResourceLocation getEntityTexture(EntityTreeSpirit entity) {
 		return TEXTURE;
+	}
+	
+	@Override
+	protected void preRenderCallback(EntityTreeSpirit entitylivingbaseIn, MatrixStack matrixStackIn,
+			float partialTickTime) {
+		
+		matrixStackIn.scale(2F, 2F, 2F);
 	}
 
 }

@@ -8,6 +8,8 @@ import laz.tirphycraft.content.entities.froz.EntityLombra;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
+import laz.tirphycraft.content.entities.laputa.EntitySpiritHeart;
+import laz.tirphycraft.content.entities.laputa.EntitySpiritMinion;
 import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
 import laz.tirphycraft.registry.TirphycraftRegistries;
 import net.minecraft.entity.EntityClassification;
@@ -24,6 +26,8 @@ public class TirphycraftEntities {
 	
 	public static EntityType<EntityButterfly> ENTITY_BUTTERFLY;
 	public static EntityType<EntityTreeSpirit> ENTITY_SPIRIT_TREE;
+	public static EntityType<EntitySpiritMinion> ENTITY_SPIRIT_MINION;
+	public static EntityType<EntitySpiritHeart> ENTITY_SPIRIT_HEART;
 	
 
 	public static void init() {
@@ -53,13 +57,21 @@ public class TirphycraftEntities {
 		ENTITY_SPIRIT_TREE = EntityType.Builder.<EntityTreeSpirit>create(EntityTreeSpirit::new, EntityClassification.MONSTER)
 				.size(0.8f, 3f).build(Tirphycraft.MOD_ID + ":spirit_tree");
 		
-		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", () -> ENTITY_KRETUN);
+		ENTITY_SPIRIT_MINION = EntityType.Builder.<EntitySpiritMinion>create(EntitySpiritMinion::new, EntityClassification.MONSTER)
+				.size(0.5f, 0.5f).build(Tirphycraft.MOD_ID + ":spirit_minion");
+		
+		ENTITY_SPIRIT_HEART = EntityType.Builder.<EntitySpiritHeart>create(EntitySpiritHeart::new, EntityClassification.MONSTER)
+				.size(1f, 1f).build(Tirphycraft.MOD_ID + ":spirit_heart");
+		
+		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", 		() -> ENTITY_KRETUN);
 		TirphycraftRegistries.ENTITY_TYPE.register("frozen_soldier_entity", () -> ENTITY_FROZEN_SOLDIER);
-		TirphycraftRegistries.ENTITY_TYPE.register("necromancer", () -> ENTITY_NECROMANCER);
-		TirphycraftRegistries.ENTITY_TYPE.register("missile_bat", () -> ENTITY_MISSILE_BAT);
-		TirphycraftRegistries.ENTITY_TYPE.register("crocrocasse", () -> ENTITY_CROCROCASSE);
-		TirphycraftRegistries.ENTITY_TYPE.register("lombra", () -> ENTITY_LOMBRA);
-		TirphycraftRegistries.ENTITY_TYPE.register("butterfly", () -> ENTITY_BUTTERFLY);
-		TirphycraftRegistries.ENTITY_TYPE.register("spirit_tree", () -> ENTITY_SPIRIT_TREE);
+		TirphycraftRegistries.ENTITY_TYPE.register("necromancer", 			() -> ENTITY_NECROMANCER);
+		TirphycraftRegistries.ENTITY_TYPE.register("missile_bat", 			() -> ENTITY_MISSILE_BAT);
+		TirphycraftRegistries.ENTITY_TYPE.register("crocrocasse", 			() -> ENTITY_CROCROCASSE);
+		TirphycraftRegistries.ENTITY_TYPE.register("lombra", 				() -> ENTITY_LOMBRA);
+		TirphycraftRegistries.ENTITY_TYPE.register("butterfly", 			() -> ENTITY_BUTTERFLY);
+		TirphycraftRegistries.ENTITY_TYPE.register("spirit_tree", 			() -> ENTITY_SPIRIT_TREE);
+		TirphycraftRegistries.ENTITY_TYPE.register("spirit_minion",			() -> ENTITY_SPIRIT_MINION);
+		TirphycraftRegistries.ENTITY_TYPE.register("spirit_heart",			() -> ENTITY_SPIRIT_HEART);
 	}
 }
