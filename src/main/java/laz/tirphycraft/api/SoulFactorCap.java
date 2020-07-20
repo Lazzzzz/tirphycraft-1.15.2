@@ -26,6 +26,10 @@ public class SoulFactorCap {
         return getPlayerSoulFactor(player).map(ISoulFactor::removeSoulFactor).orElse(0);
     }
 
+    public static int getSoulFactor(final PlayerEntity player){
+        return getPlayerSoulFactor(player).map(ISoulFactor::getSoulFactor).orElse(0);
+    }
+
     public static boolean activateBadEffect(final PlayerEntity player){
         return getPlayerSoulFactor(player).map(ISoulFactor::activateBadEffect).orElse(false);
     }
