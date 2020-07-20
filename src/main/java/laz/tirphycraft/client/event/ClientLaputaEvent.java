@@ -1,11 +1,13 @@
 package laz.tirphycraft.client.event;
 
 import laz.tirphycraft.Tirphycraft;
+import laz.tirphycraft.client.overlay.TirphycraftMainOverlay;
 import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -33,6 +35,13 @@ public class ClientLaputaEvent {
 					event.setDensity(timer);
 				}
 			}
+		}
+	}
+
+	@SubscribeEvent
+	public static void onRenderHud(RenderGameOverlayEvent.Post event) {
+		if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
+			TirphycraftMainOverlay.INSTANCE.buildOverlay();
 		}
 	}
 	

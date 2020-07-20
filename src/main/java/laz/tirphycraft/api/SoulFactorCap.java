@@ -42,5 +42,8 @@ public class SoulFactorCap {
         getPlayerSoulFactor(player).ifPresent(ISoulFactor::badSoulFactorEffect);
     }
 
+    public static void setSoulFactor(final PlayerEntity player, final int soulFactor){
+        getPlayerSoulFactor(player).ifPresent(soulfactor -> soulfactor.setSoulFactor(soulFactor));
+    }
 
 }
