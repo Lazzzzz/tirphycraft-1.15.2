@@ -1,36 +1,33 @@
 package laz.tirphycraft.network;
 
-import java.util.UUID;
 import java.util.function.Supplier;
 
+import laz.tirphycraft.api.SoulFactorCap;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
 
 public class PacketSoulFactor {
+
+    private int factor;
  
-    private UUID entityID;
-    private int changeTo;
-    private int changeFrom;
- 
-    public PacketSoulFactor(UUID entityID, int changeTo, int changeFrom) {
-        this.entityID = entityID;
-        this.changeTo = changeTo;
-        this.changeFrom = changeFrom;
+    public PacketSoulFactor(int factor) {
+        this.factor = factor;
     }
  
     public static PacketSoulFactor decode(PacketBuffer buf) {
-        return new PacketSoulFactor(buf.readUniqueId(), buf.readInt(), buf.readInt());
+        return new PacketSoulFactor(buf.readInt());
     }
  
     public static void encode(PacketSoulFactor packet, PacketBuffer buf) {
-        buf.writeUniqueId(packet.entityID);
-        buf.writeInt(packet.changeTo);
-        buf.writeInt(packet.changeFrom);
+        buf.writeInt(packet.factor);
     }
  
     public static void handle(PacketSoulFactor packet, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
-        	
+        	PlayerEntity player = Minecraft.getInstance().player;
+        	SoulFactorCap.setSoulFactor(player, packet.factor);
         });
         ctx.get().setPacketHandled(true);
     }

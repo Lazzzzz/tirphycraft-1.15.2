@@ -5,7 +5,11 @@ import static laz.tirphycraft.api.SoulFactorCap.activateGoodEffect;
 import static laz.tirphycraft.api.SoulFactorCap.badSoulEffect;
 import static laz.tirphycraft.api.SoulFactorCap.goodSoulEffect;
 
+import laz.tirphycraft.api.SoulFactorCap;
+import laz.tirphycraft.network.PacketHandler;
+import laz.tirphycraft.network.PacketSoulFactor;
 import laz.tirphycraft.registry.init.TirphycraftBiomes;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.potion.EffectInstance;
@@ -16,6 +20,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.network.NetworkDirection;
 
 @EventBusSubscriber
 public class CommonLaputaEvent {
@@ -37,13 +42,16 @@ public class CommonLaputaEvent {
 						player.rotationPitch);
 			}
 		}
-		if(!player.world.isRemote()) {
+		if (!player.world.isRemote()) {
+			if (player.world.getGameTime() % 20 == 0)
+				PacketHandler.INSTANCE.sendTo(new PacketSoulFactor(SoulFactorCap.getSoulFactor(player)), Minecraft.getInstance().getConnection().getNetworkManager(), NetworkDirection.PLAY_TO_CLIENT);
+
 			if (activateBadEffect(player)) {
 				badSoulEffect(player);
 			} else if (activateGoodEffect(player)) {
 				goodSoulEffect(player);
 			}
-		}
-
+		} 
+		
 	}
 }
