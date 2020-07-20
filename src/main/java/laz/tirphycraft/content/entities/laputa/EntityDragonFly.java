@@ -11,6 +11,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.entity.monster.GhastEntity;
 import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -19,20 +20,19 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class EntityButterfly extends FlyingEntity {
+public class EntityDragonFly extends FlyingEntity {
 
-	private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityButterfly.class,
+	private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityDragonFly.class,
 			DataSerializers.VARINT);
 
-	public EntityButterfly(EntityType<? extends EntityButterfly> type, World worldIn) {
+	public EntityDragonFly(EntityType<? extends EntityDragonFly> type, World worldIn) {
 		super(type, worldIn);
-		this.moveController = new EntityButterfly.MoveHelperController(this);
+		this.moveController = new EntityDragonFly.MoveHelperController(this);
 	}
 
 	protected void registerData() {
@@ -50,8 +50,8 @@ public class EntityButterfly extends FlyingEntity {
 
 	@Override
 	protected void registerGoals() {
-		this.targetSelector.addGoal(7, new EntityButterfly.RandomFlyGoal(this));
-		this.targetSelector.addGoal(7, new EntityButterfly.LookAroundGoal(this));
+		this.targetSelector.addGoal(7, new EntityDragonFly.RandomFlyGoal(this));
+		this.targetSelector.addGoal(7, new EntityDragonFly.LookAroundGoal(this));
 	}
 
 	@Override
@@ -66,11 +66,11 @@ public class EntityButterfly extends FlyingEntity {
 		if (getPosition().getY() < 30 || worldIn.getBlockState(getPosition().down()) == Blocks.AIR.getDefaultState()) return false;
 		return super.canSpawn(worldIn, spawnReasonIn);
 	}
-
+	
 	static class LookAroundGoal extends Goal {
-		private final EntityButterfly parentEntity;
+		private final EntityDragonFly parentEntity;
 
-		public LookAroundGoal(EntityButterfly ghast) {
+		public LookAroundGoal(EntityDragonFly ghast) {
 			this.parentEntity = ghast;
 			this.setMutexFlags(EnumSet.of(Goal.Flag.LOOK));
 		}
@@ -107,10 +107,10 @@ public class EntityButterfly extends FlyingEntity {
 	}
 
 	static class MoveHelperController extends MovementController {
-		private final EntityButterfly parentEntity;
+		private final EntityDragonFly parentEntity;
 		private int courseChangeCooldown;
 
-		public MoveHelperController(EntityButterfly ghast) {
+		public MoveHelperController(EntityDragonFly ghast) {
 			super(ghast);
 			this.parentEntity = ghast;
 		}
@@ -148,9 +148,9 @@ public class EntityButterfly extends FlyingEntity {
 	}
 
 	static class RandomFlyGoal extends Goal {
-		private final EntityButterfly parentEntity;
+		private final EntityDragonFly parentEntity;
 
-		public RandomFlyGoal(EntityButterfly ghast) {
+		public RandomFlyGoal(EntityDragonFly ghast) {
 			this.parentEntity = ghast;
 			this.setMutexFlags(EnumSet.of(Goal.Flag.MOVE));
 		}

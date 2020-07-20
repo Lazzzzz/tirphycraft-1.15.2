@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 5,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_speed",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_attack",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:amulet_1_health",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:ore_tenium",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:crystal",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:poly_crystal_pyrodes",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:explosion_core",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:end_stone",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

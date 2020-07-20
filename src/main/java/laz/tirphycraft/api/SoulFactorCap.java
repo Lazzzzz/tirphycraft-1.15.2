@@ -30,7 +30,7 @@ public class SoulFactorCap {
         return getPlayerSoulFactor(player).map(ISoulFactor::activateBadEffect).orElse(false);
     }
 
-    public static boolean  activateGoodEffect(final PlayerEntity player){
+    public static boolean activateGoodEffect(final PlayerEntity player){
         return getPlayerSoulFactor(player).map(ISoulFactor::activateGoodEffect).orElse(false);
     }
 

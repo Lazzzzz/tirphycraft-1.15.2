@@ -6,6 +6,7 @@ import java.util.Random;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.structures.BasicVoxelShape;
 import laz.tirphycraft.util.structures.CastleHelper;
+import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -49,9 +50,29 @@ public class IslandPiece extends ScatteredStructurePiece {
 		generateRoot(world, p, rand);
 		makeCastle(world, p, rand);
 		generateBossRoom(world, p, rand);
+		summonSapling(world, p, rand);
 		return false;
 	}
 
+	private void summonSapling(IWorld world, BlockPos p, Random rand) {
+		for (int i = 0; i < rand.nextInt(4); i++) {
+			double xx = 0;
+			double zz = 0;
+			boolean flag = true;
+			while (flag) {
+				xx = rand.nextInt(60) - 30;
+				zz = rand.nextInt(60) - 30;
+				if (xx != 0 || zz != 0 || xx * xx + zz * zz <= 15 * 15)
+					flag = false;
+			}
+			BlockPos sapling = p.add(xx, 0, zz);
+			if (!world.getBlockState(sapling.up()).isSolid()) {
+				world.setBlockState(sapling.down(), TirphycraftBlocks.LAPUTA_GRASS.get().getDefaultState(), 2);
+				world.setBlockState(sapling, TirphycraftBlocks.SAPLING_COPPIR.get().getDefaultState(), 2);
+			}
+		}
+	}
+	
 	private void generateBossRoom(IWorld world, BlockPos p, Random rand) {
 		for (int i = -size; i <= size; i++) {
 			for (int j = -size; j <= -3; j++) {
@@ -100,12 +121,16 @@ public class IslandPiece extends ScatteredStructurePiece {
 		BlockPos p3 = p.add(0, -17, 48);
 		BlockPos p4 = p.add(0, -17, -48);
 
-		for (int i = -2; i < 5; i++) {
+		for (int i = -2; i < 3; i++) {
 			BasicVoxelShape.line(world, p1.add(0, 0, i), p2.add(0, 0, i), 1,
 					TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
 			BasicVoxelShape.line(world, p3.add(i, 0, 0), p4.add(i, 0, 0), 1,
 					TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
 		}
+
+	}
+
+	private void generateBossRoomDecoration(IWorld world, BlockPos p, Random rand) {
 
 	}
 

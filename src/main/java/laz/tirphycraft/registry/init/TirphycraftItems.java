@@ -103,7 +103,7 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> FROZ_KEY;///
 	public static RegistryObject<Item> ORIGIN_MATTER;///
 	public static RegistryObject<Item> EXPLOSION_CORE;///
-	public static RegistryObject<Item> SEA_CORE;///
+	public static RegistryObject<Item> TREE_CORE;///
 	public static RegistryObject<Item> LIFE_CORE;///
 	public static RegistryObject<Item> STICK_CRYSTAL;//
 	public static RegistryObject<Item> STICK_COPPIR;//
@@ -428,7 +428,7 @@ public class TirphycraftItems {
 		FROZ_KEY = addSimpleItem("froz_key", 3);
 		ORIGIN_MATTER = addSimpleItem("origin_matter", 64);
 		EXPLOSION_CORE = addSimpleItem("explosion_core", 64);
-		SEA_CORE = addSimpleItem("sea_core", 64);
+		TREE_CORE = addSimpleItem("tree_core", 64);
 		LIFE_CORE = addSimpleItem("life_core", 64);
 		STICK_CRYSTAL = addSimpleItem("stick_crystal", 64);
 		STICK_COPPIR = addSimpleItem("stick_coppir", 64);

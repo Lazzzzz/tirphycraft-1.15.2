@@ -1,20 +1,21 @@
 package laz.tirphycraft.event;
 
+import static laz.tirphycraft.api.SoulFactorCap.activateBadEffect;
+import static laz.tirphycraft.api.SoulFactorCap.activateGoodEffect;
+import static laz.tirphycraft.api.SoulFactorCap.badSoulEffect;
+import static laz.tirphycraft.api.SoulFactorCap.goodSoulEffect;
+
 import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.gen.Heightmap.Type;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-
-import static laz.tirphycraft.api.SoulFactorCap.*;
 
 @EventBusSubscriber
 public class CommonLaputaEvent {

@@ -11,6 +11,7 @@ import laz.tirphycraft.world.features.froz.SmallRockPickFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozBushFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozGiantTreeFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozRootFeature;
+import laz.tirphycraft.world.features.froz.underground.BasaltPatchFeature;
 import laz.tirphycraft.world.features.froz.underground.GiantPillarFeature;
 import laz.tirphycraft.world.features.froz.underground.SnowTrapFeature;
 import laz.tirphycraft.world.features.froz.underground.StalacmiteFeature;
@@ -38,6 +39,7 @@ import laz.tirphycraft.world.features.noxis.NoxisDeadBushFeature;
 import laz.tirphycraft.world.features.noxis.NoxisDeadTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
 import laz.tirphycraft.world.features.overworld.FragmentFeature;
+import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -49,6 +51,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 public class Features {
 	
 	public static ConfiguredFeature<NoFeatureConfig, ?> ANCIENT_STONE	= new FragmentFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	
+	
+	public static CoppirTreeFeature COPPIR_TREE		= new CoppirTreeFeature();
 	
 	
 	public static ConfiguredFeature<NoFeatureConfig, ?> PYRODES			= new OreDepositFeatures(Blocks.STONE.getDefaultState(), TirphycraftBlocks.ORE_PYRODES.get().getDefaultState(), 15, 90, 10, 40, NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
@@ -67,6 +72,7 @@ public class Features {
 	public static ConfiguredFeature<IFeatureConfig, ?> BLACK_SPIKE 			= new BlackCrystalFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<IFeatureConfig, ?> CRYSTAL_SPIKE 		= new CrystalSpikeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_BUSH			= new FrozBushFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> BASALT_PATCH		= new BasaltPatchFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	
 	
 	public static ConfiguredFeature<IFeatureConfig, ?> LIGHT_PAD 			= new LightPadFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);

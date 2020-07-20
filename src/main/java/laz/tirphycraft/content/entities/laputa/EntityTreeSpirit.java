@@ -3,26 +3,40 @@ package laz.tirphycraft.content.entities.laputa;
 import java.util.Collection;
 import java.util.Map;
 
+import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.goal.spirittree.BreakingBlockGoal;
 import laz.tirphycraft.content.entities.goal.spirittree.SumonHeartGoal;
+import laz.tirphycraft.content.entities.goal.spirittree.ThunderLineGoal;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
+import laz.tirphycraft.registry.init.TirphycraftItems;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ShulkerBulletEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tileentity.ChestTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.BossInfo;
@@ -45,6 +59,7 @@ public class EntityTreeSpirit extends MonsterEntity {
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
 		this.targetSelector.addGoal(1, new BreakingBlockGoal(this));
 		this.targetSelector.addGoal(1, new SumonHeartGoal(this));
+//		this.targetSelector.addGoal(1, new ThunderLineGoal(this));
 	}
 
 	protected void registerAttributes() {
@@ -173,13 +188,54 @@ public class EntityTreeSpirit extends MonsterEntity {
 
 	@Override
 	public boolean hitByEntity(Entity entityIn) {
+//		if (entityIn instanceof PlayerEntity) {
+//			PlayerEntity player = (PlayerEntity) entityIn;
+//			return !player.isCreative();
+//		}
 		return true;
 	}
 	
 	public void damageIt() {
 		if (this.getShield() > 0) this.hitShield();
-		else this.setHealth(this.getHealth() - rand.nextInt(3) * 5);
-		if (this.getHealth() <= 0) world.setBlockState(getPosition().up(29), TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
+		else this.setHealth(this.getHealth() - (rand.nextInt(4) + 1) * 5);
+		
+		if (this.getHealth() <= 0) {
+			world.setBlockState(getPosition().up(29), TirphycraftBlocks.LAPUTA_DUNGEON_VARIANT0.get().getDefaultState());
+			spawnChest();
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftItems.TREE_CORE.get(), 4)));
+			for (int i = 0; i < rand.nextInt(5)+1; i++) {
+			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+					new ItemStack(TirphycraftBlocks.ORE_TENIUM.get(), 1)));
+			}
+		}
 	}
-
+	
+	private void spawnChest() {
+		int number = rand.nextInt(10) + 3;
+		ResourceLocation LOOT = new ResourceLocation(Tirphycraft.MOD_ID + ":chests/laputa_dungeon");
+		for (int i = 0; i < number; i++) {
+			BlockPos pos = setChestPos();
+			world.setBlockState(pos, Blocks.CHEST.getDefaultState().rotate(Rotation.randomRotation(rand)),
+					3);
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity instanceof ChestTileEntity) {
+				((ChestTileEntity) tileentity).setLootTable(LOOT, rand.nextLong());
+			}
+		}
+	}
+	
+	private BlockPos setChestPos() {
+		double x = 0;
+		double z = 0;
+		boolean flag = true;
+		while (flag) {
+			x = rand.nextInt(20) - 10;
+			z = rand.nextInt(20) - 10;
+			if (x != 0 || z != 0 || x * x + z * z <= 15 * 15) flag = false;
+		}
+		
+		return new BlockPos(this.getPosX() + x, this.getPosY(), this.getPosZ() + z);
+	}
+	
 }

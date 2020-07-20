@@ -1,11 +1,13 @@
 package laz.tirphycraft.content.entities.laputa;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.projectile.ShulkerBulletEntity;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
@@ -28,7 +30,7 @@ public class EntitySpiritHeart extends MonsterEntity {
 	@Override
 	public void livingTick() {
 		if (!world.isRemote) {
-			if (life == 0 || this.spirit == null)
+			if (life == 0 || this.spirit == null || world.getBlockState(getPosition().down()) == Blocks.AIR.getDefaultState())
 				this.remove();
 			life--;
 			this.setMotion(0, 0, 0);

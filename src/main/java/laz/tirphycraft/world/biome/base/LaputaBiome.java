@@ -28,6 +28,7 @@ public class LaputaBiome extends Biome {
 								TirphycraftBlocks.LAPUTA_DIRT.get().getDefaultState())));
 
 		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_BUTTERFLY, 10, 1, 1));
+		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_DRAGON_FLY, 10, 1, 1));
 		
 		addFeature(Decoration.SURFACE_STRUCTURES, Features.LAPUTA_ISLAND
 				.withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.01f, 1))));

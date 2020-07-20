@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.NonNullList;
@@ -84,7 +85,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 					furnaceContent.set(4, new ItemStack(Tirphycraft.FROZ_RECIPES.get(recipe).out));
 				else
 					furnaceContent.get(4).setCount(furnaceContent.get(4).getCount() + 1);
-				world.setBlockState(pos, TirphycraftBlocks.FROZ_FURNACE.get().getDefaultState().with(FrozFurnaceBlock.LIT, false));
+				world.setBlockState(pos, world.getBlockState(pos).with(FrozFurnaceBlock.LIT, false));
 			}
 			recipe = -1;
 		}

@@ -69,9 +69,6 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftItems.CRYSTAL_PYRODES.get(),
 				TirphycraftItems.CRYSTAL_PURODES.get());
 		
-		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftBlocks.ORE_TENIUM.getItem(),
-				TirphycraftItems.TENIUM_INGOT.get());
-		
 		registerSmeltingRecipes(consumer, 0.1F, 200, TirphycraftItems.CRYSTAL_PURODES.get(),
 				TirphycraftItems.CRYSTAL_PYRODES.get());
 
@@ -149,17 +146,17 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		
 		staff(TirphycraftItems.STAFF_1_EXPLOSION.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
 		staff(TirphycraftItems.STAFF_1_HEAL.get(), TirphycraftItems.LIFE_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
-		staff(TirphycraftItems.STAFF_1_TELEPORTATION.get(), TirphycraftItems.SEA_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
+		staff(TirphycraftItems.STAFF_1_TELEPORTATION.get(), TirphycraftItems.TREE_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
 		//staff(TirphycraftItems.STAFF_1_FIREBALL.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_COPPIR.get(), consumer);
 		
 		staff(TirphycraftItems.STAFF_2_EXPLOSION.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_SILVIR.get(), consumer);
 		staff(TirphycraftItems.STAFF_2_HEAL.get(), TirphycraftItems.LIFE_CORE.get(), TirphycraftItems.STICK_SILVIR.get(), consumer);
-		staff(TirphycraftItems.STAFF_2_TELEPORTATION.get(), TirphycraftItems.SEA_CORE.get(), TirphycraftItems.STICK_SILVIR.get(), consumer);
+		staff(TirphycraftItems.STAFF_2_TELEPORTATION.get(), TirphycraftItems.TREE_CORE.get(), TirphycraftItems.STICK_SILVIR.get(), consumer);
 		//staff(TirphycraftItems.STAFF_2_FIREBALL.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_SILVIR.get(), consumer);
 		
 		staff(TirphycraftItems.STAFF_3_EXPLOSION.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_GOLDIR.get(), consumer);
 		staff(TirphycraftItems.STAFF_3_HEAL.get(), TirphycraftItems.LIFE_CORE.get(), TirphycraftItems.STICK_GOLDIR.get(), consumer);
-		staff(TirphycraftItems.STAFF_3_TELEPORTATION.get(), TirphycraftItems.SEA_CORE.get(), TirphycraftItems.STICK_GOLDIR.get(), consumer);
+		staff(TirphycraftItems.STAFF_3_TELEPORTATION.get(), TirphycraftItems.TREE_CORE.get(), TirphycraftItems.STICK_GOLDIR.get(), consumer);
 		//staff(TirphycraftItems.STAFF_3_FIREBALL.get(), TirphycraftItems.EXPLOSION_CORE.get(), TirphycraftItems.STICK_GOLDIR.get(), consumer);
 		
 		setupRecipe(consumer);

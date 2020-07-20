@@ -9,6 +9,7 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.math.MathHelper;
 
 public class ButterflyModel extends EntityModel<EntityButterfly> {
 	private final ModelRenderer Wing1;
@@ -31,6 +32,8 @@ public class ButterflyModel extends EntityModel<EntityButterfly> {
 
 	@Override
 	public void setRotationAngles(EntityButterfly entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
+		Wing2.rotateAngleZ = MathHelper.cos(ageInTicks) * 0.4F;
+		Wing1.rotateAngleZ = -MathHelper.cos(ageInTicks) * 0.4F;
 	}
 
 	@Override
