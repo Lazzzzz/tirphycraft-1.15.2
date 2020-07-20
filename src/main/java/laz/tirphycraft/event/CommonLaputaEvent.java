@@ -22,6 +22,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.network.NetworkDirection;
 
+import java.util.Objects;
+
 @EventBusSubscriber
 public class CommonLaputaEvent {
 
@@ -44,7 +46,7 @@ public class CommonLaputaEvent {
 		}
 		if (!player.world.isRemote()) {
 			if (player.world.getGameTime() % 20 == 0)
-				PacketHandler.INSTANCE.sendTo(new PacketSoulFactor(SoulFactorCap.getSoulFactor(player)), Minecraft.getInstance().getConnection().getNetworkManager(), NetworkDirection.PLAY_TO_CLIENT);
+				PacketHandler.INSTANCE.sendTo(new PacketSoulFactor(SoulFactorCap.getSoulFactor(player)), ((ServerPlayerEntity) player).connection.netManager, NetworkDirection.PLAY_TO_CLIENT);
 
 			if (activateBadEffect(player)) {
 				badSoulEffect(player);
