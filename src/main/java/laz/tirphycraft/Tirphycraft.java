@@ -10,6 +10,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import laz.tirphycraft.network.PacketHandler;
+import laz.tirphycraft.network.PacketSoulFactor;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.recipes.RecipeInit;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
@@ -67,6 +69,7 @@ public class Tirphycraft {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
+		
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome) && !(biome instanceof SacredGardenBiome))
 				biome.addFeature(Decoration.SURFACE_STRUCTURES, Features.ANCIENT_STONE
@@ -79,6 +82,8 @@ public class Tirphycraft {
 			biome.addFeature(Decoration.SURFACE_STRUCTURES,
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
+		
+		PacketHandler.registerMessages();
 		CapHandler.init();
 		RecipeInit.init();
 	}

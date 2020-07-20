@@ -8,9 +8,16 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 public class PacketHandler {
 
 	public static SimpleChannel INSTANCE;
-	
-	public static void registerMessages() {
-		INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(Tirphycraft.MOD_ID, "tirphycraft"), () -> "1.0", s -> true, s -> true);
+	private static int ID = 0;
+
+	public static int nextID() {
+		return ID++;
 	}
-	
+
+	public static void registerMessages() {
+		INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(Tirphycraft.MOD_ID, "tirphycraft"),
+				() -> "1.0", s -> true, s -> true);
+		INSTANCE.registerMessage(nextID(), PacketSoulFactor.class, PacketSoulFactor::encode, PacketSoulFactor::decode, PacketSoulFactor::handle);
+	}
+
 }
