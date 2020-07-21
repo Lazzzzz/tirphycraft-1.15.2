@@ -1,22 +1,17 @@
-package laz.tirphycraft.client.event;
+package laz.tirphycraft.client.event.frog;
 
-import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Tirphycraft.MOD_ID)
-public class ClientFrozEvent {
+public class FrozFrogEvent {
+
 	static float timer = 0f;
 	static float maxFog = 0.5f;
 	static float steps = 0.0001f;
-
-	@SubscribeEvent
-	public static void frozFog(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
+	
+	public static void update(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
 			if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM.get()
@@ -43,5 +38,5 @@ public class ClientFrozEvent {
 			}
 		}
 	}
-
+	
 }

@@ -1,25 +1,17 @@
-package laz.tirphycraft.client.event;
+package laz.tirphycraft.client.event.frog;
 
-import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.client.overlay.TirphycraftMainOverlay;
 import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Tirphycraft.MOD_ID)
-public class ClientLaputaEvent {
-	
+public class LaputaFrogEvent {
+
 	static float timer = 0f;
 	static float maxFog = 0.05f;
-	static float steps = 0.0001f;	
+	static float steps = 0.0001f;
 	
-	@SubscribeEvent
-	public static void onSetupFogDensity(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
+	public static void update(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
 			if (player.getEntityWorld().getBiome(player.getPosition()) == TirphycraftBiomes.L_NML.get() && player.getPosY() < 120) {
@@ -37,14 +29,5 @@ public class ClientLaputaEvent {
 			}
 		}
 	}
-
-	@SubscribeEvent
-	public static void onRenderHud(RenderGameOverlayEvent.Post event) {
-		if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
-			TirphycraftMainOverlay.INSTANCE.buildOverlay();
-		}
-	}
 	
-	
-
 }

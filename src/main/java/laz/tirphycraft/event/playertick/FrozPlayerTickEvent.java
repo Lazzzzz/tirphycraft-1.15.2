@@ -1,23 +1,19 @@
-package laz.tirphycraft.event;
+package laz.tirphycraft.event.playertick;
 
+import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.event.TickEvent.PlayerTickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraft.world.World;
 
-@EventBusSubscriber
-public class CommonFrozEvent {
-	
+public class FrozPlayerTickEvent {
+
 	private static int maxRadius = 3;
 	private static int maxRadiusY = 2;
-
-	@SubscribeEvent
-	public static void onSetupFogDensity(PlayerTickEvent event) {
-		PlayerEntity player = event.player;
+	
+	public static void update(PlayerEntity player) {
 		if (!player.world.isRemote) {
 			if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM.get()
 					&& player.getEntityWorld().isRaining() == true) {
@@ -44,4 +40,5 @@ public class CommonFrozEvent {
 
 		return false;
 	}
+	
 }

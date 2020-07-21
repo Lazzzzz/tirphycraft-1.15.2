@@ -9,6 +9,7 @@ import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
 import laz.tirphycraft.content.entities.laputa.EntityDragonFly;
+import laz.tirphycraft.content.entities.laputa.EntityShieldy;
 import laz.tirphycraft.content.entities.laputa.EntitySpiritHeart;
 import laz.tirphycraft.content.entities.laputa.EntitySpiritMinion;
 import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
@@ -30,6 +31,8 @@ public class TirphycraftEntities {
 	public static EntityType<EntityTreeSpirit> ENTITY_SPIRIT_TREE;
 	public static EntityType<EntitySpiritMinion> ENTITY_SPIRIT_MINION;
 	public static EntityType<EntitySpiritHeart> ENTITY_SPIRIT_HEART;
+	public static EntityType<EntityShieldy> ENTITY_SHIELDY;
+	
 	
 
 	public static void init() {
@@ -68,6 +71,9 @@ public class TirphycraftEntities {
 		ENTITY_SPIRIT_HEART = EntityType.Builder.<EntitySpiritHeart>create(EntitySpiritHeart::new, EntityClassification.MONSTER)
 				.size(1f, 1f).build(Tirphycraft.MOD_ID + ":spirit_heart");
 		
+		ENTITY_SHIELDY = EntityType.Builder.<EntityShieldy>create(EntityShieldy::new, EntityClassification.MONSTER)
+				.size(0.4f, 2f).build(Tirphycraft.MOD_ID + ":shieldy");
+		
 		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", 		() -> ENTITY_KRETUN);
 		TirphycraftRegistries.ENTITY_TYPE.register("frozen_soldier_entity", () -> ENTITY_FROZEN_SOLDIER);
 		TirphycraftRegistries.ENTITY_TYPE.register("necromancer", 			() -> ENTITY_NECROMANCER);
@@ -79,5 +85,6 @@ public class TirphycraftEntities {
 		TirphycraftRegistries.ENTITY_TYPE.register("spirit_minion",			() -> ENTITY_SPIRIT_MINION);
 		TirphycraftRegistries.ENTITY_TYPE.register("spirit_heart",			() -> ENTITY_SPIRIT_HEART);
 		TirphycraftRegistries.ENTITY_TYPE.register("dragon_fly",			() -> ENTITY_DRAGON_FLY);
+		TirphycraftRegistries.ENTITY_TYPE.register("shieldy",				() -> ENTITY_SHIELDY);
 	}
 }

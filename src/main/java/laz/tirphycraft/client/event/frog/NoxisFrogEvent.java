@@ -1,24 +1,18 @@
-package laz.tirphycraft.client.event;
+package laz.tirphycraft.client.event.frog;
 
-import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.registry.init.TirphycraftBiomes;
-import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Tirphycraft.MOD_ID)
-public class ClientNoxisEvent {
+public class NoxisFrogEvent {
+
 	static float timer = 0f;
 	static float maxFog = 0.5f;
 	static float steps = 0.0001f;
-
-	@SubscribeEvent
-	public static void onSetupFogDensity(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
+	
+	public static void update(EntityViewRenderEvent.RenderFogEvent.FogDensity event) {
 		if (Minecraft.getInstance().getRenderViewEntity() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) Minecraft.getInstance().getRenderViewEntity();
 			World world = player.getEntityWorld();
@@ -37,5 +31,5 @@ public class ClientNoxisEvent {
 			}
 		}
 	}
-
+	
 }
