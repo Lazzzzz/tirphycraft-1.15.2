@@ -11,6 +11,7 @@ import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -44,6 +45,7 @@ public class TirphyRecipeProvider extends RecipeProvider {
 		bricks(TirphycraftBlocks.BRICKS_LAPUTA.getItem(), TirphycraftBlocks.LAPUTA_STONE.getItem(), consumer);
 		bricks(TirphycraftBlocks.BRICKS_NOXIS.getItem(), TirphycraftBlocks.NOXIS_STONE.getItem(), consumer);
 		bricks(TirphycraftBlocks.BRICKS_FROZ.getItem(), TirphycraftBlocks.FROZ_STONE.getItem(), consumer);
+		bricks(TirphycraftItems.ROSE_SHARD.get(), TirphycraftItems.ROSE_SHARD.get(), consumer);
 		
 		single(TirphycraftBlocks.PLANKS_COPPIR.getItem(), TirphycraftBlocks.LOG_COPPIR.getItem(), 4, consumer);
 		single(TirphycraftBlocks.PLANKS_SILVIR.getItem(), TirphycraftBlocks.LOG_SILVIR.getItem(), 4, consumer);

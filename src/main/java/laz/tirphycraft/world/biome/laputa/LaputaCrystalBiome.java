@@ -1,8 +1,11 @@
 package laz.tirphycraft.world.biome.laputa;
 
+import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
@@ -13,6 +16,10 @@ public class LaputaCrystalBiome extends LaputaBiome {
 
 	public LaputaCrystalBiome() {
 		super();
+		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_BUTTERFLY, 10, 1, 1));
+		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_SHIELDY, 10, 1, 1));
+		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_BLUPPY, 10, 1, 1));
+		
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.CRYSTAL_SPIKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(4))));
 		addFeature(Decoration.SURFACE_STRUCTURES,

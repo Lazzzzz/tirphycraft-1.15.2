@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class DeadTreeFeature extends Feature<NoFeatureConfig> {
 
-	BlockState LOG = TirphycraftBlocks.LOG_SKY.get().getDefaultState();
+	BlockState LOG = TirphycraftBlocks.LOG_DEAD.get().getDefaultState();
 
 	public DeadTreeFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);

@@ -1,9 +1,12 @@
 package laz.tirphycraft.world.biome.laputa;
 
+import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
@@ -17,6 +20,8 @@ public class LaputaOasisBiome extends LaputaBiome {
 
 	public LaputaOasisBiome() {
 		super();
+		
+		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_BUTTERFLY, 10, 1, 1));
 		
 		addFeature(Decoration.SURFACE_STRUCTURES, Features.LAPUTA_OASIS.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(40))));
 		addFeature(Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(Blocks.WATER.getDefaultState())).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(4))));

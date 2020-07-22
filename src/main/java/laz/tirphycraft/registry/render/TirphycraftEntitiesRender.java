@@ -6,12 +6,14 @@ import laz.tirphycraft.client.render.entities.froz.KretunRender;
 import laz.tirphycraft.client.render.entities.froz.LombraRender;
 import laz.tirphycraft.client.render.entities.froz.MissileBatRender;
 import laz.tirphycraft.client.render.entities.froz.NecromancerRender;
+import laz.tirphycraft.client.render.entities.laputa.BluppyRender;
 import laz.tirphycraft.client.render.entities.laputa.ButterFlyRender;
 import laz.tirphycraft.client.render.entities.laputa.DragonFlyRender;
 import laz.tirphycraft.client.render.entities.laputa.ShieldyRender;
 import laz.tirphycraft.client.render.entities.laputa.SpiritHeartRender;
 import laz.tirphycraft.client.render.entities.laputa.SpiritMinionRender;
 import laz.tirphycraft.client.render.entities.laputa.SpiritTreeRender;
+import laz.tirphycraft.client.render.entities.projectiles.BluppySplitRender;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
@@ -29,6 +31,8 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_HEART, SpiritHeartRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_DRAGON_FLY, DragonFlyRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SHIELDY, ShieldyRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BLUPPY, BluppyRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BLUPPY_SPLIT, BluppySplitRender::new);
 	}
 	
 }

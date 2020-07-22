@@ -1,8 +1,10 @@
 package laz.tirphycraft.world.biome.laputa;
 
+import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
@@ -13,6 +15,11 @@ public class LaputaPlainsBiome extends LaputaBiome {
 
     public LaputaPlainsBiome() {
         super();
+        
+		addSpawn(EntityClassification.AMBIENT, new SpawnListEntry(TirphycraftEntities.ENTITY_BUTTERFLY, 10, 1, 1));
+		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_SHIELDY, 10, 1, 1));
+		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_BLUPPY, 10, 1, 1));
+        
 		addFeature(Decoration.SURFACE_STRUCTURES, Features.LAPUTA_TREE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
         addFeature(Decoration.SURFACE_STRUCTURES, Features.BOULDER.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES, Features.LIGHT_PAD.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));

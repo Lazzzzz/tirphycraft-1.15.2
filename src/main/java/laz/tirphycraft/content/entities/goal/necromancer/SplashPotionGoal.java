@@ -41,7 +41,7 @@ public class SplashPotionGoal extends Goal {
 		      areaeffectcloudentity.setRadiusOnUse(-0.5F);
 		      areaeffectcloudentity.setWaitTime(10);
 		      areaeffectcloudentity.setRadiusPerTick(-areaeffectcloudentity.getRadius() / (float)areaeffectcloudentity.getDuration());
-		      areaeffectcloudentity.setPotion(new Potion(new EffectInstance(Effects.POISON, 100)));
+		      areaeffectcloudentity.setPotion(new Potion(new EffectInstance(Effects.POISON, 100, 2)));
 		      attacker.world.addEntity(areaeffectcloudentity);
 		}
 		

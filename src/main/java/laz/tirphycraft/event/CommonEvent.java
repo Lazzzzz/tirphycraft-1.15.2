@@ -31,9 +31,11 @@ public class CommonEvent {
 		NoxisPlayerTickEvent.update(player);
 
 		if (!player.world.isRemote()) {
-			if (player.world.getGameTime() % 20 == 0)
-				PacketHandler.INSTANCE.sendTo(new PacketSoulFactor(SoulFactorCap.getSoulFactor(player)),
+			if (player.world.getGameTime() % 20 == 0) {
+				PacketHandler.INSTANCE.sendTo(
+						new PacketSoulFactor(player.getUniqueID(), SoulFactorCap.getSoulFactor(player)),
 						((ServerPlayerEntity) player).connection.netManager, NetworkDirection.PLAY_TO_CLIENT);
+			}
 
 			if (SoulFactorCap.getSoulFactor(player) > 0) {
 				SoulFactorEvent.updateBadEffect(player);
