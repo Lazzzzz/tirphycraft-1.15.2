@@ -1,11 +1,14 @@
 package laz.tirphycraft.registry.render;
 
 import laz.tirphycraft.client.render.entities.froz.CrococasseRender;
+import laz.tirphycraft.client.render.entities.froz.EskimoKingRender;
+import laz.tirphycraft.client.render.entities.froz.EskimoRender;
 import laz.tirphycraft.client.render.entities.froz.FrozenSoldierRender;
 import laz.tirphycraft.client.render.entities.froz.KretunRender;
 import laz.tirphycraft.client.render.entities.froz.LombraRender;
 import laz.tirphycraft.client.render.entities.froz.MissileBatRender;
 import laz.tirphycraft.client.render.entities.froz.NecromancerRender;
+import laz.tirphycraft.client.render.entities.froz.PhantomGuardianRender;
 import laz.tirphycraft.client.render.entities.laputa.BluppyRender;
 import laz.tirphycraft.client.render.entities.laputa.ButterFlyRender;
 import laz.tirphycraft.client.render.entities.laputa.DragonFlyRender;
@@ -25,6 +28,11 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_MISSILE_BAT, MissileBatRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_CROCROCASSE, CrococasseRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_LOMBRA, LombraRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_PHANTOM_GUARDIAN, PhantomGuardianRender::new);
+//		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_ESKIMO, EskimoRender::new);
+//		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_ESKIMO_KING, EskimoKingRender::new);
+//		
+		
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BUTTERFLY, ButterFlyRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_TREE, SpiritTreeRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SPIRIT_MINION, SpiritMinionRender::new);
@@ -33,6 +41,7 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_SHIELDY, ShieldyRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BLUPPY, BluppyRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BLUPPY_SPLIT, BluppySplitRender::new);
+		
 	}
 	
 }

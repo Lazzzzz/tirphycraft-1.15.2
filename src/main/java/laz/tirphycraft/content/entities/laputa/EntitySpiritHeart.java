@@ -3,12 +3,8 @@ package laz.tirphycraft.content.entities.laputa;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.projectile.ShulkerBulletEntity;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 public class EntitySpiritHeart extends MonsterEntity {

@@ -1,10 +1,7 @@
 package laz.tirphycraft.world.biome.laputa;
 
-import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.features.Features;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;

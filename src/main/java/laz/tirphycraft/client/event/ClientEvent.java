@@ -19,7 +19,6 @@ public class ClientEvent {
 		NoxisFrogEvent.update(event);
 		LaputaFrogEvent.update(event);
 		FrozFrogEvent.update(event);
-		
 	}
 	
 	@SubscribeEvent

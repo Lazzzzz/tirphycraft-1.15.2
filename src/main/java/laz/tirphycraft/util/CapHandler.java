@@ -1,5 +1,7 @@
 package laz.tirphycraft.util;
 
+import javax.annotation.Nullable;
+
 import laz.tirphycraft.api.soulfactor.ISoulFactor;
 import laz.tirphycraft.api.soulfactor.SoulFactor;
 import net.minecraft.nbt.CompoundNBT;
@@ -7,8 +9,6 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
-
-import javax.annotation.Nullable;
 
 public class CapHandler {
 

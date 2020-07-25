@@ -6,9 +6,7 @@ import java.util.Random;
 import laz.tirphycraft.content.entities.laputa.EntitySpiritHeart;
 import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

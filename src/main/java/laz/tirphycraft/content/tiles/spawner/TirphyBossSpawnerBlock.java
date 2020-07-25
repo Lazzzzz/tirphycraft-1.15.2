@@ -3,6 +3,7 @@ package laz.tirphycraft.content.tiles.spawner;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.TileEntity;
@@ -34,6 +35,11 @@ public class TirphyBossSpawnerBlock extends Block {
 		TileEntity tile = worldIn.getTileEntity(pos);
 		if (tile instanceof TirphyBossSpawnerTE) return Block.makeCuboidShape(0,0,0,0,0,0);
 		return super.getCollisionShape(state, worldIn, pos, context);
+	}
+	
+	@Override
+	public BlockRenderType getRenderType(BlockState state) {
+		return BlockRenderType.INVISIBLE;
 	}
 	
 }

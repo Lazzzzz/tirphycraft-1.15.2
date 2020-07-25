@@ -3,10 +3,8 @@ package laz.tirphycraft.world.biome.base;
 import java.util.Random;
 
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
-import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;

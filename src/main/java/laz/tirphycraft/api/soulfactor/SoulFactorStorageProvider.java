@@ -1,15 +1,15 @@
 package laz.tirphycraft.api.soulfactor;
 
+import static laz.tirphycraft.api.SoulFactorCap.SOUL_FACTOR_CAPABILITY;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import static laz.tirphycraft.api.SoulFactorCap.SOUL_FACTOR_CAPABILITY;
 
 public class SoulFactorStorageProvider implements ICapabilitySerializable<CompoundNBT> {
 

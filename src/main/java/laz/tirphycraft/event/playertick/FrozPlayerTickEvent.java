@@ -1,12 +1,10 @@
 package laz.tirphycraft.event.playertick;
 
-import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import laz.tirphycraft.registry.init.TirphycraftDimensions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class FrozPlayerTickEvent {
 

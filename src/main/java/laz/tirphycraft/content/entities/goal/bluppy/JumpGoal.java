@@ -4,7 +4,6 @@ import java.util.Random;
 
 import laz.tirphycraft.content.entities.laputa.EntityBluppy;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.world.gen.Heightmap.Type;
 
 public class JumpGoal extends Goal{
 

@@ -1,4 +1,4 @@
-package laz.tirphycraft.world.features.froz.structures;
+package laz.tirphycraft.world.features.froz.structures.underground;
 
 import java.util.List;
 import java.util.Random;

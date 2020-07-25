@@ -1,7 +1,6 @@
 package laz.tirphycraft.content.entities.froz;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -11,12 +10,9 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
@@ -84,19 +80,13 @@ public class EntityLombra extends MonsterEntity {
 		super.livingTick();
 	}
 	
-
 	@Override
-	public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
-			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
-		for (double i = this.getPosY(); i < 120; i++) {
-			if (i == 119) this.remove();
-			BlockPos pos = new BlockPos(this.getPosX(), i, this.getPosZ());
-			if (worldIn.getBlockState(pos).isSolid()) {
-				this.setPositionAndUpdate(pos.getX(), pos.getY() - 1.4, pos.getZ());
-				break;
-			}
+	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
+		if (worldIn.getBlockState(getPosition().up(2)).isSolid()) {
+			setPositionAndUpdate(getPosX(), getPosY() + 0.5f, getPosZ());
+			return true;
 		}
-		return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
+		return false;
 	}
 	
 }

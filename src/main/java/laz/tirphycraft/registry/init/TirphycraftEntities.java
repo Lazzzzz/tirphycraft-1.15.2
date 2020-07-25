@@ -2,11 +2,14 @@ package laz.tirphycraft.registry.init;
 
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.froz.EntityCrococasse;
+import laz.tirphycraft.content.entities.froz.EntityEskimo;
+import laz.tirphycraft.content.entities.froz.EntityEskimoKing;
 import laz.tirphycraft.content.entities.froz.EntityFrozenSoldier;
 import laz.tirphycraft.content.entities.froz.EntityKretun;
 import laz.tirphycraft.content.entities.froz.EntityLombra;
 import laz.tirphycraft.content.entities.froz.EntityMissileBat;
 import laz.tirphycraft.content.entities.froz.EntityNecromancer;
+import laz.tirphycraft.content.entities.froz.EntityPhantomGuardian;
 import laz.tirphycraft.content.entities.laputa.EntityBluppy;
 import laz.tirphycraft.content.entities.laputa.EntityButterfly;
 import laz.tirphycraft.content.entities.laputa.EntityDragonFly;
@@ -27,6 +30,11 @@ public class TirphycraftEntities {
 	public static EntityType<EntityMissileBat> ENTITY_MISSILE_BAT;
 	public static EntityType<EntityCrococasse> ENTITY_CROCROCASSE;
 	public static EntityType<EntityLombra> ENTITY_LOMBRA;
+	public static EntityType<EntityPhantomGuardian> ENTITY_PHANTOM_GUARDIAN;
+//	
+//	public static EntityType<EntityEskimo> ENTITY_ESKIMO;
+//	public static EntityType<EntityEskimoKing> ENTITY_ESKIMO_KING;
+//	
 	
 	public static EntityType<EntityButterfly> ENTITY_BUTTERFLY;
 	public static EntityType<EntityDragonFly> ENTITY_DRAGON_FLY;
@@ -36,11 +44,11 @@ public class TirphycraftEntities {
 	public static EntityType<EntityShieldy> ENTITY_SHIELDY;
 	public static EntityType<EntityBluppy> ENTITY_BLUPPY;
 	
-	public static EntityType<EntityBluppySplit> ENTITY_BLUPPY_SPLIT;
-	
-	
+	public static EntityType<EntityBluppySplit> ENTITY_BLUPPY_SPLIT;	
 
 	public static void init() {
+		
+		// ====== FROZ ====== //
 		
 		ENTITY_KRETUN = EntityType.Builder.<EntityKretun>create(EntityKretun::new, EntityClassification.MONSTER)
 				.size(0.3f, 0.3f).build(Tirphycraft.MOD_ID + ":kretun_entity");
@@ -60,6 +68,16 @@ public class TirphycraftEntities {
 		ENTITY_LOMBRA = EntityType.Builder.<EntityLombra>create(EntityLombra::new, EntityClassification.MONSTER)
 				.size(1f, 1.5f).build(Tirphycraft.MOD_ID + ":lombra");
 		
+		ENTITY_PHANTOM_GUARDIAN = EntityType.Builder.<EntityPhantomGuardian>create(EntityPhantomGuardian::new, EntityClassification.MONSTER)
+				.size(1f, .75f).build(Tirphycraft.MOD_ID + ":phantom_guardian");
+		
+//		ENTITY_ESKIMO = EntityType.Builder.<EntityEskimo>create(EntityEskimo::new, EntityClassification.AMBIENT)
+//				.size(1f, 1.9f).build(Tirphycraft.MOD_ID + ":eskimo");
+//		
+//		ENTITY_ESKIMO_KING = EntityType.Builder.<EntityEskimoKing>create(EntityEskimoKing::new, EntityClassification.AMBIENT)
+//				.size(1f, 2.1f).build(Tirphycraft.MOD_ID + ":eskimo");
+//		
+		// ====== LAPUTA ====== //
 		
 		ENTITY_BUTTERFLY = EntityType.Builder.<EntityButterfly>create(EntityButterfly::new, EntityClassification.AMBIENT)
 				.size(0.5f, 0.5f).build(Tirphycraft.MOD_ID + ":butterfly");
@@ -85,12 +103,19 @@ public class TirphycraftEntities {
 		ENTITY_BLUPPY_SPLIT = EntityType.Builder.<EntityBluppySplit>create(EntityBluppySplit::new, EntityClassification.MONSTER)
 				.size(0.1f, 0.1f).build(Tirphycraft.MOD_ID + ":bluppy_split");
 		
+		
 		TirphycraftRegistries.ENTITY_TYPE.register("kretun_entity", 		() -> ENTITY_KRETUN);
 		TirphycraftRegistries.ENTITY_TYPE.register("frozen_soldier_entity", () -> ENTITY_FROZEN_SOLDIER);
 		TirphycraftRegistries.ENTITY_TYPE.register("necromancer", 			() -> ENTITY_NECROMANCER);
 		TirphycraftRegistries.ENTITY_TYPE.register("missile_bat", 			() -> ENTITY_MISSILE_BAT);
 		TirphycraftRegistries.ENTITY_TYPE.register("crocrocasse", 			() -> ENTITY_CROCROCASSE);
 		TirphycraftRegistries.ENTITY_TYPE.register("lombra", 				() -> ENTITY_LOMBRA);
+		TirphycraftRegistries.ENTITY_TYPE.register("phantom_guardian", 		() -> ENTITY_PHANTOM_GUARDIAN);	
+//		TirphycraftRegistries.ENTITY_TYPE.register("eskimo", 				() -> ENTITY_ESKIMO);	
+//		TirphycraftRegistries.ENTITY_TYPE.register("eskimo_king", 			() -> ENTITY_ESKIMO_KING);	
+//		
+		
+		
 		TirphycraftRegistries.ENTITY_TYPE.register("butterfly", 			() -> ENTITY_BUTTERFLY);
 		TirphycraftRegistries.ENTITY_TYPE.register("spirit_tree", 			() -> ENTITY_SPIRIT_TREE);
 		TirphycraftRegistries.ENTITY_TYPE.register("spirit_minion",			() -> ENTITY_SPIRIT_MINION);
@@ -99,5 +124,6 @@ public class TirphycraftEntities {
 		TirphycraftRegistries.ENTITY_TYPE.register("shieldy",				() -> ENTITY_SHIELDY);
 		TirphycraftRegistries.ENTITY_TYPE.register("bluppy",				() -> ENTITY_BLUPPY);
 		TirphycraftRegistries.ENTITY_TYPE.register("bluppy_split",			() -> ENTITY_BLUPPY_SPLIT);
+		
 	}
 }

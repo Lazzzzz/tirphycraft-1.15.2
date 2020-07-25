@@ -6,7 +6,6 @@ import java.util.Random;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.util.structures.BasicVoxelShape;
 import laz.tirphycraft.util.structures.CastleHelper;
-import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

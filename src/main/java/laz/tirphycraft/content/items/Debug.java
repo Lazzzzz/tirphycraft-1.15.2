@@ -4,6 +4,11 @@ import static laz.tirphycraft.Tirphycraft.ITEM_GROUP;
 import static laz.tirphycraft.Tirphycraft.MOD_ID;
 import static laz.tirphycraft.registry.init.TirphycraftDimensions.SG_DIM;
 
+import org.jline.terminal.impl.jna.freebsd.CLibrary.winsize;
+
+import laz.tirphycraft.Tirphycraft;
+import laz.tirphycraft.content.entities.froz.EntityPhantomGuardian;
+import laz.tirphycraft.registry.init.TirphycraftEntities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -29,12 +34,12 @@ public class Debug extends Item {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         if(!worldIn.isRemote()){
-            ServerPlayerEntity playerEntity = (ServerPlayerEntity) playerIn;
-            DimensionType dimensionType = DimensionManager.registerOrGetDimension(new ResourceLocation(MOD_ID, "gs_dim"), SG_DIM.get(), null, true);
-            ServerWorld targetWorld = playerEntity.getServer().getWorld(dimensionType);
-            playerEntity.teleport(targetWorld, 0,255,0, playerIn.rotationYaw,playerIn.rotationPitch);
-			BlockPos p = playerIn.world.getHeight(Type.WORLD_SURFACE, playerIn.getPosition());
-			playerIn.setPositionAndUpdate(p.getX(), p.getY(), p.getZ());
+        	BlockPos pos =  playerIn.getPosition();
+        	EntityPhantomGuardian e = new EntityPhantomGuardian(TirphycraftEntities.ENTITY_PHANTOM_GUARDIAN, worldIn);
+        	e.setTowerPos(pos);
+        	e.setPositionAndUpdate(pos.getX() + 10, pos.getY(), pos.getZ());
+        	
+        	worldIn.addEntity(e);
         }
 		return new ActionResult<ItemStack>(ActionResultType.PASS, stack);
 	}

@@ -4,9 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import laz.tirphycraft.content.entities.laputa.EntityBluppy;
-import net.minecraft.client.renderer.entity.SlimeRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.model.SlimeModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class BluppyModel extends EntityModel<EntityBluppy> {

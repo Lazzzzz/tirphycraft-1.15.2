@@ -31,8 +31,8 @@ public class PacketSoulFactor {
 
 	public static void handle(PacketSoulFactor packet, Supplier<NetworkEvent.Context> ctx) {
 		ctx.get().enqueueWork(() -> {
-				ClientWorld world = Minecraft.getInstance().world;
-				SoulFactorCap.setSoulFactor(world.getPlayerByUuid(packet.entityID), packet.factor);
+			ClientWorld world = Minecraft.getInstance().world;
+			SoulFactorCap.setSoulFactor(world.getPlayerByUuid(packet.entityID), packet.factor);
 		});
 
 		ctx.get().setPacketHandled(true);

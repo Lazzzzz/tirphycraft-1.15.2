@@ -1,9 +1,7 @@
-package laz.tirphycraft.world.features.froz.structures;
+package laz.tirphycraft.world.features.froz.structures.underground;
 
 import java.util.Random;
 import java.util.function.Function;
-
-import org.apache.logging.log4j.Level;
 
 import com.mojang.datafixers.Dynamic;
 
@@ -186,8 +184,8 @@ public class FrozDungeonStructure extends Structure<NoFeatureConfig>
 			//
 			//However, for most purposes, getting the y value of land with the default x and z is good enough.
 			//Turns the chunk coordinates into actual coordinates we can use. (Gets center of that chunk)
-			int x = (chunkX * 16) + 7;
-			int z = (chunkZ* 16) + 7;
+			int x = (chunkX * 16) + 8;
+			int z = (chunkZ* 16) + 8;
 
 			//Finds the y value of the terrain at location.
 			int surfaceY = 9;
@@ -199,9 +197,6 @@ public class FrozDungeonStructure extends Structure<NoFeatureConfig>
 
 			//Sets the bounds of the structure. 
 			this.recalculateStructureSize();
-
-			//I use to debug and quickly find out if the structure is spawning or not and where it is.
-			Tirphycraft.LOGGER.log(Level.DEBUG, "Rundown House at " + (blockpos.getX()) + " " + blockpos.getY() + " " + (blockpos.getZ()));
 		}
 
 	}

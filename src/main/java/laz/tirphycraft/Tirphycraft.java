@@ -5,35 +5,26 @@ import static laz.tirphycraft.particle.Particles.GLINT_PARTICLE;
 
 import java.util.ArrayList;
 
-import laz.tirphycraft.util.CapHandler;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import laz.tirphycraft.network.PacketHandler;
-import laz.tirphycraft.network.PacketSoulFactor;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.recipes.RecipeInit;
 import laz.tirphycraft.recipes.froz.FrozFurnaceRecipe;
 import laz.tirphycraft.registry.TirphycraftRegistries;
+import laz.tirphycraft.registry.init.TirphycraftOverworldFeature;
 import laz.tirphycraft.registry.render.TirphycraftBlockRender;
 import laz.tirphycraft.registry.render.TirphycraftEntitiesRender;
 import laz.tirphycraft.registry.render.TirphycraftGuiRender;
+import laz.tirphycraft.util.CapHandler;
 import laz.tirphycraft.util.book.BookItemInfo;
-import laz.tirphycraft.world.biome.base.FrozBiome;
-import laz.tirphycraft.world.biome.base.LaputaBiome;
-import laz.tirphycraft.world.biome.base.NoxisBiome;
-import laz.tirphycraft.world.biome.base.SacredGardenBiome;
-import laz.tirphycraft.world.features.Features;
 import laz.tirphycraft.world.features.StructureFeatures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,7 +34,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
@@ -70,18 +60,7 @@ public class Tirphycraft {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		
-		for (Biome biome : ForgeRegistries.BIOMES) {
-			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome) && !(biome instanceof SacredGardenBiome))
-				biome.addFeature(Decoration.SURFACE_STRUCTURES, Features.ANCIENT_STONE
-						.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-
-			biome.addFeature(Decoration.SURFACE_STRUCTURES,
-					Features.COAL_ON_COKE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-			biome.addFeature(Decoration.SURFACE_STRUCTURES,
-					Features.PYRODES.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-			biome.addFeature(Decoration.SURFACE_STRUCTURES,
-					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
-		}
+		TirphycraftOverworldFeature.init();
 		
 		PacketHandler.registerMessages();
 		CapHandler.init();

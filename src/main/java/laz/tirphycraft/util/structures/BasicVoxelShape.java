@@ -21,6 +21,15 @@ public class BasicVoxelShape {
 		}
 	}
 
+	public static void circle(IWorld world, BlockPos pos, int size, BlockState block) {
+		for (int i = -size; i <= size; i++) {
+			for (int k = -size; k <= size; k++) {
+				if (i * i + k * k <= size * size)
+					world.setBlockState(pos.add(i, 0, k), block, 2);
+			}
+		}
+	}
+
 	public static void hsphere(IWorld world, BlockPos pos, int size, BlockState block) {
 		for (int i = -size; i <= size; i++) {
 			for (int j = -size; j <= size; j++) {
@@ -42,7 +51,7 @@ public class BasicVoxelShape {
 			}
 		}
 	}
-	
+
 	public static void cylinder(IWorld world, BlockPos pos, int size, int height, int ep, BlockState block) {
 		for (int i = -size; i <= size; i++) {
 			for (int j = 0; j <= height; j++) {
@@ -127,7 +136,8 @@ public class BasicVoxelShape {
 			}
 			for (int i = 0; i < 2; i++) {
 				for (int j = 0; j < 2; j++) {
-					if (rand.nextInt(20) > 1) IslandPiece.placeBrick(world, new BlockPos(x0 + i, y0, z0 + j), rand);					
+					if (rand.nextInt(20) > 1)
+						IslandPiece.placeBrick(world, new BlockPos(x0 + i, y0, z0 + j), rand);
 				}
 			}
 		}

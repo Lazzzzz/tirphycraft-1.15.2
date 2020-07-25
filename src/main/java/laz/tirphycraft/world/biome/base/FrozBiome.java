@@ -13,7 +13,6 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.ForestBiome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.IFeatureConfig;
@@ -34,8 +33,8 @@ public class FrozBiome extends Biome {
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_CROCROCASSE, 10, 1, 1));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_LOMBRA, 10, 1, 1));
 		
-		addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.RABBIT, 10, 1, 4));
-		
+		addSpawn(EntityClassification.MISC, new SpawnListEntry(EntityType.SNOW_GOLEM, 10, 1, 1));
+				
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.SURFACE_STRUCTURES,
@@ -59,6 +58,10 @@ public class FrozBiome extends Biome {
 	    
 		addStructure(StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		addFeature(Decoration.UNDERGROUND_STRUCTURES, StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+		
+		addStructure(StructureFeatures.FROZ_TOWER_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+		addFeature(Decoration.SURFACE_STRUCTURES, StructureFeatures.FROZ_TOWER_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	
 	}

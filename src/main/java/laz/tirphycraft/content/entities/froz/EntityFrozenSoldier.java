@@ -100,6 +100,11 @@ public class EntityFrozenSoldier extends MonsterEntity {
 	}
 	
 	@Override
+	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
+		return worldIn.getBlockState(getPosition().down()).isSolid();
+	}
+	
+	@Override
 	public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
 			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
 		if (rand.nextInt(10) == 0) this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(TirphycraftItems.DRAUGRIR_LEGS));

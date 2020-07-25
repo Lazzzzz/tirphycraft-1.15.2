@@ -2,6 +2,7 @@ package laz.tirphycraft.content.entities.laputa;
 
 import laz.tirphycraft.content.entities.goal.bluppy.JumpGoal;
 import laz.tirphycraft.content.entities.goal.bluppy.SplitGoal;
+import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
@@ -76,7 +77,7 @@ public class EntityBluppy extends MonsterEntity {
 			this.fallDistance = 0;
 			if (!onGround && getMotion().y < 0) {
 				setHovering(true);
-				this.setMotion(0, -0.05f, 0);
+				this.setMotion(getMotion().x, -0.05f, getMotion().z);
 			} else setHovering(false);
 		}
 		super.livingTick();

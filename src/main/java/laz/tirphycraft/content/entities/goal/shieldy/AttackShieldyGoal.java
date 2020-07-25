@@ -3,22 +3,15 @@ package laz.tirphycraft.content.entities.goal.shieldy;
 import java.util.EnumSet;
 import java.util.Random;
 
-import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.laputa.EntityShieldy;
-import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
 import laz.tirphycraft.util.TirphycraftUtils;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.entity.monster.WitchEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PotionEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

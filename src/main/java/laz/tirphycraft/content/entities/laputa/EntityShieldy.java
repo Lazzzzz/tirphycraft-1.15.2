@@ -1,8 +1,6 @@
 package laz.tirphycraft.content.entities.laputa;
 
 import laz.tirphycraft.content.entities.goal.shieldy.AttackShieldyGoal;
-import net.minecraft.client.renderer.entity.LlamaSpitRenderer;
-import net.minecraft.client.renderer.entity.model.LlamaSpitModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -14,7 +12,6 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;

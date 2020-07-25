@@ -26,11 +26,12 @@ public class SoulFactorEvent {
 		}
 
 		else if (entity.getClassification(false) == EntityClassification.MONSTER) {
-			SoulFactorCap.setSoulFactor(player, SoulFactorCap.getSoulFactor(player) + 1);
+			SoulFactorCap.setSoulFactor(player, SoulFactorCap.getSoulFactor(player) + 2);
 		}
 		
 		if (SoulFactorCap.getSoulFactor(player) > 100) SoulFactorCap.setSoulFactor(player, 100);
 		else if (SoulFactorCap.getSoulFactor(player) < -100) SoulFactorCap.setSoulFactor(player, -100);
+	
 	}
 
 	public static void updateBadEffect(PlayerEntity player) {

@@ -3,7 +3,6 @@ package laz.tirphycraft.content.entities.goal.spirittree;
 import java.util.Random;
 
 import laz.tirphycraft.content.entities.laputa.EntityTreeSpirit;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.math.BlockPos;

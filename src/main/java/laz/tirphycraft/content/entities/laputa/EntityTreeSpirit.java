@@ -1,18 +1,14 @@
 package laz.tirphycraft.content.entities.laputa;
 
 import java.util.Collection;
-import java.util.Map;
 
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.goal.spirittree.BreakingBlockGoal;
 import laz.tirphycraft.content.entities.goal.spirittree.SumonHeartGoal;
-import laz.tirphycraft.content.entities.goal.spirittree.ThunderLineGoal;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
 import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.ChestBlock;
-import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,12 +24,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;

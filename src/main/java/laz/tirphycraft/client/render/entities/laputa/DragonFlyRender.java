@@ -1,9 +1,7 @@
 package laz.tirphycraft.client.render.entities.laputa;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.client.model.entity.laputa.ButterflyModel;
 import laz.tirphycraft.client.model.entity.laputa.DragonFlyModel;
-import laz.tirphycraft.content.entities.laputa.EntityButterfly;
 import laz.tirphycraft.content.entities.laputa.EntityDragonFly;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
