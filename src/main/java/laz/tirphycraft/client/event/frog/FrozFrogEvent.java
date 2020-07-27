@@ -22,7 +22,7 @@ public class FrozFrogEvent {
 				event.setDensity(timer);
 			
 			} else if (player.getEntityWorld().getDimension().getType().getModType() == TirphycraftDimensions.FROZ_DIM
-					.get() && player.getPosition().getY() < 48 && timer < maxFog / 7) {
+					.get() && player.getPosition().getY() < 48 && timer < maxFog / 7 && !player.isCreative()) {
 				if (timer < maxFog / 7)
 					timer += steps * 2;
 				event.setCanceled(true);

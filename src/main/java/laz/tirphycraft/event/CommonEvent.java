@@ -46,15 +46,6 @@ public class CommonEvent {
 	}
 
 	@SubscribeEvent
-	public static void breakBlock(BlockEvent.BreakEvent event) {
-		if (event.getPlayer().getEntityWorld().getBiome(event.getPlayer().getPosition()) == TirphycraftBiomes.SG_PLAINS
-				.get()) {
-			if (!event.getPlayer().isCreative())
-				event.setCanceled(true);
-		}
-	}
-
-	@SubscribeEvent
 	public static void soulCapMobKill(LivingDeathEvent event) {
 		World world = event.getEntity().world;
 		if (event.getSource().getTrueSource() instanceof PlayerEntity && !world.isRemote

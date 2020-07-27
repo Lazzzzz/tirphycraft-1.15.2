@@ -17,7 +17,7 @@ public class TirphyBossSpawnerBlock extends Block {
 	public TirphyBossSpawnerBlock() {
 		super(Block.Properties.from(Blocks.BEDROCK));
 	}
-	
+
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
@@ -33,13 +33,14 @@ public class TirphyBossSpawnerBlock extends Block {
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos,
 			ISelectionContext context) {
 		TileEntity tile = worldIn.getTileEntity(pos);
-		if (tile instanceof TirphyBossSpawnerTE) return Block.makeCuboidShape(0,0,0,0,0,0);
+		if (tile instanceof TirphyBossSpawnerTE)
+			return Block.makeCuboidShape(0, 0, 0, 0, 0, 0);
 		return super.getCollisionShape(state, worldIn, pos, context);
 	}
-	
+
 	@Override
 	public BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.INVISIBLE;
 	}
-	
+
 }

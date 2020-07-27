@@ -31,7 +31,6 @@ public class SoulFactorEvent {
 		
 		if (SoulFactorCap.getSoulFactor(player) > 100) SoulFactorCap.setSoulFactor(player, 100);
 		else if (SoulFactorCap.getSoulFactor(player) < -100) SoulFactorCap.setSoulFactor(player, -100);
-	
 	}
 
 	public static void updateBadEffect(PlayerEntity player) {

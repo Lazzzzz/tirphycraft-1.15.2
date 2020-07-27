@@ -1,8 +1,6 @@
 package laz.tirphycraft.registry.render;
 
 import laz.tirphycraft.client.render.entities.froz.CrococasseRender;
-import laz.tirphycraft.client.render.entities.froz.EskimoKingRender;
-import laz.tirphycraft.client.render.entities.froz.EskimoRender;
 import laz.tirphycraft.client.render.entities.froz.FrozenSoldierRender;
 import laz.tirphycraft.client.render.entities.froz.KretunRender;
 import laz.tirphycraft.client.render.entities.froz.LombraRender;

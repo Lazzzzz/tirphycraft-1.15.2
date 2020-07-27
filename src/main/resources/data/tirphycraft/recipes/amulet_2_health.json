@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "ZYZ",
+    "YXY",
+    "ZYZ"
+  ],
+  "key": {
+    "Y": {
+      "item": "tirphycraft:amulet_1_health"
+    },
+    "X": {
+      "item": "tirphycraft:tenium_ingot"
+    },
+    "Z": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:amulet_2_health"
+  }
+}

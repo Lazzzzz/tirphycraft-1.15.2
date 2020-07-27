@@ -20,12 +20,12 @@ public class ClientEvent {
 		LaputaFrogEvent.update(event);
 		FrozFrogEvent.update(event);
 	}
-	
+
 	@SubscribeEvent
 	public static void onRenderHud(RenderGameOverlayEvent.Post event) {
 		if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
 			TirphycraftMainOverlay.INSTANCE.buildOverlay();
 		}
 	}
-	
+
 }

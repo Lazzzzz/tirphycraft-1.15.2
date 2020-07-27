@@ -26,7 +26,7 @@ public class StructureFeatures {
 	public static IStructurePieceType LAPUTA_DUNGEON_ISLAND = IslandPiece::new;
 	
 	public static Structure<NoFeatureConfig> FROZ_TOWER_DUNGEON = new TowerDungeonStructure(NoFeatureConfig::deserialize);
-	public static IStructurePieceType FROZ_TOWER = TowerPiece::new;
+	public static IStructurePieceType FROZ_TOWER = TowerPiece.Piece::new;
 
 
 	public static void registerFeatures(Register<Feature<?>> event)

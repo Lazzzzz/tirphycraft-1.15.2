@@ -1,14 +1,10 @@
 package laz.tirphycraft.client.render.entities.froz;
 
 import laz.tirphycraft.Tirphycraft;
-import laz.tirphycraft.client.model.entity.froz.CrococasseModel;
-import laz.tirphycraft.content.entities.froz.EntityCrococasse;
 import laz.tirphycraft.content.entities.froz.EntityEskimo;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.ZombieRenderer;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class EskimoRender extends MobRenderer<EntityEskimo, BipedModel<EntityEskimo>> {

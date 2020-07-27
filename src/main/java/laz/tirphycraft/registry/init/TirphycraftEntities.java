@@ -2,8 +2,6 @@ package laz.tirphycraft.registry.init;
 
 import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.content.entities.froz.EntityCrococasse;
-import laz.tirphycraft.content.entities.froz.EntityEskimo;
-import laz.tirphycraft.content.entities.froz.EntityEskimoKing;
 import laz.tirphycraft.content.entities.froz.EntityFrozenSoldier;
 import laz.tirphycraft.content.entities.froz.EntityKretun;
 import laz.tirphycraft.content.entities.froz.EntityLombra;

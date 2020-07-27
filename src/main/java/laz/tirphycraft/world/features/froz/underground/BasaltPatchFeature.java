@@ -39,8 +39,7 @@ public class BasaltPatchFeature extends UnderGroundFeature {
 					BlockPos p = new BlockPos(pos.getX() + i, pos.getY() + j, pos.getZ() + k);
 					if (dx * dx + dy * dy + dz * dz <= size * size && p.getY() > 0) {
 						if (worldIn.getBlockState(p) == TirphycraftBlocks.FROZ_STONE.get().getDefaultState()) {
-							setBlockState(worldIn, p, TirphycraftBlocks.BASALT.get().getDefaultState());
-							//System.out.println(p);
+							setBlockState(worldIn, p, TirphycraftBlocks.BASALT.get().getDefaultState(), true);
 						}
 					}
 				}

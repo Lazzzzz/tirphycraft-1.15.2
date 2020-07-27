@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tirphycraft",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "tirphycraft:blue_rose_petal"
+    }
+  },
+  "result": {
+    "item": "tirphycraft:blue_rose_shard",
+    "count": 4
+  }
+}

@@ -28,6 +28,7 @@ public class PhantomGuardianModel extends EntityModel<EntityPhantomGuardian> {
 
 		mainBody = new ModelRenderer(this);
 		mainBody.setRotationPoint(0.0F, 24.0F, 0.0F);
+		
 
 		body1 = new ModelRenderer(this);
 		body1.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -49,6 +50,7 @@ public class PhantomGuardianModel extends EntityModel<EntityPhantomGuardian> {
 		tail = new ModelRenderer(this);
 		tail.setRotationPoint(0.0F, 0.0F, 1.0F);
 		body2.addChild(tail);
+		
 
 		tail1 = new ModelRenderer(this);
 		tail1.setRotationPoint(0.0F, -1.0F, 15.0F);
@@ -64,58 +66,44 @@ public class PhantomGuardianModel extends EntityModel<EntityPhantomGuardian> {
 		RightWing = new ModelRenderer(this);
 		RightWing.setRotationPoint(7.0F, -4.5F, 4.5F);
 		mainBody.addChild(RightWing);
+		
 
 		firstPartRight = new ModelRenderer(this);
 		firstPartRight.setRotationPoint(0.0F, 0.0F, 0.0F);
 		RightWing.addChild(firstPartRight);
 		setRotationAngle(firstPartRight, 0.0F, 0.5236F, 0.0F);
-		firstPartRight.setTextureOffset(82, 4).addBox(-2.0F, -0.5F, -0.5F, 23.0F, 1.0F, 1.0F, 0.0F, false);
-		firstPartRight.setTextureOffset(0, 40).addBox(0.0F, 0.0F, -0.5F, 21.0F, 0.0F, 18.0F, 0.0F, false);
+		firstPartRight.setTextureOffset(82, 6).addBox(-2.0F, -0.5F, -0.5F, 23.0F, 1.0F, 1.0F, 0.0F, false);
+		firstPartRight.setTextureOffset(42, 42).addBox(0.0F, 0.2F, -0.5F, 21.0F, 0.0F, 18.0F, 0.0F, false);
 
 		secondPartRight = new ModelRenderer(this);
 		secondPartRight.setRotationPoint(19.0F, 0.0F, -11.5F);
 		RightWing.addChild(secondPartRight);
 		setRotationAngle(secondPartRight, 0.0F, -0.5236F, 0.0F);
-		secondPartRight.setTextureOffset(82, 0).addBox(-0.65F, -0.5F, 1.05F, 32.0F, 1.0F, 1.0F, 0.0F, false);
-		secondPartRight.setTextureOffset(0, 0).addBox(-0.65F, 0.0F, 1.05F, 31.0F, 0.0F, 20.0F, 0.0F, false);
+		secondPartRight.setTextureOffset(82, 2).addBox(-0.65F, -0.5F, 1.05F, 32.0F, 1.0F, 1.0F, 0.0F, false);
+		secondPartRight.setTextureOffset(0, 20).addBox(-0.65F, 0.0F, 1.05F, 31.0F, 0.0F, 20.0F, 0.0F, false);
 
 		leftWing = new ModelRenderer(this);
 		leftWing.setRotationPoint(-7.0F, -4.5F, 4.5F);
 		mainBody.addChild(leftWing);
+		
 
 		firstPartLeft = new ModelRenderer(this);
 		firstPartLeft.setRotationPoint(0.0F, -1.0F, 0.0F);
 		leftWing.addChild(firstPartLeft);
 		setRotationAngle(firstPartLeft, 0.0F, -0.5236F, 0.0F);
-		firstPartLeft.setTextureOffset(82, 6).addBox(-21.0F, 0.5F, -0.5F, 23.0F, 1.0F, 1.0F, 0.0F, false);
-		firstPartLeft.setTextureOffset(42, 42).addBox(-21.0F, 1.0F, 0.0F, 21.0F, 0.0F, 18.0F, 0.0F, false);
+		firstPartLeft.setTextureOffset(82, 4).addBox(-21.0F, 0.5F, -0.5F, 23.0F, 1.0F, 1.0F, 0.0F, false);
+		firstPartLeft.setTextureOffset(0, 40).addBox(-21.0F, 1.05F, 0.0F, 21.0F, 0.0F, 18.0F, 0.0F, false);
 
 		secondPartLeft = new ModelRenderer(this);
 		secondPartLeft.setRotationPoint(-18.0F, -1.0F, -10.0F);
 		leftWing.addChild(secondPartLeft);
 		setRotationAngle(secondPartLeft, 0.0F, 0.5236F, 0.0F);
-		secondPartLeft.setTextureOffset(82, 2).addBox(-31.5F, 0.5F, -0.8F, 32.0F, 1.0F, 1.0F, 0.0F, false);
-		secondPartLeft.setTextureOffset(0, 20).addBox(-31.0F, 1.0F, 0.0F, 31.0F, 0.0F, 20.0F, 0.0F, false);
+		secondPartLeft.setTextureOffset(82, 0).addBox(-31.5F, 0.5F, -0.8F, 32.0F, 1.0F, 1.0F, 0.0F, false);
+		secondPartLeft.setTextureOffset(0, 0).addBox(-31.0F, 1.0F, 0.0F, 31.0F, 0.0F, 20.0F, 0.0F, false);
 	}
 
 	@Override
-	public void setRotationAngles(EntityPhantomGuardian entity, float limbSwing, float limbSwingAmount,
-			float ageInTicks, float netHeadYaw, float headPitch) {
-	
-		if (entity.isHovering()) {
-			mainBody.rotateAngleY = entity.getAngle();
-			body2.rotateAngleY 	  = -0.1f;
-			tail.rotateAngleY     = -0.03f;
-			tail1.rotateAngleY    = -0.03f;
-			tail2.rotateAngleY    = -0.03f;
-		} else {
-			mainBody.rotateAngleY = 0f;
-			body2.rotateAngleY 	  = 0f;
-			tail.rotateAngleY     = 0f;
-			tail1.rotateAngleY    = 0f;
-			tail2.rotateAngleY    = 0f;
-		}
-		
+	public void setRotationAngles(EntityPhantomGuardian entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
 		body2.rotateAngleX = (float) Math.cos(entity.ticksExisted * 0.1f) / 10;
 		tail.rotateAngleX  = (float) Math.cos(entity.ticksExisted * 0.1f) / 20;
 		tail1.rotateAngleX = (float) Math.sin(entity.ticksExisted * 0.1f) / 10;
@@ -123,12 +111,10 @@ public class PhantomGuardianModel extends EntityModel<EntityPhantomGuardian> {
 
 		leftWing.rotateAngleZ  = (float) (Math.cos(entity.ticksExisted * 0.1f) / 4);
 		RightWing.rotateAngleZ = (float) -(Math.cos(entity.ticksExisted * 0.1f) / 4);
-
 	}
 
 	@Override
-	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
-			float green, float blue, float alpha) {
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		mainBody.render(matrixStack, buffer, packedLight, packedOverlay);
 	}
 

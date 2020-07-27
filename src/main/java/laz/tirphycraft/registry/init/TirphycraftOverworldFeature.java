@@ -3,7 +3,6 @@ package laz.tirphycraft.registry.init;
 import laz.tirphycraft.world.biome.base.FrozBiome;
 import laz.tirphycraft.world.biome.base.LaputaBiome;
 import laz.tirphycraft.world.biome.base.NoxisBiome;
-import laz.tirphycraft.world.biome.base.SacredGardenBiome;
 import laz.tirphycraft.world.features.Features;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage.Decoration;
@@ -15,7 +14,7 @@ public class TirphycraftOverworldFeature {
 
 	public static void init() {
 		for (Biome biome : ForgeRegistries.BIOMES) {
-			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome) && !(biome instanceof SacredGardenBiome))
+			if (!(biome instanceof FrozBiome) && !(biome instanceof LaputaBiome) && !(biome instanceof NoxisBiome))
 				biome.addFeature(Decoration.SURFACE_STRUCTURES, Features.ANCIENT_STONE
 						.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 
@@ -27,5 +26,5 @@ public class TirphycraftOverworldFeature {
 					Features.CRYSTAL.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		}
 	}
-	
+
 }

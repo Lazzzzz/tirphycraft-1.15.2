@@ -38,9 +38,6 @@ import laz.tirphycraft.content.items.clocks.ClockReturn;
 import laz.tirphycraft.content.items.other.ItemShiny;
 import laz.tirphycraft.content.items.other.itemFuel;
 import laz.tirphycraft.content.items.other.book.BookOfKnowledge;
-import laz.tirphycraft.content.items.seed.SeedT1;
-import laz.tirphycraft.content.items.seed.SeedT2;
-import laz.tirphycraft.content.items.seed.SeedT3;
 import laz.tirphycraft.content.items.staff.StaffExplosion1;
 import laz.tirphycraft.content.items.staff.StaffExplosion2;
 import laz.tirphycraft.content.items.staff.StaffExplosion3;
@@ -150,18 +147,6 @@ public class TirphycraftItems {
 	public static RegistryObject<Item> CRYSTAL_PURODES;//
 	public static RegistryObject<Item> DEBUG;//
 
-	public static RegistryObject<Item> SEED_T1_1;
-	public static RegistryObject<Item> SEED_T1_2;
-	public static RegistryObject<Item> SEED_T1_3;
-	
-	public static RegistryObject<Item> SEED_T2_1;
-	public static RegistryObject<Item> SEED_T2_2;
-	public static RegistryObject<Item> SEED_T2_3;
-	
-	public static RegistryObject<Item> SEED_T3_1;
-	public static RegistryObject<Item> SEED_T3_2;
-	public static RegistryObject<Item> SEED_T3_3;
-	
 	public static Item PYRODES_FEET;//
 	public static Item PYRODES_LEGS;
 	public static Item PYRODES_CHEST;
@@ -325,18 +310,6 @@ public class TirphycraftItems {
 		STAFF_1_FIREBALL = addItemClass("staff_1_fireball", StaffFireBall1::new);
 		STAFF_2_FIREBALL = addItemClass("staff_2_fireball", StaffFireBall2::new);
 		STAFF_3_FIREBALL = addItemClass("staff_3_fireball", StaffFireBall3::new);
-		
-		SEED_T1_1 = addItemClass("seed_t1_1", SeedT1::new);
-		SEED_T1_2 = addItemClass("seed_t1_2", SeedT1::new);
-		SEED_T1_3 = addItemClass("seed_t1_3", SeedT1::new);
-		
-		SEED_T2_1 = addItemClass("seed_t2_1", SeedT2::new);
-		SEED_T2_2 = addItemClass("seed_t2_2", SeedT2::new);
-		SEED_T2_3 = addItemClass("seed_t2_3", SeedT2::new);
-		
-		SEED_T3_1 = addItemClass("seed_t3_1", SeedT3::new);
-		SEED_T3_2 = addItemClass("seed_t3_2", SeedT3::new);
-		SEED_T3_3 = addItemClass("seed_t3_3", SeedT3::new);
 		
 		RETURN_CLOCK = addItemClass("return_clock",ClockReturn::new);
 		NOXIS_CLOCK = addItemClass("noxis_clock",ClockNoxis::new);

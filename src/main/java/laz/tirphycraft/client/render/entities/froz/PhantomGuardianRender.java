@@ -6,7 +6,6 @@ import laz.tirphycraft.Tirphycraft;
 import laz.tirphycraft.client.model.entity.froz.PhantomGuardianModel;
 import laz.tirphycraft.content.entities.froz.EntityPhantomGuardian;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;

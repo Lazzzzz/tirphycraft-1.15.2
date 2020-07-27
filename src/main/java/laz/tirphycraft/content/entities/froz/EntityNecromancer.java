@@ -292,35 +292,39 @@ public class EntityNecromancer extends MonsterEntity {
 
 	@Override
 	public void onDeath(DamageSource cause) {
-		AxisAlignedBB box = new AxisAlignedBB(c1, c2);
-		List<EntityFrozenSoldier> k = world.getEntitiesWithinAABB(EntityFrozenSoldier.class, box);
-		for (int i = 0; i < k.size(); i++) {
-			k.get(i).remove();
+		if (c1 != null && c2 != null) {
+			AxisAlignedBB box = new AxisAlignedBB(c1, c2);
+			List<EntityFrozenSoldier> k = world.getEntitiesWithinAABB(EntityFrozenSoldier.class, box);
+			for (int i = 0; i < k.size(); i++) {
+				k.get(i).remove();
+			}
+
+			List<EntityMissileBat> kk = world.getEntitiesWithinAABB(EntityMissileBat.class, box);
+			for (int i = 0; i < kk.size(); i++) {
+				kk.get(i).remove();
+			}
+
+			world.setBlockState(spawn, TirphycraftBlocks.BOSS_SPAWNER_0.get().getDefaultState(), 2);
+			TileEntity tile = world.getTileEntity(spawn);
+			if (tile instanceof TirphyBossSpawnerTE)
+				((TirphyBossSpawnerTE) tile).isDone(true);
+
+			if (!world.isRemote) {
+				world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+						new ItemStack(TirphycraftItems.DRAUGRIR_CHEST, 1)));
+				world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+						new ItemStack(TirphycraftItems.DRAUGRIR_FEET, 1)));
+				world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+						new ItemStack(TirphycraftItems.DRAUGRIR_HEAD, 1)));
+				world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+						new ItemStack(TirphycraftItems.DRAUGRIR_LEGS, 1)));
+				world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
+						new ItemStack(TirphycraftItems.LIFE_CORE.get(), world.rand.nextInt(2) + 1)));
+			}
+
+			this.world.addEntity(
+					new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), 1000));
 		}
-
-		List<EntityMissileBat> kk = world.getEntitiesWithinAABB(EntityMissileBat.class, box);
-		for (int i = 0; i < kk.size(); i++) {
-			kk.get(i).remove();
-		}
-
-		world.setBlockState(spawn, TirphycraftBlocks.BOSS_SPAWNER_0.get().getDefaultState(), 2);
-		TileEntity tile = world.getTileEntity(spawn);
-		if (tile instanceof TirphyBossSpawnerTE)
-			((TirphyBossSpawnerTE) tile).isDone(true);
-
-		if (!world.isRemote) {
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
-					new ItemStack(TirphycraftItems.DRAUGRIR_CHEST, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
-					new ItemStack(TirphycraftItems.DRAUGRIR_FEET, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
-					new ItemStack(TirphycraftItems.DRAUGRIR_HEAD, 1)));
-			world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
-					new ItemStack(TirphycraftItems.DRAUGRIR_LEGS, 1)));
-		}
-
-		this.world.addEntity(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), 1000));
-
 		super.onDeath(cause);
 	}
 

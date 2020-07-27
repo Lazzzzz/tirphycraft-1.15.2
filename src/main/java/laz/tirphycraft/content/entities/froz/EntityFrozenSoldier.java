@@ -101,7 +101,7 @@ public class EntityFrozenSoldier extends MonsterEntity {
 	
 	@Override
 	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
-		return worldIn.getBlockState(getPosition().down()).isSolid();
+		return (worldIn.getBlockState(getPosition().down()).isSolid() && getPosY() < 48);
 	}
 	
 	@Override

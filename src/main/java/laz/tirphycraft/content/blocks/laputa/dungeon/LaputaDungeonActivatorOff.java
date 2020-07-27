@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.VineBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -20,7 +21,7 @@ import net.minecraft.world.World;
 public class LaputaDungeonActivatorOff extends Block {
 
 	public LaputaDungeonActivatorOff() {
-		super(Block.Properties.from(Blocks.BEDROCK));
+		super(Block.Properties.create(Material.ROCK).doesNotBlockMovement().noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
 	}
 
 	@Override

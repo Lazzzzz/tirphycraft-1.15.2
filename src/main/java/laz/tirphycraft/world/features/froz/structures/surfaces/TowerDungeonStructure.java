@@ -6,12 +6,16 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import laz.tirphycraft.Tirphycraft;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.SharedSeedRandom;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -80,7 +84,7 @@ public class TowerDungeonStructure extends Structure<NoFeatureConfig> {
 	}
 
 	public static class Start extends StructureStart {
-		
+
 		public Start(Structure<?> structureIn, int chunkX, int chunkZ, MutableBoundingBox mutableBoundingBox,
 				int referenceIn, long seedIn) {
 			super(structureIn, chunkX, chunkZ, mutableBoundingBox, referenceIn, seedIn);
@@ -90,13 +94,27 @@ public class TowerDungeonStructure extends Structure<NoFeatureConfig> {
 		public void init(ChunkGenerator<?> generator, TemplateManager templateManagerIn, int chunkX, int chunkZ,
 				Biome biomeIn) {
 
-			int x = chunkX * 16;
-			int z = chunkZ * 16;
+			int x = chunkX * 16 + 8;
+			int z = chunkZ * 16 + 8;
+			int i = generator.func_222531_c(x, z, Heightmap.Type.WORLD_SURFACE_WG);
+			int i1 = generator.func_222531_c(x - 8, z, Heightmap.Type.WORLD_SURFACE_WG);
+			int i2 = generator.func_222531_c(x + 8, z, Heightmap.Type.WORLD_SURFACE_WG);
+			int i3 = generator.func_222531_c(x, z - 8, Heightmap.Type.WORLD_SURFACE_WG);
+			int i4 = generator.func_222531_c(x, z + 8, Heightmap.Type.WORLD_SURFACE_WG);
 
-	        TowerPiece Tower = new TowerPiece(rand, x,0,z);
-			this.components.add(Tower);
+			int delta = Math.abs((i1 + i2 + i3 + i4) / 4) - i;
+			if (delta < 3)
+				TowerPiece.start(templateManagerIn, new BlockPos(x, i, z).up(3), Rotation.NONE, this.components,
+						this.rand);
 
 			this.recalculateStructureSize();
+		}
+
+		@Override
+		public void func_225565_a_(IWorld p_225565_1_, ChunkGenerator<?> p_225565_2_, Random p_225565_3_,
+				MutableBoundingBox p_225565_4_, ChunkPos p_225565_5_) {
+			// TODO Auto-generated method stub
+			super.func_225565_a_(p_225565_1_, p_225565_2_, p_225565_3_, p_225565_4_, p_225565_5_);
 		}
 
 	}

@@ -13,10 +13,6 @@ import laz.tirphycraft.content.blocks.froz.dungeon.FrozDungeonBricks;
 import laz.tirphycraft.content.blocks.froz.dungeon.PotionTrapBlock;
 import laz.tirphycraft.content.blocks.froz.dungeon.SpikeBlock;
 import laz.tirphycraft.content.blocks.froz.dungeon.SpikeTrapBlock;
-import laz.tirphycraft.content.blocks.gs.ExtractorT1Block;
-import laz.tirphycraft.content.blocks.gs.ExtractorT2Block;
-import laz.tirphycraft.content.blocks.gs.ExtractorT3Block;
-import laz.tirphycraft.content.blocks.gs.SacredDirt;
 import laz.tirphycraft.content.blocks.laputa.CrystalBlock;
 import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonActivatorOff;
 import laz.tirphycraft.content.blocks.laputa.dungeon.LaputaDungeonActivatorOn;
@@ -33,8 +29,6 @@ import laz.tirphycraft.content.blocks.teleporter.laputa.TeleporterLaputaBlock;
 import laz.tirphycraft.content.blocks.teleporter.laputa.__TeleporterLaputaBlock;
 import laz.tirphycraft.content.tiles.altar.AltarBlock;
 import laz.tirphycraft.content.tiles.altar.AltarTE;
-import laz.tirphycraft.content.tiles.essencium.EssenciumSeedT11Block;
-import laz.tirphycraft.content.tiles.essencium.EssenciumSeedTileBase;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceBlock;
 import laz.tirphycraft.content.tiles.frozFurnace.FrozFurnaceTE;
 import laz.tirphycraft.content.tiles.spawner.TirphyBossSpawnerBlock;
@@ -58,6 +52,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.potion.Effects;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.event.lifecycle.GatherDataEvent.DataGeneratorConfig;
 
 public class TirphycraftBlocks {
 
@@ -76,7 +71,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_STONE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_GRASS;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> LAPUTA_DIRT;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DIRT;//
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> SACRED_DIRT;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BASALT;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> BLACK_CRYSTAL;//
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZEN_CRYSTAL;//
@@ -162,22 +156,6 @@ public static BlockRegistryObjectGroup<Block, BlockItem, ?> __LAPUTA_TELEPORTER;
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> ALTAR;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> FROZ_FURNACE;//
 public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> BOSS_SPAWNER_0;
-
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT11;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT12;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT13;
-
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT21;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT22;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT23;
-
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT31;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT32;
-public static BlockRegistryObjectGroup<Block, BlockItem, TileEntity> SEEDT33;
-
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR1;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR2;
-public static BlockRegistryObjectGroup<Block, BlockItem, ?> EXTRACTOR3;
 
 //froz dungeon
 public static BlockRegistryObjectGroup<Block, BlockItem, ?> FROZ_DUNGEON_TRAP1;
@@ -284,7 +262,6 @@ public static void init(){
        
        SUN_STONE = addCubedBlock("sun_stone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(3, 10).sound(SoundType.STONE).harvestLevel(0).lightValue(15));
         
-   
        FROZ_COBBLESTONE   = addCubedBlock("froz_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        LAPUTA_COBBLESTONE =  addCubedBlock("laputa_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
        NOXIS_COBBLESTONE = addCubedBlock("noxis_cobblestone", Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.STONE).harvestLevel(0));
@@ -302,8 +279,6 @@ public static void init(){
        
        LAPUTA_GRASS = addCubedBlock("laputa_grass", Properties.from(Blocks.GRASS_BLOCK));
        LAPUTA_DIRT  = addCubedBlock("laputa_dirt", Block.Properties.create(Material.EARTH).harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5f, 0).sound(SoundType.GROUND));
-
-       SACRED_DIRT = addBlockClass("sacred_dirt", SacredDirt::new);
        
        ANCIENT_BLUE   = addCubedBlock("ancient_stone_blue", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0).notSolid());
        ANCIENT_WHITE  = addCubedBlock("ancient_stone_white", Block.Properties.create(Material.GLASS).notSolid().harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.6f, 15).sound(SoundType.GLASS).harvestLevel(0).notSolid());
@@ -330,18 +305,12 @@ public static void init(){
        ALTAR 		= addTileEntity("altar", AltarBlock::new, AltarTE::new);
        FROZ_FURNACE = addTileEntity("froz_furnace", FrozFurnaceBlock::new, FrozFurnaceTE::new);
        BOSS_SPAWNER_0 = addTileEntity("boss_spawner_0", TirphyBossSpawnerBlock::new, TirphyBossSpawnerTE::new);
-       
-       SEEDT11 = addTileEntity("seedt11", EssenciumSeedT11Block::new, () -> new EssenciumSeedTileBase(3, 1, 0, SEEDT11.getTileEntityType()));	
-       
-       EXTRACTOR1 = addBlockClass("extractor1", ExtractorT1Block::new);
-       EXTRACTOR2 = addBlockClass("extractor2", ExtractorT2Block::new);
-       EXTRACTOR3 = addBlockClass("extractor3", ExtractorT3Block::new);
-       
+
        FROZ_DUNGEON_TRAP1 = addOnlyBlockClass("froz_dungeon_t1", SpikeTrapBlock::new);
        FROZ_DUNGEON_TRAP2 = addOnlyBlockClass("froz_dungeon_t2", FireTrapBlock::new);
        FROZ_DUNGEON_TRAP3 = addOnlyBlockClass("froz_dungeon_t3", PotionTrapBlock::new);
        FROZ_DUNGEON_SPIKE = addOnlyBlockClass("froz_dungeon_spike", SpikeBlock::new);
-      
+       
        FROZ_DUNGEON_VARIANT0 = addOnlyBlockClass("froz_dungeon_v0", FrozDungeonBricks::new);
        FROZ_DUNGEON_VARIANT1 = addOnlyBlockClass("froz_dungeon_v1", FrozDungeonBricks::new);
        FROZ_DUNGEON_VARIANT2 = addOnlyBlockClass("froz_dungeon_v2", FrozDungeonBricks::new);

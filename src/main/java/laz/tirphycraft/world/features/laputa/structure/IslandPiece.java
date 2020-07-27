@@ -26,7 +26,7 @@ public class IslandPiece extends ScatteredStructurePiece {
 	private int y;
 
 	public IslandPiece(Random rand, int xIn, int yIn, int zIn) {
-		super(StructureFeatures.LAPUTA_DUNGEON_ISLAND, rand, xIn, yIn, zIn, 64, 64, 64);
+		super(StructureFeatures.LAPUTA_DUNGEON_ISLAND, rand, xIn, yIn, zIn, 128, 128, 128);
 		y = yIn;
 	}
 

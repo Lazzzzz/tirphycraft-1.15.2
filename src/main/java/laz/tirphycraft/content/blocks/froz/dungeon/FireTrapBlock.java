@@ -3,6 +3,7 @@ package laz.tirphycraft.content.blocks.froz.dungeon;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.ParticleTypes;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 public class FireTrapBlock extends Block {
 
 	public FireTrapBlock() {
-		super(Block.Properties.from(Blocks.BEDROCK));
+		super(Block.Properties.create(Material.ROCK).doesNotBlockMovement().noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
 	}
 
 	@Override

@@ -6,29 +6,31 @@ import static laz.tirphycraft.client.draw.TirphyDrawable.getSoulBarBad;
 import static laz.tirphycraft.client.draw.TirphyDrawable.getSoulBarGood;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class TirphycraftMainOverlay {
 
-    public static TirphycraftMainOverlay INSTANCE = new TirphycraftMainOverlay();
+	public static TirphycraftMainOverlay INSTANCE = new TirphycraftMainOverlay();
 
-    private final PlayerEntity player;
+	private int barX = 10;
+	private int barY = 10;
 
-    private int barX = 10;
-    private int barY = 10;
+	public TirphycraftMainOverlay() {
+	}
 
-    public TirphycraftMainOverlay() {
-        player = Minecraft.getInstance().player;
-    }
-
-    public void buildOverlay() {
-    	
-        EMPTY_SOUL_BAR.draw(barX, barY, 70, 6);
-        float soulFactor = getSoulFactor(player);
-        
-        if (soulFactor > 0) getSoulBarGood(70).drawPartial(barX, barY, 70, 6, 0, 0, soulFactor/100, 1);
-        else if (soulFactor < 0) getSoulBarBad(70).drawPartial(barX, barY, 70, 6, 0, 0, -soulFactor/100, 1);
-    }
-
+	public void buildOverlay() {
+		ClientWorld world = Minecraft.getInstance().world;
+		PlayerEntity player = Minecraft.getInstance().player;
+		
+		EMPTY_SOUL_BAR.draw(barX, barY, 70, 6);
+		
+		float soulFactor = getSoulFactor(world.getPlayerByUuid(player.getUniqueID()));
+		
+		if (soulFactor > 0)
+			getSoulBarGood(70).drawPartial(barX, barY, 70, 6, 0, 0, soulFactor / 100, 1);
+		else if (soulFactor < 0)
+			getSoulBarBad(70).drawPartial(barX, barY, 70, 6, 0, 0, -soulFactor / 100, 1);
+	}
 
 }

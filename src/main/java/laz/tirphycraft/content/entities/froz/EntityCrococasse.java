@@ -9,6 +9,7 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
+import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.IWorld;
@@ -46,7 +47,7 @@ public class EntityCrococasse extends MonsterEntity {
 
 	@Override
 	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
-		return worldIn.getBlockState(getPosition().down()).isSolid();
+		return (worldIn.getBlockState(getPosition().down()).isSolid() && getPosY() < 48);
 	}
 	
 }

@@ -2,7 +2,6 @@ package laz.tirphycraft.content.entities.laputa;
 
 import laz.tirphycraft.content.entities.goal.bluppy.JumpGoal;
 import laz.tirphycraft.content.entities.goal.bluppy.SplitGoal;
-import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;

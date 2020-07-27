@@ -53,11 +53,20 @@ public class BasicVoxelShape {
 	}
 
 	public static void cylinder(IWorld world, BlockPos pos, int size, int height, int ep, BlockState block) {
+		cylinder(world, pos, size, height, ep, block, false);
+	}
+
+	public static void cylinder(IWorld world, BlockPos pos, int size, int height, int ep, BlockState block,
+			boolean check) {
 		for (int i = -size; i <= size; i++) {
 			for (int j = 0; j <= height; j++) {
 				for (int k = -size; k <= size; k++) {
 					if (i * i + k * k <= size * size && i * i + k * k >= (size - ep) * (size - ep))
-						world.setBlockState(pos.add(i, j, k), block, 2);
+						if (check) {
+							if (world.getBlockState(pos.add(i, j, k)) == Blocks.AIR.getDefaultState())
+								world.setBlockState(pos.add(i, j, k), block, 2);
+						} else
+							world.setBlockState(pos.add(i, j, k), block, 2);
 				}
 			}
 		}

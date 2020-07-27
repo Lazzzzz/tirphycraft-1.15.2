@@ -36,7 +36,7 @@ public class UnderGroundFeature extends Feature<NoFeatureConfig> {
 		}
 		return p;
 	}
-	
+
 	public BlockPos getTopPos(IWorld worldIn, Random rand, BlockPos pos) {
 		BlockPos p = pos;
 		for (int i = 20; i < 50; i++) {
@@ -46,7 +46,7 @@ public class UnderGroundFeature extends Feature<NoFeatureConfig> {
 		}
 		return p;
 	}
-	
+
 	public void placeBlock(IWorld world, BlockPos pos, Random rand) {
 		int i = rand.nextInt(50);
 		if (i == 0)
@@ -56,10 +56,18 @@ public class UnderGroundFeature extends Feature<NoFeatureConfig> {
 		else
 			setBlockState(world, pos, TirphycraftBlocks.FROZ_STONE.get().getDefaultState());
 	}
-	
+
 	public void setBlockState(IWorld worldIn, BlockPos pos, BlockState state) {
-		if (worldIn.getBlockState(pos) == Blocks.AIR.getDefaultState())
+		setBlockState(worldIn, pos, state, false);
+	}
+
+	public void setBlockState(IWorld worldIn, BlockPos pos, BlockState state, boolean replace) {
+		if (replace)
 			worldIn.setBlockState(pos, state, 3);
+		else {
+			if (worldIn.getBlockState(pos) == Blocks.AIR.getDefaultState())
+				worldIn.setBlockState(pos, state, 3);
+		}
 	}
 
 }

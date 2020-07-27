@@ -20,8 +20,8 @@ public class TirphyData {
         final ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         if (event.includeClient()) {
-            dataGenerator.addProvider(new TirphyLang(dataGenerator));
             dataGenerator.addProvider(new TirphyLootsProvider(dataGenerator));
+            dataGenerator.addProvider(new TirphyLang(dataGenerator));
             dataGenerator.addProvider(new TirphyRecipeProvider(dataGenerator));
         }
     }

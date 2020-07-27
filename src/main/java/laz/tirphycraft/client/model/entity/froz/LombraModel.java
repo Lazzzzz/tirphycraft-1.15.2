@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import laz.tirphycraft.content.entities.froz.EntityLombra;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 3.5.3
 // Exported for Minecraft version 1.15
@@ -97,6 +98,9 @@ public class LombraModel extends EntityModel<EntityLombra> {
 			Main.rotationPointY = 24;
 			Main.rotateAngleX = 0;
 		}
+
+		RightArmWhole.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * .4F * limbSwingAmount;
+		LeftArmWhole.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * .4F * limbSwingAmount;
 	}
 
 	@Override

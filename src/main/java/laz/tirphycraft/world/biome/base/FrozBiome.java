@@ -55,6 +55,8 @@ public class FrozBiome extends Biome {
 				Features.MAJESTIC_ROSE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 		addFeature(Decoration.UNDERGROUND_DECORATION,
 				Features.BASALT_PATCH.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
+		addFeature(Decoration.UNDERGROUND_DECORATION,
+				Features.SILVIR_SAPLING.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));
 	    
 		addStructure(StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		addFeature(Decoration.UNDERGROUND_STRUCTURES, StructureFeatures.FROZ_DUNGEON.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)

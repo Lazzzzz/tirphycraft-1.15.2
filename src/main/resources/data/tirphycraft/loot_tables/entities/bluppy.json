@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 4,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:slime_ball",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:fruit_ball_red",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:fruit_ball_blue",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tirphycraft:fruit_ball_green",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

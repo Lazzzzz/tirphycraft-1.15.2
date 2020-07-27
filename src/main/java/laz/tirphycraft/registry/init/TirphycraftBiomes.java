@@ -2,7 +2,6 @@ package laz.tirphycraft.registry.init;
 
 import static laz.tirphycraft.registry.TirphycraftRegistries.addBiome;
 
-import laz.tirphycraft.world.biome.base.SacredGardenBiome;
 import laz.tirphycraft.world.biome.froz.FrozCanyon;
 import laz.tirphycraft.world.biome.froz.FrozForestBiome;
 import laz.tirphycraft.world.biome.froz.FrozIcePlains;
@@ -41,8 +40,6 @@ public class TirphycraftBiomes {
 	public static RegistryObject<Biome> N_MAIN;
 	public static RegistryObject<Biome> N_THORNS;
 	public static RegistryObject<Biome> N_PLAINS;
-
-	public static RegistryObject<Biome> SG_PLAINS;
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void init() {
@@ -88,8 +85,6 @@ public class TirphycraftBiomes {
 		N_MAIN = addBiome("noxis", () -> new NoxisMainBiome());
 		N_THORNS = addBiome("noxis_thorns", () -> new NoxisThornsBiome());
 		N_PLAINS = addBiome("noxis_plains", () -> new NoxisPlainsBiome());
-
-		SG_PLAINS = addBiome("sg_plains", () -> new SacredGardenBiome());
 
 	}
 

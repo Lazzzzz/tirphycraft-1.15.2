@@ -77,6 +77,8 @@ minecraft {
             args '--mod', 'tirphycraft', '--all', '--output', file('src/generated/resources/'),
                     '--existing', sourceSets.main.resources.srcDirs[0]
 
+			environment 'target', 'fmluserdevdata'
+
             mods {
                 examplemod {
                     source sourceSets.main

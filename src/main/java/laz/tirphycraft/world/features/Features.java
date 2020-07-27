@@ -13,6 +13,7 @@ import laz.tirphycraft.world.features.froz.trees.FrozGiantTreeFeature;
 import laz.tirphycraft.world.features.froz.trees.FrozRootFeature;
 import laz.tirphycraft.world.features.froz.underground.BasaltPatchFeature;
 import laz.tirphycraft.world.features.froz.underground.GiantPillarFeature;
+import laz.tirphycraft.world.features.froz.underground.SilvirSaplingFeature;
 import laz.tirphycraft.world.features.froz.underground.SnowTrapFeature;
 import laz.tirphycraft.world.features.froz.underground.StalacmiteFeature;
 import laz.tirphycraft.world.features.froz.underground.StalactiteFeature;
@@ -40,6 +41,7 @@ import laz.tirphycraft.world.features.noxis.NoxisDeadTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
 import laz.tirphycraft.world.features.overworld.FragmentFeature;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
+import laz.tirphycraft.world.features.trees.SilvirTreeFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -73,6 +75,7 @@ public class Features {
 	public static ConfiguredFeature<IFeatureConfig, ?> CRYSTAL_SPIKE 		= new CrystalSpikeFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> FROZ_BUSH			= new FrozBushFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	public static ConfiguredFeature<NoFeatureConfig, ?> BASALT_PATCH		= new BasaltPatchFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+	public static ConfiguredFeature<NoFeatureConfig, ?> SILVIR_SAPLING		= new SilvirSaplingFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
 	
 	
 	public static ConfiguredFeature<IFeatureConfig, ?> LIGHT_PAD 			= new LightPadFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);

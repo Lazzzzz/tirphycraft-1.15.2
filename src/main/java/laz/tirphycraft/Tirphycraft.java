@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import laz.tirphycraft.event.LymbeFog;
 import laz.tirphycraft.network.PacketHandler;
 import laz.tirphycraft.particle.GlintParticle;
 import laz.tirphycraft.recipes.RecipeInit;
@@ -26,6 +27,7 @@ import net.minecraft.particles.ParticleType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -60,8 +62,9 @@ public class Tirphycraft {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		
+//		MinecraftForge.EVENT_BUS.register(new LymbeFog());
+				
 		TirphycraftOverworldFeature.init();
-		
 		PacketHandler.registerMessages();
 		CapHandler.init();
 		RecipeInit.init();
