@@ -1,4 +1,4 @@
-package laz.tirphycraft.world.dimension.gosyn;
+package laz.tirphycraft.world.dimension.lymbe;
 
 import java.util.Set;
 
@@ -8,8 +8,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
-public class GosynBiomeProvider extends BiomeProvider {
-	public GosynBiomeProvider() {
+public class LymbeBiomeProvider extends BiomeProvider {
+	public LymbeBiomeProvider() {
 		super(biomeList);
 	}
 

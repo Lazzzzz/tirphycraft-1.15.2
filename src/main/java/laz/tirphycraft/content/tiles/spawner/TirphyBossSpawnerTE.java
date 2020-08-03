@@ -17,6 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.gen.Heightmap.Type;
 
 public class TirphyBossSpawnerTE extends TileEntity implements ITickableTileEntity {
 	// boss room corner
@@ -64,9 +65,9 @@ public class TirphyBossSpawnerTE extends TileEntity implements ITickableTileEnti
 			if (!world.isRemote) {
 				AxisAlignedBB box = new AxisAlignedBB(pos.add(1, 0, 1), pos.add(-1, 1, -1));
 				List<PlayerEntity> entity = world.getEntitiesWithinAABB(PlayerEntity.class, box);
+				BlockPos top = world.getHeight(Type.WORLD_SURFACE, getPos());
 				for (int i = 0; i < entity.size(); i++) {
-					entity.get(i).setPositionAndUpdate(entity.get(i).getPosX(), entity.get(i).getPosY() + 10,
-							entity.get(i).getPosZ());
+					entity.get(i).setPositionAndUpdate(top.getX(), top.getY(), top.getZ());
 				}
 
 			} else {

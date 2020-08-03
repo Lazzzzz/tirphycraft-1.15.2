@@ -23,7 +23,7 @@ public class EntityBluppy extends MonsterEntity {
 	private static final DataParameter<Boolean> HOVERING = EntityDataManager.createKey(EntityBluppy.class,
 			DataSerializers.BOOLEAN);
 
-	public EntityBluppy(EntityType<? extends MonsterEntity> type, World worldIn) {
+	public EntityBluppy(EntityType<? extends EntityBluppy> type, World worldIn) {
 		super(type, worldIn);
 	}
 

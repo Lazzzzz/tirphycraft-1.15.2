@@ -52,7 +52,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.potion.Effects;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent.DataGeneratorConfig;
 
 public class TirphycraftBlocks {
 

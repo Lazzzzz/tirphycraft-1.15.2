@@ -1,4 +1,4 @@
-package laz.tirphycraft.client.render.weather;
+package laz.tirphycraft.client.render.world;
 
 import java.util.Random;
 

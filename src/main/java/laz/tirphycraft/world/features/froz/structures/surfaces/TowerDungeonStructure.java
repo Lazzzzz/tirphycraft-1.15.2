@@ -93,20 +93,27 @@ public class TowerDungeonStructure extends Structure<NoFeatureConfig> {
 		@Override
 		public void init(ChunkGenerator<?> generator, TemplateManager templateManagerIn, int chunkX, int chunkZ,
 				Biome biomeIn) {
-
 			int x = chunkX * 16 + 8;
 			int z = chunkZ * 16 + 8;
 			int i = generator.func_222531_c(x, z, Heightmap.Type.WORLD_SURFACE_WG);
-			int i1 = generator.func_222531_c(x - 8, z, Heightmap.Type.WORLD_SURFACE_WG);
-			int i2 = generator.func_222531_c(x + 8, z, Heightmap.Type.WORLD_SURFACE_WG);
-			int i3 = generator.func_222531_c(x, z - 8, Heightmap.Type.WORLD_SURFACE_WG);
-			int i4 = generator.func_222531_c(x, z + 8, Heightmap.Type.WORLD_SURFACE_WG);
 
-			int delta = Math.abs((i1 + i2 + i3 + i4) / 4) - i;
-			if (delta < 3)
-				TowerPiece.start(templateManagerIn, new BlockPos(x, i, z).up(3), Rotation.NONE, this.components,
-						this.rand);
+			Object[] biomes = generator.getBiomeProvider().getBiomes(x, i, z, 2).toArray();
+			Boolean CanPlace = true;
+			for (int ii = 1; ii < biomes.length; ii++) {
+				if (biomes[ii - 1] != biomes[ii])
+					CanPlace = false;
+			}
+			if (CanPlace) {
+				int i1 = generator.func_222531_c(x - 8, z, Heightmap.Type.WORLD_SURFACE_WG);
+				int i2 = generator.func_222531_c(x + 8, z, Heightmap.Type.WORLD_SURFACE_WG);
+				int i3 = generator.func_222531_c(x, z - 8, Heightmap.Type.WORLD_SURFACE_WG);
+				int i4 = generator.func_222531_c(x, z + 8, Heightmap.Type.WORLD_SURFACE_WG);
 
+				int delta = Math.abs((i1 + i2 + i3 + i4) / 4) - i;
+				if (delta < 3)
+					TowerPiece.start(templateManagerIn, new BlockPos(x, i, z).up(3), Rotation.NONE, this.components,
+							this.rand);
+			}
 			this.recalculateStructureSize();
 		}
 

@@ -25,7 +25,6 @@ public class SilvirSaplingFeature extends UnderGroundFeature {
 		
 		BlockPos p = getGroundPos(worldIn, rand, pos);	
 		if (worldIn.getBlockState(p.up()) == Blocks.AIR.getDefaultState() && rand.nextInt(10) == 0) {
-			System.out.println(p);
 			worldIn.setBlockState(p, TirphycraftBlocks.FROZ_DIRT.get().getDefaultState(), 3);
 			worldIn.setBlockState(p.up(), TirphycraftBlocks.SAPLING_SILVIR.get().getDefaultState(), 3);
 		}

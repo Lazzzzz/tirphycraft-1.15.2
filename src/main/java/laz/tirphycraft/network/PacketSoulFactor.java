@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import laz.tirphycraft.api.SoulFactorCap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
 
@@ -32,7 +33,10 @@ public class PacketSoulFactor {
 	public static void handle(PacketSoulFactor packet, Supplier<NetworkEvent.Context> ctx) {
 		ctx.get().enqueueWork(() -> {
 			ClientWorld world = Minecraft.getInstance().world;
-			SoulFactorCap.setSoulFactor(world.getPlayerByUuid(packet.entityID), packet.factor);
+			PlayerEntity player = world.getPlayerByUuid(packet.entityID);
+			if (player != null)
+				SoulFactorCap.setSoulFactor(player, packet.factor);
+			
 		});
 
 		ctx.get().setPacketHandled(true);

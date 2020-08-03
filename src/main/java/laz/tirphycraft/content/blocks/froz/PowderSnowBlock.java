@@ -3,6 +3,7 @@ package laz.tirphycraft.content.blocks.froz;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftEntities;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.Entity;
@@ -39,5 +40,5 @@ public class PowderSnowBlock extends Block {
 						TirphycraftBlocks.POWDER_SNOW_LAYER.get().getDefaultState().with(SnowBlock.LAYERS, 7));
 		}
 	}
-
+	
 }

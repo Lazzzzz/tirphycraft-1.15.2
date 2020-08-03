@@ -1,4 +1,4 @@
-package laz.tirphycraft.world.dimension.gosyn;
+package laz.tirphycraft.world.dimension.lymbe;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.spawner.WorldEntitySpawner;
 
-public class GosynChunkGenerator extends NoiseChunkGenerator<GosynGenSettings> {
+public class LymbeChunkGenerator extends NoiseChunkGenerator<LymbeGenSettings> {
 	private static final float[] field_222576_h = Util.make(new float[25], (p_222575_0_) -> {
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {
@@ -32,7 +32,7 @@ public class GosynChunkGenerator extends NoiseChunkGenerator<GosynGenSettings> {
 	private final OctavesNoiseGenerator depthNoise;
 	private final boolean isAmplified;
 
-	public GosynChunkGenerator(IWorld worldIn, BiomeProvider provider, GosynGenSettings settingsIn) {
+	public LymbeChunkGenerator(IWorld worldIn, BiomeProvider provider, LymbeGenSettings settingsIn) {
 		super(worldIn, provider, 4, 8, 256, settingsIn, true);
 		this.randomSeed.skip(2620);
 		this.depthNoise = new OctavesNoiseGenerator(this.randomSeed, 15, 0);

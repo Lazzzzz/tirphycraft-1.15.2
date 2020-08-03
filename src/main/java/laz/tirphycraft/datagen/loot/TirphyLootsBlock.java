@@ -10,7 +10,6 @@ import laz.tirphycraft.registry.TirphycraftRegistries;
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import laz.tirphycraft.registry.init.TirphycraftItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;

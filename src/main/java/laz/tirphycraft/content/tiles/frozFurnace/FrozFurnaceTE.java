@@ -64,7 +64,7 @@ public class FrozFurnaceTE extends LockableLootTileEntity implements ITickableTi
 									fuel1.setCount(fuel1.getCount() - 3);
 									fuel2.setCount(fuel2.getCount() - 3);
 									input.setCount(input.getCount() - 1);
-									world.setBlockState(pos, TirphycraftBlocks.FROZ_FURNACE.get().getDefaultState().with(FrozFurnaceBlock.LIT, true));
+									world.setBlockState(pos, world.getBlockState(pos).getBlockState().with(FrozFurnaceBlock.LIT, true));
 								}
 							}
 						}

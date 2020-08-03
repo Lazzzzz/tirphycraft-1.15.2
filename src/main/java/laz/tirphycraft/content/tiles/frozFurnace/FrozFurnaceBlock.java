@@ -75,7 +75,9 @@ public class FrozFurnaceBlock extends Block {
 			TileEntity te = worldIn.getTileEntity(pos);
 			if (te instanceof FrozFurnaceTE) {
 				InventoryHelper.dropItems(worldIn, pos, ((FrozFurnaceTE) te).getItems());
+				te.remove();
 			}
+			
 		}
 	}
 

@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 public class LaputaDungeonActivatorOff extends Block {
 
 	public LaputaDungeonActivatorOff() {
-		super(Block.Properties.create(Material.ROCK).doesNotBlockMovement().noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
+		super(Block.Properties.create(Material.ROCK).noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
 	}
 
 	@Override

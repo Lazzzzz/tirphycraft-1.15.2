@@ -1,4 +1,4 @@
-package laz.tirphycraft.world.dimension.gosyn;
+package laz.tirphycraft.world.dimension.lymbe;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
@@ -9,15 +9,15 @@ import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 
-public class GosynDimension extends Dimension {
+public class LymbeDimension extends Dimension {
 
-	public GosynDimension(World world, DimensionType type) {
+	public LymbeDimension(World world, DimensionType type) {
 		super(world, type, 0.0f);
 	}
 
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		return new GosynChunkGenerator(world, new GosynBiomeProvider(), new GosynGenSettings());
+		return new LymbeChunkGenerator(world, new LymbeBiomeProvider(), new LymbeGenSettings());
 	}
 
 	@Override

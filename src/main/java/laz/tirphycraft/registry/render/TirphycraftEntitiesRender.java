@@ -1,5 +1,6 @@
 package laz.tirphycraft.registry.render;
 
+import laz.tirphycraft.client.render.entities.froz.BoarRender;
 import laz.tirphycraft.client.render.entities.froz.CrococasseRender;
 import laz.tirphycraft.client.render.entities.froz.FrozenSoldierRender;
 import laz.tirphycraft.client.render.entities.froz.KretunRender;
@@ -27,6 +28,8 @@ public class TirphycraftEntitiesRender {
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_CROCROCASSE, CrococasseRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_LOMBRA, LombraRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_PHANTOM_GUARDIAN, PhantomGuardianRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_BOAR, BoarRender::new);
+
 //		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_ESKIMO, EskimoRender::new);
 //		RenderingRegistry.registerEntityRenderingHandler(TirphycraftEntities.ENTITY_ESKIMO_KING, EskimoKingRender::new);
 //		

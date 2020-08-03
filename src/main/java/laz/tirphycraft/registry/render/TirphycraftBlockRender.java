@@ -6,10 +6,10 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 
 public class TirphycraftBlockRender {
 	public static void init() {
+
 		RenderType cutout = RenderType.getCutout();
 		RenderType opaque = RenderType.getTranslucent();
-		RenderType transparent = RenderType.getTranslucentNoCrumbling();
-
+		
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_COPPIR.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_SILVIR.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.SAPLING_GOLDIR.get(), cutout);
@@ -20,8 +20,8 @@ public class TirphycraftBlockRender {
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_YELLOW.get(), opaque);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PURPLE.get(), opaque);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LAPUTA_PINK.get(), opaque);
-		
-		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.BOSS_SPAWNER_0.get(), transparent);
+
+		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.BOSS_SPAWNER_0.get(), cutout);
 
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_COPPIR.get(), cutout);
 		RenderTypeLookup.setRenderLayer(TirphycraftBlocks.LEAVES_SILVIR.get(), cutout);

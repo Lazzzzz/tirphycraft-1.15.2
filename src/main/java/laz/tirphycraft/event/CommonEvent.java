@@ -7,14 +7,12 @@ import laz.tirphycraft.event.playertick.NoxisPlayerTickEvent;
 import laz.tirphycraft.event.soulfactor.SoulFactorEvent;
 import laz.tirphycraft.network.PacketHandler;
 import laz.tirphycraft.network.PacketSoulFactor;
-import laz.tirphycraft.registry.init.TirphycraftBiomes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.network.NetworkDirection;
@@ -36,11 +34,10 @@ public class CommonEvent {
 						new PacketSoulFactor(player.getUniqueID(), SoulFactorCap.getSoulFactor(player)),
 						((ServerPlayerEntity) player).connection.netManager, NetworkDirection.PLAY_TO_CLIENT);
 			}
-
-			if (SoulFactorCap.getSoulFactor(player) > 0) {
-				SoulFactorEvent.updateBadEffect(player);
-			} else if (SoulFactorCap.getSoulFactor(player) < 0) {
-				SoulFactorEvent.updateGoodEffect(player);
+			if (player.world.getGameTime() % 100 == 0) {
+				int factor = SoulFactorCap.getSoulFactor(player);
+				if (factor < 0)	SoulFactorEvent.updateBadEffect(player, factor);
+				else if (factor > 0) SoulFactorEvent.updateGoodEffect(player, factor);
 			}
 		}
 	}

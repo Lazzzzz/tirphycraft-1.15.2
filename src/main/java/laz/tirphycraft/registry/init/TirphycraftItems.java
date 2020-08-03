@@ -9,6 +9,7 @@ import static laz.tirphycraft.registry.TirphycraftRegistries.addShovel;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addSimpleFood;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addSimpleItem;
 import static laz.tirphycraft.registry.TirphycraftRegistries.addSword;
+import static laz.tirphycraft.registry.TirphycraftRegistries.addSpawnEggs;
 
 import laz.tirphycraft.content.items.Debug;
 import laz.tirphycraft.content.items.amulets.AmuletAnti;
@@ -31,7 +32,7 @@ import laz.tirphycraft.content.items.armor.ArmorTenium;
 import laz.tirphycraft.content.items.artefacts.ArtefactFeatherOfLight;
 import laz.tirphycraft.content.items.artefacts.ArtefactSunTear;
 import laz.tirphycraft.content.items.clocks.ClockFroz;
-import laz.tirphycraft.content.items.clocks.ClockGosyn;
+import laz.tirphycraft.content.items.clocks.ClockLymbe;
 import laz.tirphycraft.content.items.clocks.ClockLaputa;
 import laz.tirphycraft.content.items.clocks.ClockNoxis;
 import laz.tirphycraft.content.items.clocks.ClockReturn;
@@ -314,7 +315,7 @@ public class TirphycraftItems {
 		RETURN_CLOCK = addItemClass("return_clock",ClockReturn::new);
 		NOXIS_CLOCK = addItemClass("noxis_clock",ClockNoxis::new);
 		LAPUTA_CLOCK = addItemClass("laputa_clock", ClockLaputa::new);
-		GOSYN_CLOCK = addItemClass("gosyn_clock",ClockGosyn::new);
+		GOSYN_CLOCK = addItemClass("gosyn_clock",ClockLymbe::new);
 		FROZ_CLOCK = addItemClass("froz_clock",ClockFroz::new);
 
 		SUN_TEAR = addItemClass("sun_tear", ArtefactSunTear::new);
@@ -419,6 +420,7 @@ public class TirphycraftItems {
 		
 		FOOD1 = addSimpleFood("donangoblu_fruit", 2);
 		ORIGIN_INGOT = addSimpleItem("origin_ingot", 64);
+		
 	}
 
 }

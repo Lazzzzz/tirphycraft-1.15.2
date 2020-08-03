@@ -1,8 +1,8 @@
-package laz.tirphycraft.world.dimension.gosyn;
+package laz.tirphycraft.world.dimension.lymbe;
 
 import net.minecraft.world.gen.GenerationSettings;
 
-public class GosynGenSettings extends GenerationSettings {
+public class LymbeGenSettings extends GenerationSettings {
 
 	public int getBiomeSize() {
 		return 4;

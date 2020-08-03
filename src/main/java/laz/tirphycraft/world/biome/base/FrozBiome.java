@@ -34,6 +34,8 @@ public class FrozBiome extends Biome {
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(TirphycraftEntities.ENTITY_LOMBRA, 10, 1, 1));
 		
 		addSpawn(EntityClassification.MISC, new SpawnListEntry(EntityType.SNOW_GOLEM, 10, 1, 1));
+		
+		addSpawn(EntityClassification.CREATURE, new SpawnListEntry(TirphycraftEntities.ENTITY_BOAR, 10, 1, 6));
 				
 		addFeature(Decoration.SURFACE_STRUCTURES,
 				Features.FROZ_STALAGMITE.withPlacement(Placement.COUNT_HEIGHTMAP.configure(new FrequencyConfig(1))));

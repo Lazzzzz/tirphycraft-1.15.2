@@ -2,9 +2,9 @@ package laz.tirphycraft.world.biome.base;
 
 import net.minecraft.world.biome.Biome;
 
-public class GosynStage2Biome extends Biome {
+public class LymbeBiome extends Biome {
 
-    protected GosynStage2Biome(Builder builder) {
+    protected LymbeBiome(Builder builder) {
         super(builder);
     }
 

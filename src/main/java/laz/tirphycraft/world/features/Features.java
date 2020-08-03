@@ -41,7 +41,6 @@ import laz.tirphycraft.world.features.noxis.NoxisDeadTreeFeature;
 import laz.tirphycraft.world.features.ore.OreDepositFeatures;
 import laz.tirphycraft.world.features.overworld.FragmentFeature;
 import laz.tirphycraft.world.features.trees.CoppirTreeFeature;
-import laz.tirphycraft.world.features.trees.SilvirTreeFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;

@@ -20,12 +20,11 @@ public class EntityLombra extends MonsterEntity {
 
 	private static final DataParameter<Boolean> ON_ROOF = EntityDataManager.createKey(EntityLombra.class,
 			DataSerializers.BOOLEAN);
-	
-	
+
 	public EntityLombra(EntityType<? extends EntityLombra> type, World worldIn) {
 		super(type, worldIn);
 	}
-	
+
 	@Override
 	protected void registerAttributes() {
 		super.registerAttributes();
@@ -48,12 +47,12 @@ public class EntityLombra extends MonsterEntity {
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
 		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.9f, true));
 	}
-	
+
 	protected void registerData() {
 		super.registerData();
 		this.dataManager.register(ON_ROOF, true);
 	}
-	
+
 	public boolean getRoof() {
 		return this.dataManager.get(ON_ROOF);
 	}
@@ -61,16 +60,16 @@ public class EntityLombra extends MonsterEntity {
 	public void setRoof(boolean flag) {
 		this.dataManager.set(ON_ROOF, flag);
 	}
-	
+
 	@Override
 	public void livingTick() {
 		if (getRoof() && !world.isRemote) {
-			this.setMotion(0,0,0);
+			this.setMotion(0, 0, 0);
 			if (this.getAttackTarget() != null) {
 				double x = this.getAttackTarget().getPosX();
 				double z = this.getAttackTarget().getPosZ();
-				if (x > this.getPosX() - 1 && x < this.getPosX() + 1) {
-					if (z > this.getPosZ() - 1 && z < this.getPosZ() + 1) {
+				if (x > this.getPosX() - 3 && x < this.getPosX() + 3) {
+					if (z > this.getPosZ() - 3 && z < this.getPosZ() + 3) {
 						this.setRoof(false);
 					}
 				}
@@ -79,7 +78,7 @@ public class EntityLombra extends MonsterEntity {
 		this.fallDistance = 0;
 		super.livingTick();
 	}
-	
+
 	@Override
 	public boolean canSpawn(IWorld worldIn, SpawnReason spawnReasonIn) {
 		if (worldIn.getBlockState(getPosition().up(2)).isSolid()) {
@@ -88,5 +87,5 @@ public class EntityLombra extends MonsterEntity {
 		}
 		return false;
 	}
-	
+
 }

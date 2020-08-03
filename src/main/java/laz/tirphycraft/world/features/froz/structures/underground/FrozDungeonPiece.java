@@ -365,9 +365,11 @@ public class FrozDungeonPiece {
 					worldIn.setBlockState(pos, Blocks.SPAWNER.getDefaultState(), 3);
 					TileEntity tileentity = worldIn.getTileEntity(pos);
 					if (tileentity instanceof MobSpawnerTileEntity) {
-						 AbstractSpawner abstractspawner = ((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic();
-						 if (randomIn.nextBoolean()) abstractspawner.setEntityType(TirphycraftEntities.ENTITY_CROCROCASSE);
-						 else abstractspawner.setEntityType(TirphycraftEntities.ENTITY_FROZEN_SOLDIER);
+						AbstractSpawner abstractspawner = ((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic();
+						if (randomIn.nextBoolean())
+							abstractspawner.setEntityType(TirphycraftEntities.ENTITY_CROCROCASSE);
+						else
+							abstractspawner.setEntityType(TirphycraftEntities.ENTITY_FROZEN_SOLDIER);
 					}
 				}
 

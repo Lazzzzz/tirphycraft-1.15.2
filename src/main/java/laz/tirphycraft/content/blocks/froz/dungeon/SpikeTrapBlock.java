@@ -2,7 +2,6 @@ package laz.tirphycraft.content.blocks.froz.dungeon;
 
 import laz.tirphycraft.registry.init.TirphycraftBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +11,7 @@ import net.minecraft.world.World;
 public class SpikeTrapBlock extends Block {
 
 	public SpikeTrapBlock() {
-		super(Block.Properties.create(Material.ROCK).doesNotBlockMovement().noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
+		super(Block.Properties.create(Material.ROCK).noDrops().hardnessAndResistance(-1.0F, 3600000.0F));
 	}
 
 	@Override

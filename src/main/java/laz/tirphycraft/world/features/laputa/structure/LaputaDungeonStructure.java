@@ -1,6 +1,7 @@
 package laz.tirphycraft.world.features.laputa.structure;
 
 import java.util.Random;
+import java.util.Set;
 import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
@@ -112,11 +113,16 @@ public class LaputaDungeonStructure extends Structure<NoFeatureConfig> {
 			int z = chunkZ * 16;
 
 			int surfaceY = 180;
-			BlockPos blockpos = new BlockPos(x, surfaceY, z);
-
-	        IslandPiece MainIslandPiece = new IslandPiece(this.rand, x, surfaceY, z);
-			this.components.add(MainIslandPiece);
-
+			Object[] biomes = generator.getBiomeProvider().getBiomes(x, surfaceY, z, 64).toArray();
+			Boolean CanPlace = true;
+			for (int i = 1; i < biomes.length; i++) {
+				if (biomes[i - 1] != biomes[i])
+					CanPlace = false;
+			}
+			if (CanPlace) {
+				IslandPiece MainIslandPiece = new IslandPiece(this.rand, x, surfaceY, z);
+				this.components.add(MainIslandPiece);
+			}
 			this.recalculateStructureSize();
 		}
 

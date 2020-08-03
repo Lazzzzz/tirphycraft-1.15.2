@@ -1,6 +1,6 @@
 package laz.tirphycraft.world.dimension.froz;
 
-import laz.tirphycraft.client.render.weather.BlizzardRendering;
+import laz.tirphycraft.client.render.world.BlizzardRendering;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -97,11 +97,6 @@ public class FrozDimension extends Dimension {
 	@Override
 	public int getSeaLevel() {
 		return 1;
-	}
-
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return super.getSkyRenderer();
 	}
 
 	@Override

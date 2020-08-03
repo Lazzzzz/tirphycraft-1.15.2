@@ -26,11 +26,13 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.fixes.ItemSpawnEggSplit;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.ModDimension;
@@ -145,6 +147,12 @@ public class TirphycraftRegistries {
 		ITEMLIST_INT = ++ITEMLIST_INT;
 		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name,
 				() -> new Item(new Item.Properties().group(ITEM_GROUP).maxStackSize(size)));
+	}
+	
+	public static RegistryObject<Item> addSpawnEggs(EntityType<?> type, int color1, int color2, String name) {
+		ITEMLIST_INT = ++ITEMLIST_INT;
+		return ITEMLIST[ITEMLIST_INT - 1] = ITEMS.register(name,
+				() -> new SpawnEggItem(type, color1, color2, new Item.Properties().group(ITEM_GROUP).maxStackSize(1)));
 	}
 
 	public static RegistryObject<Item> addSimpleFood(String name, int food) {

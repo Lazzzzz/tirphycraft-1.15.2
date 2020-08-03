@@ -129,11 +129,15 @@ public class EntityTreeSpirit extends MonsterEntity {
 
 			spawnThing();
 		}
-	
+		
 		super.livingTick();
 
 	}
-
+	
+	@Override
+	protected void collideWithNearbyEntities() {
+	}
+	
 	public void spawnThing() {
 		if (this.ticksExisted % 75 == 0 && this.getAttackTarget() != null) {
 			EntitySpiritMinion m = new EntitySpiritMinion(TirphycraftEntities.ENTITY_SPIRIT_MINION, world, this.getAttackTarget(), this);
